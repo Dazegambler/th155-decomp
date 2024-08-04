@@ -1,0 +1,51 @@
+function Render()
+{
+	this.SetBlend(1);
+	this.SetCulling(1);
+	this.SetFilter(1);
+	this.SetZWrite(true);
+	this.SetZTest(true);
+	this.background_begin.Execute();
+	this.background3d_0.Execute();
+	this.SetZWrite(false);
+	this.SetZTest(true);
+	this.SetCulling(0);
+	this.SetBlend(2);
+	this.background3d_add.Execute();
+	this.SetBlend(1);
+	this.SetZWrite(false);
+	this.SetZTest(false);
+	this.background2d_base.Execute();
+	this.background2d_0.Execute();
+	this.background3d_1.Execute();
+	this.SetFilter(1);
+	this.background_end.Execute();
+	this.SetZWrite(false);
+	this.SetZTest(true);
+	this.SetCulling(0);
+	this.background3d_3.Execute();
+	this.SetZTest(false);
+	this.info_back.Execute();
+	this.actor.Execute();
+	this.background2d_1.Execute();
+	this.SetBlend(1);
+	this.SetFilter(1);
+	this.SetZWrite(true);
+	this.SetZTest(true);
+	this.background3d_2.Execute();
+	this.SetZWrite(false);
+	this.SetZTest(false);
+	this.SetFilter(1);
+	this.info.Execute();
+	this.status.Execute();
+	this.talk.Execute();
+	this.ui.Execute();
+	this.overlay.Execute();
+}
+
+function RenderFront()
+{
+	this.SetBlend(1);
+	this.front.Execute();
+}
+
