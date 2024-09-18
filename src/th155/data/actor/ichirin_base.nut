@@ -60,12 +60,12 @@ function Update_Input()
 
 			if (this.command.rsv_x * this.direction > 0)
 			{
-				t_.k = 1,00000000.0;
+				t_.k = 1.00000000;
 			}
 
 			if (this.command.rsv_x * this.direction < 0)
 			{
-				t_.k = -1,00000000.0;
+				t_.k = -1.00000000;
 			}
 
 			if (this.Okult_Init(t_))

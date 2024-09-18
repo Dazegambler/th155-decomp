@@ -144,7 +144,7 @@ function CPU_DashFront( wait_ )
 				return;
 			}
 
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.x = this.direction;
 		};
 	}
@@ -157,7 +157,7 @@ function CPU_DashFront( wait_ )
 				return true;
 			}
 
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.x = this.direction;
 		};
 	}
@@ -178,7 +178,7 @@ function CPU_DashFront_Aggro( wait_ )
 				return true;
 			}
 
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.x = this.direction;
 		};
 	}
@@ -191,7 +191,7 @@ function CPU_DashFront_Aggro( wait_ )
 				return true;
 			}
 
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.x = this.direction;
 		};
 	}
@@ -211,7 +211,7 @@ function CPU_DashBack( wait_ )
 				return true;
 			}
 
-			this.com_dash = -1,00000000.0;
+			this.com_dash = -1.00000000;
 			this.input.x = -this.direction;
 		};
 	}
@@ -225,7 +225,7 @@ function CPU_DashBack( wait_ )
 				return true;
 			}
 
-			this.com_dash = -1,00000000.0;
+			this.com_dash = -1.00000000;
 			this.input.x = -this.direction;
 		};
 	}
@@ -428,9 +428,9 @@ function CPU_Defence()
 							break;
 
 						default:
-							if (this.direction == 1,00000000.0 && this.x > ::battle.corner_left + 180 || this.direction == -1,00000000.0 && this.x < ::battle.corner_right - 180)
+							if (this.direction == 1.00000000 && this.x > ::battle.corner_left + 180 || this.direction == -1.00000000 && this.x < ::battle.corner_right - 180)
 							{
-								if (this.com_search[1][this.direction == 1,00000000.0 ? 4 : 0] > 0 && this.com_search[2][this.direction == 1,00000000.0 ? 4 : 0] == 0)
+								if (this.com_search[1][this.direction == 1.00000000 ? 4 : 0] > 0 && this.com_search[2][this.direction == 1.00000000 ? 4 : 0] == 0)
 								{
 									this.com_subState[0] = this.CPU_Avoid_DashBack;
 									this.com_guard_stance = this.com_count[0] = -10;
@@ -438,7 +438,7 @@ function CPU_Defence()
 								}
 							}
 
-							if (this.com_search[2][this.direction == 1,00000000.0 ? 0 : 4] == 0)
+							if (this.com_search[2][this.direction == 1.00000000 ? 0 : 4] == 0)
 							{
 								this.com_subState[0] = this.CPU_Avoid_DashFront;
 								this.com_guard_stance = this.com_count[0] = this.rand() % 30 - 60;
@@ -483,7 +483,7 @@ function CPU_Defence()
 								return true;
 							}
 
-							if (this.direction == 1,00000000.0)
+							if (this.direction == 1.00000000)
 							{
 								if (this.com_search[1][5] == 0 || this.com_search[2][5] == 0)
 								{
@@ -537,9 +537,9 @@ function CPU_Defence()
 			}
 			else if (r_ >= 300 * 300)
 			{
-				if (this.com_search[1][this.direction == 1,00000000.0 ? 0 : 4] > 0 && this.com_search[2][this.direction == 1,00000000.0 ? 0 : 4] == 0)
+				if (this.com_search[1][this.direction == 1.00000000 ? 0 : 4] > 0 && this.com_search[2][this.direction == 1.00000000 ? 0 : 4] == 0)
 				{
-					if (this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == 1,00000000.0 || this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == -1,00000000.0)
+					if (this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == 1.00000000 || this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == -1.00000000)
 					{
 						this.com_subState[0] = this.CPU_Avoid_FlightFront;
 						this.com_guard_stance = this.com_count[0] = this.rand() % 30 - 60;
@@ -564,9 +564,9 @@ function CPU_Defence()
 				case 4:
 				case 5:
 				case 6:
-					if (this.com_search[1][this.direction == 1,00000000.0 ? 4 : 0] > 0 && this.com_search[2][this.direction == 1,00000000.0 ? 4 : 0] == 0)
+					if (this.com_search[1][this.direction == 1.00000000 ? 4 : 0] > 0 && this.com_search[2][this.direction == 1.00000000 ? 4 : 0] == 0)
 					{
-						if (this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == 1,00000000.0 || this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == -1,00000000.0)
+						if (this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == 1.00000000 || this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == -1.00000000)
 						{
 							this.com_subState[0] = this.CPU_Avoid_FlightBack;
 							this.com_guard_stance = this.com_count[0] = this.rand() % 30 - 60;
@@ -585,9 +585,9 @@ function CPU_Defence()
 					break;
 
 				default:
-					if (this.com_search[1][this.direction == 1,00000000.0 ? 0 : 4] > 0 && this.com_search[2][this.direction == 1,00000000.0 ? 0 : 4] == 0)
+					if (this.com_search[1][this.direction == 1.00000000 ? 0 : 4] > 0 && this.com_search[2][this.direction == 1.00000000 ? 0 : 4] == 0)
 					{
-						if (this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == 1,00000000.0 || this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == -1,00000000.0)
+						if (this.com_search[2][this.y <= this.centerY ? 1 : 7] == 0 && this.direction == 1.00000000 || this.com_search[2][this.y <= this.centerY ? 3 : 5] == 0 && this.direction == -1.00000000)
 						{
 							this.com_subState[0] = this.CPU_Avoid_FlightFront;
 							this.com_guard_stance = this.com_count[0] = this.rand() % 30 - 60;
@@ -681,7 +681,7 @@ function CPU_Avoid_DashFront()
 	{
 		if (this.motion != 40 && this.motion != 41)
 		{
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 		}
 		else if (this.targetDist * this.targetDist <= 40000 && this.targetHeight * this.targetHeight <= 20000)
 		{
@@ -692,7 +692,7 @@ function CPU_Avoid_DashFront()
 	}
 	else if (this.motion != 42 && this.motion != 43)
 	{
-		this.com_dash = 1,00000000.0;
+		this.com_dash = 1.00000000;
 	}
 	else if (this.centerStop * this.centerStop <= 1)
 	{
@@ -715,7 +715,7 @@ function CPU_Avoid_DashBack()
 	{
 		if (this.motion != 40 && this.motion != 41)
 		{
-			this.com_dash = -1,00000000.0;
+			this.com_dash = -1.00000000;
 		}
 		else if (this.abs(this.targetDist) <= 100 && this.abs(this.targetHeight) <= 100)
 		{
@@ -744,7 +744,7 @@ function CPU_Avoid_DashBack()
 			}
 		}
 
-		if (this.com_front > 0,00000000.0)
+		if (this.com_front > 0.00000000)
 		{
 			this.input.x = -20;
 		}
@@ -755,7 +755,7 @@ function CPU_Avoid_DashBack()
 	}
 	else if (this.motion != 42 && this.motion != 43)
 	{
-		this.com_dash = -1,00000000.0;
+		this.com_dash = -1.00000000;
 	}
 	else if (this.centerStop * this.centerStop <= 1)
 	{

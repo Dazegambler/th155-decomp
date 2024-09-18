@@ -17,24 +17,24 @@ function S_Assult_Attack( t )
 
 	if (this.x > 640)
 	{
-		this.direction = -1,00000000.0;
+		this.direction = -1.00000000;
 	}
 	else
 	{
-		this.direction = 1,00000000.0;
+		this.direction = 1.00000000;
 	}
 
 	this.armor = -1;
 	this.count = 0;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(-10,00000000.0 * this.direction, 0,00000000.0);
+	this.SetSpeed_XY(-10.00000000 * this.direction, 0.00000000);
 	this.func = [
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,20000000.0 * this.direction, 0,00000000.0);
+				this.AddSpeed_XY(0.20000000 * this.direction, 0.00000000);
 			};
 		},
 		function ()
@@ -43,8 +43,8 @@ function S_Assult_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
-				this.CenterUpdate(0,05000000.0, 1,00000000.0);
+				this.VX_Brake(0.50000000);
+				this.CenterUpdate(0.05000000, 1.00000000);
 			};
 		}
 	];
@@ -60,11 +60,11 @@ function S_Assult_Attack( t )
 			{
 				if (this.count <= 30)
 				{
-					this.AddSpeed_XY(0,20000000.0 * this.direction, 0,00000000.0, 20,00000000.0 * this.direction, null);
+					this.AddSpeed_XY(0.20000000 * this.direction, 0.00000000, 20.00000000 * this.direction, null);
 				}
 				else
 				{
-					this.AddSpeed_XY(1,25000000.0 * this.direction, 0,00000000.0, 25,00000000.0 * this.direction, null);
+					this.AddSpeed_XY(1.25000000 * this.direction, 0.00000000, 25.00000000 * this.direction, null);
 				}
 
 				if (this.count % 3 == 1)
@@ -72,7 +72,7 @@ function S_Assult_Attack( t )
 					this.SetFreeObject(this.x - this.rand() % 75, this.y - 50 + this.rand() % 100, this.direction, this.Boss_S1_Particle, {});
 				}
 
-				if (this.direction == 1,00000000.0 && this.x > ::battle.corner_right - 200,00000000.0 || this.direction == -1,00000000.0 && this.x < ::battle.corner_left + 200,00000000.0)
+				if (this.direction == 1.00000000 && this.x > ::battle.corner_right - 200.00000000 || this.direction == -1.00000000 && this.x < ::battle.corner_left + 200.00000000)
 				{
 					this.func[1].call(this);
 					return;
@@ -107,7 +107,7 @@ function S_Assult_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,50000000.0, 1,00000000.0);
+		this.Vec_Brake(0.50000000, 1.00000000);
 
 		if (this.count == 60)
 		{
@@ -124,8 +124,8 @@ function S_Fire_Attack( t )
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag1 = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag1 = 0.00000000;
 	this.flag2 = null;
 	this.func = [
 		function ()
@@ -134,7 +134,7 @@ function S_Fire_Attack( t )
 			this.flag2 = this.SetShot(this.x, this.y, this.direction, this.Boss_S2_FireBall, {}).weakref();
 			this.stateLabel = function ()
 			{
-				this.VY_Brake(0,75000000.0);
+				this.VY_Brake(0.75000000);
 
 				if (this.count == 90)
 				{
@@ -151,7 +151,7 @@ function S_Fire_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, -0,25000000.0);
+				this.AddSpeed_XY(0.00000000, -0.25000000);
 
 				if (this.count == 20)
 				{
@@ -174,8 +174,8 @@ function S_WideFire_Attack( t )
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag1 = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag1 = 0.00000000;
 	this.flag2 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 3;
@@ -205,7 +205,7 @@ function S_WideFire_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VY_Brake(0,75000000.0);
+				this.VY_Brake(0.75000000);
 
 				if (this.count == 90)
 				{
@@ -249,8 +249,8 @@ function S_SelfFire_Attack( t )
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag1 = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag1 = 0.00000000;
 	this.flag2 = null;
 	this.func = [
 		function ()
@@ -259,7 +259,7 @@ function S_SelfFire_Attack( t )
 			this.flag2 = this.SetShot(this.x, this.y, this.direction, this.Boss_S2_FireBall, {}).weakref();
 			this.stateLabel = function ()
 			{
-				this.VY_Brake(0,75000000.0);
+				this.VY_Brake(0.75000000);
 
 				if (this.count == 90)
 				{
@@ -276,7 +276,7 @@ function S_SelfFire_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, -0,25000000.0);
+				this.AddSpeed_XY(0.00000000, -0.25000000);
 
 				if (this.count == 20)
 				{
@@ -319,10 +319,10 @@ function Slave_Attack_Jyoon3()
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag1 = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag1 = 0.00000000;
 	this.flag2 = null;
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -336,7 +336,7 @@ function Slave_Attack_Jyoon3()
 	this.flag5.shotCycle <- 12;
 	this.flag5.shotCount <- 60;
 	this.flag5.shotNum <- 3;
-	this.flag5.shotRotate <- 2,09439468.0;
+	this.flag5.shotRotate <- 2.09439468;
 
 	switch(this.com_difficulty)
 	{
@@ -344,21 +344,21 @@ function Slave_Attack_Jyoon3()
 		this.flag5.shotCycle = 8;
 		this.flag5.shotNum = 8;
 		this.flag5.shotCount = 60;
-		this.flag5.shotRotate = 0,78539813.0;
+		this.flag5.shotRotate = 0.78539813;
 		break;
 
 	case 2:
 		this.flag5.shotCycle = 5;
 		this.flag5.shotNum = 12;
 		this.flag5.shotCount = 90;
-		this.flag5.shotRotate = 0,52359873.0;
+		this.flag5.shotRotate = 0.52359873;
 		break;
 
 	case 3:
 		this.flag5.shotCycle = 3;
 		this.flag5.shotNum = 20;
 		this.flag5.shotCount = 120;
-		this.flag5.shotRotate = 13 * 0,01745329.0;
+		this.flag5.shotRotate = 13 * 0.01745329;
 		break;
 	}
 
@@ -377,7 +377,7 @@ function Slave_Attack_Jyoon3()
 					}
 
 					this.flag4 = null;
-					local r_ = this.rand() % 360 * 0,01745329.0;
+					local r_ = this.rand() % 360 * 0.01745329;
 
 					while (this.flag5.shotNum > 0)
 					{
@@ -394,7 +394,7 @@ function Slave_Attack_Jyoon3()
 						if (this.count < this.flag5.shotCount && this.count % this.flag5.shotCycle == 1)
 						{
 							local t_ = {};
-							t_.rot <- this.rand() % 360 * 0,01745329.0;
+							t_.rot <- this.rand() % 360 * 0.01745329;
 							this.SetShot(this.point0_x, this.point0_y, this.direction, this.Boss_S2_FireShot_B, t_);
 						}
 

@@ -24,7 +24,7 @@ class this.ActorBase
 	reflectEvent = null;
 	throwEvent = null;
 	lavelClearEvent = null;
-	firstHitRate = 1,00000000.0;
+	firstHitRate = 1.00000000;
 	linkObject = null;
 	afterImage = null;
 	popularAura = null;
@@ -35,7 +35,7 @@ class this.ActorBase
 
 class this.ActorCommon extends this.ActorBase
 {
-	sp = 0,00000000.0;
+	sp = 0.00000000;
 	spMax = 0;
 	selectSpell = 0;
 	stan = 0;
@@ -54,7 +54,7 @@ class this.ActorCommon extends this.ActorBase
 	enableKO = true;
 	centerStop = 0;
 	centerStopCheck = 0;
-	baseGravity = 0,00000000.0;
+	baseGravity = 0.00000000;
 	invinBoss = 0;
 	invin = 0;
 	invinGrab = 0;
@@ -80,25 +80,25 @@ class this.ActorCommon extends this.ActorBase
 	enableJustGuard = true;
 	pushGuardAction = null;
 	comboResetCount = 0;
-	firstRate = 1,00000000.0;
-	mainHitRate = 1,00000000.0;
-	minRate = 1,00000000.0;
+	firstRate = 1.00000000;
+	mainHitRate = 1.00000000;
+	minRate = 1.00000000;
 	comboNum = 0;
 	comboDamage = 0;
-	counterDamage = 1,00000000.0;
-	atkRate = 1,00000000.0;
-	atkRate_Pat = 1,00000000.0;
-	defRate = 1,00000000.0;
-	guardRate = 1,00000000.0;
+	counterDamage = 1.00000000;
+	atkRate = 1.00000000;
+	atkRate_Pat = 1.00000000;
+	defRate = 1.00000000;
+	guardRate = 1.00000000;
 	shield_rate = 1;
-	spRate = 1,00000000.0;
-	baseAtkRate = 1,00000000.0;
-	baseDefRate = 1,00000000.0;
-	item0_defRateA = 1,00000000.0;
+	spRate = 1.00000000;
+	baseAtkRate = 1.00000000;
+	baseDefRate = 1.00000000;
+	item0_defRateA = 1.00000000;
 	item1_boost = 0;
-	item1_guardRate = 1,00000000.0;
-	item7_defRateA = 1,00000000.0;
-	item7_defRateB = 1,00000000.0;
+	item1_guardRate = 1.00000000;
+	item7_defRateA = 1.00000000;
+	item7_defRateB = 1.00000000;
 	item7_guardRateB = false;
 	resetFunc = null;
 	resetPracticeFunc = null;
@@ -112,12 +112,12 @@ class this.PlayerData extends this.ActorCommon
 	autoCamera = true;
 	cameraPos = null;
 	colorFunction = null;
-	colorAvoid = 1,00000000.0;
-	masterAlpha = 1,00000000.0;
-	masterRed = 1,00000000.0;
-	masterGreen = 1,00000000.0;
-	masterBlue = 1,00000000.0;
-	occultAlpha = 1,00000000.0;
+	colorAvoid = 1.00000000;
+	masterAlpha = 1.00000000;
+	masterRed = 1.00000000;
+	masterGreen = 1.00000000;
+	masterBlue = 1.00000000;
+	occultAlpha = 1.00000000;
 	spellBack = null;
 	spellBackTime = 0;
 	spellBaria = null;
@@ -140,7 +140,7 @@ class this.PlayerData extends this.ActorCommon
 	avoidCount = 0;
 	freeMap = false;
 	collisionFree = false;
-	atkRange = 100,00000000.0;
+	atkRange = 100.00000000;
 	baseBuff = null;
 	atkBuff = null;
 	debuff_animal = null;
@@ -195,8 +195,8 @@ class this.PlayerData extends this.ActorCommon
 	cpu_baria = 0;
 	cpu_rand = 0;
 	cpu_rand_def = 0;
-	cpu_front = 1,00000000.0;
-	com_dash = 0,00000000.0;
+	cpu_front = 1.00000000;
+	com_dash = 0.00000000;
 	cpu_command = 0;
 	cpu_DisableAttack = 0;
 	cpu_flag1 = 0;
@@ -240,15 +240,15 @@ class this.EffectData
 class this.HitState 
 {
 	damage = 0;
-	direction = 0,00000000.0;
+	direction = 0.00000000;
 	knockFlag = 0;
 	atkRank = 0;
 	atkType = 0;
-	hitVecX = 0,00000000.0;
-	hitVecY = 0,00000000.0;
-	grazeKnock = 0,00000000.0;
-	stopVecX = 0,00000000.0;
-	stopVecY = 0,00000000.0;
+	hitVecX = 0.00000000;
+	hitVecY = 0.00000000;
+	grazeKnock = 0.00000000;
+	stopVecX = 0.00000000;
+	stopVecY = 0.00000000;
 	recover = 0;
 	forceKnock = false;
 }
@@ -270,13 +270,13 @@ class this.ObjectBase
 	name = null;
 	owner = null;
 	callbackGroup = null;
-	scale = 1,00000000.0;
-	rz = 0,00000000.0;
+	scale = 1.00000000;
+	rz = 0.00000000;
 	priority = 0;
 	flag1 = 0;
 	flag2 = 0;
 	flag3 = 0;
 	baseAtk = 0;
-	atkOffset = 0,10000000.0;
+	atkOffset = 0.10000000;
 }
 

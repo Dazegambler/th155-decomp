@@ -12,8 +12,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_BossCommon();
 	this.type = 9;
-	this.baseGravity = 0,40000001.0;
-	this.baseSlideSpeed = 17,00000000.0;
+	this.baseGravity = 0.40000001;
+	this.baseSlideSpeed = 17.00000000;
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;
 	this.func_timeDemo = this.Func_Lose;
@@ -26,29 +26,29 @@ this.player_class.Init <- function ()
 		this.Vector3(),
 		this.Vector3()
 	];
-	this.shotRand[0].x = 16,00000000.0;
-	this.shotRand[0].y = -5 * 0,01745329.0;
+	this.shotRand[0].x = 16.00000000;
+	this.shotRand[0].y = -5 * 0.01745329;
 	this.shotRand[0].z = 0;
-	this.shotRand[1].x = 17,00000000.0;
-	this.shotRand[1].y = 23 * 0,01745329.0;
+	this.shotRand[1].x = 17.00000000;
+	this.shotRand[1].y = 23 * 0.01745329;
 	this.shotRand[1].z = 0;
 	this.shotRand[2].x = 16;
-	this.shotRand[2].y = 33 * 0,01745329.0;
+	this.shotRand[2].y = 33 * 0.01745329;
 	this.shotRand[2].z = 1;
 	this.shotRand[3].x = 15;
-	this.shotRand[3].y = -6 * 0,01745329.0;
+	this.shotRand[3].y = -6 * 0.01745329;
 	this.shotRand[3].z = 2;
 	this.shotRand[4].x = 17;
-	this.shotRand[4].y = 19 * 0,01745329.0;
+	this.shotRand[4].y = 19 * 0.01745329;
 	this.shotRand[4].z = 1;
 	this.uv.SetMotion(9901, 0);
 	this.ChangeEmotion(-1);
 	this.resetFunc = function ()
 	{
 		this.uv_count = 0;
-		this.maskRot = 0,00000000.0;
-		this.maskYaw = 0,00000000.0;
-		this.maskPitch = 0,00000000.0;
+		this.maskRot = 0.00000000;
+		this.maskYaw = 0.00000000;
+		this.maskPitch = 0.00000000;
 		this.emotion = -1;
 		this.emotionChange = false;
 		this.mask = null;

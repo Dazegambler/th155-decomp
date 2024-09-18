@@ -13,7 +13,7 @@ function Initialize()
 		{
 			local t = ::font.CreateSystemString(".");
 			t.x = offset;
-			t.red = t.blue = t.green = 0,50000000.0;
+			t.red = t.blue = t.green = 0.50000000;
 			this.obj.append(t);
 			offset = offset + space / 2;
 		}
@@ -22,7 +22,7 @@ function Initialize()
 		{
 			local t = ::font.CreateSystemString(":");
 			t.x = offset;
-			t.red = t.blue = t.green = 0,50000000.0;
+			t.red = t.blue = t.green = 0.50000000;
 			this.obj.append(t);
 			offset = offset + space / 2;
 		}
@@ -42,7 +42,7 @@ function Initialize()
 
 function Update()
 {
-	::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0,69999999.0);
+	::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0.69999999);
 	::menu.network.UpdateInputAddr();
 
 	foreach( i, v in ::menu.network.target_addr_v )
@@ -54,11 +54,11 @@ function Update()
 		{
 			local t2 = this.obj.top();
 			t2.x = t.x - 4;
-			t.red = t.blue = t.green = 1,00000000.0;
+			t.red = t.blue = t.green = 1.00000000;
 		}
 		else
 		{
-			t.red = t.blue = t.green = 0,50000000.0;
+			t.red = t.blue = t.green = 0.50000000;
 		}
 	}
 }

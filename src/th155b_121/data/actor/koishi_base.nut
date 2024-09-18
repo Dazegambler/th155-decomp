@@ -2,41 +2,41 @@ function SenceObject( t )
 {
 	this.SetMotion(3899, t.take);
 	this.EnableTimeStop(false);
-	this.alpha = 0,00000000.0;
-	this.rx = 60 * 0,01745329.0;
-	this.ry = 30 * 0,01745329.0;
+	this.alpha = 0.00000000;
+	this.rx = 60 * 0.01745329;
+	this.ry = 30 * 0.01745329;
 	this.rz = t.rot;
-	this.sx = this.sy = 1,50000000.0;
+	this.sx = this.sy = 1.50000000;
 	this.func = [
 		function ()
 		{
 			this.subState = function ()
 			{
-				this.sx = this.sy += (3,50000000.0 - this.sx) * 0,15000001.0;
-				this.alpha -= 0,05000000.0;
+				this.sx = this.sy += (3.50000000 - this.sx) * 0.15000001;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
-					this.alpha = 0,00000000.0;
+					this.alpha = 0.00000000;
 				}
 			};
 		},
 		function ()
 		{
-			this.sx = this.sy = 2,00000000.0;
+			this.sx = this.sy = 2.00000000;
 			this.subState = function ()
 			{
-				this.alpha += 0,10000000.0;
-				this.sx = this.sy -= 0,05000000.0;
+				this.alpha += 0.10000000;
+				this.sx = this.sy -= 0.05000000;
 
-				if (this.sx < 1,50000000.0)
+				if (this.sx < 1.50000000)
 				{
-					this.sx = this.sy = 1,50000000.0;
+					this.sx = this.sy = 1.50000000;
 				}
 
-				if (this.alpha >= 1,00000000.0)
+				if (this.alpha >= 1.00000000)
 				{
-					this.alpha = 1,00000000.0;
+					this.alpha = 1.00000000;
 				}
 			};
 		}
@@ -45,7 +45,7 @@ function SenceObject( t )
 	this.stateLabel = function ()
 	{
 		this.Warp(this.team.current.x, this.team.current.y);
-		this.rz -= 2,00000000.0 * 0,01745329.0;
+		this.rz -= 2.00000000 * 0.01745329;
 		this.subState();
 	};
 }
@@ -79,21 +79,21 @@ function KoishiColor()
 			}
 			else
 			{
-				this.masterAlpha -= 0,05000000.0;
+				this.masterAlpha -= 0.05000000;
 
-				if (this.masterAlpha <= 0,33000001.0)
+				if (this.masterAlpha <= 0.33000001)
 				{
-					this.masterAlpha = 0,33000001.0;
+					this.masterAlpha = 0.33000001;
 				}
 			}
 		}
 		else
 		{
-			this.masterAlpha += 0,05000000.0;
+			this.masterAlpha += 0.05000000;
 
-			if (this.masterAlpha > 1,00000000.0)
+			if (this.masterAlpha > 1.00000000)
 			{
-				this.masterAlpha = 1,00000000.0;
+				this.masterAlpha = 1.00000000;
 			}
 		}
 	}
@@ -184,7 +184,7 @@ function CommonAutoAttackReset( i )
 
 function AutoAttackSet( t )
 {
-	this.SetSpeed_XY(this.va.x * 0,50000000.0, this.va.y * 0,50000000.0);
+	this.SetSpeed_XY(this.va.x * 0.50000000, this.va.y * 0.50000000);
 	this.LabelClear();
 	this.HitReset();
 	this.hitResult = 1;
@@ -199,7 +199,7 @@ function AutoAttackSet( t )
 			{
 				local t_ = {};
 				t_.keyTake <- 0;
-				t_.rot <- (i + 45 + this.rand() % 5) * 0,01745329.0;
+				t_.rot <- (i + 45 + this.rand() % 5) * 0.01745329;
 				this.SetFreeObject(this.x, this.y, this.direction, this.SetEffect_Koishi, t_);
 			}
 
@@ -210,7 +210,7 @@ function AutoAttackSet( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(1,25000000.0);
+				this.VX_Brake(1.25000000);
 			};
 		}
 	];
@@ -221,8 +221,8 @@ function AutoAttackSet( t )
 			this.subState();
 		}
 
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
-		this.VX_Brake(1,25000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
+		this.VX_Brake(1.25000000);
 	};
 }
 
@@ -245,7 +245,7 @@ function AutoAttackSet_Charge( t )
 			{
 				local t_ = {};
 				t_.keyTake <- 0;
-				t_.rot <- (i + 45 + this.rand() % 5) * 0,01745329.0;
+				t_.rot <- (i + 45 + this.rand() % 5) * 0.01745329;
 				this.SetFreeObject(this.x, this.y, this.direction, this.SetEffect_Koishi, t_);
 			}
 
@@ -255,20 +255,20 @@ function AutoAttackSet_Charge( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
-		this.VX_Brake(0,50000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
+		this.VX_Brake(0.50000000);
 	};
 }
 
 function AutoShotSet( t )
 {
-	this.SetSpeed_XY(this.va.x * 0,50000000.0, this.va.y * 0,50000000.0);
+	this.SetSpeed_XY(this.va.x * 0.50000000, this.va.y * 0.50000000);
 	this.LabelClear();
 	this.HitReset();
 	this.hitResult = 1;
@@ -284,7 +284,7 @@ function AutoShotSet( t )
 			{
 				local t_ = {};
 				t_.keyTake <- 1;
-				t_.rot <- (i + 45 + this.rand() % 5) * 0,01745329.0;
+				t_.rot <- (i + 45 + this.rand() % 5) * 0.01745329;
 				this.SetFreeObject(this.x, this.y, this.direction, this.SetEffect_Koishi, t_);
 			}
 
@@ -294,20 +294,20 @@ function AutoShotSet( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(1,25000000.0);
+				this.VX_Brake(1.25000000);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
-		this.VX_Brake(1,25000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
+		this.VX_Brake(1.25000000);
 	};
 }
 
 function AutoSkillSet( t )
 {
-	this.SetSpeed_XY(this.va.x * 0,50000000.0, this.va.y * 0,50000000.0);
+	this.SetSpeed_XY(this.va.x * 0.50000000, this.va.y * 0.50000000);
 	this.LabelClear();
 	this.AjustCenterStop();
 	this.HitReset();
@@ -334,7 +334,7 @@ function AutoSkillSet( t )
 			{
 				local t_ = {};
 				t_.keyTake <- 2;
-				t_.rot <- (i + 45 + this.rand() % 5) * 0,01745329.0;
+				t_.rot <- (i + 45 + this.rand() % 5) * 0.01745329;
 				this.SetFreeObject(this.x, this.y, this.direction, this.SetEffect_Koishi, t_);
 			}
 
@@ -349,14 +349,14 @@ function AutoSkillSet( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(1,25000000.0);
+				this.VX_Brake(1.25000000);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
-		this.VX_Brake(1,25000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
+		this.VX_Brake(1.25000000);
 	};
 }
 
@@ -410,12 +410,12 @@ function Update_Normal()
 
 					if (this.IsAttack() <= 3)
 					{
-						local r_ = 1,00000000.0;
+						local r_ = 1.00000000;
 						this.occultRange += r_;
 
-						if (this.occultRange >= 12,00000000.0)
+						if (this.occultRange >= 12.00000000)
 						{
-							this.occultRange = 12,00000000.0;
+							this.occultRange = 12.00000000;
 						}
 
 						local t_ = {};

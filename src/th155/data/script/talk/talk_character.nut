@@ -189,20 +189,20 @@ class this.CharacterImage
 		if (this.active)
 		{
 			local vec_ = this.Vector3();
-			vec_.x = this.offset_x / 4,00000000.0;
-			vec_.y = this.offset_y / 4,00000000.0;
+			vec_.x = this.offset_x / 4.00000000;
+			vec_.y = this.offset_y / 4.00000000;
 			local vl_ = vec_.Length();
 
-			if (vl_ != 0,00000000.0)
+			if (vl_ != 0.00000000)
 			{
-				if (vl_ > 40,00000000.0)
+				if (vl_ > 40.00000000)
 				{
-					vec_.SetLength(40,00000000.0);
+					vec_.SetLength(40.00000000);
 				}
 
-				if (vl_ < 2,00000000.0)
+				if (vl_ < 2.00000000)
 				{
-					vec_.SetLength(2,00000000.0);
+					vec_.SetLength(2.00000000);
 				}
 
 				this.offset_x -= vec_.x;
@@ -215,9 +215,9 @@ class this.CharacterImage
 				{
 					if (v.alpha < 1)
 					{
-						v.alpha = 1,00000000.0;
+						v.alpha = 1.00000000;
 					}
-					else if (this.sprite.len() == 1 && this.fabs(this.offset_x) < 1,00000000.0 && this.fabs(this.offset_y) < 1,00000000.0)
+					else if (this.sprite.len() == 1 && this.fabs(this.offset_x) < 1.00000000 && this.fabs(this.offset_y) < 1.00000000)
 					{
 						this.stop = true;
 						this.offset_x = 0;
@@ -230,7 +230,7 @@ class this.CharacterImage
 				}
 				else
 				{
-					v.alpha -= 0,20000000.0;
+					v.alpha -= 0.20000000;
 
 					if (v.alpha <= 0)
 					{
@@ -242,15 +242,15 @@ class this.CharacterImage
 		else
 		{
 			local vec_ = this.Vector3();
-			vec_.x = (this.offset_x - -128 * this.direction) / 4,00000000.0;
-			vec_.y = (this.offset_y - 64) / 4,00000000.0;
+			vec_.x = (this.offset_x - -128 * this.direction) / 4.00000000;
+			vec_.y = (this.offset_y - 64) / 4.00000000;
 			local vl_ = vec_.Length();
 
-			if (vl_ != 0,00000000.0)
+			if (vl_ != 0.00000000)
 			{
-				if (vl_ > 40,00000000.0)
+				if (vl_ > 40.00000000)
 				{
-					vec_.SetLength(40,00000000.0);
+					vec_.SetLength(40.00000000);
 				}
 
 				this.offset_x -= vec_.x;
@@ -261,19 +261,19 @@ class this.CharacterImage
 			{
 				if (i == 0)
 				{
-					if (v.alpha > 0,50000000.0)
+					if (v.alpha > 0.50000000)
 					{
-						v.alpha -= 0,10000000.0;
+						v.alpha -= 0.10000000;
 					}
 
-					if (v.alpha < 0,50000000.0)
+					if (v.alpha < 0.50000000)
 					{
-						v.alpha += 0,10000000.0;
+						v.alpha += 0.10000000;
 					}
 				}
 				else
 				{
-					v.alpha -= 0,20000000.0;
+					v.alpha -= 0.20000000;
 
 					if (v.alpha <= 0)
 					{
@@ -289,7 +289,7 @@ class this.CharacterImage
 
 	function Out()
 	{
-		this.offset_x -= this.count * this.direction * 3,00000000.0;
+		this.offset_x -= this.count * this.direction * 3.00000000;
 		this.count += 1;
 
 		if (this.count >= 30)
@@ -304,7 +304,7 @@ class this.CharacterImage
 			}
 			else
 			{
-				v.alpha -= 0,20000000.0;
+				v.alpha -= 0.20000000;
 
 				if (v.alpha <= 0)
 				{

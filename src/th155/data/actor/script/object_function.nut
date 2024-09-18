@@ -31,7 +31,7 @@ function Damage_ConvertOP( x_, y_, num_, dLv_ = 1 )
 	{
 		local t_ = {};
 		t_.num <- num_;
-		this.SetFreeObject(x_, y_, 1,00000000.0, this.Occult_PowerCreatePoint, t_);
+		this.SetFreeObject(x_, y_, 1.00000000, this.Occult_PowerCreatePoint, t_);
 		return true;
 	}
 }

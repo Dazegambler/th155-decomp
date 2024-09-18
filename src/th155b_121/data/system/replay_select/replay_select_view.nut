@@ -128,7 +128,7 @@ function Update()
 	}
 
 	local _y = this.y + this.action.cursor.val * this.space + 16;
-	::menu.cursor.SetTarget(this.x - 20, _y, 0,69999999.0);
+	::menu.cursor.SetTarget(this.x - 20, _y, 0.69999999);
 
 	if (this.action.current_file)
 	{
@@ -138,7 +138,7 @@ function Update()
 		{
 			foreach( obj in v.obj )
 			{
-				obj.red = obj.green = obj.blue = i == this.action.cursor.val ? 1,00000000.0 : 0,50000000.0;
+				obj.red = obj.green = obj.blue = i == this.action.cursor.val ? 1.00000000 : 0.50000000;
 			}
 		}
 	}
@@ -239,7 +239,7 @@ function CreateDir( t, obj )
 	local text = ::font.CreateSystemString(obj.name);
 	text.x = this.x + 36;
 	text.y = t.y - 8;
-	text.red = text.green = text.blue = 0,50000000.0;
+	text.red = text.green = text.blue = 0.50000000;
 	t.obj.push(text);
 	local icon = ::manbow.ObjectRenderer();
 	icon.Set(this.system_icon[0]);
@@ -249,7 +249,7 @@ function CreateDir( t, obj )
 
 	foreach( obj in t.obj )
 	{
-		obj.red = obj.green = obj.blue = 0,50000000.0;
+		obj.red = obj.green = obj.blue = 0.50000000;
 	}
 
 	return t;
@@ -261,7 +261,7 @@ function CreateFile( t, obj )
 	local text = ::font.CreateSystemString(::menu.common.GetMessageText("reading"));
 	text.x = this.x + 36;
 	text.y = t.y - 8;
-	text.red = text.green = text.blue = 0,50000000.0;
+	text.red = text.green = text.blue = 0.50000000;
 	t.obj.push(text);
 
 	if (obj.loading > 0)
@@ -377,7 +377,7 @@ function SetFileHeader( target, header )
 
 	foreach( obj in target.obj )
 	{
-		obj.red = obj.green = obj.blue = 0,50000000.0;
+		obj.red = obj.green = obj.blue = 0.50000000;
 	}
 }
 

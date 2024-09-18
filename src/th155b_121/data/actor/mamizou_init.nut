@@ -24,9 +24,9 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_PlayerCommon();
 	this.type = 8;
-	this.baseGravity = 0,40000001.0;
-	this.baseSlideSpeed = 13,00000000.0;
-	this.atkRange = 175,00000000.0;
+	this.baseGravity = 0.40000001;
+	this.baseSlideSpeed = 13.00000000;
+	this.atkRange = 175.00000000;
 	this.alien = [];
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;
@@ -50,11 +50,11 @@ this.player_class.Init <- function ()
 
 		if (this.team.index == 0)
 		{
-			this.tanuki_gauge = this.SetFreeObject(20, 580, 1,00000000.0, this.Tanuki_Guage_Back, {}).weakref();
+			this.tanuki_gauge = this.SetFreeObject(20, 580, 1.00000000, this.Tanuki_Guage_Back, {}).weakref();
 		}
 		else
 		{
-			this.tanuki_gauge = this.SetFreeObject(1260, 580, -1,00000000.0, this.Tanuki_Guage_Back, {}).weakref();
+			this.tanuki_gauge = this.SetFreeObject(1260, 580, -1.00000000, this.Tanuki_Guage_Back, {}).weakref();
 		}
 
 		if (this.tanuki_gauge)
@@ -65,11 +65,11 @@ this.player_class.Init <- function ()
 
 	if (this.team.index == 0)
 	{
-		this.tanuki_gauge = this.SetFreeObject(20, 580, 1,00000000.0, this.Tanuki_Guage_Back, {}).weakref();
+		this.tanuki_gauge = this.SetFreeObject(20, 580, 1.00000000, this.Tanuki_Guage_Back, {}).weakref();
 	}
 	else
 	{
-		this.tanuki_gauge = this.SetFreeObject(1260, 580, -1,00000000.0, this.Tanuki_Guage_Back, {}).weakref();
+		this.tanuki_gauge = this.SetFreeObject(1260, 580, -1.00000000, this.Tanuki_Guage_Back, {}).weakref();
 	}
 
 	if (this.tanuki_gauge)

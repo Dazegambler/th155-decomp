@@ -250,7 +250,7 @@ function ComStack_DashFront( wait_ )
 		this.com_stackCount = t_;
 		this.com_stackState[0].state = function ( t_ )
 		{
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.b4 = 3;
 			this.input.x = this.direction;
 
@@ -265,7 +265,7 @@ function ComStack_DashFront( wait_ )
 						return true;
 					}
 
-					this.com_dash = 1,00000000.0;
+					this.com_dash = 1.00000000;
 					this.input.b4 = 3;
 					this.input.x = this.direction;
 				};
@@ -287,7 +287,7 @@ function ComStack_DashFront_Near( x_, wait_ )
 		this.com_stackFlag = t_.x;
 		this.com_stackState[0].state = function ( t_ )
 		{
-			this.com_dash = 1,00000000.0;
+			this.com_dash = 1.00000000;
 			this.input.b4 = 3;
 			this.input.x = this.direction;
 
@@ -308,7 +308,7 @@ function ComStack_DashFront_Near( x_, wait_ )
 						return true;
 					}
 
-					this.com_dash = 1,00000000.0;
+					this.com_dash = 1.00000000;
 					this.input.b4 = 3;
 					this.input.x = this.direction;
 				};
@@ -328,7 +328,7 @@ function ComStack_DashBack( wait_ )
 		this.com_stackCount = t_;
 		this.com_stackState[0].state = function ( t_ )
 		{
-			this.com_dash = -1,00000000.0;
+			this.com_dash = -1.00000000;
 			this.input.b4 = 3;
 			this.input.x = -this.direction;
 
@@ -343,7 +343,7 @@ function ComStack_DashBack( wait_ )
 						return true;
 					}
 
-					this.com_dash = -1,00000000.0;
+					this.com_dash = -1.00000000;
 					this.input.b4 = 3;
 					this.input.x = -this.direction;
 				};

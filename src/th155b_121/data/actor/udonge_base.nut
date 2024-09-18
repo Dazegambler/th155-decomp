@@ -177,7 +177,7 @@ function UdongeColorUpdate()
 			}
 			else if (this.vision)
 			{
-				this.masterAlpha = 0,50000000.0;
+				this.masterAlpha = 0.50000000;
 			}
 			else
 			{
@@ -185,7 +185,7 @@ function UdongeColorUpdate()
 
 				if (this.motion == 41 && (this.keyTake == 1 || this.keyTake == 2))
 				{
-					this.masterAlpha -= 0,15000001.0;
+					this.masterAlpha -= 0.15000001;
 
 					if (this.masterAlpha <= 0)
 					{
@@ -199,11 +199,11 @@ function UdongeColorUpdate()
 				{
 					if (this.keyTake == 3)
 					{
-						this.masterAlpha -= 0,10000000.0;
+						this.masterAlpha -= 0.10000000;
 
-						if (this.masterAlpha <= 0,00000000.0)
+						if (this.masterAlpha <= 0.00000000)
 						{
-							this.masterAlpha = 0,00000000.0;
+							this.masterAlpha = 0.00000000;
 						}
 
 						c_ = true;
@@ -211,11 +211,11 @@ function UdongeColorUpdate()
 
 					if (this.keyTake == 4)
 					{
-						this.masterAlpha += 0,05000000.0;
+						this.masterAlpha += 0.05000000;
 
-						if (this.masterAlpha >= 0,50000000.0)
+						if (this.masterAlpha >= 0.50000000)
 						{
-							this.masterAlpha = 0,50000000.0;
+							this.masterAlpha = 0.50000000;
 						}
 
 						c_ = true;
@@ -224,28 +224,28 @@ function UdongeColorUpdate()
 
 				if (!c_)
 				{
-					if (this.masterAlpha >= 0,89999998.0)
+					if (this.masterAlpha >= 0.89999998)
 					{
-						this.masterAlpha = 1,00000000.0;
+						this.masterAlpha = 1.00000000;
 						this.masterBlue = this.masterGreen = this.masterAlpha;
 					}
 					else
 					{
-						this.masterAlpha += 0,10000000.0;
+						this.masterAlpha += 0.10000000;
 					}
 				}
 			}
 		}
-		else if (this.masterAlpha >= 0,89999998.0)
+		else if (this.masterAlpha >= 0.89999998)
 		{
-			this.masterAlpha = 1,00000000.0;
+			this.masterAlpha = 1.00000000;
 		}
 		else
 		{
-			this.masterAlpha += 0,10000000.0;
+			this.masterAlpha += 0.10000000;
 		}
 
-		if (this.masterAlpha != 1,00000000.0)
+		if (this.masterAlpha != 1.00000000)
 		{
 			this.masterBlue = this.masterGreen = this.masterAlpha;
 		}

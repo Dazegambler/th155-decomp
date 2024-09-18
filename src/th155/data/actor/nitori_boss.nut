@@ -42,7 +42,7 @@ function Master_Spell_1_Start()
 	this.flag5.charge <- 120;
 	this.flag5.vec <- this.Vector3();
 	this.flag4 = null;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -106,19 +106,19 @@ function Master_Spell_1_Start()
 					this.SetSpeed_XY(this.flag5.vec.x, this.flag5.vec.y);
 					this.subState = function ()
 					{
-						this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction);
+						this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction);
 					};
 				}
 
-				if (this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top || this.va.y > 0,00000000.0 && this.ground)
+				if (this.va.y < 0.00000000 && this.y < ::battle.scroll_top || this.va.y > 0.00000000 && this.ground)
 				{
-					this.SetSpeed_XY(this.va.x, this.va.y * -0,66000003.0);
-					this.flag5.vec.y *= -0,66000003.0;
+					this.SetSpeed_XY(this.va.x, this.va.y * -0.66000003);
+					this.flag5.vec.y *= -0.66000003;
 				}
 
 				if (this.count == 900 / this.flag5.moveV - 90)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count >= 900 / this.flag5.moveV)
@@ -153,7 +153,7 @@ function Master_Spell_1_Attack( t )
 	this.flag5.moveV <- 4;
 	this.flag5.charge <- 180;
 	this.flag5.vec <- this.Vector3();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -198,17 +198,17 @@ function Master_Spell_1_Attack( t )
 		}
 
 		this.HitCycleUpdate(16);
-		this.AddSpeed_Vec(0,25000000.0, null, this.flag5.moveV, this.direction);
+		this.AddSpeed_Vec(0.25000000, null, this.flag5.moveV, this.direction);
 
-		if (this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top || this.va.y > 0,00000000.0 && this.ground)
+		if (this.va.y < 0.00000000 && this.y < ::battle.scroll_top || this.va.y > 0.00000000 && this.ground)
 		{
-			this.SetSpeed_XY(this.va.x, this.va.y * -0,66000003.0);
-			this.flag5.vec.y *= -0,66000003.0;
+			this.SetSpeed_XY(this.va.x, this.va.y * -0.66000003);
+			this.flag5.vec.y *= -0.66000003;
 		}
 
 		if (this.count == 900 / this.flag5.moveV - 60)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		if (this.count >= 900 / this.flag5.moveV)
@@ -262,7 +262,7 @@ function Master_Spell_1_Stop( t )
 	{
 		if (this.count == this.flag5.moveCount - 60)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		if (this.count >= this.flag5.moveCount)

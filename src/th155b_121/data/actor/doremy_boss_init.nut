@@ -12,8 +12,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_BossCommon();
 	this.type = 15;
-	this.baseGravity = 0,60000002.0;
-	this.baseSlideSpeed = 14,00000000.0;
+	this.baseGravity = 0.60000002;
+	this.baseSlideSpeed = 14.00000000;
 	this.back_park = null;
 	this.back_hole = [];
 	this.mukon = ::manbow.Actor2DProcGroup();
@@ -22,13 +22,13 @@ this.player_class.Init <- function ()
 	this.mukon_charge = 0;
 	this.mukon_stock = [];
 	local vec_ = this.Vector3();
-	vec_.x = 100,00000000.0;
+	vec_.x = 100.00000000;
 	local vec2_ = this.Vector3();
-	vec2_.y = 100,00000000.0;
+	vec2_.y = 100.00000000;
 	local vec3_ = this.Vector3();
-	vec3_.x = -100,00000000.0;
+	vec3_.x = -100.00000000;
 	local vec4_ = this.Vector3();
-	vec4_.y = -100,00000000.0;
+	vec4_.y = -100.00000000;
 	this.mukon_pos = [
 		vec_,
 		vec2_,
@@ -53,13 +53,13 @@ this.player_class.Init <- function ()
 		this.mukon_charge = 0;
 		this.mukon_stock = [];
 		local vec_ = this.Vector3();
-		vec_.x = 100,00000000.0;
+		vec_.x = 100.00000000;
 		local vec2_ = this.Vector3();
-		vec2_.y = 100,00000000.0;
+		vec2_.y = 100.00000000;
 		local vec3_ = this.Vector3();
-		vec3_.x = -100,00000000.0;
+		vec3_.x = -100.00000000;
 		local vec4_ = this.Vector3();
-		vec4_.y = -100,00000000.0;
+		vec4_.y = -100.00000000;
 		this.mukon_pos = [
 			vec_,
 			vec2_,

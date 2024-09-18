@@ -38,8 +38,8 @@ local func_update = function ()
 
 	foreach( v in this.item )
 	{
-		v.x -= (v.x - v.target_x) * 0,25000000.0;
-		v.y -= (v.y - v.target_y) * 0,25000000.0;
+		v.x -= (v.x - v.target_x) * 0.25000000;
+		v.y -= (v.y - v.target_y) * 0.25000000;
 		mat.SetTranslation(v.x, v.y, 0);
 
 		foreach( w in v.obj )
@@ -54,7 +54,7 @@ local func_set_target = function ()
 
 	foreach( i, v in this.item )
 	{
-		local color = i == this.cursor_inst.val ? 1,00000000.0 : 0,50000000.0;
+		local color = i == this.cursor_inst.val ? 1.00000000 : 0.50000000;
 		v.target_x = x;
 
 		foreach( w in v.obj )
@@ -80,7 +80,7 @@ local func_create_resource = function ()
 	{
 		local v = {};
 		v.x <- -1000;
-		v.y <- (i - this.cursor_inst.item_num / 2,00000000.0) * this.space + this.base_y;
+		v.y <- (i - this.cursor_inst.item_num / 2.00000000) * this.space + this.base_y;
 		v.target_x <- v.x;
 		v.target_y <- v.y;
 		local s = ::manbow.Sprite();

@@ -4,7 +4,7 @@ function Master_Spell_1()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.resist_baria = true;
 	this.boss_spell_func = function ()
 	{
@@ -42,15 +42,15 @@ function Master_Spell_1_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
-	this.flag3 = this.flag5.pos.x > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
+	this.flag3 = this.flag5.pos.x > 0 ? 1.00000000 : -1.00000000;
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -64,7 +64,7 @@ function Master_Spell_1_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Attack();
 				}
@@ -92,7 +92,7 @@ function Master_Spell_1_Attack()
 	this.flag5.shotRot <- 0;
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
-	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag5.charge)
@@ -154,7 +154,7 @@ function Master_Spell_1_Attack()
 			this.subState[1] = function ()
 			{
 				this.flag5.shotCount++;
-				::camera.Shake(2,00000000.0);
+				::camera.Shake(2.00000000);
 
 				if (this.flag5.shotCount % 60 == 1)
 				{
@@ -168,7 +168,7 @@ function Master_Spell_1_Attack()
 
 				if (this.flag5.shotCount == 210)
 				{
-					this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.flag5.shotCount >= 300)
@@ -189,7 +189,7 @@ function Master_Spell_1_Attack()
 function Master_Spell_1_Move()
 {
 	this.LabelClear();
-	this.direction = this.x > 640 ? -1,00000000.0 : 1,00000000.0;
+	this.direction = this.x > 640 ? -1.00000000 : 1.00000000;
 	this.SetMotion(4991, 0);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 5;
@@ -200,8 +200,8 @@ function Master_Spell_1_Move()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 + (260 + this.rand() % 180) * this.direction;
 	this.flag5.pos.y = 240 + this.rand() % 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
-	this.flag3 = this.flag5.pos.x > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
+	this.flag3 = this.flag5.pos.x > 0 ? 1.00000000 : -1.00000000;
 
 	if (this.team.shield == null)
 	{
@@ -210,11 +210,11 @@ function Master_Spell_1_Move()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 15,00000000.0)
+		if (this.flag5.moveV > 15.00000000)
 		{
-			this.flag5.moveV = 15,00000000.0;
+			this.flag5.moveV = 15.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -228,7 +228,7 @@ function Master_Spell_1_Move()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,75000000.0))
+				if (this.Vec_Brake(0.75000000))
 				{
 					this.GetFront();
 					this.flag5.moveCount = 0;
@@ -267,7 +267,7 @@ function Master_Spell_2()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.resist_baria = true;
 	this.boss_spell_func = function ()
@@ -319,7 +319,7 @@ function Master_Spell_2_Attack()
 
 		this.flag5.charge = null;
 	};
-	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 
 	switch(this.com_difficulty)
 	{
@@ -347,7 +347,7 @@ function Master_Spell_2_Attack()
 	];
 	this.subState[0] = function ()
 	{
-		this.Vec_Brake(0,75000000.0);
+		this.Vec_Brake(0.75000000);
 	};
 	this.subState[1] = function ()
 	{
@@ -380,7 +380,7 @@ function Master_Spell_2_Attack()
 
 						if (this.flag5.shotCount == 240)
 						{
-							this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+							this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 						}
 
 						if (this.flag5.shotCount >= 330)
@@ -404,7 +404,7 @@ function Master_Spell_2_Attack()
 function Master_Spell_2_Move()
 {
 	this.LabelClear();
-	this.direction = this.x > 640 ? -1,00000000.0 : 1,00000000.0;
+	this.direction = this.x > 640 ? -1.00000000 : 1.00000000;
 	this.SetMotion(4991, 0);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 5;
@@ -415,7 +415,7 @@ function Master_Spell_2_Move()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 + (120 + this.rand() % 120) * this.direction;
 	this.flag5.pos.y = 320 + this.rand() % 80;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 
 	if (this.team.shield == null)
 	{
@@ -425,11 +425,11 @@ function Master_Spell_2_Move()
 	this.stone.func[2].call(this.stone);
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -443,7 +443,7 @@ function Master_Spell_2_Move()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,75000000.0))
+				if (this.Vec_Brake(0.75000000))
 				{
 					this.GetFront();
 					this.flag5.moveCount = 0;
@@ -528,7 +528,7 @@ function Master_Spell_3_Start()
 	this.flag5.pos.x = 640 - 240 * this.direction;
 	this.flag5.pos.y = this.centerY - 160;
 	this.centerStop = -2;
-	this.flag3 = this.flag5.pos.x > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.flag3 = this.flag5.pos.x > 0 ? 1.00000000 : -1.00000000;
 
 	if (this.team.shield == null)
 	{
@@ -537,11 +537,11 @@ function Master_Spell_3_Start()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 15,00000000.0)
+		if (this.flag5.moveV > 15.00000000)
 		{
-			this.flag5.moveV = 15,00000000.0;
+			this.flag5.moveV = 15.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -573,18 +573,18 @@ function Master_Spell_3_Attack()
 	this.flag5.shotRot <- 0;
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
-	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.flag5.sword <- null;
-	this.flag5.g <- 0,00000000.0;
+	this.flag5.g <- 0.00000000;
 
 	switch(this.com_flag2)
 	{
 	case 0:
-		this.flag5.g = 0,02500000.0;
+		this.flag5.g = 0.02500000;
 		break;
 
 	case 1:
-		this.flag5.g = 0,07500000.0;
+		this.flag5.g = 0.07500000;
 		break;
 	}
 
@@ -631,7 +631,7 @@ function Master_Spell_3_Attack()
 	];
 	this.subState[0] = function ()
 	{
-		this.Vec_Brake(0,50000000.0, 0,50000000.0);
+		this.Vec_Brake(0.50000000, 0.50000000);
 	};
 	this.subState[1] = function ()
 	{
@@ -662,20 +662,20 @@ function Master_Spell_3_Attack()
 
 			this.flag5.charge = null;
 			this.flag5.shotCount = 0;
-			this.SetSpeed_Vec(-2,00000000.0, 1,04719746.0, this.direction);
+			this.SetSpeed_Vec(-2.00000000, 1.04719746, this.direction);
 			this.centerStop = -2;
 			this.subState[0] = function ()
 			{
-				this.CenterUpdate(this.flag5.g, 0,75000000.0);
+				this.CenterUpdate(this.flag5.g, 0.75000000);
 			};
 			this.subState[1] = function ()
 			{
 				this.flag5.shotCount++;
-				::camera.Shake(2,00000000.0);
+				::camera.Shake(2.00000000);
 
 				if (this.com_flag1 == 2 && this.flag5.shotCount == 60)
 				{
-					this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.flag5.shotCount >= 150)
@@ -686,7 +686,7 @@ function Master_Spell_3_Attack()
 					{
 						this.subState[0] = function ()
 						{
-							this.CenterUpdate(0,10000000.0, 6,00000000.0);
+							this.CenterUpdate(0.10000000, 6.00000000);
 						};
 						this.subState[1] = function ()
 						{
@@ -741,7 +741,7 @@ function Master_Spell_3_Move()
 	this.flag5.shotRot <- 0;
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
-	this.direction = this.x > 640 ? 1,00000000.0 : -1,00000000.0;
+	this.direction = this.x > 640 ? 1.00000000 : -1.00000000;
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 240 * this.direction;
 	local r_ = this.rand() % 3;
@@ -764,7 +764,7 @@ function Master_Spell_3_Move()
 		break;
 	}
 
-	this.flag3 = this.flag5.pos.x > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.flag3 = this.flag5.pos.x > 0 ? 1.00000000 : -1.00000000;
 
 	if (this.team.shield == null)
 	{
@@ -773,11 +773,11 @@ function Master_Spell_3_Move()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 20,00000000.0)
+		if (this.flag5.moveV > 20.00000000)
 		{
-			this.flag5.moveV = 20,00000000.0;
+			this.flag5.moveV = 20.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -812,7 +812,7 @@ function Master_Spell_1_Dream()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 0;
 	this.resist_baria = true;
 	this.boss_spell_func = function ()
@@ -854,8 +854,8 @@ function Master_Spell_1_Dream_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
-	this.flag3 = this.flag5.pos.x * this.direction > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
+	this.flag3 = this.flag5.pos.x * this.direction > 0 ? 1.00000000 : -1.00000000;
 
 	switch(this.com_difficulty)
 	{
@@ -875,11 +875,11 @@ function Master_Spell_1_Dream_Start()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -893,7 +893,7 @@ function Master_Spell_1_Dream_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Dream_Attack();
 				}
@@ -921,7 +921,7 @@ function Master_Spell_1_Dream_Attack()
 	this.flag5.shotRot <- 0;
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
-	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge <- this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag5.charge)
@@ -980,7 +980,7 @@ function Master_Spell_1_Dream_Attack()
 			this.subState[1] = function ()
 			{
 				this.flag5.shotCount++;
-				::camera.Shake(2,00000000.0);
+				::camera.Shake(2.00000000);
 
 				if (this.flag5.shotCount % 40 == 1)
 				{
@@ -1032,7 +1032,7 @@ function Master_Spell_1_Dream_Attack()
 function Master_Spell_1_Dream_Move()
 {
 	this.LabelClear();
-	this.direction = this.x > 640 ? -1,00000000.0 : 1,00000000.0;
+	this.direction = this.x > 640 ? -1.00000000 : 1.00000000;
 	this.SetMotion(4991, 0);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 5;
@@ -1043,8 +1043,8 @@ function Master_Spell_1_Dream_Move()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 + (260 + this.rand() % 180) * this.direction;
 	this.flag5.pos.y = 240 + this.rand() % 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
-	this.flag3 = this.flag5.pos.x * this.direction > 0 ? 1,00000000.0 : -1,00000000.0;
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
+	this.flag3 = this.flag5.pos.x * this.direction > 0 ? 1.00000000 : -1.00000000;
 
 	if (this.team.shield == null)
 	{
@@ -1053,11 +1053,11 @@ function Master_Spell_1_Dream_Move()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 15,00000000.0)
+		if (this.flag5.moveV > 15.00000000)
 		{
-			this.flag5.moveV = 15,00000000.0;
+			this.flag5.moveV = 15.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -1071,7 +1071,7 @@ function Master_Spell_1_Dream_Move()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,75000000.0))
+				if (this.Vec_Brake(0.75000000))
 				{
 					this.GetFront();
 					this.flag5.moveCount = 0;
@@ -1115,7 +1115,7 @@ function Master_Spell_2_Dream()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.resist_baria = true;
 	this.team.slave.Slave_Dream_1();
@@ -1195,7 +1195,7 @@ function Master_Spell_2_Dream_Attack()
 	];
 	this.subState[0] = function ()
 	{
-		this.Vec_Brake(0,75000000.0);
+		this.Vec_Brake(0.75000000);
 	};
 	this.subState[1] = function ()
 	{
@@ -1203,7 +1203,7 @@ function Master_Spell_2_Dream_Attack()
 	this.keyAction = [
 		function ()
 		{
-			this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 			this.flag5.shotCount = 0;
 			this.subState[1] = function ()
 			{
@@ -1214,7 +1214,7 @@ function Master_Spell_2_Dream_Attack()
 					this.SetMotion(4962, 2);
 					this.subState[1] = function ()
 					{
-						::camera.Shake(2,00000000.0);
+						::camera.Shake(2.00000000);
 					};
 				}
 			};
@@ -1223,12 +1223,12 @@ function Master_Spell_2_Dream_Attack()
 		function ()
 		{
 			this.flag5.shotCount = 0;
-			this.SetSpeed_XY(0,00000000.0, -0,25000000.0);
+			this.SetSpeed_XY(0.00000000, -0.25000000);
 			this.subState[1] = function ()
 			{
 				this.HitCycleUpdate(30);
 				this.flag5.shotCount++;
-				::camera.Shake(2,00000000.0);
+				::camera.Shake(2.00000000);
 
 				if (this.flag5.shotCount % 40 == 1)
 				{
@@ -1241,7 +1241,7 @@ function Master_Spell_2_Dream_Attack()
 					local t_ = {};
 					t_.namazu <- false;
 
-					if (this.team.life <= this.team.life_max * 0,50000000.0 && this.flag5.shotNum == 1)
+					if (this.team.life <= this.team.life_max * 0.50000000 && this.flag5.shotNum == 1)
 					{
 						t_.namazu = true;
 					}
@@ -1297,7 +1297,7 @@ function Master_Spell_2_Dream_Attack()
 function Master_Spell_2_Dream_Move()
 {
 	this.LabelClear();
-	this.direction = this.x > 640 ? -1,00000000.0 : 1,00000000.0;
+	this.direction = this.x > 640 ? -1.00000000 : 1.00000000;
 	this.SetMotion(4991, 0);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 5;
@@ -1308,7 +1308,7 @@ function Master_Spell_2_Dream_Move()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 + (120 + this.rand() % 120) * this.direction;
 	this.flag5.pos.y = 320 + this.rand() % 80;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 
 	if (this.team.shield == null)
 	{
@@ -1317,11 +1317,11 @@ function Master_Spell_2_Dream_Move()
 
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -1335,7 +1335,7 @@ function Master_Spell_2_Dream_Move()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,75000000.0))
+				if (this.Vec_Brake(0.75000000))
 				{
 					this.GetFront();
 					this.flag5.moveCount = 0;
@@ -1380,7 +1380,7 @@ function Master_Spell_3_Dream()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.resist_baria = true;
 	this.team.life_limit = 2500;
@@ -1415,7 +1415,7 @@ function Master_Spell_3_Dream_OD()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.team.life_limit = 2500;
 	this.koExp = true;
@@ -1462,7 +1462,7 @@ function Master_Spell_3_Dream_Start()
 	}
 
 	this.HitReset();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 120;
 	this.flag5.shotCount <- 0;
@@ -1472,7 +1472,7 @@ function Master_Spell_3_Dream_Start()
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
 	this.flag5.charge <- null;
-	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.flag5.namazu <- null;
 	this.lavelClearEvent = function ()
 	{
@@ -1500,27 +1500,27 @@ function Master_Spell_3_Dream_Start()
 			}
 
 			this.flag5.charge = null;
-			this.SetSpeed_XY(17,50000000.0 * this.direction, -12,50000000.0);
+			this.SetSpeed_XY(17.50000000 * this.direction, -12.50000000);
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0, 1,00000000.0 * this.direction);
-				this.AddSpeed_XY(0,00000000.0, 0,25000000.0, null, 2,00000000.0);
+				this.VX_Brake(0.50000000, 1.00000000 * this.direction);
+				this.AddSpeed_XY(0.00000000, 0.25000000, null, 2.00000000);
 
 				if (this.count == 25)
 				{
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
-						this.AddSpeed_XY(0,00000000.0, 1,50000000.0, 0,00000000.0, 30,00000000.0);
+						this.VX_Brake(0.50000000);
+						this.AddSpeed_XY(0.00000000, 1.50000000, 0.00000000, 30.00000000);
 
 						if (this.ground)
 						{
 							this.count = 0;
 							this.PlaySE(4253);
 							this.SetMotion(4963, 3);
-							::camera.Shake(6,00000000.0);
-							this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+							::camera.Shake(6.00000000);
+							this.SetSpeed_XY(0.00000000, 0.00000000);
 							this.stateLabel = function ()
 							{
 							};
@@ -1539,11 +1539,11 @@ function Master_Spell_3_Dream_Start()
 			}
 
 			this.flag5.namazu = this.SetShot(this.x, this.y + 64, this.direction, this.Shot_Dream3_CrainNamazu, {}).weakref();
-			::camera.Shake(12,00000000.0);
-			this.SetSpeed_XY(0,00000000.0, -22,50000000.0);
+			::camera.Shake(12.00000000);
+			this.SetSpeed_XY(0.00000000, -22.50000000);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0, 0,00000000.0, -10,00000000.0);
+				this.AddSpeed_XY(0.00000000, 0.50000000, 0.00000000, -10.00000000);
 
 				if (this.y < this.centerY - 200)
 				{
@@ -1555,14 +1555,14 @@ function Master_Spell_3_Dream_Start()
 					this.flag5.moveCount = 0;
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,75000000.0);
+						this.Vec_Brake(0.75000000);
 						this.flag5.moveCount++;
 
 						if (this.flag5.moveCount >= 45)
 						{
 							this.GetFront();
 							this.SetMotion(this.motion, 6);
-							this.SetSpeed_XY(-2,00000000.0 * this.direction, -10,00000000.0);
+							this.SetSpeed_XY(-2.00000000 * this.direction, -10.00000000);
 
 							if (this.flag5.namazu)
 							{
@@ -1580,24 +1580,24 @@ function Master_Spell_3_Dream_Start()
 
 							this.stateLabel = function ()
 							{
-								this.VX_Brake(0,25000000.0, -1,00000000.0 * this.direction);
-								this.AddSpeed_XY(0,00000000.0, 0,50000000.0, null, 4,50000000.0);
+								this.VX_Brake(0.25000000, -1.00000000 * this.direction);
+								this.AddSpeed_XY(0.00000000, 0.50000000, null, 4.50000000);
 
 								if (this.va.y > 0 && this.y >= this.centerY)
 								{
 									this.SetMotion(this.motion, 8);
-									this.SetSpeed_XY(this.va.x, 3,00000000.0);
+									this.SetSpeed_XY(this.va.x, 3.00000000);
 									this.stateLabel = function ()
 									{
-										this.VX_Brake(0,50000000.0);
+										this.VX_Brake(0.50000000);
 
 										if (this.y < this.centerY && this.va.y < 0)
 										{
-											this.SetSpeed_XY(this.va.x, 0,00000000.0);
+											this.SetSpeed_XY(this.va.x, 0.00000000);
 											this.y = this.centerY;
 											this.stateLabel = function ()
 											{
-												this.VX_Brake(0,50000000.0);
+												this.VX_Brake(0.50000000);
 											};
 										}
 									};
@@ -1656,11 +1656,11 @@ function Master_Spell_4_Dream_Start()
 	this.team.regain_life = 0;
 	this.SetMotion(4964, 0);
 	this.HitReset();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 120;
 	this.flag5.bigCycle <- 300;
-	this.flag5.scaleAdd <- 0,10000000.0;
+	this.flag5.scaleAdd <- 0.10000000;
 	this.flag5.shotCount <- 0;
 	this.flag5.chargeCount <- 60;
 	this.flag5.shotRot <- 0;
@@ -1668,7 +1668,7 @@ function Master_Spell_4_Dream_Start()
 	this.flag5.moveCount <- 0;
 	this.flag5.moveV <- 0;
 	this.flag5.charge <- null;
-	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.flag5.namazu <- null;
 	this.lavelClearEvent = function ()
 	{
@@ -1689,18 +1689,18 @@ function Master_Spell_4_Dream_Start()
 	{
 	case 1:
 		this.flag5.bigCycle = 270;
-		this.flag5.scaleAdd = 0,15000001.0;
+		this.flag5.scaleAdd = 0.15000001;
 		break;
 
 	case 2:
 		this.flag5.bigCycle = 240;
-		this.flag5.scaleAdd = 0,20000000.0;
+		this.flag5.scaleAdd = 0.20000000;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.bigCycle = 240;
-		this.flag5.scaleAdd = 0,25000000.0;
+		this.flag5.scaleAdd = 0.25000000;
 		break;
 	}
 
@@ -1712,7 +1712,7 @@ function Master_Spell_4_Dream_Start()
 		function ()
 		{
 			this.flag5.shotCount = 0;
-			this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellChargeBig, {}, this.weakref()).weakref();
+			this.flag5.charge = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellChargeBig, {}, this.weakref()).weakref();
 			this.subState[1] = function ()
 			{
 				this.flag5.shotCount++;
@@ -1762,7 +1762,7 @@ function Master_Spell_4_Dream_Start()
 				{
 					this.SetMotion(4964, 2);
 					this.centerStop = -2;
-					this.SetSpeed_XY(0,00000000.0, -25,00000000.0);
+					this.SetSpeed_XY(0.00000000, -25.00000000);
 					this.stone.func[0].call(this.stone);
 					this.count = 0;
 
@@ -1777,14 +1777,14 @@ function Master_Spell_4_Dream_Start()
 						if (this.count >= 60)
 						{
 							this.SetMotion(4964, 4);
-							this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+							this.SetSpeed_XY(0.00000000, 0.00000000);
 							this.stateLabel = function ()
 							{
 								if (this.count == 120)
 								{
 									this.Warp(640, -800);
 									this.SetMotion(4964, 5);
-									this.SetSpeed_XY(0,00000000.0, 40,00000000.0);
+									this.SetSpeed_XY(0.00000000, 40.00000000);
 									this.PlaySE(4251);
 									this.stateLabel = function ()
 									{
@@ -1793,8 +1793,8 @@ function Master_Spell_4_Dream_Start()
 											this.count = 0;
 											this.PlaySE(4253);
 											this.SetMotion(4964, 6);
-											::camera.Shake(6,00000000.0);
-											this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+											::camera.Shake(6.00000000);
+											this.SetSpeed_XY(0.00000000, 0.00000000);
 											this.stateLabel = function ()
 											{
 											};
@@ -1820,7 +1820,7 @@ function Master_Spell_4_Dream_Start()
 			}
 
 			this.flag5.namazu = this.SetShot(this.x, this.y + 64, this.direction, this.Shot_Dream3_RideNamazu, {}).weakref();
-			::camera.Shake(12,00000000.0);
+			::camera.Shake(12.00000000);
 			this.func[1].call(this);
 			this.team.life_limit = 0;
 			this.stateLabel = function ()
@@ -1841,14 +1841,14 @@ function Master_Spell_4_Dream_Move()
 	this.flag5.moveCount++;
 	local pos_ = this.Vector3();
 	pos_.x = 640;
-	pos_.y = 240 + 180 * this.sin(this.flag5.moveCount * 0,01745329.0 * 0,50000000.0);
-	this.va.x = (pos_.x - this.x) * 0,10000000.0;
-	this.va.y = (pos_.y - this.y) * 0,10000000.0;
-	this.flag5.moveV += 0,20000000.0;
+	pos_.y = 240 + 180 * this.sin(this.flag5.moveCount * 0.01745329 * 0.50000000);
+	this.va.x = (pos_.x - this.x) * 0.10000000;
+	this.va.y = (pos_.y - this.y) * 0.10000000;
+	this.flag5.moveV += 0.20000000;
 
-	if (this.flag5.moveV > 5,00000000.0)
+	if (this.flag5.moveV > 5.00000000)
 	{
-		this.flag5.moveV = 5,00000000.0;
+		this.flag5.moveV = 5.00000000;
 	}
 
 	if (this.va.Length() > this.flag5.moveV)
@@ -1866,7 +1866,7 @@ function Master_Spell_5_Dream_OD()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 0;
 	this.resist_baria = true;
 	this.team.life_limit = 2500;
@@ -1899,10 +1899,10 @@ function Master_Spell_5_Dream_Start()
 {
 	this.LabelClear();
 	this.stone.func[4].call(this.stone);
-	this.direction = -1,00000000.0;
+	this.direction = -1.00000000;
 	this.SetMotion(4970, 0);
 	this.flag5 = {};
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.flag5.back <- null;
 	this.flag5.height <- 200;
 	this.isVisible = true;
@@ -1910,11 +1910,11 @@ function Master_Spell_5_Dream_Start()
 	::battle.state = 4;
 	this.freeMap = true;
 	this.count = 0;
-	this.SetFreeObject(640, 800, 1,00000000.0, this.Shot_Dream5_BackBebri, {});
+	this.SetFreeObject(640, 800, 1.00000000, this.Shot_Dream5_BackBebri, {});
 	this.stateLabel = function ()
 	{
-		this.flag5.v += 0,75000000.0;
-		this.SetSpeed_XY((640 - this.x) * 0,10000000.0, (960 - this.y) * 0,10000000.0);
+		this.flag5.v += 0.75000000;
+		this.SetSpeed_XY((640 - this.x) * 0.10000000, (960 - this.y) * 0.10000000);
 
 		if (this.va.Length() > this.flag5.v)
 		{
@@ -1930,15 +1930,15 @@ function Master_Spell_5_Dream_Start()
 		if (this.count == 75)
 		{
 			::camera.lock = false;
-			::camera.auto_zoom_limit = 1,50000000.0;
+			::camera.auto_zoom_limit = 1.50000000;
 			::camera.lock = true;
 			this.Warp(860, this.y);
 			this.invin = 0;
 			this.invinObject = 0;
 			this.DrawActorPriority(300);
 			this.SetMotion(4970, 1);
-			this.sx = this.sy = 2,50000000.0;
-			this.SetSpeed_XY(0,00000000.0, -5,00000000.0);
+			this.sx = this.sy = 2.50000000;
+			this.SetSpeed_XY(0.00000000, -5.00000000);
 			this.count = 0;
 			this.stateLabel = function ()
 			{
@@ -1950,12 +1950,12 @@ function Master_Spell_5_Dream_Start()
 
 				if (this.y < 560)
 				{
-					this.AddSpeed_XY(0,00000000.0, -0,50000000.0, 0,00000000.0, -25,00000000.0);
-					::camera.Shake(10,00000000.0);
+					this.AddSpeed_XY(0.00000000, -0.50000000, 0.00000000, -25.00000000);
+					::camera.Shake(10.00000000);
 				}
 				else
 				{
-					::camera.Shake(2,00000000.0);
+					::camera.Shake(2.00000000);
 				}
 
 				if (this.y < ::battle.scroll_top - 480)
@@ -1973,22 +1973,22 @@ function Master_Spell_5_Dream_Start()
 								::battle.state = 8;
 							}
 
-							this.sx = this.sy = 1,00000000.0;
+							this.sx = this.sy = 1.00000000;
 							this.DrawActorPriority(189);
 							this.SetMotion(4970, 2);
 							this.namazu = this.SetShot(this.x, this.y + 64, this.direction, this.Shot_Dream5_RideNamazu, {}).weakref();
 							this.stateLabel = function ()
 							{
-								this.flag5.height = 200 + 50 * this.sin(this.count * 0,03490658.0);
-								this.SetSpeed_XY(0,00000000.0, (this.flag5.height - this.y) * 0,05000000.0);
+								this.flag5.height = 200 + 50 * this.sin(this.count * 0.03490658);
+								this.SetSpeed_XY(0.00000000, (this.flag5.height - this.y) * 0.05000000);
 
-								if (this.fabs(this.va.y) <= 0,10000000.0)
+								if (this.fabs(this.va.y) <= 0.10000000)
 								{
 									this.count = 0;
 									this.stateLabel = function ()
 									{
-										this.flag5.height = 200 + 50 * this.sin(this.count * 0,03490658.0);
-										this.SetSpeed_XY(0,00000000.0, (this.flag5.height - this.y) * 0,05000000.0);
+										this.flag5.height = 200 + 50 * this.sin(this.count * 0.03490658);
+										this.SetSpeed_XY(0.00000000, (this.flag5.height - this.y) * 0.05000000);
 
 										if (this.count == 15)
 										{
@@ -2043,7 +2043,7 @@ function Master_Spell_5_Dream_BeamRush()
 	this.LabelClear();
 	this.flag5 = {};
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.SetMotion(4971, 4);
 	this.func = [
 		function ()
@@ -2053,21 +2053,21 @@ function Master_Spell_5_Dream_BeamRush()
 				this.SetMotion(this.motion, 3);
 			}
 
-			this.flag5.v = 0,00000000.0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.flag5.v = 0.00000000;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			local y_ = this.centerY;
 			this.flag5.pos.y += y_;
 			this.flag5.pos.x = 1180;
 			this.subState = function ()
 			{
-				this.flag5.v += 0,34999999.0;
+				this.flag5.v += 0.34999999;
 
-				if (this.flag5.v > 17,50000000.0)
+				if (this.flag5.v > 17.50000000)
 				{
-					this.flag5.v = 17,50000000.0;
+					this.flag5.v = 17.50000000;
 				}
 
-				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0,15000001.0, (this.flag5.pos.y - this.y) * 0,15000001.0);
+				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0.15000001, (this.flag5.pos.y - this.y) * 0.15000001);
 
 				if (this.va.Length() > this.flag5.v)
 				{
@@ -2082,27 +2082,27 @@ function Master_Spell_5_Dream_BeamRush()
 				this.SetMotion(this.motion, 3);
 			}
 
-			this.flag5.v = 0,00000000.0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.flag5.v = 0.00000000;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			local y_ = this.target.y - this.y;
 
 			if (this.fabs(y_) >= 300)
 			{
-				y_ = y_ < 0 ? -300,00000000.0 : 300,00000000.0;
+				y_ = y_ < 0 ? -300.00000000 : 300.00000000;
 			}
 
 			this.flag5.pos.y += y_;
 			this.flag5.pos.x = 960 + this.rand() % 300;
 			this.subState = function ()
 			{
-				this.flag5.v += 0,34999999.0;
+				this.flag5.v += 0.34999999;
 
-				if (this.flag5.v > 17,50000000.0)
+				if (this.flag5.v > 17.50000000)
 				{
-					this.flag5.v = 17,50000000.0;
+					this.flag5.v = 17.50000000;
 				}
 
-				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0,15000001.0, (this.flag5.pos.y - this.y) * 0,15000001.0);
+				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0.15000001, (this.flag5.pos.y - this.y) * 0.15000001);
 
 				if (this.va.Length() > this.flag5.v)
 				{
@@ -2121,8 +2121,8 @@ function Master_Spell_5_Dream_BeamRush()
 				for( local i = 0; i < 12; i++ )
 				{
 					local t_ = {};
-					t_.rot <- 0,52359873.0 * i;
-					t_.v <- 1,50000000.0;
+					t_.rot <- 0.52359873 * i;
+					t_.v <- 1.50000000;
 					this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream5_Barrage, t_);
 				}
 
@@ -2184,11 +2184,11 @@ function Master_Spell_5_Dream_SwordRay()
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.flag5.sword <- null;
-	this.flag5.shotRot <- -1,57079601.0;
+	this.flag5.shotRot <- -1.57079601;
 	this.flag5.shotCount <- 0;
-	this.flag5.rotSpeed <- 0,00000000.0;
+	this.flag5.rotSpeed <- 0.00000000;
 	this.SetMotion(4972, 0);
 	this.lavelClearEvent = function ()
 	{
@@ -2202,21 +2202,21 @@ function Master_Spell_5_Dream_SwordRay()
 	this.func = [
 		function ()
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
-			this.flag5.v = 0,00000000.0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag5.v = 0.00000000;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.flag5.pos.y = 200;
 			this.flag5.pos.x = 1000;
 			this.subState = function ()
 			{
-				this.flag5.v += 0,34999999.0;
+				this.flag5.v += 0.34999999;
 
-				if (this.flag5.v > 17,50000000.0)
+				if (this.flag5.v > 17.50000000)
 				{
-					this.flag5.v = 17,50000000.0;
+					this.flag5.v = 17.50000000;
 				}
 
-				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0,15000001.0, (this.flag5.pos.y - this.y) * 0,15000001.0);
+				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0.15000001, (this.flag5.pos.y - this.y) * 0.15000001);
 				local r_ = this.va.Length();
 
 				if (r_ > this.flag5.v)
@@ -2237,7 +2237,7 @@ function Master_Spell_5_Dream_SwordRay()
 			this.flag4 = null;
 			this.subState = function ()
 			{
-				this.CenterUpdate(0,01500000.0, null);
+				this.CenterUpdate(0.01500000, null);
 				this.flag5.shotCount++;
 
 				if (this.flag5.shotCount % 6 == 1)
@@ -2248,7 +2248,7 @@ function Master_Spell_5_Dream_SwordRay()
 				if (this.flag5.shotCount % 2 == 1)
 				{
 					local t_ = {};
-					t_.rot <- this.flag5.shotRot + (20 - this.rand() % 41) * 0,01745329.0;
+					t_.rot <- this.flag5.shotRot + (20 - this.rand() % 41) * 0.01745329;
 					this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream5_BarrageB, t_);
 				}
 
@@ -2256,11 +2256,11 @@ function Master_Spell_5_Dream_SwordRay()
 				{
 					this.subState = function ()
 					{
-						this.flag5.rotSpeed += 0,05000000.0 * 0,01745329.0;
+						this.flag5.rotSpeed += 0.05000000 * 0.01745329;
 
-						if (this.flag5.rotSpeed > 0,06981317.0)
+						if (this.flag5.rotSpeed > 0.06981317)
 						{
-							this.flag5.rotSpeed = 0,06981317.0;
+							this.flag5.rotSpeed = 0.06981317;
 						}
 
 						this.flag5.shotRot += this.flag5.rotSpeed;
@@ -2322,14 +2322,14 @@ function Master_Spell_5_Dream_SwordRing()
 {
 	this.LabelClear();
 	this.keyAction = null;
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.flag5 = {};
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.flag5.sword <- null;
-	this.flag5.shotRot <- -1,57079601.0;
+	this.flag5.shotRot <- -1.57079601;
 	this.flag5.shotCount <- 0;
-	this.flag5.rotSpeed <- 0,00000000.0;
+	this.flag5.rotSpeed <- 0.00000000;
 	this.SetMotion(4973, 0);
 	this.lavelClearEvent = function ()
 	{
@@ -2343,20 +2343,20 @@ function Master_Spell_5_Dream_SwordRing()
 	this.func = [
 		function ()
 		{
-			this.flag5.v = 0,00000000.0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.flag5.v = 0.00000000;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.flag5.pos.y = 150;
 			this.flag5.pos.x = 640 - 440 * this.direction;
 			this.subState = function ()
 			{
-				this.flag5.v += 0,50000000.0;
+				this.flag5.v += 0.50000000;
 
-				if (this.flag5.v > 20,00000000.0)
+				if (this.flag5.v > 20.00000000)
 				{
-					this.flag5.v = 20,00000000.0;
+					this.flag5.v = 20.00000000;
 				}
 
-				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0,15000001.0, (this.flag5.pos.y - this.y) * 0,15000001.0);
+				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0.15000001, (this.flag5.pos.y - this.y) * 0.15000001);
 				local r_ = this.va.Length();
 
 				if (r_ > this.flag5.v)
@@ -2379,14 +2379,14 @@ function Master_Spell_5_Dream_SwordRing()
 				this.keyAction = null;
 				local t_ = {};
 				t_.rot <- this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-				t_.rot = this.Math_MinMax(t_.rot, 0, 1,57079601.0);
+				t_.rot = this.Math_MinMax(t_.rot, 0, 1.57079601);
 				this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Dream5_Ring, t_);
 				this.PlaySE(4266);
-				this.SetSpeed_XY(-5,00000000.0 * this.direction, -3,50000000.0);
+				this.SetSpeed_XY(-5.00000000 * this.direction, -3.50000000);
 			};
 			this.subState = function ()
 			{
-				this.Vec_Brake(0,50000000.0, 1,00000000.0);
+				this.Vec_Brake(0.50000000, 1.00000000);
 			};
 		},
 		function ()
@@ -2397,20 +2397,20 @@ function Master_Spell_5_Dream_SwordRing()
 				this.SetMotion(4973, 0);
 				this.keyAction = null;
 			};
-			this.flag5.v = 0,00000000.0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.flag5.v = 0.00000000;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.flag5.pos.y = 540;
 			this.flag5.pos.x = 640 - 540 * this.direction;
 			this.subState = function ()
 			{
-				this.flag5.v += 0,50000000.0;
+				this.flag5.v += 0.50000000;
 
-				if (this.flag5.v > 20,00000000.0)
+				if (this.flag5.v > 20.00000000)
 				{
-					this.flag5.v = 20,00000000.0;
+					this.flag5.v = 20.00000000;
 				}
 
-				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0,15000001.0, (this.flag5.pos.y - this.y) * 0,15000001.0);
+				this.SetSpeed_XY((this.flag5.pos.x - this.x) * 0.15000001, (this.flag5.pos.y - this.y) * 0.15000001);
 				local r_ = this.va.Length();
 
 				if (r_ > this.flag5.v)
@@ -2427,14 +2427,14 @@ function Master_Spell_5_Dream_SwordRing()
 				this.keyAction = null;
 				local t_ = {};
 				t_.rot <- this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-				t_.rot = this.Math_MinMax(t_.rot, -1,57079601.0, 0);
+				t_.rot = this.Math_MinMax(t_.rot, -1.57079601, 0);
 				this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Dream5_Ring, t_);
 				this.PlaySE(4266);
-				this.SetSpeed_XY(-5,00000000.0 * this.direction, 3,50000000.0);
+				this.SetSpeed_XY(-5.00000000 * this.direction, 3.50000000);
 			};
 			this.subState = function ()
 			{
-				this.Vec_Brake(0,50000000.0, 1,00000000.0);
+				this.Vec_Brake(0.50000000, 1.00000000);
 			};
 		},
 		function ()
@@ -2444,7 +2444,7 @@ function Master_Spell_5_Dream_SwordRing()
 			this.AjustCenterStop();
 			this.subState = function ()
 			{
-				this.CenterUpdate(0,05000000.0, null);
+				this.CenterUpdate(0.05000000, null);
 			};
 			this.keyAction = function ()
 			{
@@ -2489,7 +2489,7 @@ function Master_Spell_6_Dream_OD()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 0;
 	this.resist_baria = true;
 	this.boss_spell_func = function ()
@@ -2518,10 +2518,10 @@ function Master_Spell_6_Dream_OD()
 function Master_Spell_6_Dream_Start()
 {
 	this.LabelClear();
-	this.direction = -1,00000000.0;
+	this.direction = -1.00000000;
 	this.SetMotion(4975, 3);
 	this.flag5 = {};
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.flag5.back <- null;
 	this.flag5.pos <- this.Vector3;
 	this.flag5.moveCount <- 0;
@@ -2562,14 +2562,14 @@ function Master_Spell_6_Dream_Start()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.v += 0,50000000.0;
+				this.flag5.v += 0.50000000;
 
-				if (this.flag5.v > 10,00000000.0)
+				if (this.flag5.v > 10.00000000)
 				{
-					this.flag5.v = 10,00000000.0;
+					this.flag5.v = 10.00000000;
 				}
 
-				this.SetSpeed_XY((640 - this.x) * 0,10000000.0, (300 - this.y) * 0,10000000.0);
+				this.SetSpeed_XY((640 - this.x) * 0.10000000, (300 - this.y) * 0.10000000);
 
 				if (this.va.Length() > this.flag5.v)
 				{
@@ -2584,14 +2584,14 @@ function Master_Spell_6_Dream_Start()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.v += 0,50000000.0;
+				this.flag5.v += 0.50000000;
 
-				if (this.flag5.v > 10,00000000.0)
+				if (this.flag5.v > 10.00000000)
 				{
-					this.flag5.v = 10,00000000.0;
+					this.flag5.v = 10.00000000;
 				}
 
-				this.SetSpeed_XY((640 - this.x) * 0,10000000.0, (300 - this.y) * 0,10000000.0);
+				this.SetSpeed_XY((640 - this.x) * 0.10000000, (300 - this.y) * 0.10000000);
 
 				if (this.va.Length() > this.flag5.v)
 				{
@@ -2615,15 +2615,15 @@ function Master_Spell_6_Dream_Start()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.AddSpeed_XY(0,00000000.0, -0,25000000.0, 0,00000000.0, -1,50000000.0);
+				this.AddSpeed_XY(0.00000000, -0.25000000, 0.00000000, -1.50000000);
 
 				if (this.flag5.moveCount == 40)
 				{
 					this.namazu.func[3].call(this.namazu);
-					this.FadeOut(1,00000000.0, 1,00000000.0, 1,00000000.0, 60);
+					this.FadeOut(1.00000000, 1.00000000, 1.00000000, 60);
 					this.subState = function ()
 					{
-						this.AddSpeed_XY(0,00000000.0, -0,75000000.0, 0,00000000.0, -17,50000000.0);
+						this.AddSpeed_XY(0.00000000, -0.75000000, 0.00000000, -17.50000000);
 						this.flag5.moveCount++;
 
 						if (this.flag5.moveCount == 150)
@@ -2655,25 +2655,25 @@ function Master_Spell_6_Dream_Start()
 function Master_Spell_6_Dream_Attack()
 {
 	this.LabelClear();
-	this.direction = -1,00000000.0;
+	this.direction = -1.00000000;
 	this.SetMotion(4975, 2);
 	this.Warp(640, 360);
 	this.target.team.master.VS_NamazuMove_Pre2(null);
 	this.EraceBackGround();
-	this.FadeIn(1,00000000.0, 1,00000000.0, 1,00000000.0, 120);
+	this.FadeIn(1.00000000, 1.00000000, 1.00000000, 120);
 	this.team.life_limit = 0;
 	this.enableKO = true;
 	::battle.corner_left = 320;
 	::battle.corner_right = 960;
 	this.flag5 = {};
-	this.flag5.v <- 0,00000000.0;
-	this.flag5.back <- this.SetFreeObject(640, 360, 1,00000000.0, this.Shot_Dream6_Back, {}).weakref();
+	this.flag5.v <- 0.00000000;
+	this.flag5.back <- this.SetFreeObject(640, 360, 1.00000000, this.Shot_Dream6_Back, {}).weakref();
 	this.flag5.pos <- this.Vector3;
 	this.flag5.moveCount <- 0;
 	this.flag5.camera <- this.Vector3();
 	this.flag5.camera.x = 640;
 	this.flag5.camera.y = 760;
-	this.flag5.zoom <- 1,00000000.0;
+	this.flag5.zoom <- 1.00000000;
 	this.flag5.sword <- null;
 	this.freeMap = true;
 	this.count = 0;
@@ -2700,8 +2700,8 @@ function Master_Spell_6_Dream_Attack()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.camera.y += (260 - this.flag5.camera.y) * 0,03000000.0;
-				this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,03000000.0;
+				this.flag5.camera.y += (260 - this.flag5.camera.y) * 0.03000000;
+				this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.03000000;
 				::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 				if (this.flag5.moveCount == 90)
@@ -2711,15 +2711,15 @@ function Master_Spell_6_Dream_Attack()
 					this.SetMotion(this.motion, 5 + this.rand() % 4);
 					this.namazu.func[1].call(this.namazu);
 					this.DrawActorPriority(21);
-					this.sx = this.sy = 0,66000003.0;
-					this.namazu.sx = this.namazu.sy = 0,66000003.0;
-					this.namazu.red = this.namazu.blue = this.namazu.green = 0,66000003.0;
-					this.SetSpeed_XY(3,00000000.0, -8,00000000.0);
+					this.sx = this.sy = 0.66000003;
+					this.namazu.sx = this.namazu.sy = 0.66000003;
+					this.namazu.red = this.namazu.blue = this.namazu.green = 0.66000003;
+					this.SetSpeed_XY(3.00000000, -8.00000000);
 					this.flag5.moveCount = 0;
 					this.subState = function ()
 					{
-						this.masterRed = this.masterGreen = this.masterBlue = 0,50000000.0;
-						this.rz -= 0,75000000.0 * 0,01745329.0;
+						this.masterRed = this.masterGreen = this.masterBlue = 0.50000000;
+						this.rz -= 0.75000000 * 0.01745329;
 						this.flag5.moveCount++;
 
 						if (this.flag5.moveCount == 120)
@@ -2730,18 +2730,18 @@ function Master_Spell_6_Dream_Attack()
 							this.SetMotion(this.motion, 9);
 							this.namazu.func[2].call(this.namazu);
 							this.DrawActorPriority(180);
-							this.sx = this.sy = 1,00000000.0;
-							this.masterRed = this.masterGreen = this.masterBlue = 1,00000000.0;
-							this.namazu.sx = this.namazu.sy = 1,00000000.0;
-							this.namazu.red = this.namazu.blue = this.namazu.green = 1,00000000.0;
-							this.SetSpeed_XY(-2,00000000.0, 5,00000000.0);
+							this.sx = this.sy = 1.00000000;
+							this.masterRed = this.masterGreen = this.masterBlue = 1.00000000;
+							this.namazu.sx = this.namazu.sy = 1.00000000;
+							this.namazu.red = this.namazu.blue = this.namazu.green = 1.00000000;
+							this.SetSpeed_XY(-2.00000000, 5.00000000);
 							this.subState = function ()
 							{
-								this.flag5.camera.x += (800 - this.flag5.camera.x) * 0,05000000.0;
-								this.flag5.camera.y += (260 - this.flag5.camera.y) * 0,05000000.0;
-								this.flag5.zoom += (1,25000000.0 - this.flag5.zoom) * 0,05000000.0;
+								this.flag5.camera.x += (800 - this.flag5.camera.x) * 0.05000000;
+								this.flag5.camera.y += (260 - this.flag5.camera.y) * 0.05000000;
+								this.flag5.zoom += (1.25000000 - this.flag5.zoom) * 0.05000000;
 								::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
-								this.rz += 0,50000000.0 * 0,01745329.0;
+								this.rz += 0.50000000 * 0.01745329;
 
 								if (this.y > 1060)
 								{
@@ -2762,9 +2762,9 @@ function Master_Spell_6_Dream_Attack()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0,05000000.0;
-				this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0.05000000;
+				this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 				::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 				if (this.flag5.moveCount == 30)
@@ -2775,19 +2775,19 @@ function Master_Spell_6_Dream_Attack()
 					this.namazu.func[1].call(this.namazu);
 					this.DrawActorPriority(21);
 					this.flag5.moveCount = 0;
-					this.sx = this.sy = 0,33000001.0;
-					this.namazu.sx = this.namazu.sy = 0,33000001.0;
-					this.namazu.red = this.namazu.blue = this.namazu.green = 0,50000000.0;
-					this.SetSpeed_XY(-8,50000000.0, -1,00000000.0);
+					this.sx = this.sy = 0.33000001;
+					this.namazu.sx = this.namazu.sy = 0.33000001;
+					this.namazu.red = this.namazu.blue = this.namazu.green = 0.50000000;
+					this.SetSpeed_XY(-8.50000000, -1.00000000);
 					this.subState = function ()
 					{
-						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-						this.masterRed = this.masterGreen = this.masterBlue = 0,50000000.0;
-						this.rz -= 1,50000000.0 * 0,01745329.0;
+						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+						this.masterRed = this.masterGreen = this.masterBlue = 0.50000000;
+						this.rz -= 1.50000000 * 0.01745329;
 						this.flag5.moveCount++;
-						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-						this.flag5.camera.y += (260 - this.flag5.camera.y) * 0,05000000.0;
-						this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+						this.flag5.camera.y += (260 - this.flag5.camera.y) * 0.05000000;
+						this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 						::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 						if (this.flag5.moveCount == 120)
@@ -2795,20 +2795,20 @@ function Master_Spell_6_Dream_Attack()
 							this.PlaySE(4242);
 							this.flag5.moveCount = 0;
 							this.Warp(640 - 200, 360 + 360);
-							this.sx = this.sy = 0,50000000.0;
-							this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-							this.namazu.sx = this.namazu.sy = 0,50000000.0;
-							this.namazu.red = this.namazu.blue = this.namazu.green = 0,66000003.0;
-							this.SetSpeed_XY(1,50000000.0, -5,50000000.0);
+							this.sx = this.sy = 0.50000000;
+							this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+							this.namazu.sx = this.namazu.sy = 0.50000000;
+							this.namazu.red = this.namazu.blue = this.namazu.green = 0.66000003;
+							this.SetSpeed_XY(1.50000000, -5.50000000);
 							this.SetMotion(this.motion, 12);
 							this.subState = function ()
 							{
-								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-								this.rz += 1,00000000.0 * 0,01745329.0;
-								this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-								this.flag5.camera.y += (260 - this.flag5.camera.y) * 0,05000000.0;
-								this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+								this.rz += 1.00000000 * 0.01745329;
+								this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+								this.flag5.camera.y += (260 - this.flag5.camera.y) * 0.05000000;
+								this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 								::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 								this.flag5.moveCount++;
 
@@ -2819,21 +2819,21 @@ function Master_Spell_6_Dream_Attack()
 									this.flag5.moveCount = 0;
 									this.Warp(640 + 540, 360 - 500);
 									this.SetMotion(this.motion, 13);
-									this.rz = 3,14159203.0;
+									this.rz = 3.14159203;
 									this.namazu.func[2].call(this.namazu);
 									this.DrawActorPriority(180);
-									this.sx = this.sy = 1,00000000.0;
-									this.masterRed = this.masterGreen = this.masterBlue = 1,00000000.0;
-									this.namazu.sx = this.namazu.sy = 1,00000000.0;
-									this.namazu.red = this.namazu.blue = this.namazu.green = 1,00000000.0;
-									this.SetSpeed_XY(-1,00000000.0, 2,50000000.0);
+									this.sx = this.sy = 1.00000000;
+									this.masterRed = this.masterGreen = this.masterBlue = 1.00000000;
+									this.namazu.sx = this.namazu.sy = 1.00000000;
+									this.namazu.red = this.namazu.blue = this.namazu.green = 1.00000000;
+									this.SetSpeed_XY(-1.00000000, 2.50000000);
 									this.flag5.sword = this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream6_Blade, {}).weakref();
 									this.subState = function ()
 									{
-										this.rz += 1,25000000.0 * 0,01745329.0;
-										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0,02500000.0;
-										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0,02500000.0;
-										this.flag5.zoom += (1,20000005.0 - this.flag5.zoom) * 0,02500000.0;
+										this.rz += 1.25000000 * 0.01745329;
+										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0.02500000;
+										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0.02500000;
+										this.flag5.zoom += (1.20000005 - this.flag5.zoom) * 0.02500000;
 										::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 										this.flag5.moveCount++;
 
@@ -2875,9 +2875,9 @@ function Master_Spell_6_Dream_Attack()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0,05000000.0;
-				this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0.05000000;
+				this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 				::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 				if (this.flag5.moveCount == 30)
@@ -2888,19 +2888,19 @@ function Master_Spell_6_Dream_Attack()
 					this.namazu.func[1].call(this.namazu);
 					this.DrawActorPriority(21);
 					this.flag5.moveCount = 0;
-					this.sx = this.sy = 0,33000001.0;
-					this.namazu.sx = this.namazu.sy = 0,33000001.0;
-					this.namazu.red = this.namazu.blue = this.namazu.green = 0,33000001.0;
-					this.SetSpeed_XY(-8,50000000.0, 1,00000000.0);
+					this.sx = this.sy = 0.33000001;
+					this.namazu.sx = this.namazu.sy = 0.33000001;
+					this.namazu.red = this.namazu.blue = this.namazu.green = 0.33000001;
+					this.SetSpeed_XY(-8.50000000, 1.00000000);
 					this.subState = function ()
 					{
-						this.masterRed = this.masterGreen = this.masterBlue = 0,50000000.0;
-						this.rz += 1,50000000.0 * 0,01745329.0;
+						this.masterRed = this.masterGreen = this.masterBlue = 0.50000000;
+						this.rz += 1.50000000 * 0.01745329;
 						this.flag5.moveCount++;
-						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-						this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+						this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 						::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 						if (this.flag5.moveCount == 120)
@@ -2908,20 +2908,20 @@ function Master_Spell_6_Dream_Attack()
 							this.PlaySE(4242);
 							this.flag5.moveCount = 0;
 							this.Warp(640 - 200, 360 - 360);
-							this.sx = this.sy = 0,50000000.0;
-							this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-							this.namazu.sx = this.namazu.sy = 0,50000000.0;
-							this.namazu.red = this.namazu.blue = this.namazu.green = 0,66000003.0;
-							this.SetSpeed_XY(1,50000000.0, 5,50000000.0);
+							this.sx = this.sy = 0.50000000;
+							this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+							this.namazu.sx = this.namazu.sy = 0.50000000;
+							this.namazu.red = this.namazu.blue = this.namazu.green = 0.66000003;
+							this.SetSpeed_XY(1.50000000, 5.50000000);
 							this.SetMotion(this.motion, 12);
 							this.subState = function ()
 							{
-								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-								this.rz -= 1,00000000.0 * 0,01745329.0;
-								this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-								this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+								this.rz -= 1.00000000 * 0.01745329;
+								this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+								this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 								::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 								this.flag5.moveCount++;
 
@@ -2932,21 +2932,21 @@ function Master_Spell_6_Dream_Attack()
 									this.flag5.moveCount = 0;
 									this.Warp(640 + 540, 360 + 500);
 									this.SetMotion(this.motion, 13);
-									this.rz = -3,14159203.0;
+									this.rz = -3.14159203;
 									this.namazu.func[2].call(this.namazu);
 									this.DrawActorPriority(180);
-									this.sx = this.sy = 1,00000000.0;
-									this.masterRed = this.masterGreen = this.masterBlue = 1,00000000.0;
-									this.namazu.sx = this.namazu.sy = 1,00000000.0;
-									this.namazu.red = this.namazu.blue = this.namazu.green = 1,00000000.0;
-									this.SetSpeed_XY(-1,00000000.0, -2,50000000.0);
+									this.sx = this.sy = 1.00000000;
+									this.masterRed = this.masterGreen = this.masterBlue = 1.00000000;
+									this.namazu.sx = this.namazu.sy = 1.00000000;
+									this.namazu.red = this.namazu.blue = this.namazu.green = 1.00000000;
+									this.SetSpeed_XY(-1.00000000, -2.50000000);
 									this.flag5.sword = this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream6_Blade, {}).weakref();
 									this.subState = function ()
 									{
-										this.rz -= 1,25000000.0 * 0,01745329.0;
-										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0,02500000.0;
-										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0,02500000.0;
-										this.flag5.zoom += (1,20000005.0 - this.flag5.zoom) * 0,02500000.0;
+										this.rz -= 1.25000000 * 0.01745329;
+										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0.02500000;
+										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0.02500000;
+										this.flag5.zoom += (1.20000005 - this.flag5.zoom) * 0.02500000;
 										::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 										this.flag5.moveCount++;
 
@@ -2994,9 +2994,9 @@ function Master_Spell_6_Dream_Attack()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0,05000000.0;
-				this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0.05000000;
+				this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 				::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 				if (this.flag5.moveCount == 30)
@@ -3007,19 +3007,19 @@ function Master_Spell_6_Dream_Attack()
 					this.namazu.func[1].call(this.namazu);
 					this.DrawActorPriority(21);
 					this.flag5.moveCount = 0;
-					this.sx = this.sy = 0,33000001.0;
-					this.namazu.sx = this.namazu.sy = 0,33000001.0;
-					this.namazu.red = this.namazu.blue = this.namazu.green = 0,50000000.0;
-					this.SetSpeed_XY(-8,50000000.0, -1,00000000.0);
+					this.sx = this.sy = 0.33000001;
+					this.namazu.sx = this.namazu.sy = 0.33000001;
+					this.namazu.red = this.namazu.blue = this.namazu.green = 0.50000000;
+					this.SetSpeed_XY(-8.50000000, -1.00000000);
 					this.subState = function ()
 					{
-						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-						this.masterRed = this.masterGreen = this.masterBlue = 0,50000000.0;
-						this.rz += 1,50000000.0 * 0,01745329.0;
+						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+						this.masterRed = this.masterGreen = this.masterBlue = 0.50000000;
+						this.rz += 1.50000000 * 0.01745329;
 						this.flag5.moveCount++;
-						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-						this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+						this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 						::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 						if (this.flag5.moveCount == 120)
@@ -3027,20 +3027,20 @@ function Master_Spell_6_Dream_Attack()
 							this.PlaySE(4242);
 							this.flag5.moveCount = 0;
 							this.Warp(640 - 480, 360);
-							this.sx = this.sy = 0,50000000.0;
-							this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-							this.namazu.sx = this.namazu.sy = 0,50000000.0;
-							this.namazu.red = this.namazu.blue = this.namazu.green = 0,66000003.0;
-							this.SetSpeed_XY(6,00000000.0, 0,75000000.0);
+							this.sx = this.sy = 0.50000000;
+							this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+							this.namazu.sx = this.namazu.sy = 0.50000000;
+							this.namazu.red = this.namazu.blue = this.namazu.green = 0.66000003;
+							this.SetSpeed_XY(6.00000000, 0.75000000);
 							this.SetMotion(this.motion, 12);
 							this.subState = function ()
 							{
-								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-								this.rz -= 2,00000000.0 * 0,01745329.0;
-								this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-								this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+								this.rz -= 2.00000000 * 0.01745329;
+								this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+								this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 								::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 								this.flag5.moveCount++;
 
@@ -3051,21 +3051,21 @@ function Master_Spell_6_Dream_Attack()
 									this.flag5.moveCount = 0;
 									this.Warp(640 + 920, 360);
 									this.SetMotion(this.motion, 14);
-									this.rz = 0,00000000.0;
+									this.rz = 0.00000000;
 									this.namazu.func[2].call(this.namazu);
 									this.DrawActorPriority(180);
-									this.sx = this.sy = 1,00000000.0;
-									this.masterRed = this.masterGreen = this.masterBlue = 1,00000000.0;
-									this.namazu.sx = this.namazu.sy = 1,00000000.0;
-									this.namazu.red = this.namazu.blue = this.namazu.green = 1,00000000.0;
-									this.SetSpeed_XY(-6,00000000.0, -0,50000000.0);
+									this.sx = this.sy = 1.00000000;
+									this.masterRed = this.masterGreen = this.masterBlue = 1.00000000;
+									this.namazu.sx = this.namazu.sy = 1.00000000;
+									this.namazu.red = this.namazu.blue = this.namazu.green = 1.00000000;
+									this.SetSpeed_XY(-6.00000000, -0.50000000);
 									this.flag5.sword = this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream6_BladeB, {}).weakref();
 									this.subState = function ()
 									{
-										this.rz -= 2,00000000.0 * 0,01745329.0;
-										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0,02500000.0;
-										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0,02500000.0;
-										this.flag5.zoom += (1,20000005.0 - this.flag5.zoom) * 0,02500000.0;
+										this.rz -= 2.00000000 * 0.01745329;
+										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0.02500000;
+										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0.02500000;
+										this.flag5.zoom += (1.20000005 - this.flag5.zoom) * 0.02500000;
 										::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 										this.flag5.moveCount++;
 
@@ -3098,9 +3098,9 @@ function Master_Spell_6_Dream_Attack()
 			this.subState = function ()
 			{
 				this.flag5.moveCount++;
-				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0,05000000.0;
-				this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+				this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+				this.flag5.camera.y += (360 - this.flag5.camera.y) * 0.05000000;
+				this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 				::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 				if (this.flag5.moveCount == 30)
@@ -3111,19 +3111,19 @@ function Master_Spell_6_Dream_Attack()
 					this.namazu.func[1].call(this.namazu);
 					this.DrawActorPriority(21);
 					this.flag5.moveCount = 0;
-					this.sx = this.sy = 0,33000001.0;
-					this.namazu.sx = this.namazu.sy = 0,33000001.0;
-					this.namazu.red = this.namazu.blue = this.namazu.green = 0,50000000.0;
-					this.SetSpeed_XY(-8,50000000.0, -1,00000000.0);
+					this.sx = this.sy = 0.33000001;
+					this.namazu.sx = this.namazu.sy = 0.33000001;
+					this.namazu.red = this.namazu.blue = this.namazu.green = 0.50000000;
+					this.SetSpeed_XY(-8.50000000, -1.00000000);
 					this.subState = function ()
 					{
-						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-						this.masterRed = this.masterGreen = this.masterBlue = 0,50000000.0;
-						this.rz -= 1,50000000.0 * 0,01745329.0;
+						this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+						this.masterRed = this.masterGreen = this.masterBlue = 0.50000000;
+						this.rz -= 1.50000000 * 0.01745329;
 						this.flag5.moveCount++;
-						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-						this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+						this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+						this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+						this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 						::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 
 						if (this.flag5.moveCount == 120)
@@ -3131,20 +3131,20 @@ function Master_Spell_6_Dream_Attack()
 							this.PlaySE(4242);
 							this.flag5.moveCount = 0;
 							this.Warp(640 - 480, 360);
-							this.sx = this.sy = 0,50000000.0;
-							this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-							this.namazu.sx = this.namazu.sy = 0,50000000.0;
-							this.namazu.red = this.namazu.blue = this.namazu.green = 0,66000003.0;
-							this.SetSpeed_XY(6,00000000.0, 0,75000000.0);
+							this.sx = this.sy = 0.50000000;
+							this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+							this.namazu.sx = this.namazu.sy = 0.50000000;
+							this.namazu.red = this.namazu.blue = this.namazu.green = 0.66000003;
+							this.SetSpeed_XY(6.00000000, 0.75000000);
 							this.SetMotion(this.motion, 12);
 							this.subState = function ()
 							{
-								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0,00100000.0;
-								this.rz += 2,00000000.0 * 0,01745329.0;
-								this.masterRed = this.masterGreen = this.masterBlue = 0,66000003.0;
-								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0,05000000.0;
-								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0,05000000.0;
-								this.flag5.zoom += (2,00000000.0 - this.flag5.zoom) * 0,05000000.0;
+								this.sx = this.sy = this.namazu.sx = this.namazu.sy += 0.00100000;
+								this.rz += 2.00000000 * 0.01745329;
+								this.masterRed = this.masterGreen = this.masterBlue = 0.66000003;
+								this.flag5.camera.x += (640 - this.flag5.camera.x) * 0.05000000;
+								this.flag5.camera.y += (460 - this.flag5.camera.y) * 0.05000000;
+								this.flag5.zoom += (2.00000000 - this.flag5.zoom) * 0.05000000;
 								::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 								this.flag5.moveCount++;
 
@@ -3155,21 +3155,21 @@ function Master_Spell_6_Dream_Attack()
 									this.flag5.moveCount = 0;
 									this.Warp(640 + 920, 360);
 									this.SetMotion(this.motion, 14);
-									this.rz = 3,14159203.0;
+									this.rz = 3.14159203;
 									this.namazu.func[2].call(this.namazu);
 									this.DrawActorPriority(180);
-									this.sx = this.sy = 1,00000000.0;
-									this.masterRed = this.masterGreen = this.masterBlue = 1,00000000.0;
-									this.namazu.sx = this.namazu.sy = 1,00000000.0;
-									this.namazu.red = this.namazu.blue = this.namazu.green = 1,00000000.0;
-									this.SetSpeed_XY(-6,00000000.0, -0,50000000.0);
+									this.sx = this.sy = 1.00000000;
+									this.masterRed = this.masterGreen = this.masterBlue = 1.00000000;
+									this.namazu.sx = this.namazu.sy = 1.00000000;
+									this.namazu.red = this.namazu.blue = this.namazu.green = 1.00000000;
+									this.SetSpeed_XY(-6.00000000, -0.50000000);
 									this.flag5.sword = this.SetShot(this.point1_x, this.point1_y, this.direction, this.Shot_Dream6_BladeB, {}).weakref();
 									this.subState = function ()
 									{
-										this.rz += 2,00000000.0 * 0,01745329.0;
-										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0,02500000.0;
-										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0,02500000.0;
-										this.flag5.zoom += (1,20000005.0 - this.flag5.zoom) * 0,02500000.0;
+										this.rz += 2.00000000 * 0.01745329;
+										this.flag5.camera.x += (this.x - this.flag5.camera.x) * 0.02500000;
+										this.flag5.camera.y += (this.y - this.flag5.camera.y) * 0.02500000;
+										this.flag5.zoom += (1.20000005 - this.flag5.zoom) * 0.02500000;
 										::camera.SetTarget(this.flag5.camera.x, this.flag5.camera.y, this.flag5.zoom, true);
 										this.flag5.moveCount++;
 
@@ -3205,7 +3205,7 @@ function Master_Spell_6_Dream_Attack()
 		{
 			this.namazu.Warp(this.point0_x, this.point0_y);
 			this.namazu.rz = this.rz;
-			this.namazu.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+			this.namazu.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 		}
 	};
 }
@@ -3235,7 +3235,7 @@ function Slave_Attack_Doremy2( t )
 	}
 
 	this.HitReset();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag5 = {};
 	this.flag5.shotCycle <- 9;
 	this.flag5.shotCount <- 0;
@@ -3293,19 +3293,19 @@ function Slave_Attack_Doremy2( t )
 			}
 
 			this.flag5.charge = null;
-			this.SetSpeed_XY(17,50000000.0 * this.direction, -12,50000000.0);
+			this.SetSpeed_XY(17.50000000 * this.direction, -12.50000000);
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0, 1,00000000.0 * this.direction);
-				this.AddSpeed_XY(0,00000000.0, 0,25000000.0, null, 2,00000000.0);
+				this.VX_Brake(0.50000000, 1.00000000 * this.direction);
+				this.AddSpeed_XY(0.00000000, 0.25000000, null, 2.00000000);
 
 				if (this.count == 25)
 				{
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
-						this.AddSpeed_XY(0,00000000.0, 1,50000000.0, 0,00000000.0, 30,00000000.0);
+						this.VX_Brake(0.50000000);
+						this.AddSpeed_XY(0.00000000, 1.50000000, 0.00000000, 30.00000000);
 
 						if (this.ground)
 						{
@@ -3320,8 +3320,8 @@ function Slave_Attack_Doremy2( t )
 							this.count = 0;
 							this.PlaySE(4253);
 							this.SetMotion(4963, 3);
-							::camera.Shake(10,00000000.0);
-							this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+							::camera.Shake(10.00000000);
+							this.SetSpeed_XY(0.00000000, 0.00000000);
 							this.team.master.shot_actor.Foreach(function ()
 							{
 								this.func[2].call(this);
@@ -3345,12 +3345,12 @@ function Slave_Attack_Doremy2( t )
 		{
 			this.SetMotion(this.motion, 6);
 			this.centerStop = -3;
-			this.SetSpeed_XY(-2,50000000.0 * this.direction, -12,50000000.0);
+			this.SetSpeed_XY(-2.50000000 * this.direction, -12.50000000);
 			this.stateLabel = function ()
 			{
 				if (this.y < this.centerY)
 				{
-					this.CenterUpdate(0,60000002.0, 7,50000000.0);
+					this.CenterUpdate(0.60000002, 7.50000000);
 				}
 
 				if (this.centerStop * this.centerStop <= 1)
@@ -3360,8 +3360,8 @@ function Slave_Attack_Doremy2( t )
 					this.stone.func[2].call(this.stone);
 					this.stateLabel = function ()
 					{
-						this.CenterUpdate(0,50000000.0, null);
-						this.VX_Brake(0,50000000.0);
+						this.CenterUpdate(0.50000000, null);
+						this.VX_Brake(0.50000000);
 
 						if (this.count >= 80)
 						{

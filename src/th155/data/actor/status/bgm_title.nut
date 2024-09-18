@@ -17,10 +17,10 @@ class this.BGMTitle
 		this.item = [];
 		local title = ::font.CreateSystemString(d.title);
 		local author = ::font.CreateSystemString(d.author);
-		local w = (title.width < author.width * 0,69999999.0 ? author.width * 0,69999999.0 : title.width) + 20;
+		local w = (title.width < author.width * 0.69999999 ? author.width * 0.69999999 : title.width) + 20;
 		title.x = ::graphics.width - title.width - 10;
 		title.y = 640;
-		author.sx = author.sy = 0,69999999.0;
+		author.sx = author.sy = 0.69999999;
 		author.x = ::graphics.width - author.width * author.sx - 10;
 		author.y = title.y + 32;
 		local t = ::manbow.ObjectRenderer();
@@ -28,7 +28,7 @@ class this.BGMTitle
 		t.x = ::graphics.width - w;
 		t.y = title.y + 24;
 		t.filter = 1;
-		t.sx = w / 512,00000000.0;
+		t.sx = w / 512.00000000;
 		this.item.push(t);
 		this.item.push(title);
 		this.item.push(author);

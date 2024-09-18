@@ -194,9 +194,9 @@ function ForceSpecialCall_Init()
 	this.team.spell_active = true;
 	this.team.spell_time = 9999;
 	this.team.spell_use_count = -1;
-	this.team.master.spellcard.Activate("u\x253c‹­\x253c—Ç‚\x2560ˆ\x2518•Ï‰ğŒˆ›Ş—v");
+	this.team.master.spellcard.Activate("u\x253c‹­\x253c—\x255f‚\x2560ˆ\x2518•\x2567‰\x2261Œˆ›\x2590—v");
 	this.PlaySE(826);
-	this.SetFreeObjectStencil(this.team.index == 0 ? -1480 : 1280 + 1480, 360 + 442, this.team.index == 0 ? 1,00000000.0 : -1,00000000.0, this.SpellFace, {}, this.weakref());
+	this.SetFreeObjectStencil(this.team.index == 0 ? -1480 : 1280 + 1480, 360 + 442, this.team.index == 0 ? 1.00000000 : -1.00000000, this.SpellFace, {}, this.weakref());
 	return true;
 }
 

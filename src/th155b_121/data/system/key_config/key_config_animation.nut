@@ -99,7 +99,7 @@ function Update()
 
 	foreach( i, v in this.item )
 	{
-		v.red = v.green = v.blue = y == i ? 1,00000000.0 : 0,50000000.0;
+		v.red = v.green = v.blue = y == i ? 1.00000000 : 0.50000000;
 	}
 
 	foreach( v in this.item_pad )
@@ -114,19 +114,19 @@ function Update()
 	{
 		this.SetPad(this.item_pad[i], this.action.pad[v]);
 		this.SetKey(this.item_key[i], this.action.key[v]);
-		this.item_pad[i].red = this.item_pad[i].green = this.item_pad[i].blue = y == i && this.action.cursor.x == 0 ? 1,00000000.0 : 0,50000000.0;
-		this.item_key[i].red = this.item_key[i].green = this.item_key[i].blue = y == i && this.action.cursor.x == 1 ? 1,00000000.0 : 0,50000000.0;
+		this.item_pad[i].red = this.item_pad[i].green = this.item_pad[i].blue = y == i && this.action.cursor.x == 0 ? 1.00000000 : 0.50000000;
+		this.item_key[i].red = this.item_key[i].green = this.item_key[i].blue = y == i && this.action.cursor.x == 1 ? 1.00000000 : 0.50000000;
 	}
 
 	if (this.action.state == 0)
 	{
 		if (this.action.cursor.y >= 13)
 		{
-			::menu.cursor.SetTarget(this.item[y].x - 20, this.item[y].y + 16, 0,69999999.0);
+			::menu.cursor.SetTarget(this.item[y].x - 20, this.item[y].y + 16, 0.69999999);
 		}
 		else
 		{
-			::menu.cursor.SetTarget((this.action.cursor.x == 0 ? this.item_pad[y].x : this.item_key[y].x) - 20, this.item[y].y + 16, 0,69999999.0);
+			::menu.cursor.SetTarget((this.action.cursor.x == 0 ? this.item_pad[y].x : this.item_key[y].x) - 20, this.item[y].y + 16, 0.69999999);
 		}
 	}
 

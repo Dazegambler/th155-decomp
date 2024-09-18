@@ -3,7 +3,7 @@ function Master_Spell_1()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.boss_spell_func = function ()
 	{
@@ -39,14 +39,14 @@ function Master_Spell_1_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -60,7 +60,7 @@ function Master_Spell_1_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Dream_Attack();
 				}
@@ -95,8 +95,8 @@ function Slave_Attack_Ichirin( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag1 = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag1 = 0.00000000;
 	this.flag2 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 3;
@@ -127,7 +127,7 @@ function Slave_Attack_Ichirin( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VY_Brake(0,75000000.0);
+				this.VY_Brake(0.75000000);
 
 				if (this.count == 90)
 				{
@@ -150,11 +150,11 @@ function Slave_Attack_Ichirin( t )
 			});
 			this.count = 0;
 			this.PlaySE(1965);
-			this.SetSpeed_XY(-12,50000000.0 * this.direction, 0,00000000.0);
+			this.SetSpeed_XY(-12.50000000 * this.direction, 0.00000000);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,75000000.0, -1,00000000.0 * this.direction);
-				this.CenterUpdate(0,05000000.0, 0,50000000.0);
+				this.VX_Brake(0.75000000, -1.00000000 * this.direction);
+				this.CenterUpdate(0.05000000, 0.50000000);
 			};
 		},
 		function ()
@@ -162,8 +162,8 @@ function Slave_Attack_Ichirin( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,05000000.0);
-				this.CenterUpdate(0,05000000.0, 3,00000000.0);
+				this.VX_Brake(0.05000000);
+				this.CenterUpdate(0.05000000, 3.00000000);
 
 				if (this.count >= this.flag5.wait)
 				{
@@ -184,13 +184,13 @@ function Slave_Move( t )
 	this.SetMotion(4992, 0);
 	this.armor = -1;
 	this.flag1 = this.Vector3();
-	this.flag2 = 0,00000000.0;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.flag2 = 0.00000000;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.count = 0;
 	this.GetFront();
 	this.centerStop = -2;
 
-	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0,50000000.0)
+	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0.50000000)
 	{
 		this.flag1.x = ::battle.corner_right - 400;
 		this.flag1.y = this.centerY - 150 + this.rand() % 301;
@@ -205,14 +205,14 @@ function Slave_Move( t )
 	this.stateLabel = function ()
 	{
 		this.Boss_WalkMotionUpdate(this.flag3);
-		this.flag2 += 0,40000001.0;
+		this.flag2 += 0.40000001;
 
-		if (this.flag2 >= 12,50000000.0)
+		if (this.flag2 >= 12.50000000)
 		{
-			this.flag2 = 12,50000000.0;
+			this.flag2 = 12.50000000;
 		}
 
-		this.SetSpeed_XY((this.flag1.x - this.x) * 0,10000000.0, (this.flag1.y - this.y) * 0,10000000.0);
+		this.SetSpeed_XY((this.flag1.x - this.x) * 0.10000000, (this.flag1.y - this.y) * 0.10000000);
 		local v_ = this.va.Length();
 
 		if (v_ >= this.flag2)
@@ -221,12 +221,12 @@ function Slave_Move( t )
 			this.ConvertTotalSpeed();
 		}
 
-		if (v_ <= 7,00000000.0)
+		if (v_ <= 7.00000000)
 		{
-			this.flag3 = 0,00000000.0;
+			this.flag3 = 0.00000000;
 		}
 
-		if (v_ <= 2,00000000.0)
+		if (v_ <= 2.00000000)
 		{
 			this.Change_Master_Ichirin(null);
 			return;

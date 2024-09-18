@@ -29,14 +29,14 @@ function Update_Normal()
 
 	foreach( a in this.mukon_pos )
 	{
-		a.RotateByRadian(0,03490658.0);
+		a.RotateByRadian(0.03490658);
 	}
 
 	foreach( val_, a in this.mukon_stock )
 	{
 		if (a)
 		{
-			a.SetSpeed_XY((this.team.current.x + this.mukon_pos[val_].x - a.x) * 0,10000000.0, (this.team.current.y + this.mukon_pos[val_].y - a.y) * 0,10000000.0);
+			a.SetSpeed_XY((this.team.current.x + this.mukon_pos[val_].x - a.x) * 0.10000000, (this.team.current.y + this.mukon_pos[val_].y - a.y) * 0.10000000);
 		}
 	}
 

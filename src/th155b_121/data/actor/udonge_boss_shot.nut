@@ -4,7 +4,7 @@ function Boss_Shot_M1( t )
 	this.owner.shot_actor.Add(this);
 	this.SetParent(this.owner, this.owner.x - this.x, this.owner.y - this.y);
 	this.rz = t.rot;
-	this.SetSpeed_Vec(30,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(30.00000000, this.rz, this.direction);
 	this.func = [
 		function ()
 		{
@@ -15,7 +15,7 @@ function Boss_Shot_M1( t )
 			this.SetMotion(this.motion, 2);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_Vec(-10,00000000.0, this.rz, 30,00000000.0, this.direction);
+				this.AddSpeed_Vec(-10.00000000, this.rz, 30.00000000, this.direction);
 			};
 			this.keyAction = null;
 		}
@@ -28,10 +28,10 @@ function Boss_Shot_M1( t )
 	};
 	this.keyAction = function ()
 	{
-		this.SetSpeed_XY(this.va.x * 0,50000000.0, this.va.y * 0,50000000.0);
+		this.SetSpeed_XY(this.va.x * 0.50000000, this.va.y * 0.50000000);
 		this.stateLabel = function ()
 		{
-			this.Vec_Brake(1,50000000.0, 0,50000000.0);
+			this.Vec_Brake(1.50000000, 0.50000000);
 		};
 	};
 }
@@ -41,19 +41,19 @@ function Boss_Shot_M2( t )
 	this.SetMotion(4918, 0);
 	this.owner.shot_actor.Add(this);
 	this.rz = t.rot;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 	this.SetSpeed_Vec(t.v, this.rz, this.direction);
 	this.cancelCount = 3;
-	this.flag2 = 0,00750000.0 + this.owner.com_difficulty * 0,00250000.0;
+	this.flag2 = 0.00750000 + this.owner.com_difficulty * 0.00250000;
 	this.func = [
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
 			this.stateLabel = function ()
 			{
-				this.alpha -= 0,10000000.0;
+				this.alpha -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -62,8 +62,8 @@ function Boss_Shot_M2( t )
 		function ()
 		{
 			this.SetMotion(4917, 0);
-			this.SetSpeed_XY(this.va.x * 0,66000003.0, this.va.y * 0,66000003.0);
-			this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+			this.SetSpeed_XY(this.va.x * 0.66000003, this.va.y * 0.66000003);
+			this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 			this.stateLabel = function ()
 			{
 				if (this.hitCount > 0 || this.cancelCount <= 0 || this.IsScreen(200 * this.sx))
@@ -73,7 +73,7 @@ function Boss_Shot_M2( t )
 				}
 
 				this.sx = this.sy += this.flag2;
-				this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+				this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 				if (this.hitCount == 0)
 				{
@@ -105,7 +105,7 @@ function Boss_Shot_S1_Vision( t )
 	this.flag2 = 0;
 	this.flag3 = 3;
 	this.rz = this.atan2(this.owner.target.y - this.y, (this.owner.target.x - this.x) * this.direction);
-	this.SetSpeed_Vec(-10,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(-10.00000000, this.rz, this.direction);
 
 	switch(this.owner.com_difficulty)
 	{
@@ -136,7 +136,7 @@ function Boss_Shot_S1_Vision( t )
 			this.SetMotion(this.motion, 2);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(-2,50000000.0 * this.direction, 0,00000000.0);
+				this.AddSpeed_XY(-2.50000000 * this.direction, 0.00000000);
 			};
 		}
 	];
@@ -146,7 +146,7 @@ function Boss_Shot_S1_Vision( t )
 			this.count = 0;
 			this.subState = function ()
 			{
-				this.Vec_Brake(1,00000000.0, 1,00000000.0);
+				this.Vec_Brake(1.00000000, 1.00000000);
 				this.count++;
 
 				if (this.count >= 5 && this.count % 4 == 1)
@@ -171,7 +171,7 @@ function Boss_Shot_S1_Vision( t )
 	];
 	this.subState = function ()
 	{
-		this.Vec_Brake(1,00000000.0, 0,00000000.0);
+		this.Vec_Brake(1.00000000, 0.00000000);
 	};
 	this.stateLabel = function ()
 	{
@@ -184,7 +184,7 @@ function Boss_Shot_S1_Bullet( t )
 	this.SetMotion(4929, 0);
 	this.owner.shot_actor.Add(this);
 	this.rz = t.rot;
-	this.SetSpeed_Vec(7,50000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(7.50000000, this.rz, this.direction);
 	this.cancelCount = 1;
 	local t_ = {};
 	t_.rot <- this.rz;
@@ -196,7 +196,7 @@ function Boss_Shot_S1_Bullet( t )
 			{
 			};
 			this.stateLabel = null;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.SetMotion(this.motion, 3);
 			this.keyAction = this.ReleaseActor;
 		}

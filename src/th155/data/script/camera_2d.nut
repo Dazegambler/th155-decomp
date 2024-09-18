@@ -24,16 +24,16 @@ function UpdateDebugCamera( camera )
 
 	if (a_.input.b0 > 0)
 	{
-		::camera.target_zoom += 0,01000000.0;
+		::camera.target_zoom += 0.01000000;
 	}
 
 	if (a_.input.b1 > 0)
 	{
-		::camera.target_zoom -= 0,01000000.0;
+		::camera.target_zoom -= 0.01000000;
 
-		if (::camera.target_zoom < 1,00000000.0)
+		if (::camera.target_zoom < 1.00000000)
 		{
-			::camera.target_zoom = 1,00000000.0;
+			::camera.target_zoom = 1.00000000;
 		}
 	}
 
@@ -52,8 +52,8 @@ function UpdateBattleCamera( camera )
 	}
 	else
 	{
-		this.x += (camera.target_x - this.x) * 0,20000000.0;
-		this.y += (camera.target_y - this.y) * 0,20000000.0;
+		this.x += (camera.target_x - this.x) * 0.20000000;
+		this.y += (camera.target_y - this.y) * 0.20000000;
 	}
 
 	this.offset_x = camera.offset_x;
@@ -91,9 +91,9 @@ function UpdateBattleCamera( camera )
 
 function UpdaetEventCamera( camera )
 {
-	camera.zoom = 2,00000000.0;
-	this.x = (camera.left + camera.right) * 0,50000000.0;
-	this.y = (camera.top + camera.bottom) * 0,50000000.0;
+	camera.zoom = 2.00000000;
+	this.x = (camera.left + camera.right) * 0.50000000;
+	this.y = (camera.top + camera.bottom) * 0.50000000;
 	this.left = this.x - 640;
 	this.right = this.x + 640;
 	this.top = this.y - 360;

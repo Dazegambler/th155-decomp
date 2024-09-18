@@ -11,14 +11,14 @@ function CheckDirectoryExisted( _st_dirname )
 
 			if (attr == -1 || (attr & 16) == 0)
 			{
-				::libact.MessageBox("\x2514s‚\x2554•K—v‚\x255aƒfƒBƒŒƒNƒgƒŠ‚\x2560ì¬‚\x2554¸”s‚µ‚\x2584‚µ‚½");
+				::libact.MessageBox("\x2514s‚\x2554•K—v‚\x255aƒfƒBƒŒƒNƒgƒŠ‚\x2560\x221e¬‚\x2554\x2555”s‚\x2561‚\x2584‚\x2561‚\x255c");
 				this.ExitGame();
 				return false;
 			}
 		}
 		else
 		{
-			::libact.MessageBox("\x2514s‚\x2554•K—v‚\x255aƒfƒBƒŒƒNƒgƒŠ‚\x2560ì¬‚\x2554¸”s‚µ‚\x2584‚µ‚½");
+			::libact.MessageBox("\x2514s‚\x2554•K—v‚\x255aƒfƒBƒŒƒNƒgƒŠ‚\x2560\x221e¬‚\x2554\x2555”s‚\x2561‚\x2584‚\x2561‚\x255c");
 			this.ExitGame();
 			return false;
 		}

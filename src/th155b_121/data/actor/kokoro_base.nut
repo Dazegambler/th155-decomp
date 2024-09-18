@@ -11,7 +11,7 @@ function EndtoFreeMove()
 	}
 	else if (this.y > this.centerY)
 	{
-		if (this.va.y > 6,00000000.0)
+		if (this.va.y > 6.00000000)
 		{
 			this.Fall_Init(null);
 		}
@@ -20,7 +20,7 @@ function EndtoFreeMove()
 			this.Up_Init(null);
 		}
 	}
-	else if (this.va.y < -6,00000000.0)
+	else if (this.va.y < -6.00000000)
 	{
 		this.Up_Init(null);
 	}
@@ -60,7 +60,7 @@ function ChangeEmotion( type_ )
 	{
 		local t_ = {};
 		t_.keyTake <- type_;
-		this.SetFreeObject(this.x, this.y, 1,00000000.0, this.EmotionChange_Aura, t_);
+		this.SetFreeObject(this.x, this.y, 1.00000000, this.EmotionChange_Aura, t_);
 	}
 
 	switch(type_)
@@ -121,7 +121,7 @@ function SummonMask()
 		{
 			local t_ = {};
 			t_.type <- i;
-			t_.rot <- 120 * i * 0,01745329.0;
+			t_.rot <- 120 * i * 0.01745329;
 			this.mask.append(this.SetShot(this.x, this.y, this.direction, this.MaskObject, t_).weakref());
 		}
 	}
@@ -175,12 +175,12 @@ function Update_Normal()
 		}
 	}
 
-	this.maskRot += 2,00000000.0 * 0,01745329.0;
-	this.maskYaw += 0,01745329.0;
-	this.maskPitch += 0,33000001.0 * 0,01745329.0;
+	this.maskRot += 2.00000000 * 0.01745329;
+	this.maskYaw += 0.01745329;
+	this.maskPitch += 0.33000001 * 0.01745329;
 	this.uv_count++;
 	local mat = ::manbow.Matrix();
-	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0,20000000.0 % 1024, 64, 0);
+	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0.20000000 % 1024, 64, 0);
 	this.uv.SetWorldTransform(mat);
 
 	if (this.mask == null && this.IsFree())

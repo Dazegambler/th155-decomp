@@ -241,10 +241,10 @@ function Team_Change_Common()
 		this.target.team.combo_change++;
 	}
 
-	this.rx = 0,00000000.0;
-	this.ry = 0,00000000.0;
-	this.rz = 0,00000000.0;
-	this.sx = this.sy = 1,00000000.0;
+	this.rx = 0.00000000;
+	this.ry = 0.00000000;
+	this.rz = 0.00000000;
+	this.sx = this.sy = 1.00000000;
 	this.FitBoxfromSprite();
 	this.hitBackFlag = 0;
 	this.enableKO = true;
@@ -270,7 +270,7 @@ function Team_Change_Common()
 	this.team.current.dashCount = this.dashCount;
 	this.BuffReset();
 	this.team.current.DrawActorPriority(190);
-	this.team.current.masterAlpha = 1,00000000.0;
+	this.team.current.masterAlpha = 1.00000000;
 	this.team.current.Warp(this.x, this.y);
 	this.change_reset();
 	this.team.current.Team_FreeChangeAction();
@@ -286,7 +286,7 @@ function Team_Change_Common()
 	}
 	else
 	{
-		this.team.current.hyouiAura = this.SetEffect(this.team.current.x, this.team.current.y, 1,00000000.0, this.Hyoui_Aura, {}, this.team.current.weakref()).weakref();
+		this.team.current.hyouiAura = this.SetEffect(this.team.current.x, this.team.current.y, 1.00000000, this.Hyoui_Aura, {}, this.team.current.weakref()).weakref();
 		this.team.master.team_update = this.Team_Update_Slave;
 	}
 }
@@ -308,7 +308,7 @@ function Team_Master_Out()
 	{
 		if (this.count >= 30)
 		{
-			this.masterAlpha -= 0,05000000.0;
+			this.masterAlpha -= 0.05000000;
 
 			if (this.masterAlpha <= 0)
 			{
@@ -348,14 +348,14 @@ function Team_Bench_Fade()
 	this.ResetSpeed();
 	this.DrawActorPriority(189);
 	this.SetMotion(3910, 0);
-	this.SetSpeed_XY(-8,00000000.0 * this.direction, -5,00000000.0);
+	this.SetSpeed_XY(-8.00000000 * this.direction, -5.00000000);
 	this.stateLabel = function ()
 	{
-		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0,00000000.0;
-		this.Vec_Brake(0,50000000.0, 0,50000000.0);
-		this.masterAlpha -= 0,02500000.0;
+		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0.00000000;
+		this.Vec_Brake(0.50000000, 0.50000000);
+		this.masterAlpha -= 0.02500000;
 
-		if (this.masterAlpha <= 0,00000000.0)
+		if (this.masterAlpha <= 0.00000000)
 		{
 			this.LabelClear();
 			this.ResetSpeed();
@@ -370,22 +370,22 @@ function Team_Bench_Fade_Spell()
 	this.ResetSpeed();
 	this.DrawActorPriority(189);
 	this.SetMotion(3910, 0);
-	this.SetSpeed_XY(-8,00000000.0 * this.direction, -5,00000000.0);
+	this.SetSpeed_XY(-8.00000000 * this.direction, -5.00000000);
 	this.flag1 = this.team.current.weakref();
 	this.stateLabel = function ()
 	{
-		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0,00000000.0;
-		this.Vec_Brake(0,50000000.0, 0,50000000.0);
+		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0.00000000;
+		this.Vec_Brake(0.50000000, 0.50000000);
 
 		if (this.flag1.IsAttack() == 0)
 		{
 			this.stateLabel = function ()
 			{
-				this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0,00000000.0;
-				this.Vec_Brake(0,50000000.0, 0,50000000.0);
-				this.masterAlpha -= 0,10000000.0;
+				this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0.00000000;
+				this.Vec_Brake(0.50000000, 0.50000000);
+				this.masterAlpha -= 0.10000000;
 
-				if (this.masterAlpha <= 0,00000000.0)
+				if (this.masterAlpha <= 0.00000000)
 				{
 					this.LabelClear();
 					this.ResetSpeed();
@@ -403,15 +403,15 @@ function Team_Bench_Recover( t_ )
 	this.Team_Change_Common();
 	this.DrawActorPriority(189);
 	this.SetMotion(3910, 0);
-	this.SetSpeed_XY(-8,00000000.0 * this.direction, -5,00000000.0);
+	this.SetSpeed_XY(-8.00000000 * this.direction, -5.00000000);
 	this.team.current.Team_Change_Recover.call(this.team.current, this.direction);
 	this.stateLabel = function ()
 	{
-		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0,00000000.0;
-		this.Vec_Brake(0,50000000.0, 0,50000000.0);
-		this.masterAlpha -= 0,02500000.0;
+		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0.00000000;
+		this.Vec_Brake(0.50000000, 0.50000000);
+		this.masterAlpha -= 0.02500000;
 
-		if (this.masterAlpha <= 0,00000000.0)
+		if (this.masterAlpha <= 0.00000000)
 		{
 			this.LabelClear();
 			this.ResetSpeed();
@@ -434,31 +434,31 @@ function Team_Change_Recover( dir_ )
 
 	if (this.centerStop * this.centerStop <= 1)
 	{
-		this.SetSpeed_XY(-17,50000000.0 * this.direction, 0,00000000.0);
+		this.SetSpeed_XY(-17.50000000 * this.direction, 0.00000000);
 	}
 	else if (this.y <= this.centerY)
 	{
 		this.centerStop = -3;
-		this.SetSpeed_XY(-17,50000000.0 * this.direction, -6,00000000.0);
+		this.SetSpeed_XY(-17.50000000 * this.direction, -6.00000000);
 	}
 	else
 	{
 		this.centerStop = 3;
-		this.SetSpeed_XY(-17,50000000.0 * this.direction, 6,00000000.0);
+		this.SetSpeed_XY(-17.50000000 * this.direction, 6.00000000);
 	}
 
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,20000000.0, null);
+		this.CenterUpdate(0.20000000, null);
 
 		if (this.centerStop * this.centerStop <= 1)
 		{
-			this.VX_Brake(1,00000000.0);
+			this.VX_Brake(1.00000000);
 		}
 		else
 		{
-			this.VX_Brake(1,00000000.0, -3,00000000.0 * this.direction);
+			this.VX_Brake(1.00000000, -3.00000000 * this.direction);
 		}
 
 		if (this.count == 40)
@@ -468,11 +468,11 @@ function Team_Change_Recover( dir_ )
 			{
 				if (this.centerStop * this.centerStop <= 1)
 				{
-					this.VX_Brake(1,00000000.0);
+					this.VX_Brake(1.00000000);
 				}
 				else
 				{
-					this.VX_Brake(1,00000000.0, -3,00000000.0 * this.direction);
+					this.VX_Brake(1.00000000, -3.00000000 * this.direction);
 				}
 			};
 		}
@@ -487,28 +487,28 @@ function Team_Bench_Suicide( t_ )
 	this.DrawActorPriority(189);
 	this.SetMotion(218, 0);
 	this.team.current.Team_Change_Suicide.call(this.team.current, this.direction);
-	this.SetSpeed_XY(-1,50000000.0 * this.direction, -11,00000000.0);
+	this.SetSpeed_XY(-1.50000000 * this.direction, -11.00000000);
 	this.count = 0;
 	this.subState = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,34999999.0);
+		this.AddSpeed_XY(0.00000000, 0.34999999);
 
-		if (this.va.y > -1,00000000.0)
+		if (this.va.y > -1.00000000)
 		{
 			this.subState = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,05000000.0);
+				this.AddSpeed_XY(0.00000000, 0.05000000);
 			};
 		}
 	};
 	this.stateLabel = function ()
 	{
-		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0,00000000.0;
+		this.vf.x = this.vf.y = this.vfBaria.x = this.vfBaria.y = 0.00000000;
 		this.subState();
 
 		if (this.va.x > 0 && this.x > ::battle.corner_right || this.va.x < 0 && this.x < ::battle.corner_left)
 		{
-			this.SetSpeed_XY(0,00000000.0, null);
+			this.SetSpeed_XY(0.00000000, null);
 		}
 
 		if (this.count == 40)
@@ -539,13 +539,13 @@ function Team_Change_Suicide( t_ )
 	this.PlaySE(903);
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_Team_Change, {}, this.weakref());
 	this.centerStop = -2;
-	this.SetSpeed_Vec(8,00000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(8.00000000, -160 * 0.01745329, this.direction);
 	this.count = 0;
 	this.stateLabel = function ()
 	{
 		if (this.count >= 20)
 		{
-			this.Vec_Brake(0,75000000.0, 0,50000000.0);
+			this.Vec_Brake(0.75000000, 0.50000000);
 		}
 
 		if (this.count == 90)
@@ -553,14 +553,14 @@ function Team_Change_Suicide( t_ )
 			this.SetMotion(3994, 2);
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,50000000.0, 8,00000000.0);
+				this.CenterUpdate(0.50000000, 8.00000000);
 
 				if (this.centerStop * this.centerStop <= 1)
 				{
 					this.SetMotion(3994, 4);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -602,7 +602,7 @@ function Team_Change_AirMove( t_ )
 	this.Team_Bench_In();
 	this.team.current.ResetSpeed();
 
-	if (v_ == 0,00000000.0)
+	if (v_ == 0.00000000)
 	{
 		if (this.y < this.centerY)
 		{
@@ -636,8 +636,8 @@ function Team_Change_AirMoveB( t_ )
 {
 	this.ResetSpeed();
 	this.Team_Change_AirMoveCommon(null);
-	this.flag5.vx = 6,00000000.0;
-	this.flag5.vy = 3,50000000.0;
+	this.flag5.vx = 6.00000000;
+	this.flag5.vy = 3.50000000;
 	this.flag5.g = this.baseGravity;
 }
 
@@ -649,8 +649,8 @@ function Team_Change_AirMoveCommon( t_ )
 	this.hitResult = 1;
 	this.SetMotion(3940, 0);
 	this.flag5 = {};
-	this.flag5.vy <- 0,00000000.0;
-	this.flag5.vx <- 0,00000000.0;
+	this.flag5.vy <- 0.00000000;
+	this.flag5.vx <- 0.00000000;
 	this.flag5.g <- 0;
 	this.stateLabel = function ()
 	{
@@ -678,7 +678,7 @@ function Team_Change_AirMoveCommon( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -694,7 +694,7 @@ function Team_Change_AirMoveCommon( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -707,8 +707,8 @@ function Team_Change_AirBackB( t_ )
 {
 	this.ResetSpeed();
 	this.Team_Change_AirBackCommon(null);
-	this.flag5.vx = -6,00000000.0;
-	this.flag5.vy = 3,50000000.0;
+	this.flag5.vx = -6.00000000;
+	this.flag5.vy = 3.50000000;
 	this.flag5.g = this.baseGravity;
 }
 
@@ -720,8 +720,8 @@ function Team_Change_AirBackCommon( t_ )
 	this.hitResult = 1;
 	this.SetMotion(3941, 0);
 	this.flag5 = {};
-	this.flag5.vy <- 0,00000000.0;
-	this.flag5.vx <- 0,00000000.0;
+	this.flag5.vy <- 0.00000000;
+	this.flag5.vx <- 0.00000000;
 	this.flag5.g <- 0;
 	this.stateLabel = function ()
 	{
@@ -749,7 +749,7 @@ function Team_Change_AirBackCommon( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -765,7 +765,7 @@ function Team_Change_AirBackCommon( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -777,8 +777,8 @@ function Team_Change_AirBackCommon( t_ )
 function Team_Change_AirSlideUpperB( t_ )
 {
 	this.Team_Change_AirSlideUpperCommon(null);
-	this.flag5.vx = 0,00000000.0;
-	this.flag5.vy = -6,50000000.0;
+	this.flag5.vx = 0.00000000;
+	this.flag5.vy = -6.50000000;
 	this.flag5.g = this.baseGravity;
 }
 
@@ -790,8 +790,8 @@ function Team_Change_AirSlideUpperCommon( t_ )
 	this.hitResult = 1;
 	this.SetMotion(3942, 0);
 	this.flag5 = {};
-	this.flag5.vy <- 0,00000000.0;
-	this.flag5.vx <- 0,00000000.0;
+	this.flag5.vy <- 0.00000000;
+	this.flag5.vx <- 0.00000000;
 	this.flag5.g <- 0;
 	this.stateLabel = function ()
 	{
@@ -810,7 +810,7 @@ function Team_Change_AirSlideUpperCommon( t_ )
 					this.SetMotion(this.motion, 4);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -822,8 +822,8 @@ function Team_Change_AirSlideUnderB( t_ )
 {
 	this.ResetSpeed();
 	this.Team_Change_AirSlideUnderCommon(null);
-	this.flag5.vx = 0,00000000.0;
-	this.flag5.vy = 6,50000000.0;
+	this.flag5.vx = 0.00000000;
+	this.flag5.vy = 6.50000000;
 	this.flag5.g = this.baseGravity;
 }
 
@@ -835,8 +835,8 @@ function Team_Change_AirSlideUnderCommon( t_ )
 	this.hitResult = 1;
 	this.SetMotion(3943, 0);
 	this.flag5 = {};
-	this.flag5.vy <- 0,00000000.0;
-	this.flag5.vx <- 0,00000000.0;
+	this.flag5.vy <- 0.00000000;
+	this.flag5.vx <- 0.00000000;
 	this.flag5.g <- 0;
 	this.stateLabel = function ()
 	{
@@ -855,7 +855,7 @@ function Team_Change_AirSlideUnderCommon( t_ )
 					this.SetMotion(this.motion, 4);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -892,20 +892,20 @@ function Team_ChangeDashBack_Init( t )
 	this.team.op_stop = 180;
 	this.team.op_stop_max = this.team.op_stop;
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_GuardCancel, {});
-	this.SetSpeed_XY(-10,00000000.0 * this.direction, -5,00000000.0);
+	this.SetSpeed_XY(-10.00000000 * this.direction, -5.00000000);
 	this.centerStop = -3;
 	this.stateLabel = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
+		this.AddSpeed_XY(0.00000000, 0.50000000);
 
-		if (this.y > this.centerY && this.va.y > 0,00000000.0)
+		if (this.y > this.centerY && this.va.y > 0.00000000)
 		{
 			this.SetMotion(this.motion, 3);
 			this.centerStop = 1;
-			this.SetSpeed_XY(null, 2,50000000.0);
+			this.SetSpeed_XY(null, 2.50000000);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,75000000.0);
+				this.VX_Brake(0.75000000);
 			};
 		}
 	};
@@ -923,20 +923,20 @@ function Team_ChangeDashBack_Air_Init( t )
 
 	if (this.y < this.centerY)
 	{
-		this.SetSpeed_XY(-10,00000000.0 * this.direction, -4,00000000.0);
+		this.SetSpeed_XY(-10.00000000 * this.direction, -4.00000000);
 		this.centerStop = -3;
 	}
 	else
 	{
-		this.SetSpeed_XY(-10,00000000.0 * this.direction, 4,00000000.0);
+		this.SetSpeed_XY(-10.00000000 * this.direction, 4.00000000);
 		this.centerStop = -3;
 	}
 
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,20000000.0);
-		this.CenterUpdate(0,15000001.0, null);
+		this.VX_Brake(0.20000000);
+		this.CenterUpdate(0.15000001, null);
 
 		if (this.count == 15)
 		{
@@ -945,7 +945,7 @@ function Team_ChangeDashBack_Air_Init( t )
 			{
 				if (this.centerStop == 0)
 				{
-					this.VX_Brake(0,50000000.0);
+					this.VX_Brake(0.50000000);
 				}
 			};
 		}
@@ -967,26 +967,26 @@ function CallSpellCard_Slave( t )
 {
 	this.LabelClear();
 	this.ResetSpeed();
-	this.masterAlpha = 0,00000000.0;
+	this.masterAlpha = 0.00000000;
 	this.SetMotion(3993, 1);
 	this.DrawActorPriority(189);
 	this.Warp(this.team.master.x, this.team.master.y - 25);
 	this.direction = this.team.master.direction;
-	this.SetSpeed_XY(-10,00000000.0 * this.direction, -1,00000000.0);
+	this.SetSpeed_XY(-10.00000000 * this.direction, -1.00000000);
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.masterAlpha += 0,10000000.0;
-		this.Vec_Brake(0,40000001.0, 0,25000000.0);
+		this.masterAlpha += 0.10000000;
+		this.Vec_Brake(0.40000001, 0.25000000);
 
 		if (this.count >= 30)
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,40000001.0);
-				this.masterAlpha -= 0,10000000.0;
+				this.VX_Brake(0.40000001);
+				this.masterAlpha -= 0.10000000;
 
-				if (this.masterAlpha <= 0,00000000.0)
+				if (this.masterAlpha <= 0.00000000)
 				{
 					this.Team_Bench_In();
 				}
@@ -1029,8 +1029,8 @@ function Team_Change_Counter( t )
 	local t_ = {};
 	t_.init <- this.EF_FadeBackScreen;
 	t_.pare <- this.weakref();
-	this.flag1 = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
-	this.EF_Set_FadeColor.call(this.flag1, 0,50000000.0, 0,00000000.0, 0,00000000.0, 0,00000000.0);
+	this.flag1 = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
+	this.EF_Set_FadeColor.call(this.flag1, 0.50000000, 0.00000000, 0.00000000, 0.00000000);
 	this.EF_BeginFadeOut.call(this.flag1, 0, 2);
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_GuardCancel, {});
 	this.SetTimeStop(15);
@@ -1057,7 +1057,7 @@ function Team_Change_CounterB( dir_ )
 	this.SetCommonShot(this.x, this.y, this.direction, this.CallAttack_Shot, {});
 	local val_ = this.team.op;
 	this.team.op_leak += 2000;
-	this.team.op_stop = (600 - 540 * ((val_ - 1000) / 1000,00000000.0)).tointeger();
+	this.team.op_stop = (600 - 540 * ((val_ - 1000) / 1000.00000000)).tointeger();
 	this.team.op_stop_max = this.team.op_stop;
 	this.PlaySE(903);
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_Team_Change, {}, this.weakref());
@@ -1195,10 +1195,10 @@ function Team_Change_Attack( t )
 	}
 
 	this.team.stop_reserve = 0;
-	local scale_ = 0,66000003.0 + (this.team.op - 1000) / 1000,00000000.0 * 0,34000000.0;
-	scale_ = this.Math_MinMax(scale_, 0,66000003.0, 1,00000000.0);
+	local scale_ = 0.66000003 + (this.team.op - 1000) / 1000.00000000 * 0.34000000;
+	scale_ = this.Math_MinMax(scale_, 0.66000003, 1.00000000);
 
-	if (this.target.team.kaiki_scale == 1,00000000.0)
+	if (this.target.team.kaiki_scale == 1.00000000)
 	{
 		this.target.team.kaiki_scale = scale_;
 	}
@@ -1226,10 +1226,10 @@ function Team_Change_Attack_Air( t )
 	}
 
 	this.team.stop_reserve = 0;
-	local scale_ = 0,66000003.0 + (this.team.op - 1000) / 1000,00000000.0 * 0,34000000.0;
-	scale_ = this.Math_MinMax(scale_, 0,66000003.0, 1,00000000.0);
+	local scale_ = 0.66000003 + (this.team.op - 1000) / 1000.00000000 * 0.34000000;
+	scale_ = this.Math_MinMax(scale_, 0.66000003, 1.00000000);
 
-	if (this.target.team.kaiki_scale == 1,00000000.0)
+	if (this.target.team.kaiki_scale == 1.00000000)
 	{
 		this.target.team.kaiki_scale = scale_;
 	}
@@ -1260,10 +1260,10 @@ function Team_Change_Shot( t )
 	}
 
 	this.team.stop_reserve = 0;
-	local scale_ = 0,66000003.0 + (this.team.op - 1000) / 1000,00000000.0 * 0,34000000.0;
-	scale_ = this.Math_MinMax(scale_, 0,66000003.0, 1,00000000.0);
+	local scale_ = 0.66000003 + (this.team.op - 1000) / 1000.00000000 * 0.34000000;
+	scale_ = this.Math_MinMax(scale_, 0.66000003, 1.00000000);
 
-	if (this.target.team.kaiki_scale == 1,00000000.0)
+	if (this.target.team.kaiki_scale == 1.00000000)
 	{
 		this.target.team.kaiki_scale = scale_;
 	}
@@ -1336,10 +1336,10 @@ function Team_Change_Skill()
 		this.Team_Change_Common();
 		this.PlaySE(900);
 		this.SetEffect(this.x, this.y - 20, this.direction, this.EF_Team_ChangeB, {}, this.weakref());
-		local scale_ = 0,66000003.0 + (this.team.op - 1000) / 1000,00000000.0 * 0,34000000.0;
-		scale_ = this.Math_MinMax(scale_, 0,66000003.0, 1,00000000.0);
+		local scale_ = 0.66000003 + (this.team.op - 1000) / 1000.00000000 * 0.34000000;
+		scale_ = this.Math_MinMax(scale_, 0.66000003, 1.00000000);
 
-		if (this.target.team.kaiki_scale == 1,00000000.0)
+		if (this.target.team.kaiki_scale == 1.00000000)
 		{
 			this.target.team.kaiki_scale = scale_;
 		}
@@ -1418,10 +1418,10 @@ function Team_Change_Spell( t )
 		}
 
 		this.team.stop_reserve = 0;
-		local scale_ = 0,66000003.0 + (this.team.op - 1000) / 1000,00000000.0 * 0,34000000.0;
-		scale_ = this.Math_MinMax(scale_, 0,66000003.0, 1,00000000.0);
+		local scale_ = 0.66000003 + (this.team.op - 1000) / 1000.00000000 * 0.34000000;
+		scale_ = this.Math_MinMax(scale_, 0.66000003, 1.00000000);
 
-		if (this.target.team.kaiki_scale == 1,00000000.0)
+		if (this.target.team.kaiki_scale == 1.00000000)
 		{
 			this.target.team.kaiki_scale = scale_;
 		}

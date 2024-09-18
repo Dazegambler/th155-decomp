@@ -39,7 +39,7 @@ function Round_Begin()
 	];
 	this.enable_contact_test = false;
 	::camera.Reset();
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 
 	if (this.team[0].current.func_beginDemo)
 	{
@@ -186,7 +186,7 @@ function Round_Fight()
 	this.enableTimeCount = true;
 	this.enableTimeUp = true;
 	this.enable_contact_test = true;
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	::camera.SetMode_Battle();
 }
 
@@ -236,7 +236,7 @@ function Round_KO()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.state = 64;
@@ -457,7 +457,7 @@ function Round_TimeUpCall()
 
 		this.battleUpdate = this.Game_TimeUpCallUpdate;
 		w_.autoCamera = false;
-		::camera.SetTarget(w_.x, w_.y - 20, 2,00000000.0, false);
+		::camera.SetTarget(w_.x, w_.y - 20, 2.00000000, false);
 		local a = this.team[0].master;
 
 		if (a.team.current == a.team.slave)
@@ -470,7 +470,7 @@ function Round_TimeUpCall()
 		}
 
 		a.autoCamera = false;
-		::camera.SetTarget(a.x, a.y - 20, 2,00000000.0, false);
+		::camera.SetTarget(a.x, a.y - 20, 2.00000000, false);
 		local t = {};
 		t.winner <- a.type;
 		t.team <- a.team;
@@ -483,27 +483,27 @@ function Round_TimeUpCall()
 		{
 			if (a.team.index == 0)
 			{
-				this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+				this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 			}
 			else
 			{
-				this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+				this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 			}
 
-			this.infoActor[1] = a.SetFreeObject(0, 600, 1,00000000.0, a.WinPlayerName_L, {}).weakref();
+			this.infoActor[1] = a.SetFreeObject(0, 600, 1.00000000, a.WinPlayerName_L, {}).weakref();
 		}
 		else
 		{
 			if (a.team.index == 0)
 			{
-				this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+				this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 			}
 			else
 			{
-				this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+				this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 			}
 
-			this.infoActor[1] = a.SetFreeObject(1280, 600, 1,00000000.0, a.WinPlayerName_R, {}).weakref();
+			this.infoActor[1] = a.SetFreeObject(1280, 600, 1.00000000, a.WinPlayerName_R, {}).weakref();
 		}
 
 		break;
@@ -523,7 +523,7 @@ function Round_TimeUpCall()
 
 		this.battleUpdate = this.Game_TimeUpCallUpdate;
 		w_.autoCamera = false;
-		::camera.SetTarget(w_.x, w_.y - 20, 2,00000000.0, false);
+		::camera.SetTarget(w_.x, w_.y - 20, 2.00000000, false);
 		local a = this.team[1].master;
 
 		if (a.team.current == a.team.slave)
@@ -536,7 +536,7 @@ function Round_TimeUpCall()
 		}
 
 		a.autoCamera = false;
-		::camera.SetTarget(a.x, a.y - 20, 2,00000000.0, false);
+		::camera.SetTarget(a.x, a.y - 20, 2.00000000, false);
 		local t = {};
 		t.winner <- a.type;
 		t.team <- a.team;
@@ -549,27 +549,27 @@ function Round_TimeUpCall()
 		{
 			if (a.team.index == 0)
 			{
-				this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+				this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 			}
 			else
 			{
-				this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+				this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 			}
 
-			this.infoActor[1] = a.SetFreeObject(0, 600, 1,00000000.0, a.WinPlayerName_L, {}).weakref();
+			this.infoActor[1] = a.SetFreeObject(0, 600, 1.00000000, a.WinPlayerName_L, {}).weakref();
 		}
 		else
 		{
 			if (a.team.index == 0)
 			{
-				this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+				this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 			}
 			else
 			{
-				this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+				this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 			}
 
-			this.infoActor[1] = a.SetFreeObject(1280, 600, 1,00000000.0, a.WinPlayerName_R, {}).weakref();
+			this.infoActor[1] = a.SetFreeObject(1280, 600, 1.00000000, a.WinPlayerName_R, {}).weakref();
 		}
 
 		break;
@@ -659,7 +659,7 @@ function Round_Win()
 	}
 
 	a.autoCamera = false;
-	::camera.SetTarget(a.x, a.y - 20, 2,00000000.0, false);
+	::camera.SetTarget(a.x, a.y - 20, 2.00000000, false);
 	local t = {};
 	t.winner <- a.type;
 	t.team <- a.team;
@@ -672,27 +672,27 @@ function Round_Win()
 	{
 		if (a.team.index == 0)
 		{
-			this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+			this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 		}
 		else
 		{
-			this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+			this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 		}
 
-		this.infoActor[1] = a.SetFreeObject(0, 600, 1,00000000.0, a.WinPlayerName_L, {}).weakref();
+		this.infoActor[1] = a.SetFreeObject(0, 600, 1.00000000, a.WinPlayerName_L, {}).weakref();
 	}
 	else
 	{
 		if (a.team.index == 0)
 		{
-			this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+			this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
 		}
 		else
 		{
-			this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win2P, t).weakref();
+			this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win2P, t).weakref();
 		}
 
-		this.infoActor[1] = a.SetFreeObject(1280, 600, 1,00000000.0, a.WinPlayerName_R, {}).weakref();
+		this.infoActor[1] = a.SetFreeObject(1280, 600, 1.00000000, a.WinPlayerName_R, {}).weakref();
 	}
 }
 
@@ -844,7 +844,7 @@ function RoundReset()
 	this.team[0].ResetRound();
 	this.team[1].ResetRound();
 	::camera.Reset();
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	this.time = 99 * 90;
 	this.enableTimeCount = false;
 	this.enableTimeUp = false;

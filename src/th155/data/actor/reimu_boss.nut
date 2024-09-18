@@ -3,7 +3,7 @@ function Master_Spell_1()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.boss_spell_func = function ()
 	{
@@ -39,14 +39,14 @@ function Master_Spell_1_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -60,7 +60,7 @@ function Master_Spell_1_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Dream_Attack();
 				}
@@ -95,13 +95,13 @@ function Slave_Attack_Yukari( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 3;
 	this.flag5.shotNum <- 6;
-	this.flag5.shotRot <- 0,00000000.0;
-	this.flag5.shotRotAdd <- 1,04719746.0;
+	this.flag5.shotRot <- 0.00000000;
+	this.flag5.shotRotAdd <- 1.04719746;
 	this.flag5.wait <- 150;
 	this.lavelClearEvent = function ()
 	{
@@ -117,17 +117,17 @@ function Slave_Attack_Yukari( t )
 	{
 	case 1:
 		this.flag5.shotNum = 8;
-		this.flag5.shotRotAdd = 0,78539813.0;
+		this.flag5.shotRotAdd = 0.78539813;
 		break;
 
 	case 2:
 		this.flag5.shotNum = 10;
-		this.flag5.shotRotAdd = 36 * 0,01745329.0;
+		this.flag5.shotRotAdd = 36 * 0.01745329;
 		break;
 
 	case 3:
 		this.flag5.shotNum = 12;
-		this.flag5.shotRotAdd = 0,52359873.0;
+		this.flag5.shotRotAdd = 0.52359873;
 		break;
 	}
 
@@ -202,16 +202,16 @@ function Slave_Attack_Yukari2( t )
 		this.flag4 = null;
 	};
 	this.count = 0;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.flag3 = ::manbow.Actor2DProcGroup();
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotNum <- 2;
-	this.flag5.shotWay <- 3,14159203.0;
+	this.flag5.shotWay <- 3.14159203;
 	this.flag5.shotCycle <- 10;
 	this.flag5.shotCount <- 120;
 	this.flag5.shotRot <- 0;
-	this.flag5.shotRotSpeed <- 0,26179937.0;
+	this.flag5.shotRotSpeed <- 0.26179937;
 
 	switch(this.com_difficulty)
 	{
@@ -225,14 +225,14 @@ function Slave_Attack_Yukari2( t )
 
 	case 2:
 		this.flag5.shotNum = 3;
-		this.flag5.shotWay = 2,09439468.0;
+		this.flag5.shotWay = 2.09439468;
 		this.flag5.shotCycle = 5;
 		this.flag5.shotCount = 180;
 		break;
 
 	case 3:
 		this.flag5.shotNum = 4;
-		this.flag5.shotWay = 1,57079601.0;
+		this.flag5.shotWay = 1.57079601;
 		this.flag5.shotCycle = 5;
 		this.flag5.shotCount = 240;
 		break;
@@ -243,7 +243,7 @@ function Slave_Attack_Yukari2( t )
 		{
 			this.PlaySE(4430);
 			local pos_ = this.Vector3();
-			pos_.x = 100,00000000.0;
+			pos_.x = 100.00000000;
 			pos_.RotateByRadian(this.flag5.shotRot);
 
 			for( local i = 0; i < this.flag5.shotNum; i++ )
@@ -263,15 +263,15 @@ function Slave_Attack_Yukari2( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.flag1 += 0,50000000.0;
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 > 10,00000000.0)
+		if (this.flag1 > 10.00000000)
 		{
-			this.flag1 = 10,00000000.0;
+			this.flag1 = 10.00000000;
 		}
 
-		this.va.x = (640 - this.x) * 0,10000000.0;
-		this.va.y = (200 - this.y) * 0,10000000.0;
+		this.va.x = (640 - this.x) * 0.10000000;
+		this.va.y = (200 - this.y) * 0.10000000;
 
 		if (this.va.Length() >= this.flag1)
 		{
@@ -292,7 +292,7 @@ function Slave_Attack_Yukari2( t )
 
 		if (this.count == this.flag5.shotCount)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		if (this.count == this.flag5.shotCount + 90)

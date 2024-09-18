@@ -36,7 +36,7 @@ function Rush_Smash()
 		{
 			if (this.Atk_RushC_Under_Init(null))
 			{
-				if (this.direction == 1,00000000.0 && this.x > ::battle.corner_right - 200 || this.direction == -1,00000000.0 && this.x < ::battle.corner_left + 200)
+				if (this.direction == 1.00000000 && this.x > ::battle.corner_right - 200 || this.direction == -1.00000000 && this.x < ::battle.corner_left + 200)
 				{
 					this.combo_func = this.Rush_Skill_Upper;
 					return true;

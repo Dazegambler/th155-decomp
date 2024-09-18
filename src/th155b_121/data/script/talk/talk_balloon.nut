@@ -67,7 +67,7 @@ class this.Balloon
 	owner = null;
 	x = 0;
 	y = 0;
-	scale = 0,00000000.0;
+	scale = 0.00000000;
 	function Create( _text, name, _owner )
 	{
 		this.Perse(_text);
@@ -118,8 +118,8 @@ class this.Balloon
 		this.sprite.Initialize(src.texture, 0, 0, src.texture.width, src.texture.height);
 		this.sprite.x = -src.cx;
 		this.sprite.y = -src.cy;
-		this.text.x = src.point.x * this.direction + this.text.width / 2,00000000.0;
-		this.text.y = src.point.y - this.text.height / 2,00000000.0;
+		this.text.x = src.point.x * this.direction + this.text.width / 2.00000000;
+		this.text.y = src.point.y - this.text.height / 2.00000000;
 		this.scale = 0;
 		this.owner.balloon = this;
 		this.SetPosition(this.owner.balloon_x, this.owner.balloon_y);
@@ -196,9 +196,9 @@ class this.Balloon
 				this.suspend();
 			}
 
-			while (t.scale < 1,00000000.0)
+			while (t.scale < 1.00000000)
 			{
-				t.scale += 0,10000000.0;
+				t.scale += 0.10000000;
 				t.UpdatePosition();
 
 				if (t.subtitle)

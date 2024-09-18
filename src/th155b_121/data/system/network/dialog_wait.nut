@@ -15,7 +15,7 @@ function InitializeWithUPnP()
 		foreach( i, v in action.item_table.upnp_state )
 		{
 			local t = ::font.CreateSystemString(v);
-			t.sx = t.sy = 0,66000003.0;
+			t.sx = t.sy = 0.66000003;
 			t.y = 10;
 			this.obj.append(t);
 		}
@@ -31,7 +31,7 @@ function InitializeWithUPnP()
 
 function Update()
 {
-	::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0,69999999.0);
+	::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0.69999999);
 	::menu.network.update();
 }
 

@@ -30,10 +30,10 @@ function Team_Change_Boss()
 		return false;
 	}
 
-	this.rx = 0,00000000.0;
-	this.ry = 0,00000000.0;
-	this.rz = 0,00000000.0;
-	this.sx = this.sy = 1,00000000.0;
+	this.rx = 0.00000000;
+	this.ry = 0.00000000;
+	this.rz = 0.00000000;
+	this.sx = this.sy = 1.00000000;
 	this.FitBoxfromSprite();
 	this.hitBackFlag = 0;
 	this.freeMap = false;
@@ -48,7 +48,7 @@ function Team_Change_Boss()
 	this.team.current.change_reserve = false;
 	this.BuffReset();
 	this.team.current.DrawActorPriority(190);
-	this.team.current.masterAlpha = 1,00000000.0;
+	this.team.current.masterAlpha = 1.00000000;
 	this.team.current.direction = this.direction;
 	this.team.current.Warp(this.x, this.y);
 	this.change_reset();
@@ -64,7 +64,7 @@ function Team_Change_Boss()
 	}
 	else
 	{
-		this.team.current.hyouiAura = this.SetEffect(this.team.current.x, this.team.current.y, 1,00000000.0, this.Hyoui_Aura, {}, this.team.current.weakref()).weakref();
+		this.team.current.hyouiAura = this.SetEffect(this.team.current.x, this.team.current.y, 1.00000000, this.Hyoui_Aura, {}, this.team.current.weakref()).weakref();
 		this.team.master.team_update = this.Team_Update_Boss;
 	}
 }
@@ -97,7 +97,7 @@ function CallBossCard( time_, name_ )
 		this.team.master.spellcard.Activate(::battle.boss_spell[0].master_name);
 	}
 
-	this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+	this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 	this.PlaySE(826);
 }
 
@@ -158,7 +158,7 @@ function BossDamageFunc( d_ )
 				local t_ = {};
 				t_.count <- 15;
 				t_.priority <- 210;
-				this.SetEffect(640, 360, 1,00000000.0, this.EF_SpeedLine, t_);
+				this.SetEffect(640, 360, 1.00000000, this.EF_SpeedLine, t_);
 				this.Set_Boss_Shield(null);
 				this.team.current.SpellCrash_Init(null);
 				return;
@@ -194,23 +194,23 @@ function Set_Boss_Shield( life_ )
 		}
 
 		this.team.shield = null;
-		this.team.master.baseDefRate = 1,00000000.0;
+		this.team.master.baseDefRate = 1.00000000;
 		this.team.master.DamageBuffAjust();
 
 		if (this.team.slave)
 		{
-			this.team.slave.baseDefRate = 1,00000000.0;
+			this.team.slave.baseDefRate = 1.00000000;
 			this.team.slave.DamageBuffAjust();
 		}
 	}
 	else
 	{
-		this.team.master.baseDefRate = 0,33000001.0;
+		this.team.master.baseDefRate = 0.33000001;
 		this.team.master.DamageBuffAjust();
 
 		if (this.team.slave)
 		{
-			this.team.slave.baseDefRate = 1,00000000.0;
+			this.team.slave.baseDefRate = 1.00000000;
 			this.team.slave.DamageBuffAjust();
 		}
 
@@ -223,7 +223,7 @@ function Set_Boss_Shield( life_ )
 
 		if (this.team.shield == null)
 		{
-			this.team.shield = this.SetEffect(this.x, this.y, 1,00000000.0, this.EF_Boss_Shield, {}, this.weakref()).weakref();
+			this.team.shield = this.SetEffect(this.x, this.y, 1.00000000, this.EF_Boss_Shield, {}, this.weakref()).weakref();
 			this.armor = -1;
 
 			if (this.team.slave)
@@ -249,14 +249,14 @@ function Set_BossSpellBariaRate( rate_ )
 
 		if (rate_ > 1)
 		{
-			this.team.master.baseDefRate = 1,00000000.0;
+			this.team.master.baseDefRate = 1.00000000;
 			this.team.master.DamageBuffAjust();
 			this.PlaySE(873);
 			this.team.shield.func[2].call(this.team.shield);
 		}
 		else
 		{
-			this.team.master.baseDefRate = 0,33000001.0;
+			this.team.master.baseDefRate = 0.33000001;
 			this.team.master.DamageBuffAjust();
 			this.team.shield.func[1].call(this.team.shield);
 		}

@@ -39,7 +39,7 @@ function MS1_Move( t )
 	this.centerStop = -2;
 	this.AjustCenterStop();
 	this.flag1 = this.Vector3();
-	this.flag2 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag2 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.flag3 = true;
 	this.lavelClearEvent = function ()
 	{
@@ -51,28 +51,28 @@ function MS1_Move( t )
 		this.flag2 = null;
 	};
 
-	if (this.direction == 1,00000000.0 && this.x > ::battle.corner_left + 400 || this.direction == -1,00000000.0 && this.x < ::battle.corner_right - 400)
+	if (this.direction == 1.00000000 && this.x > ::battle.corner_left + 400 || this.direction == -1.00000000 && this.x < ::battle.corner_right - 400)
 	{
 		this.count = -40;
-		this.flag1.x = -0,75000000.0 * this.direction;
+		this.flag1.x = -0.75000000 * this.direction;
 
 		if (this.y >= this.target.y)
 		{
-			this.flag1.y = -0,25000000.0;
+			this.flag1.y = -0.25000000;
 		}
 		else
 		{
-			this.flag1.y = 0,25000000.0;
+			this.flag1.y = 0.25000000;
 		}
 
 		if (this.y < this.centerY - 125)
 		{
-			this.flag1.y = 0,25000000.0;
+			this.flag1.y = 0.25000000;
 		}
 
 		if (this.y > this.centerY + 125)
 		{
-			this.flag1.y = -0,25000000.0;
+			this.flag1.y = -0.25000000;
 		}
 	}
 	else
@@ -81,42 +81,42 @@ function MS1_Move( t )
 		{
 			if (this.y >= this.target.y)
 			{
-				this.flag1.y = -0,40000001.0;
+				this.flag1.y = -0.40000001;
 			}
 			else
 			{
-				this.flag1.y = 0,40000001.0;
+				this.flag1.y = 0.40000001;
 			}
 
 			if (this.y < this.centerY - 125)
 			{
-				this.flag1.y = 0,40000001.0;
+				this.flag1.y = 0.40000001;
 			}
 
 			if (this.y > this.centerY + 125)
 			{
-				this.flag1.y = -0,40000001.0;
+				this.flag1.y = -0.40000001;
 			}
 		}
 		else
 		{
 			if (this.y >= this.target.y)
 			{
-				this.flag1.y = -0,25000000.0;
+				this.flag1.y = -0.25000000;
 			}
 			else
 			{
-				this.flag1.y = 0,25000000.0;
+				this.flag1.y = 0.25000000;
 			}
 
 			if (this.y < this.centerY - 125)
 			{
-				this.flag1.y = 0,25000000.0;
+				this.flag1.y = 0.25000000;
 			}
 
 			if (this.y > this.centerY + 125)
 			{
-				this.flag1.y = -0,25000000.0;
+				this.flag1.y = -0.25000000;
 			}
 		}
 
@@ -124,18 +124,18 @@ function MS1_Move( t )
 
 		if (this.com_flag1 == 0)
 		{
-			this.flag1.x = -0,50000000.0 * this.direction;
+			this.flag1.x = -0.50000000 * this.direction;
 			this.com_flag1 = -1;
 		}
 		else
 		{
-			this.flag1.x = 0,50000000.0 * this.com_flag1 * this.direction;
+			this.flag1.x = 0.50000000 * this.com_flag1 * this.direction;
 			this.com_flag1 *= -1;
 		}
 
-		if (this.direction == 1,00000000.0 && this.x < ::battle.corner_left + 200 || this.direction == -1,00000000.0 && this.x > ::battle.corner_right - 200)
+		if (this.direction == 1.00000000 && this.x < ::battle.corner_left + 200 || this.direction == -1.00000000 && this.x > ::battle.corner_right - 200)
 		{
-			this.flag1.x = 0,50000000.0 * this.direction;
+			this.flag1.x = 0.50000000 * this.direction;
 		}
 	}
 
@@ -145,13 +145,13 @@ function MS1_Move( t )
 		{
 			this.flag3 = false;
 
-			if (this.Vec_Brake(0,50000000.0))
+			if (this.Vec_Brake(0.50000000))
 			{
 				this.MS1_Attack(null);
 				return;
 			}
 		}
-		else if (this.va.Length() <= 8,00000000.0)
+		else if (this.va.Length() <= 8.00000000)
 		{
 			this.AddSpeed_XY(this.flag1.x, this.flag1.y);
 		}
@@ -174,16 +174,16 @@ function MS1_Wait( wait_ )
 	this.count = -wait_;
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
 
 		if (this.centerStop == 0)
 		{
-			this.VX_Brake(0,20000000.0);
+			this.VX_Brake(0.20000000);
 		}
 
 		if (this.keyTake == 1)
 		{
-			if ((this.target.x - this.x) * this.direction < 0,00000000.0)
+			if ((this.target.x - this.x) * this.direction < 0.00000000)
 			{
 				this.SetMotion(4998, 0);
 				this.direction = -this.direction;
@@ -211,8 +211,8 @@ function MS1_Attack( t )
 	this.flag5 = {};
 	this.flag5.shotNum <- 10;
 	this.flag5.shotCount <- 10;
-	this.flag5.shotRot <- 0,17453292.0;
-	this.flag5.targetRot <- 0,00000000.0;
+	this.flag5.shotRot <- 0.17453292;
+	this.flag5.targetRot <- 0.00000000;
 
 	switch(this.com_difficulty)
 	{
@@ -221,23 +221,23 @@ function MS1_Attack( t )
 
 	case 1:
 		this.flag5.shotCount = 45;
-		this.flag5.shotRot = 0,13962634.0;
+		this.flag5.shotRot = 0.13962634;
 		break;
 
 	case 2:
 		this.flag5.shotCount = 90;
-		this.flag5.shotRot = 0,10471975.0;
+		this.flag5.shotRot = 0.10471975;
 		break;
 
 	case 3:
 		this.flag5.shotCount = 180;
-		this.flag5.shotRot = 0,08726646.0;
+		this.flag5.shotRot = 0.08726646;
 		break;
 	}
 
 	this.subState = function ()
 	{
-		this.SetSpeed_XY((640 - this.flag1.x * this.direction - this.x) * 0,10000000.0, (this.centerY + 0 + this.flag1.y * 0,50000000.0 - this.y) * 0,10000000.0);
+		this.SetSpeed_XY((640 - this.flag1.x * this.direction - this.x) * 0.10000000, (this.centerY + 0 + this.flag1.y * 0.50000000 - this.y) * 0.10000000);
 	};
 	this.func = [
 		function ()
@@ -253,13 +253,13 @@ function MS1_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,50000000.0);
+		this.Vec_Brake(0.50000000);
 	};
 	this.keyAction = [
 		function ()
 		{
 			this.count = 0;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.flag5.targetRot = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
 			this.stateLabel = function ()
 			{
@@ -269,11 +269,11 @@ function MS1_Attack( t )
 					{
 						this.PlaySE(2050);
 						local t_ = {};
-						t_.rot <- (this.flag5.shotNum - 10) * -0,05235988.0 + this.flag5.shotRot + this.flag5.targetRot;
+						t_.rot <- (this.flag5.shotNum - 10) * -0.05235988 + this.flag5.shotRot + this.flag5.targetRot;
 						t_.count <- this.flag5.shotCount;
 						this.flag3.Add(this.SetShot(this.x - 600 * this.cos(this.flag5.targetRot) * this.direction, this.y - 600 * this.sin(this.flag5.targetRot), this.direction, this.Boss_Shot_M1_Laser, t_));
 						local t_ = {};
-						t_.rot <- (this.flag5.shotNum - 10) * 0,05235988.0 - this.flag5.shotRot + this.flag5.targetRot;
+						t_.rot <- (this.flag5.shotNum - 10) * 0.05235988 - this.flag5.shotRot + this.flag5.targetRot;
 						t_.count <- this.flag5.shotCount;
 						this.flag3.Add(this.SetShot(this.x - 600 * this.cos(this.flag5.targetRot) * this.direction, this.y - 600 * this.sin(this.flag5.targetRot), this.direction, this.Boss_Shot_M1_Laser, t_));
 						this.flag5.shotNum--;
@@ -315,7 +315,7 @@ function Master_Spell_2()
 	this.team.slave.Slave_Miko_1();
 	this.disableGuard = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 0;
 	this.boss_spell_func = function ()
 	{
@@ -349,26 +349,26 @@ function MS2_Attack( t )
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.direction = this.com_flag1;
 	this.flag1 = this.Vector3();
 	this.flag1.x = 640 - 480 * this.direction;
 	this.flag1.y = this.centerY - 150 - this.rand() % 25;
-	this.flag2 = 0,00000000.0;
+	this.flag2 = 0.00000000;
 	this.flag3 = true;
 	this.flag4 = null;
-	this.com_flag1 *= -1,00000000.0;
+	this.com_flag1 *= -1.00000000;
 	this.subState = function ()
 	{
-		this.flag2 += 0,50000000.0;
+		this.flag2 += 0.50000000;
 
-		if (this.flag2 > 15,00000000.0)
+		if (this.flag2 > 15.00000000)
 		{
-			this.flag2 = 15,00000000.0;
+			this.flag2 = 15.00000000;
 		}
 
-		this.va.x = (this.flag1.x - this.x) * 0,10000000.0;
-		this.va.y = (this.flag1.y - this.y) * 0,10000000.0;
+		this.va.x = (this.flag1.x - this.x) * 0.10000000;
+		this.va.y = (this.flag1.y - this.y) * 0.10000000;
 		local v_ = this.va.Length();
 
 		if (v_ > this.flag2)
@@ -376,7 +376,7 @@ function MS2_Attack( t )
 			this.va.SetLength(this.flag2);
 		}
 
-		if (v_ <= 5,00000000.0)
+		if (v_ <= 5.00000000)
 		{
 			this.flag3 = false;
 		}
@@ -389,18 +389,18 @@ function MS2_Attack( t )
 			this.SetMotion(4920, 0);
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,25000000.0);
+				this.Vec_Brake(0.25000000);
 			};
 			this.keyAction = [
 				function ()
 				{
 					this.count = 0;
 					local t_ = {};
-					t_.rot <- 60 * 0,01745329.0;
+					t_.rot <- 60 * 0.01745329;
 					this.flag4 = this.SetShot(this.x, ::battle.scroll_top - 400, this.direction, this.Boss_Shot_M2_Light, t_).weakref();
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,25000000.0);
+						this.Vec_Brake(0.25000000);
 
 						if (this.count == 240)
 						{
@@ -427,7 +427,7 @@ function MS2_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,10000000.0, 2,00000000.0);
+				this.CenterUpdate(0.10000000, 2.00000000);
 
 				if (this.count >= 90)
 				{
@@ -450,7 +450,7 @@ function MS2_Attack( t )
 			this.Boss_WalkMotionUpdate(0);
 		}
 
-		if (this.flag3 == false && this.va.Length() <= 1,00000000.0)
+		if (this.flag3 == false && this.va.Length() <= 1.00000000)
 		{
 			this.func[0].call(this);
 			return;

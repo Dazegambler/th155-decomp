@@ -1,12 +1,12 @@
-this.volume_base <- 1,00000000.0;
+this.volume_base <- 1.00000000;
 this.se <- {};
 this.se_base <- {};
 this.se_cache <- null;
-this.se.volume_base <- 0,40000001.0;
+this.se.volume_base <- 0.40000001;
 this.bgm <- {};
 this.bgm.playing <- null;
 this.bgm.play_next <- null;
-this.bgm.volume_base <- 0,30000001.0;
+this.bgm.volume_base <- 0.30000001;
 this.volume_master <- this.manbow.VolumeController();
 this.volume_se <- this.manbow.VolumeController();
 this.volume_se_stage <- this.manbow.VolumeController();
@@ -152,7 +152,7 @@ function LoadBGM( filename )
 		local t = this.BGM();
 		t.filename = val.path;
 		t.leaf = val.path.slice("data/bgm/".len(), val.path.len() - 4);
-		t.volume = val.volume / 100,00000000.0;
+		t.volume = val.volume / 100.00000000;
 		t.track_no = val.track_no;
 		t.page = val.line;
 		t.title = val.title;
@@ -225,7 +225,7 @@ function StopBGM( _time )
 	{
 		if (_time > 0)
 		{
-			this.bgm.playing.FadeBackground(_time, 1,00000000.0);
+			this.bgm.playing.FadeBackground(_time, 1.00000000);
 		}
 		else if (_time < 0)
 		{

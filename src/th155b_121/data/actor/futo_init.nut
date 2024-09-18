@@ -20,17 +20,17 @@ this.player_class.Init <- function ()
 	this.AI_PlayerCommon();
 	this.type = 4;
 	this.atkRange = 65;
-	this.baseGravity = 0,77999997.0;
-	this.baseSlideSpeed = 18,00000000.0;
+	this.baseGravity = 0.77999997;
+	this.baseSlideSpeed = 18.00000000;
 	this.slave_spell = 1;
 
 	if (this.team.index == 0)
 	{
-		this.dish_guage = this.SetFreeObject(120, 622, 1,00000000.0, this.Dish_Guage_Back, {}).weakref();
+		this.dish_guage = this.SetFreeObject(120, 622, 1.00000000, this.Dish_Guage_Back, {}).weakref();
 	}
 	else
 	{
-		this.dish_guage = this.SetFreeObject(1120, 622, -1,00000000.0, this.Dish_Guage_Back, {}).weakref();
+		this.dish_guage = this.SetFreeObject(1120, 622, -1.00000000, this.Dish_Guage_Back, {}).weakref();
 	}
 
 	this.Reset_PlayerCommon();
@@ -56,11 +56,11 @@ this.player_class.Init <- function ()
 
 		if (this.team.index == 0)
 		{
-			this.dish_guage = this.SetFreeObject(120, 622, 1,00000000.0, this.Dish_Guage_Back, {}).weakref();
+			this.dish_guage = this.SetFreeObject(120, 622, 1.00000000, this.Dish_Guage_Back, {}).weakref();
 		}
 		else
 		{
-			this.dish_guage = this.SetFreeObject(1120, 622, -1,00000000.0, this.Dish_Guage_Back, {}).weakref();
+			this.dish_guage = this.SetFreeObject(1120, 622, -1.00000000, this.Dish_Guage_Back, {}).weakref();
 		}
 	};
 	this.Load_SpellCardData("futo");

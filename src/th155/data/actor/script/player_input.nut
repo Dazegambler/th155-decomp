@@ -205,7 +205,7 @@ function InputMove()
 		}
 		else if (this.centerStop * this.centerStop <= 1)
 		{
-			if (this.input.x * this.direction > 0,00000000.0)
+			if (this.input.x * this.direction > 0.00000000)
 			{
 				if (this.motion != 40 && this.debuff_hyper.time > 0)
 				{
@@ -230,7 +230,7 @@ function InputMove()
 		{
 			if (this.input.y <= -1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -251,7 +251,7 @@ function InputMove()
 
 			if (this.input.y >= 1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -274,7 +274,7 @@ function InputMove()
 		{
 			if (this.input.y <= -1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -295,7 +295,7 @@ function InputMove()
 
 			if (this.input.y >= 1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -626,7 +626,7 @@ function Input_Master()
 			{
 				if (this.IsAttack() == 3)
 				{
-					this.target.team.base_scale *= 0,85000002.0;
+					this.target.team.base_scale *= 0.85000002;
 				}
 
 				this[this.spellList[this.spellcard.id].init](null);

@@ -2,7 +2,7 @@ function SetNeutralActor()
 {
 	local t_ = {};
 	t_.init <- null;
-	return ::actor.common_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, ::neutral.Init, t_);
+	return ::actor.common_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, ::neutral.Init, t_);
 }
 
 function SetEventObject( x_, y_, dir_, init_, t_, mgr )
@@ -371,9 +371,9 @@ function SetOccultAura( init_ )
 	}
 	else
 	{
-		t_.blue = 0,89999998.0;
-		t_.green = 0,00000000.0;
-		t_.scale = 1,04999995.0;
+		t_.blue = 0.89999998;
+		t_.green = 0.00000000;
+		t_.scale = 1.04999995;
 	}
 
 	local t2_ = {};
@@ -382,9 +382,9 @@ function SetOccultAura( init_ )
 		t_,
 		function ()
 		{
-			this.occultAura[0].scale = 1,20000005.0;
+			this.occultAura[0].scale = 1.20000005;
 		},
-		this.SetEffect(this.x, this.y, 1,00000000.0, this.Occult_AuraB_Core, t2_, this.weakref()).weakref()
+		this.SetEffect(this.x, this.y, 1.00000000, this.Occult_AuraB_Core, t2_, this.weakref()).weakref()
 	];
 }
 

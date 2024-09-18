@@ -90,7 +90,7 @@ class this.Combo
 
 	function Activate()
 	{
-		this.scale = 1,50000000.0;
+		this.scale = 1.50000000;
 
 		if (this.Update == this.Update1)
 		{
@@ -132,9 +132,9 @@ class this.Combo
 
 	function Update1()
 	{
-		if (this.scale > 1,00000000.0)
+		if (this.scale > 1.00000000)
 		{
-			this.scale -= 0,10000000.0;
+			this.scale -= 0.10000000;
 			this.combo.sx = this.scale;
 			this.combo.sy = this.scale;
 		}
@@ -157,7 +157,7 @@ class this.Combo
 	function Update3()
 	{
 		this.count++;
-		local a = 1,00000000.0 - this.count / 15,00000000.0;
+		local a = 1.00000000 - this.count / 15.00000000;
 
 		if (a <= 0)
 		{

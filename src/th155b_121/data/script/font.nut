@@ -11,8 +11,8 @@ function CreateSystemString( str )
 	text.SetSpace(-5, 0);
 	text.SetOutline(true);
 	text.Set(str);
-	text.outline_threshold = 0,16000000.0;
-	text.outline_scale = 6,00000000.0;
+	text.outline_threshold = 0.16000000;
+	text.outline_scale = 6.00000000;
 	return text;
 }
 
@@ -23,8 +23,8 @@ function CreateSystemStringSmall( str )
 	text.SetSpace(-3, 0);
 	text.SetOutline(true);
 	text.Set(str);
-	text.outline_threshold = 0,16000000.0;
-	text.outline_scale = 6,00000000.0;
+	text.outline_threshold = 0.16000000;
+	text.outline_scale = 6.00000000;
 	return text;
 }
 
@@ -35,8 +35,8 @@ function CreateSubtitleString( str )
 	text.SetSpace(-5, 10);
 	text.SetOutline(true);
 	text.Set(str);
-	text.outline_threshold = 0,16000000.0;
-	text.outline_scale = 6,00000000.0;
+	text.outline_threshold = 0.16000000;
+	text.outline_scale = 6.00000000;
 	return text;
 }
 
@@ -49,13 +49,13 @@ function CreateSpellString( str, r, g, b )
 	text.SetSpace(-4, 0);
 	text.SetOutline(true);
 	text.SetGradation(true);
-	text.red = 1,79999995.0;
-	text.green = 1,79999995.0;
-	text.blue = 1,79999995.0;
-	text.red2 = r + 0,10000000.0;
-	text.green2 = g + 0,10000000.0;
-	text.blue2 = b + 0,10000000.0;
-	text.outline_scale = 4,00000000.0;
+	text.red = 1.79999995;
+	text.green = 1.79999995;
+	text.blue = 1.79999995;
+	text.red2 = r + 0.10000000;
+	text.green2 = g + 0.10000000;
+	text.blue2 = b + 0.10000000;
+	text.outline_scale = 4.00000000;
 	text.Set(str);
 	return text;
 }

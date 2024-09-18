@@ -4,13 +4,13 @@ replay_task.Update <- function ()
 	if (::replay.IsFinished())
 	{
 		::sound.StopBGM(500);
-		::sound.SetVolumeSE(::config.sound.se / 100,00000000.0);
+		::sound.SetVolumeSE(::config.sound.se / 100.00000000);
 		::loop.EndWithFade();
 	}
 	else if (::input_all.b1 == 1 && !::talk.is_active && !::graphics.IsFading())
 	{
 		::sound.PlaySE(111);
-		::sound.SetVolumeSE(::config.sound.se / 100,00000000.0);
+		::sound.SetVolumeSE(::config.sound.se / 100.00000000);
 		::menu.pause.Initialize(3);
 	}
 };
@@ -24,7 +24,7 @@ function Update()
 
 		if (!::talk.is_active)
 		{
-			::sound.SetVolumeSE(::config.sound.se / 100,00000000.0);
+			::sound.SetVolumeSE(::config.sound.se / 100.00000000);
 			this.Update = function ()
 			{
 				this.UpdateMain();

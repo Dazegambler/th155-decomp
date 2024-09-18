@@ -13,7 +13,7 @@ this.fade_task.Update <- function ()
 {
 	if (::ed.fade.alpha < 1)
 	{
-		::ed.fade.alpha += 0,05000000.0;
+		::ed.fade.alpha += 0.05000000;
 	}
 	else
 	{

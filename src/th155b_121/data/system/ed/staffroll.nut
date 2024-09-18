@@ -222,7 +222,7 @@ function TaskPicture( texture_name, start, _end, position = 0, x = 0, y = 0, off
 		obj.SetPosition(-1, -1, ::graphics.width + 1, ::graphics.height + 1);
 		obj.SetColor(1, position, x, y);
 
-		if (position >= 1,00000000.0)
+		if (position >= 1.00000000)
 		{
 			obj.blend = 2;
 		}
@@ -239,7 +239,7 @@ function TaskPicture( texture_name, start, _end, position = 0, x = 0, y = 0, off
 
 	while (this.current < 1000 + start)
 	{
-		obj.alpha = (this.current - start) / 1000,00000000.0;
+		obj.alpha = (this.current - start) / 1000.00000000;
 		yield true;
 	}
 
@@ -260,7 +260,7 @@ function TaskPicture( texture_name, start, _end, position = 0, x = 0, y = 0, off
 
 	while (this.current < _end + 1000)
 	{
-		obj.alpha = (1000 + _end - this.current) / 1000,00000000.0;
+		obj.alpha = (1000 + _end - this.current) / 1000.00000000;
 		yield true;
 	}
 
@@ -329,14 +329,14 @@ function TaskItemScroll( table, start, _end, page, position, offset = 0 )
 				switch(line[1].tointeger())
 				{
 				case 1:
-					t.green = 0,96799999.0;
-					t.blue = 0,60000002.0;
+					t.green = 0.96799999;
+					t.blue = 0.60000002;
 					break;
 
 				case 2:
-					t.red = 0,67500001.0;
-					t.green = 0,83499998.0;
-					t.blue = 0,59600002.0;
+					t.red = 0.67500001;
+					t.green = 0.83499998;
+					t.blue = 0.59600002;
 					break;
 				}
 			}
@@ -459,7 +459,7 @@ function TaskItemFade( table, start, _end, page )
 
 				if (line[2].tointeger() == 16)
 				{
-					t.sx = t.sy = 0,66000003.0;
+					t.sx = t.sy = 0.66000003;
 				}
 				else
 				{
@@ -475,13 +475,13 @@ function TaskItemFade( table, start, _end, page )
 				switch(line[1].tointeger())
 				{
 				case 1:
-					t.blue = 0,50000000.0;
+					t.blue = 0.50000000;
 					break;
 
 				case 2:
-					t.red = 0,40000001.0;
-					t.green = 0,80000001.0;
-					t.blue = 0,60000002.0;
+					t.red = 0.40000001;
+					t.green = 0.80000001;
+					t.blue = 0.60000002;
 					break;
 				}
 			}
@@ -535,7 +535,7 @@ function TaskItemFade( table, start, _end, page )
 
 	while (this.current < 500 + start)
 	{
-		local alpha = (this.current - start) / 500,00000000.0;
+		local alpha = (this.current - start) / 500.00000000;
 
 		foreach( i, v in item )
 		{
@@ -552,7 +552,7 @@ function TaskItemFade( table, start, _end, page )
 
 	while (this.current < _end + 500)
 	{
-		local alpha = (500 + _end - this.current) / 500,00000000.0;
+		local alpha = (500 + _end - this.current) / 500.00000000;
 
 		foreach( i, v in item )
 		{
@@ -596,10 +596,10 @@ function TaskPictureRotate( texture_name, start, _end, x = 0, y = 0, offset = 0 
 
 	while (this.current < 2000 + start)
 	{
-		obj.alpha = (this.current - start) / 2000,00000000.0;
+		obj.alpha = (this.current - start) / 2000.00000000;
 		count++;
 		mat.Set(mat_local);
-		mat.Rotate(0, 0, count * 0,00300000.0 + 3,14159203.0);
+		mat.Rotate(0, 0, count * 0.00300000 + 3.14159203);
 		mat.Translate(x, y, 0);
 		obj.SetWorldTransform(mat);
 		yield true;
@@ -613,7 +613,7 @@ function TaskPictureRotate( texture_name, start, _end, x = 0, y = 0, offset = 0 
 		{
 			count++;
 			mat.Set(mat_local);
-			mat.Rotate(0, 0, count * 0,00300000.0 + 3,14159203.0);
+			mat.Rotate(0, 0, count * 0.00300000 + 3.14159203);
 			mat.Translate(x, y, 0);
 			obj.SetWorldTransform(mat);
 			yield true;
@@ -624,7 +624,7 @@ function TaskPictureRotate( texture_name, start, _end, x = 0, y = 0, offset = 0 
 	{
 		count++;
 		mat.Set(mat_local);
-		mat.Rotate(0, 0, count * 0,00300000.0 + 3,14159203.0);
+		mat.Rotate(0, 0, count * 0.00300000 + 3.14159203);
 		mat.Translate(x, y, 0);
 		obj.SetWorldTransform(mat);
 		yield true;
@@ -632,10 +632,10 @@ function TaskPictureRotate( texture_name, start, _end, x = 0, y = 0, offset = 0 
 
 	while (this.current < _end + 2000)
 	{
-		obj.alpha = (2000 + _end - this.current) / 2000,00000000.0;
+		obj.alpha = (2000 + _end - this.current) / 2000.00000000;
 		count++;
 		mat.Set(mat_local);
-		mat.Rotate(0, 0, count * 0,00300000.0 + 3,14159203.0);
+		mat.Rotate(0, 0, count * 0.00300000 + 3.14159203);
 		mat.Translate(x, y, 0);
 		obj.SetWorldTransform(mat);
 		yield true;
@@ -701,14 +701,14 @@ function TaskFlowerScroll( start, _end )
 		local t = {};
 		t.item <- ::manbow.ObjectRenderer();
 		t.item.Set(sprite[this.rand() % 4]);
-		t.vy <- -0,69999999.0 + 0,30000001.0 * (this.rand() % 100) / 100,00000000.0;
-		t.rot <- 0,10000000.0;
-		t.rot_acc <- 0,01000000.0 + 0,00100000.0 * (this.rand() % 100) / 100,00000000.0;
-		t.sx <- 0,20000000.0 + 0,50000000.0 * (this.rand() % 100) / 100,00000000.0;
+		t.vy <- -0.69999999 + 0.30000001 * (this.rand() % 100) / 100.00000000;
+		t.rot <- 0.10000000;
+		t.rot_acc <- 0.01000000 + 0.00100000 * (this.rand() % 100) / 100.00000000;
+		t.sx <- 0.20000000 + 0.50000000 * (this.rand() % 100) / 100.00000000;
 		t.x <- this.rand() % ::graphics.width;
 		t.y <- this.rand() % (::graphics.height + 512);
 		t.mat <- mat;
-		t.item.alpha = 0,50000000.0;
+		t.item.alpha = 0.50000000;
 
 		if (this.rand() % 2 == 1)
 		{
@@ -737,7 +737,7 @@ function TaskFlowerScroll( start, _end )
 
 	while (this.current < 1000 + start)
 	{
-		alpha = (this.current - start) / 2000,00000000.0;
+		alpha = (this.current - start) / 2000.00000000;
 
 		foreach( v in obj )
 		{
@@ -760,7 +760,7 @@ function TaskFlowerScroll( start, _end )
 
 	while (this.current < _end + 1000)
 	{
-		alpha = (1000 + _end - this.current) / 2000,00000000.0;
+		alpha = (1000 + _end - this.current) / 2000.00000000;
 
 		foreach( v in obj )
 		{

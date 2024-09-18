@@ -33,8 +33,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_PlayerCommon();
 	this.type = 7;
-	this.baseGravity = 0,40000001.0;
-	this.baseSlideSpeed = 12,50000000.0;
+	this.baseGravity = 0.40000001;
+	this.baseSlideSpeed = 12.50000000;
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;
 	this.func_timeDemo = this.Func_Lose;
@@ -89,10 +89,10 @@ this.player_class.Init <- function ()
 	t1_.rot <- 0;
 	local t2_ = {};
 	t2_.take <- 1;
-	t2_.rot <- 120 * 0,01745329.0;
+	t2_.rot <- 120 * 0.01745329;
 	local t3_ = {};
 	t3_.take <- 2;
-	t3_.rot <- 240 * 0,01745329.0;
+	t3_.rot <- 240 * 0.01745329;
 	this.sence = [
 		this.SetFreeObject(this.x, this.y, this.direction, this.SenceObject, t1_).weakref(),
 		this.SetFreeObject(this.x, this.y, this.direction, this.SenceObject, t2_).weakref(),

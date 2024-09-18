@@ -98,24 +98,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY && this.centerStop != -1 || this.centerStop == 1)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -133,24 +133,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY && this.centerStop != -1 || this.centerStop == 1)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -248,24 +248,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -283,24 +283,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = 7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = 7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = 4,00000000.0;
+						t_.hitVecY = 4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -318,24 +318,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = 7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = 7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = 4,00000000.0;
+						t_.hitVecY = 4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -353,24 +353,24 @@ function PlayerhitAction_Boss( t_ )
 			{
 				if (this.y <= this.centerY)
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = -7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = -7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = -4,00000000.0;
+						t_.hitVecY = -4.00000000;
 					}
 
 					this.DamageUpperLight_Init(t_);
 				}
 				else
 				{
-					t_.hitVecX = -4,00000000.0;
-					t_.hitVecY = 7,00000000.0;
+					t_.hitVecX = -4.00000000;
+					t_.hitVecY = 7.00000000;
 
 					if (t_.atkRank == 0)
 					{
-						t_.hitVecY = 4,00000000.0;
+						t_.hitVecY = 4.00000000;
 					}
 
 					this.DamageUnderLight_Init(t_);
@@ -431,14 +431,14 @@ function SpellCrash_Init( t )
 	this.LabelClear();
 	this.SetMotion(130, 0);
 	::battle.SetTimeStop(45);
-	::camera.shake_radius = 20,00000000.0;
+	::camera.shake_radius = 20.00000000;
 	this.GetFront();
 	this.PlaySE(816);
-	this.SetSpeed_XY(-13,00000000.0 * this.direction, 0,00000000.0);
-	::camera.SetTarget(this.x, this.y, 2,50000000.0, true);
+	this.SetSpeed_XY(-13.00000000 * this.direction, 0.00000000);
+	::camera.SetTarget(this.x, this.y, 2.50000000, true);
 	this.count = -45;
 	this.stanBossCount = 240;
-	this.SetFreeObject(this.x, this.y, 1,00000000.0, function ( t_ )
+	this.SetFreeObject(this.x, this.y, 1.00000000, function ( t_ )
 	{
 		this.stateLabel = function ()
 		{
@@ -463,42 +463,42 @@ function SpellCrash_Init( t )
 	local t_ = {};
 	t_.count <- 45;
 	t_.priority <- 520;
-	this.SetEffect(640, 360, 1,00000000.0, this.EF_SpeedLine, t_);
+	this.SetEffect(640, 360, 1.00000000, this.EF_SpeedLine, t_);
 
 	if (this.centerStop * this.centerStop <= 1)
 	{
-		this.SetSpeed_XY(-15,00000000.0 * this.direction, 0,00000000.0);
+		this.SetSpeed_XY(-15.00000000 * this.direction, 0.00000000);
 	}
 	else
 	{
 		if (this.y < this.centerY)
 		{
 			this.centerStop = -2;
-			this.SetSpeed_XY(-15,00000000.0 * this.direction, -5,00000000.0);
+			this.SetSpeed_XY(-15.00000000 * this.direction, -5.00000000);
 		}
 
 		if (this.y > this.centerY)
 		{
 			this.centerStop = 2;
-			this.SetSpeed_XY(-15,00000000.0 * this.direction, 5,00000000.0);
+			this.SetSpeed_XY(-15.00000000 * this.direction, 5.00000000);
 		}
 	}
 
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(this.va.x * this.direction <= -3,00000000.0 ? 1,00000000.0 : 0,05000000.0);
-		this.CenterUpdate(0,25000000.0, null);
+		this.VX_Brake(this.va.x * this.direction <= -3.00000000 ? 1.00000000 : 0.05000000);
+		this.CenterUpdate(0.25000000, null);
 		this.stateLabel = function ()
 		{
-			this.VX_Brake(this.va.x * this.direction <= -3,00000000.0 ? 1,00000000.0 : 0,05000000.0);
-			this.CenterUpdate(0,25000000.0, null);
+			this.VX_Brake(this.va.x * this.direction <= -3.00000000 ? 1.00000000 : 0.05000000);
+			this.CenterUpdate(0.25000000, null);
 
 			if (this.count >= 0)
 			{
 				this.SetMotion(this.motion, 2);
 				this.stateLabel = function ()
 				{
-					this.VX_Brake(1,00000000.0);
+					this.VX_Brake(1.00000000);
 				};
 			}
 		};
@@ -522,7 +522,7 @@ function BossCall_Init()
 	this.invinObject = 6;
 	this.invinGrab = 6;
 	this.armor = -1;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.SetMotion(3999, 0);
 	this.count = 0;
 	::battle.enableTimeCount = false;
@@ -546,7 +546,7 @@ function BossCall_Init()
 			};
 			this.count = 0;
 			this.CallBossCard(90, ::battle.boss_spell[0].master_name);
-			this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+			this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 			this.SetTimeStop(90);
 			this.stateLabel = function ()
 			{
@@ -581,7 +581,7 @@ function Boss_SetLife_Actor( t )
 	this.flag2 = 0;
 	this.stateLabel = function ()
 	{
-		local l_ = ((this.flag1 - this.flag2) * 0,20000000.0).tointeger();
+		local l_ = ((this.flag1 - this.flag2) * 0.20000000).tointeger();
 
 		if (l_ <= 10)
 		{
@@ -691,12 +691,12 @@ function Boss_SlideMotionUpdate( move_ )
 	}
 	else if (move_ <= 0)
 	{
-		if (this.keyTake == 2 && this.va.y >= 0,00000000.0)
+		if (this.keyTake == 2 && this.va.y >= 0.00000000)
 		{
 			this.SetMotion(this.motion, 3);
 		}
 	}
-	else if (this.keyTake == 2 && this.va.y <= 0,00000000.0)
+	else if (this.keyTake == 2 && this.va.y <= 0.00000000)
 	{
 		this.SetMotion(this.motion, 3);
 	}

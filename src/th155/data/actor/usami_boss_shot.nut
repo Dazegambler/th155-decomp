@@ -2,7 +2,7 @@ function Boss_Shot_M1_Bullet( t )
 {
 	this.flag2 = this.rand() % 4;
 	this.SetMotion(4919, 1 + this.flag2 * 2);
-	this.rz = this.rand() % 360 * 0,01745329.0;
+	this.rz = this.rand() % 360 * 0.01745329;
 	this.flag1 = this.Vector3();
 	this.flag1.x = this.x - t.pare.x;
 	this.flag1.y = this.y - t.pare.y;
@@ -12,9 +12,9 @@ function Boss_Shot_M1_Bullet( t )
 			this.SetMotion(4919, this.flag2);
 			this.stateLabel = function ()
 			{
-				this.alpha = this.red = this.green = this.blue -= 0,02500000.0;
+				this.alpha = this.red = this.green = this.blue -= 0.02500000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -23,7 +23,7 @@ function Boss_Shot_M1_Bullet( t )
 		function ( pare_ )
 		{
 			this.hitOwner = this;
-			this.SetSpeed_XY((this.x - pare_.x) * 0,10000000.0, (this.y - pare_.y) * 0,10000000.0);
+			this.SetSpeed_XY((this.x - pare_.x) * 0.10000000, (this.y - pare_.y) * 0.10000000);
 			this.cancelCount = 1;
 			this.stateLabel = function ()
 			{
@@ -48,7 +48,7 @@ function Boss_Shot_M1( t )
 	this.flag4 = 6;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 10;
-	this.flag5.moveV <- 0,00000000.0;
+	this.flag5.moveV <- 0.00000000;
 	this.flag5.rad_1 <- 100;
 	this.flag5.rad_2 <- 200;
 
@@ -77,7 +77,7 @@ function Boss_Shot_M1( t )
 	this.func = [
 		function ()
 		{
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.flag1.Foreach(function ()
 			{
 				this.func[0].call(this);
@@ -89,15 +89,15 @@ function Boss_Shot_M1( t )
 			this.flag5.moveV = 0;
 			this.subState = function ()
 			{
-				this.flag5.moveV += 0,50000000.0;
+				this.flag5.moveV += 0.50000000;
 
-				if (this.flag5.moveV > 4,00000000.0)
+				if (this.flag5.moveV > 4.00000000)
 				{
-					this.flag5.moveV = 4,00000000.0;
+					this.flag5.moveV = 4.00000000;
 				}
 
-				this.va.x = (this.team.current.x - this.x) * 0,15000001.0;
-				this.va.y = (this.team.current.y - this.y) * 0,15000001.0;
+				this.va.x = (this.team.current.x - this.x) * 0.15000001;
+				this.va.y = (this.team.current.y - this.y) * 0.15000001;
 
 				if (this.va.Length() > this.flag5.moveV)
 				{
@@ -133,8 +133,8 @@ function Boss_Shot_M1( t )
 		this.HitCycleUpdate(11);
 		this.flag1.Foreach(function ( a_ = this )
 		{
-			this.flag1.RotateByDegree(4,00000000.0);
-			this.SetSpeed_XY((a_.x + this.flag1.x - this.x) * 0,20000000.0, (a_.y + this.flag1.y - this.y) * 0,20000000.0);
+			this.flag1.RotateByDegree(4.00000000);
+			this.SetSpeed_XY((a_.x + this.flag1.x - this.x) * 0.20000000, (a_.y + this.flag1.y - this.y) * 0.20000000);
 		});
 		this.subState();
 	};
@@ -170,7 +170,7 @@ function Boss_Doppel_Hole_D2( t )
 		break;
 	}
 
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.subState = function ()
 	{
 		this.count++;
@@ -212,7 +212,7 @@ function Boss_Doppel_Hole_D2( t )
 					local t_ = {};
 					t_.count <- 15;
 					t_.priority <- 210;
-					this.SetEffect(640, 360, 1,00000000.0, this.EF_SpeedLine, t_);
+					this.SetEffect(640, 360, 1.00000000, this.EF_SpeedLine, t_);
 					this.owner.Set_Boss_Shield(null);
 					this.team.current.SpellCrash_Init(null);
 				}
@@ -220,12 +220,12 @@ function Boss_Doppel_Hole_D2( t )
 
 			this.stateLabel = function ()
 			{
-				this.sx *= 0,89999998.0;
-				this.sy *= 1,04999995.0;
-				this.SetSpeed_XY(0,00000000.0, -10 * this.sy);
-				this.alpha -= 0,05000000.0;
+				this.sx *= 0.89999998;
+				this.sy *= 1.04999995;
+				this.SetSpeed_XY(0.00000000, -10 * this.sy);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -233,9 +233,9 @@ function Boss_Doppel_Hole_D2( t )
 		},
 		function ()
 		{
-			this.direction = this.x >= this.owner.target.x ? -1,00000000.0 : 1,00000000.0;
+			this.direction = this.x >= this.owner.target.x ? -1.00000000 : 1.00000000;
 			this.SetMotion(4926, 0);
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 			this.subState = function ()
 			{
 			};
@@ -315,7 +315,7 @@ function Boss_Doppel_Denchu_D2( t )
 		break;
 	}
 
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.subState = function ()
 	{
 		this.count++;
@@ -357,7 +357,7 @@ function Boss_Doppel_Denchu_D2( t )
 					local t_ = {};
 					t_.count <- 15;
 					t_.priority <- 210;
-					this.SetEffect(640, 360, 1,00000000.0, this.EF_SpeedLine, t_);
+					this.SetEffect(640, 360, 1.00000000, this.EF_SpeedLine, t_);
 					this.owner.Set_Boss_Shield(null);
 					this.team.current.SpellCrash_Init(null);
 				}
@@ -365,12 +365,12 @@ function Boss_Doppel_Denchu_D2( t )
 
 			this.stateLabel = function ()
 			{
-				this.sx *= 0,89999998.0;
-				this.sy *= 1,04999995.0;
-				this.SetSpeed_XY(0,00000000.0, -10 * this.sy);
-				this.alpha -= 0,05000000.0;
+				this.sx *= 0.89999998;
+				this.sy *= 1.04999995;
+				this.SetSpeed_XY(0.00000000, -10 * this.sy);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -378,10 +378,10 @@ function Boss_Doppel_Denchu_D2( t )
 		},
 		function ()
 		{
-			this.direction = this.x >= this.owner.target.x ? -1,00000000.0 : 1,00000000.0;
+			this.direction = this.x >= this.owner.target.x ? -1.00000000 : 1.00000000;
 			this.SetMotion(4927, 0);
 			this.PlaySE(3637);
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 			this.subState = function ()
 			{
 			};
@@ -398,7 +398,7 @@ function Boss_Doppel_Denchu_D2( t )
 			}
 
 			this.flag4 = null;
-			this.SetShot(this.direction == 1,00000000.0 ? ::camera.camera2d.right + 100 : ::camera.camera2d.left - 100, 860, -this.direction, this.Boss_Shot_D2_Denchu, {});
+			this.SetShot(this.direction == 1.00000000 ? ::camera.camera2d.right + 100 : ::camera.camera2d.left - 100, 860, -this.direction, this.Boss_Shot_D2_Denchu, {});
 		},
 		function ()
 		{
@@ -461,7 +461,7 @@ function Boss_Doppel_Tower_D2( t )
 		break;
 	}
 
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.subState = function ()
 	{
 		this.count++;
@@ -503,7 +503,7 @@ function Boss_Doppel_Tower_D2( t )
 					local t_ = {};
 					t_.count <- 15;
 					t_.priority <- 210;
-					this.SetEffect(640, 360, 1,00000000.0, this.EF_SpeedLine, t_);
+					this.SetEffect(640, 360, 1.00000000, this.EF_SpeedLine, t_);
 					this.owner.Set_Boss_Shield(null);
 					this.team.current.SpellCrash_Init(null);
 				}
@@ -511,12 +511,12 @@ function Boss_Doppel_Tower_D2( t )
 
 			this.stateLabel = function ()
 			{
-				this.sx *= 0,89999998.0;
-				this.sy *= 1,04999995.0;
-				this.SetSpeed_XY(0,00000000.0, -10 * this.sy);
-				this.alpha -= 0,05000000.0;
+				this.sx *= 0.89999998;
+				this.sy *= 1.04999995;
+				this.SetSpeed_XY(0.00000000, -10 * this.sy);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -524,9 +524,9 @@ function Boss_Doppel_Tower_D2( t )
 		},
 		function ()
 		{
-			this.direction = this.x >= this.owner.target.x ? -1,00000000.0 : 1,00000000.0;
+			this.direction = this.x >= this.owner.target.x ? -1.00000000 : 1.00000000;
 			this.SetMotion(4925, 0);
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 			this.subState = function ()
 			{
 			};
@@ -579,11 +579,11 @@ function Boss_Shot_D2( t )
 {
 	this.SetMotion(4937, 2);
 	this.owner.shot_actor.Add(this);
-	::camera.shake_radius = 5,00000000.0;
+	::camera.shake_radius = 5.00000000;
 	this.PlaySE(3649);
-	this.rz = 15 * 0,01745329.0;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
-	this.flag1 = 0,25000000.0 * 0,01745329.0;
+	this.rz = 15 * 0.01745329;
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
+	this.flag1 = 0.25000000 * 0.01745329;
 	this.cancelCount = 99;
 	this.flag2 = 1;
 	this.flag3 = 1;
@@ -612,9 +612,9 @@ function Boss_Shot_D2( t )
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.alpha -= 0,10000000.0;
+				this.alpha -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -623,7 +623,7 @@ function Boss_Shot_D2( t )
 	];
 	this.stateLabel = function ()
 	{
-		if (this.rz > 10,00000000.0 * 0,01745329.0)
+		if (this.rz > 10.00000000 * 0.01745329)
 		{
 			if (this.keyTake == 2)
 			{
@@ -631,11 +631,11 @@ function Boss_Shot_D2( t )
 			}
 		}
 
-		this.flag1 += this.flag1 < 0,50000000.0 * 0,01745329.0 ? 0,00025000.0 * 0,01745329.0 : 0,00000000.0;
+		this.flag1 += this.flag1 < 0.50000000 * 0.01745329 ? 0.00025000 * 0.01745329 : 0.00000000;
 
-		if (this.rz > 45,00000000.0 * 0,01745329.0)
+		if (this.rz > 45.00000000 * 0.01745329)
 		{
-			this.flag1 += 0,01000000.0 * 0,01745329.0;
+			this.flag1 += 0.01000000 * 0.01745329;
 
 			if (this.keyTake == 0)
 			{
@@ -644,7 +644,7 @@ function Boss_Shot_D2( t )
 		}
 
 		this.rz += this.flag1;
-		this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+		this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 
 		if (this.grazeCount >= this.flag2 || this.hitCount >= this.flag3)
 		{
@@ -657,10 +657,10 @@ function Boss_Shot_D2( t )
 
 		this.count++;
 
-		if (this.rz >= 90 * 0,01745329.0)
+		if (this.rz >= 90 * 0.01745329)
 		{
 			this.PlaySE(3650);
-			::camera.shake_radius = 12,00000000.0;
+			::camera.shake_radius = 12.00000000;
 			this.ReleaseActor();
 			return;
 		}
@@ -671,25 +671,25 @@ function Boss_Shot_D2_Denchu( t )
 {
 	this.SetMotion(4939, 2);
 	this.owner.shot_actor.Add(this);
-	this.rz = -10 * 0,01745329.0;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
-	this.flag1 = 0,75000000.0 * 0,01745329.0;
+	this.rz = -10 * 0.01745329;
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
+	this.flag1 = 0.75000000 * 0.01745329;
 	this.func = [
 		function ()
 		{
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.alpha = this.red = this.green = this.blue -= 0,05000000.0;
-				this.flag1 += 0,05000000.0 * 0,01745329.0;
+				this.alpha = this.red = this.green = this.blue -= 0.05000000;
+				this.flag1 += 0.05000000 * 0.01745329;
 				this.rz += this.flag1;
 
-				if (this.rz > 90,00000000.0 * 0,01745329.0)
+				if (this.rz > 90.00000000 * 0.01745329)
 				{
-					this.rz = 90,00000000.0 * 0,01745329.0;
+					this.rz = 90.00000000 * 0.01745329;
 				}
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -699,9 +699,9 @@ function Boss_Shot_D2_Denchu( t )
 	];
 	this.stateLabel = function ()
 	{
-		if (this.rz > 10,00000000.0 * 0,01745329.0)
+		if (this.rz > 10.00000000 * 0.01745329)
 		{
-			this.flag1 += 0,05000000.0 * 0,01745329.0;
+			this.flag1 += 0.05000000 * 0.01745329;
 
 			if (this.keyTake == 2)
 			{
@@ -710,12 +710,12 @@ function Boss_Shot_D2_Denchu( t )
 		}
 
 		this.rz += this.flag1;
-		this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+		this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 
-		if (this.rz >= 90 * 0,01745329.0)
+		if (this.rz >= 90 * 0.01745329)
 		{
 			this.PlaySE(3638);
-			::camera.shake_radius = 5,00000000.0;
+			::camera.shake_radius = 5.00000000;
 			this.ReleaseActor();
 			return;
 		}
@@ -740,25 +740,25 @@ function Boss_Shot_D2_HoleCore( t )
 			case 0:
 				this.flag1 = 3;
 				this.flag2 = 90;
-				this.SetSpeed_XY(6,00000000.0 * this.direction, 0,00000000.0);
+				this.SetSpeed_XY(6.00000000 * this.direction, 0.00000000);
 				break;
 
 			case 1:
 				this.flag1 = 6;
 				this.flag2 = 30;
-				this.SetSpeed_XY(6,00000000.0 * this.direction, 0,00000000.0);
+				this.SetSpeed_XY(6.00000000 * this.direction, 0.00000000);
 				break;
 
 			case 2:
 				this.flag1 = 8;
 				this.flag2 = 25;
-				this.SetSpeed_XY(6,00000000.0 * this.direction, 0,00000000.0);
+				this.SetSpeed_XY(6.00000000 * this.direction, 0.00000000);
 				break;
 
 			case 3:
 				this.flag1 = 12;
 				this.flag2 = 20;
-				this.SetSpeed_XY(6,00000000.0 * this.direction, 0,00000000.0);
+				this.SetSpeed_XY(6.00000000 * this.direction, 0.00000000);
 				break;
 			}
 
@@ -802,12 +802,12 @@ function Boss_Shot_D2_Hole( t )
 {
 	this.SetMotion(4938, 0);
 	this.cancelCount = 3;
-	this.SetSpeed_Vec(35,00000000.0, -1,57079601.0, this.direction);
-	this.flag1 = -35 * 0,01745329.0;
+	this.SetSpeed_Vec(35.00000000, -1.57079601, this.direction);
+	this.flag1 = -35 * 0.01745329;
 	this.subState = function ()
 	{
 		this.rz += this.flag1;
-		this.flag1 *= 0,94999999.0;
+		this.flag1 *= 0.94999999;
 	};
 	this.func = [
 		function ()
@@ -816,11 +816,11 @@ function Boss_Shot_D2_Hole( t )
 			this.stateLabel = function ()
 			{
 				this.subState();
-				this.SetSpeed_XY(this.va.x * 0,89999998.0, this.va.y * 0,89999998.0);
-				this.AddSpeed_XY(0,00000000.0, 0,75000000.0);
-				this.alpha = this.red = this.green = this.blue -= 0,10000000.0;
+				this.SetSpeed_XY(this.va.x * 0.89999998, this.va.y * 0.89999998);
+				this.AddSpeed_XY(0.00000000, 0.75000000);
+				this.alpha = this.red = this.green = this.blue -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -837,7 +837,7 @@ function Boss_Shot_D2_Hole( t )
 			return;
 		}
 
-		this.Vec_Brake(1,00000000.0, 1,50000000.0);
+		this.Vec_Brake(1.00000000, 1.50000000);
 		this.count++;
 
 		if (this.count == 20)
@@ -851,7 +851,7 @@ function Boss_Shot_D2_Hole( t )
 			this.stateLabel = function ()
 			{
 				this.subState();
-				this.AddSpeed_XY(0,00000000.0, 0,75000000.0);
+				this.AddSpeed_XY(0.00000000, 0.75000000);
 
 				if (this.y > ::battle.scroll_bottom + 100)
 				{
@@ -865,8 +865,8 @@ function Boss_Shot_D2_Hole( t )
 function Boss_Shot_D2_Splash( t )
 {
 	this.SetMotion(4938, 1);
-	this.sx = 1,50000000.0;
-	this.SetSpeed_Vec(60,00000000.0, -1,57079601.0, this.direction);
+	this.sx = 1.50000000;
+	this.SetSpeed_Vec(60.00000000, -1.57079601, this.direction);
 	this.cancelCount = 1;
 
 	if (this.rand() % 100 <= 50)
@@ -880,25 +880,25 @@ function Boss_Shot_D2_Splash( t )
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				if (this.Vec_Brake(2,00000000.0, 1,50000000.0))
+				if (this.Vec_Brake(2.00000000, 1.50000000))
 				{
 					this.stateLabel = function ()
 					{
-						this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-						this.sx *= 1,00999999.0;
-						this.alpha = this.red = this.green -= 0,05000000.0;
+						this.AddSpeed_XY(0.00000000, 0.50000000);
+						this.sx *= 1.00999999;
+						this.alpha = this.red = this.green -= 0.05000000;
 
-						if (this.alpha <= 0,00000000.0)
+						if (this.alpha <= 0.00000000)
 						{
 							this.ReleaseActor();
 						}
 					};
 				}
 
-				this.alpha -= 0,10000000.0;
-				this.sx *= 0,92000002.0;
+				this.alpha -= 0.10000000;
+				this.sx *= 0.92000002;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -913,16 +913,16 @@ function Boss_Shot_D2_Splash( t )
 			return;
 		}
 
-		if (this.Vec_Brake(2,50000000.0, 1,50000000.0))
+		if (this.Vec_Brake(2.50000000, 1.50000000))
 		{
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.sx *= 1,00999999.0;
-				this.alpha = this.red = this.green -= 0,05000000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.sx *= 1.00999999;
+				this.alpha = this.red = this.green -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}

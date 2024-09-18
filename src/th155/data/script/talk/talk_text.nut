@@ -3,7 +3,7 @@ class this.Text
 	x = 1155;
 	y = 130;
 	offset = 0;
-	scale = 0,00000000.0;
+	scale = 0.00000000;
 	text = null;
 	constructor()
 	{
@@ -61,9 +61,9 @@ class this.Text
 
 				foreach( v in t.text )
 				{
-					if (v.alpha < 1,00000000.0)
+					if (v.alpha < 1.00000000)
 					{
-						v.alpha += 0,10000000.0;
+						v.alpha += 0.10000000;
 						b = true;
 					}
 				}
@@ -87,9 +87,9 @@ class this.Text
 
 				foreach( v in t.text )
 				{
-					if (v.alpha > 0,00000000.0)
+					if (v.alpha > 0.00000000)
 					{
-						v.alpha -= 0,10000000.0;
+						v.alpha -= 0.10000000;
 						b = true;
 					}
 				}

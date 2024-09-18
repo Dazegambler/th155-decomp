@@ -163,7 +163,7 @@ function Update()
 	{
 		if (!this.current_file.is_directory)
 		{
-			::Dialog(1, "ƒtƒ@ƒCƒ‹‚ðíœ‚µ‚\x2584‚·‚©H", function ( t )
+			::Dialog(1, "ƒtƒ@ƒCƒ‹‚\x2261íœ‚\x2561‚\x2584‚\x2556‚\x2310H", function ( t )
 			{
 				if (t)
 				{

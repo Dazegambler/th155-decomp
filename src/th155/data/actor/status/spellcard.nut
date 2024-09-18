@@ -54,12 +54,12 @@ class this.SpellCard
 
 		if (this.side == 0)
 		{
-			this.actor = this.font.CreateSpellString(text, 1,00000000.0, 0,50000000.0, this.id == 3 ? 1,00000000.0 : 0,50000000.0);
+			this.actor = this.font.CreateSpellString(text, 1.00000000, 0.50000000, this.id == 3 ? 1.00000000 : 0.50000000);
 			this.actor_back.x = -9999;
 		}
 		else
 		{
-			this.actor = this.font.CreateSpellString(text, this.id == 3 ? 1,00000000.0 : 0,50000000.0, 0,50000000.0, 1,00000000.0);
+			this.actor = this.font.CreateSpellString(text, this.id == 3 ? 1.00000000 : 0.50000000, 0.50000000, 1.00000000);
 			this.actor.x = -this.actor.width + 16;
 			this.actor_back.x = 9999;
 		}
@@ -83,11 +83,11 @@ class this.SpellCard
 
 	function State0()
 	{
-		local s = 4,00000000.0 - this.count.tofloat() / 6,00000000.0;
+		local s = 4.00000000 - this.count.tofloat() / 6.00000000;
 
-		if (s <= 1,00000000.0)
+		if (s <= 1.00000000)
 		{
-			s = 1,00000000.0;
+			s = 1.00000000;
 			this.Update = this.State1;
 			this.count = 0;
 			this.actor.alpha = 1;
@@ -95,7 +95,7 @@ class this.SpellCard
 		}
 		else
 		{
-			this.actor.alpha = this.count.tofloat() / 18,00000000.0;
+			this.actor.alpha = this.count.tofloat() / 18.00000000;
 			this.actor.alpha2 = this.actor.alpha;
 			this.count++;
 		}
@@ -116,14 +116,14 @@ class this.SpellCard
 		}
 		else
 		{
-			local t = (15 - this.count) * (15 - this.count) * (this.side == 0 ? -1,50000000.0 : 1,50000000.0);
+			local t = (15 - this.count) * (15 - this.count) * (this.side == 0 ? -1.50000000 : 1.50000000);
 			this.actor_back.x = this.spell_back_ox + t;
 		}
 	}
 
 	function State2()
 	{
-		local y = this.top + (this.cos(this.count * 6 * 3,14159012.0 / 180,00000000.0) + 1,00000000.0) * (this.bottom - this.top) * 0,50000000.0;
+		local y = this.top + (this.cos(this.count * 6 * 3.14159012 / 180.00000000) + 1.00000000) * (this.bottom - this.top) * 0.50000000;
 
 		if (this.count == 30)
 		{
@@ -153,7 +153,7 @@ class this.SpellCard
 
 	function State4()
 	{
-		local tx = this.count * this.count * (this.side == 0 ? -0,50000000.0 : 0,50000000.0);
+		local tx = this.count * this.count * (this.side == 0 ? -0.50000000 : 0.50000000);
 
 		if (this.count++ > 20)
 		{

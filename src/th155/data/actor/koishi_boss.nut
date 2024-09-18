@@ -16,13 +16,13 @@ function ST2_PositionChange( t )
 	this.SetMotion(4992, 0);
 	this.armor = -1;
 	this.flag1 = this.Vector3();
-	this.flag2 = 0,00000000.0;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.flag2 = 0.00000000;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.count = 0;
 	this.GetFront();
 	this.centerStop = -2;
 
-	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0,50000000.0)
+	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0.50000000)
 	{
 		this.flag1.x = ::battle.corner_right - 200;
 		this.flag1.y = this.centerY - 250;
@@ -37,14 +37,14 @@ function ST2_PositionChange( t )
 	this.stateLabel = function ()
 	{
 		this.Boss_WalkMotionUpdate(this.flag3);
-		this.flag2 += 0,33000001.0;
+		this.flag2 += 0.33000001;
 
-		if (this.flag2 >= 7,50000000.0)
+		if (this.flag2 >= 7.50000000)
 		{
-			this.flag2 = 7,50000000.0;
+			this.flag2 = 7.50000000;
 		}
 
-		this.SetSpeed_XY((this.flag1.x - this.x) * 0,10000000.0, (this.flag1.y - this.y) * 0,10000000.0);
+		this.SetSpeed_XY((this.flag1.x - this.x) * 0.10000000, (this.flag1.y - this.y) * 0.10000000);
 		local v_ = this.va.Length();
 
 		if (v_ >= this.flag2)
@@ -53,12 +53,12 @@ function ST2_PositionChange( t )
 			this.ConvertTotalSpeed();
 		}
 
-		if (v_ <= 7,00000000.0)
+		if (v_ <= 7.00000000)
 		{
-			this.flag3 = 0,00000000.0;
+			this.flag3 = 0.00000000;
 		}
 
-		if (v_ <= 2,00000000.0)
+		if (v_ <= 2.00000000)
 		{
 			this.ST2_Attack(null);
 			return;
@@ -73,13 +73,13 @@ function ST2_Attack( t )
 	this.armor = -1;
 	this.count = 0;
 
-	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0,50000000.0)
+	if (this.x < (::battle.corner_left + ::battle.corner_right) * 0.50000000)
 	{
-		this.direction = 1,00000000.0;
+		this.direction = 1.00000000;
 	}
 	else
 	{
-		this.direction = -1,00000000.0;
+		this.direction = -1.00000000;
 	}
 
 	this.flag5 = {};
@@ -114,7 +114,7 @@ function ST2_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,25000000.0, 0,50000000.0);
+				this.Vec_Brake(0.25000000, 0.50000000);
 
 				if (this.count == 15)
 				{
@@ -129,7 +129,7 @@ function ST2_Attack( t )
 			this.PlaySE(2502);
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,05000000.0, 0,50000000.0);
+				this.CenterUpdate(0.05000000, 0.50000000);
 
 				if (this.flag5.shotNum > 0 && this.count % this.flag5.shotCycle == 1)
 				{
@@ -143,7 +143,7 @@ function ST2_Attack( t )
 					this.count = 0;
 					this.stateLabel = function ()
 					{
-						this.CenterUpdate(0,05000000.0, 0,50000000.0);
+						this.CenterUpdate(0.05000000, 0.50000000);
 					};
 				}
 			};
@@ -161,7 +161,7 @@ function ST2_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0, 0,50000000.0);
+		this.Vec_Brake(0.25000000, 0.50000000);
 	};
 }
 
@@ -269,11 +269,11 @@ function Slave_Attack_Jyoon3()
 	this.keyAction = [
 		function ()
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,25000000.0, 0,50000000.0);
+				this.Vec_Brake(0.25000000, 0.50000000);
 
 				if (this.count == 90)
 				{
@@ -295,7 +295,7 @@ function Slave_Attack_Jyoon3()
 			this.flag4 = null;
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,05000000.0, 0,50000000.0);
+				this.CenterUpdate(0.05000000, 0.50000000);
 
 				if (this.flag5.shotNum > 0)
 				{
@@ -318,7 +318,7 @@ function Slave_Attack_Jyoon3()
 						this.SetMotion(this.motion, 5);
 						this.stateLabel = function ()
 						{
-							this.CenterUpdate(0,05000000.0, 0,50000000.0);
+							this.CenterUpdate(0.05000000, 0.50000000);
 						};
 						return;
 					}
@@ -338,7 +338,7 @@ function Slave_Attack_Jyoon3()
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0, 0,50000000.0);
+		this.Vec_Brake(0.25000000, 0.50000000);
 	};
 }
 

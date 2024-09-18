@@ -16,8 +16,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_BossCommon();
 	this.type = 19;
-	this.baseGravity = 0,50000000.0;
-	this.baseSlideSpeed = 10,00000000.0;
+	this.baseGravity = 0.50000000;
+	this.baseSlideSpeed = 10.00000000;
 	this.com_difficulty = this.difficulty;
 
 	switch(this.difficulty)

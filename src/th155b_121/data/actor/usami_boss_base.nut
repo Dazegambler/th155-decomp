@@ -20,7 +20,7 @@ function Update_Normal()
 	this.uv_count++;
 	local mat = ::manbow.Matrix();
 	local x_ = this.x * this.direction % 128;
-	mat.SetTranslation(256 + x_, 256 + (this.y / 2 + this.uv_count * 0,25000000.0) % 128, 0);
+	mat.SetTranslation(256 + x_, 256 + (this.y / 2 + this.uv_count * 0.25000000) % 128, 0);
 	this.uv.SetWorldTransform(mat);
 
 	if (::battle.state == 8)
@@ -143,7 +143,7 @@ function BossForceCall_Init()
 {
 	::battle.enableTimeCount = false;
 	this.CallBossCard(0, ::battle.boss_spell[0].master_name);
-	this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+	this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 
 	if (this.boss_spell_func)
 	{

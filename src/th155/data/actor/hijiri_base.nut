@@ -46,11 +46,11 @@ function Move_ChantC_Orb()
 			{
 				if (this.chantC_orb.len() == 3)
 				{
-					this.chantC_range += (150 - this.chantC_range) * 0,15000001.0;
+					this.chantC_range += (150 - this.chantC_range) * 0.15000001;
 				}
 
-				local y_ = this.sin(this.chantC_rot + i * 120 * 0,01745329.0);
-				this.chantC_orb[i].Warp(this.x + this.chantC_range * this.cos(this.chantC_rot + i * 120 * 0,01745329.0), this.y - 50 + this.chantC_range * 0,25000000.0 * y_);
+				local y_ = this.sin(this.chantC_rot + i * 120 * 0.01745329);
+				this.chantC_orb[i].Warp(this.x + this.chantC_range * this.cos(this.chantC_rot + i * 120 * 0.01745329), this.y - 50 + this.chantC_range * 0.25000000 * y_);
 
 				if (this.chantC_orb[i].drawPriority == 200 && y_ < 0)
 				{

@@ -101,10 +101,10 @@ function Update()
 		::effect.Create(1, v, null, ::graphics.slot.front, 59999, ::effect.MASK_GLOBAL);
 	}
 
-	this.x += (this.target_x - this.x) * 0,20000000.0;
-	this.y += (this.target_y - this.y) * 0,20000000.0;
-	this.scale += (this.target_scale - this.scale) * 0,20000000.0;
-	this.rot += 0,03000000.0;
+	this.x += (this.target_x - this.x) * 0.20000000;
+	this.y += (this.target_y - this.y) * 0.20000000;
+	this.scale += (this.target_scale - this.scale) * 0.20000000;
+	this.rot += 0.03000000;
 	local mat = ::manbow.Matrix();
 	mat.Set(this.mat_local);
 	mat.Scale(this.scale, this.scale, this.scale);

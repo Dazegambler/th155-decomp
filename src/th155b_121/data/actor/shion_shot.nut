@@ -6,8 +6,8 @@ function Binbou_Shot_Core( t )
 	for( local i = 0; i < 15; i++ )
 	{
 		local t_ = {};
-		t_.rot <- i * 24 * 0,01745329.0;
-		this.flag1.append(this.SetShot(this.x, this.y, 1,00000000.0, this.Binbou_Shot, t_, this.weakref()).weakref());
+		t_.rot <- i * 24 * 0.01745329;
+		this.flag1.append(this.SetShot(this.x, this.y, 1.00000000, this.Binbou_Shot, t_, this.weakref()).weakref());
 	}
 
 	this.cancelCount = 99;
@@ -39,11 +39,11 @@ function Binbou_Shot_Core( t )
 function Binbou_Shot( t )
 {
 	this.SetMotion(3919, this.rand() % 4);
-	this.atkRate_Pat = 4,00000000.0;
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetSpeed_Vec(8 + this.rand() % 3, t.rot, 1,00000000.0);
+	this.atkRate_Pat = 4.00000000;
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetSpeed_Vec(8 + this.rand() % 3, t.rot, 1.00000000);
 	this.cancelCount = 1;
-	this.SetTaskAddRotation(0,00000000.0, 0,00000000.0, 0,03490658.0);
+	this.SetTaskAddRotation(0.00000000, 0.00000000, 0.03490658);
 	this.hitOwner = t.pare;
 	this.func = [
 		function ()
@@ -55,11 +55,11 @@ function Binbou_Shot( t )
 			};
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
-				this.sx = this.sy *= 0,92000002.0;
-				this.alpha -= 0,05000000.0;
+				this.Vec_Brake(0.50000000);
+				this.sx = this.sy *= 0.92000002;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -74,15 +74,15 @@ function Binbou_Shot( t )
 			return;
 		}
 
-		this.atkRate_Pat -= 0,10000000.0;
+		this.atkRate_Pat -= 0.10000000;
 
-		if (this.atkRate_Pat < 1,00000000.0)
+		if (this.atkRate_Pat < 1.00000000)
 		{
-			this.atkRate_Pat = 1,00000000.0;
+			this.atkRate_Pat = 1.00000000;
 		}
 
-		this.sx = this.sy += 0,05000000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy += 0.05000000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	};
 }
 

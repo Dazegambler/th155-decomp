@@ -5,15 +5,15 @@ function Boss_Shot_MS1_Core( t )
 	this.owner.shot_actor.Add(this);
 	this.flag5 = [];
 	this.flag4 = this.Vector3();
-	this.flag4.x = 1,00000000.0;
+	this.flag4.x = 1.00000000;
 	this.flag4.RotateByRadian(t.rot);
 	this.flag3 = 0;
 	this.flag2 = 0;
-	this.flag1 = 0,01745329.0;
+	this.flag1 = 0.01745329;
 
 	if (this.owner.com_difficulty == 4)
 	{
-		this.flag1 = 0,10471975.0;
+		this.flag1 = 0.10471975;
 	}
 
 	for( local i = 0; i < t.range; i++ )
@@ -32,7 +32,7 @@ function Boss_Shot_MS1_Core( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.flag2 += 0,00500000.0 * 0,01745329.0;
+				this.flag2 += 0.00500000 * 0.01745329;
 
 				if (this.flag2 > this.flag1)
 				{
@@ -57,7 +57,7 @@ function Boss_Shot_MS1_Core( t )
 	{
 		this.HitCycleUpdate(60);
 		this.cancelCount = 99;
-		this.flag3 += (100 - this.flag3) * 0,07500000.0;
+		this.flag3 += (100 - this.flag3) * 0.07500000;
 
 		foreach( val, a in this.flag5 )
 		{
@@ -80,10 +80,10 @@ function Boss_Shot_MS1( t )
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.alpha -= 0,05000000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -100,7 +100,7 @@ function Boss_Shot_DS1_Core( t )
 	this.hitResult = 128;
 	this.flag5 = [];
 	this.flag4 = this.Vector3();
-	this.flag4.x = 1,00000000.0;
+	this.flag4.x = 1.00000000;
 	this.flag4.RotateByRadian(t.rot);
 	this.flag3 = 0;
 	this.flag2 = this.Vector3();
@@ -166,11 +166,11 @@ function Boss_Shot_DS1_Core( t )
 					}
 				}
 
-				this.flag1 += 0,02500000.0 * 0,01745329.0;
+				this.flag1 += 0.02500000 * 0.01745329;
 
-				if (this.flag1 > 0,03490658.0)
+				if (this.flag1 > 0.03490658)
 				{
-					this.flag1 = 0,03490658.0;
+					this.flag1 = 0.03490658;
 				}
 
 				this.flag2.RotateByRadian(this.flag1);
@@ -180,7 +180,7 @@ function Boss_Shot_DS1_Core( t )
 		},
 		function ()
 		{
-			::camera.Shake(10,00000000.0);
+			::camera.Shake(10.00000000);
 			this.PlaySE(2987);
 
 			foreach( a in this.flag5 )
@@ -216,11 +216,11 @@ function Boss_Shot_DS1_Core( t )
 					}
 				}
 
-				this.flag1 += 0,05000000.0 * 0,01745329.0;
+				this.flag1 += 0.05000000 * 0.01745329;
 
-				if (this.flag1 > 0,08726646.0)
+				if (this.flag1 > 0.08726646)
 				{
-					this.flag1 = 0,08726646.0;
+					this.flag1 = 0.08726646;
 				}
 
 				this.flag2.RotateByRadian(this.flag1);
@@ -233,7 +233,7 @@ function Boss_Shot_DS1_Core( t )
 	{
 		this.HitCycleUpdate(60);
 		this.cancelCount = 99;
-		this.flag3 += (66 - this.flag3) * 0,07500000.0;
+		this.flag3 += (66 - this.flag3) * 0.07500000;
 
 		foreach( val, a in this.flag5 )
 		{
@@ -258,10 +258,10 @@ function Boss_Shot_DS1( t )
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.alpha -= 0,05000000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -272,8 +272,8 @@ function Boss_Shot_DS1( t )
 			this.hitOwner = this.weakref();
 			this.cancelCount = 3;
 			this.hitResult = 128;
-			this.SetSpeed_XY(this.va.x * 0,66000003.0, this.va.y * 0,33000001.0);
-			this.flag1 = (1 + this.rand() % 3) * 0,01745329.0;
+			this.SetSpeed_XY(this.va.x * 0.66000003, this.va.y * 0.33000001);
+			this.flag1 = (1 + this.rand() % 3) * 0.01745329;
 
 			if (this.rand() % 100 <= 49)
 			{
@@ -289,7 +289,7 @@ function Boss_Shot_DS1( t )
 				}
 
 				this.rz += this.flag1;
-				this.AddSpeed_XY(0,00000000.0, 0,25000000.0);
+				this.AddSpeed_XY(0.00000000, 0.25000000);
 				this.HitCycleUpdate(2);
 
 				if (this.hitCount > 0 || this.cancelCount <= 0 || this.grazeCount >= 5)
@@ -325,21 +325,21 @@ function Boss_Shot_SL1( t )
 	this.SetMotion(4919, this.rand() % 3);
 	this.owner.shot_actor.Add(this);
 	this.cancelCount = 1;
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	this.SetSpeed_Vec(t.v, t.rot, this.direction);
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.func = [
 		function ()
 		{
 			this.callbackGroup = 0;
-			this.flag2 = (6 - this.rand() % 13) * 0,01745329.0;
+			this.flag2 = (6 - this.rand() % 13) * 0.01745329;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
+				this.AddSpeed_XY(0.00000000, 0.50000000);
 				this.rz += this.flag2;
-				this.alpha -= 0,05000000.0;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -352,9 +352,9 @@ function Boss_Shot_SL1( t )
 		{
 			this.subState = function ()
 			{
-				this.flag1 += 0,75000000.0;
-				this.va.x = (this.owner.flag5.pos.x - this.x) * 0,20000000.0;
-				this.va.y = (this.owner.flag5.pos.y - this.y) * 0,20000000.0;
+				this.flag1 += 0.75000000;
+				this.va.x = (this.owner.flag5.pos.x - this.x) * 0.20000000;
+				this.va.y = (this.owner.flag5.pos.y - this.y) * 0.20000000;
 				local r_ = this.va.Length();
 
 				if (r_ > this.flag1)
@@ -368,15 +368,15 @@ function Boss_Shot_SL1( t )
 		function ()
 		{
 			this.callbackGroup = 0;
-			this.SetSpeed_Vec(10,00000000.0 + this.rand() % 8, this.rand() % 360 * 0,01745329.0, this.direction);
-			this.flag2 = (6 - this.rand() % 13) * 0,01745329.0;
+			this.SetSpeed_Vec(10.00000000 + this.rand() % 8, this.rand() % 360 * 0.01745329, this.direction);
+			this.flag2 = (6 - this.rand() % 13) * 0.01745329;
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
+				this.AddSpeed_XY(0.00000000, 0.50000000);
 				this.rz += this.flag2;
-				this.alpha -= 0,05000000.0;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -385,7 +385,7 @@ function Boss_Shot_SL1( t )
 	];
 	this.subState = function ()
 	{
-		this.SetSpeed_XY(this.va.x * 0,92000002.0, this.va.y * 0,92000002.0);
+		this.SetSpeed_XY(this.va.x * 0.92000002, this.va.y * 0.92000002);
 	};
 	this.stateLabel = function ()
 	{

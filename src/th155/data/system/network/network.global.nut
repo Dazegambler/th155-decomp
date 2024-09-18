@@ -63,7 +63,7 @@ function Update()
 	switch(this.action.state)
 	{
 	case 0:
-		::menu.cursor.SetTarget(this.ox + this.gl.lobby_incomming.x - 20, this.gl.y + this.gl.lobby_incomming.y + 16 + this.action.cursor.val * 36, 0,69999999.0);
+		::menu.cursor.SetTarget(this.ox + this.gl.lobby_incomming.x - 20, this.gl.y + this.gl.lobby_incomming.y + 16 + this.action.cursor.val * 36, 0.69999999);
 
 		if (this.count > 0)
 		{
@@ -128,7 +128,7 @@ function Update()
 		this.msg_window.text.y = 48;
 		this.msg_window.upnp_state.visible = ::config.network.upnp;
 		this.msg_window.upnp_state_title.visible = ::config.network.upnp;
-		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0,69999999.0);
+		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0.69999999);
 	}
 	else if (this.action.update == this.action.UpdateMatch || this.action.update == this.action.UpdateMatchWait)
 	{
@@ -149,7 +149,7 @@ function Update()
 			this.msg_window.upnp_state_title.visible = false;
 		}
 
-		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0,69999999.0);
+		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0.69999999);
 	}
 	else if (this.action.update == this.action.UpdateWaitClient)
 	{
@@ -160,7 +160,7 @@ function Update()
 		this.msg_window.text.y = 48;
 		this.msg_window.upnp_state.visible = false;
 		this.msg_window.upnp_state_title.visible = false;
-		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0,69999999.0);
+		::menu.cursor.SetTarget(this.msg_window.x + this.msg_window.text.x - 16, this.msg_window.y + this.msg_window.text.y + 16, 0.69999999);
 	}
 	else
 	{
@@ -182,7 +182,7 @@ function Update()
 		}
 
 		this.addr_window.cursor.x = this.addr_cursor_x + c * 20;
-		::menu.cursor.SetTarget(this.addr_window.x + this.addr_window.input_addr.x - 16, this.addr_window.y + this.addr_window.input_addr.y + 16, 0,69999999.0);
+		::menu.cursor.SetTarget(this.addr_window.x + this.addr_window.input_addr.x - 16, this.addr_window.y + this.addr_window.input_addr.y + 16, 0.69999999);
 	}
 	else
 	{
@@ -193,7 +193,7 @@ function Update()
 	{
 		this.port_window.visible = true;
 		this.port_window.cursor.x = this.port_cursor_x + this.action.server_port_h.val * 20;
-		::menu.cursor.SetTarget(this.port_window.x + this.port_window.input_port.x - 16, this.port_window.y + this.port_window.input_port.y + 16, 0,69999999.0);
+		::menu.cursor.SetTarget(this.port_window.x + this.port_window.input_port.x - 16, this.port_window.y + this.port_window.input_port.y + 16, 0.69999999);
 	}
 	else
 	{
@@ -260,7 +260,7 @@ function Draw()
 	{
 		local d = port % 10;
 		local offset = d * 32;
-		this.gl.port.Blit(408 - i * 20, 0, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1,00000000.0);
+		this.gl.port.Blit(408 - i * 20, 0, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1.00000000);
 		port = port / 10;
 
 		if (port == 0)
@@ -284,8 +284,8 @@ function Draw()
 				for( local i = 0; i < ip.len(); i = ++i )
 				{
 					local offset = (ip[i] == 46 ? 11 : ip[i].tointeger() - 48) * 32;
-					actor.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1,00000000.0);
-					actor.BlitScale(0,50000000.0, 0,50000000.0, 0, 0);
+					actor.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1.00000000);
+					actor.BlitScale(0.50000000, 0.50000000, 0, 0);
 					x = x + 10;
 				}
 			}
@@ -304,18 +304,18 @@ function Draw()
 		{
 			if (i == 3 || i == 6 || i == 9)
 			{
-				this.addr_window.window.Blit(x, y, 32, 32, r, 11 * w, 0, this.BLEND_ALPHA, 1,00000000.0);
+				this.addr_window.window.Blit(x, y, 32, 32, r, 11 * w, 0, this.BLEND_ALPHA, 1.00000000);
 				x = x + s;
 			}
 
 			if (i == 12)
 			{
-				this.addr_window.window.Blit(x, y, 32, 32, r, 10 * w, 0, this.BLEND_ALPHA, 1,00000000.0);
+				this.addr_window.window.Blit(x, y, 32, 32, r, 10 * w, 0, this.BLEND_ALPHA, 1.00000000);
 				x = x + s;
 			}
 
 			local offset = this.action.target_addr_v[i].val * w + (this.action.target_addr_h.val == i ? 0 : 512);
-			this.addr_window.window.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1,00000000.0);
+			this.addr_window.window.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1.00000000);
 			x = x + s;
 		}
 	}
@@ -331,7 +331,7 @@ function Draw()
 		for( local i = 0; i < 5; i = ++i )
 		{
 			local offset = this.action.server_port_v[i].val * w + (this.action.server_port_h.val == i ? 0 : 512);
-			this.port_window.window.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1,00000000.0);
+			this.port_window.window.Blit(x, y, 32, 32, this.resource.num, offset, 0, this.BLEND_ALPHA, 1.00000000);
 			x = x + s;
 		}
 	}

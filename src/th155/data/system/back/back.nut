@@ -70,7 +70,7 @@ function Update()
 	{
 		if (this.sprite_back.sy < 1)
 		{
-			this.sprite_back.sy += 0,10000000.0;
+			this.sprite_back.sy += 0.10000000;
 		}
 		else
 		{
@@ -80,22 +80,22 @@ function Update()
 
 		this.sprite_back.alpha = this.sprite_back.sy;
 		this.Show();
-		local v = (1,00000000.0 - this.sprite_back.alpha) * 20,00000000.0;
+		local v = (1.00000000 - this.sprite_back.alpha) * 20.00000000;
 		this.sprite0.x = -v * v - this.margin;
 		this.sprite1.x = 1280 - 448 + v * v + this.margin;
 	}
 	else
 	{
-		if (this.count++ < 16 && this.sprite_back.sy >= 1,00000000.0)
+		if (this.count++ < 16 && this.sprite_back.sy >= 1.00000000)
 		{
 			return;
 		}
 
 		if (this.sprite_back.sy > 0)
 		{
-			this.sprite_back.sy -= 0,10000000.0;
+			this.sprite_back.sy -= 0.10000000;
 			this.sprite_back.alpha = this.sprite_back.sy;
-			local v = (1,00000000.0 - this.sprite_back.alpha) * 20,00000000.0;
+			local v = (1.00000000 - this.sprite_back.alpha) * 20.00000000;
 			this.sprite0.x = -v * v - this.margin;
 			this.sprite1.x = 1280 - 448 + v * v + this.margin;
 		}

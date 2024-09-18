@@ -35,13 +35,13 @@ function Update_Normal()
 		if (this.IsDamage())
 		{
 			this.occultCount = 0;
-			this.atkRate = 1,00000000.0;
+			this.atkRate = 1.00000000;
 			this.occult_level = 0;
 		}
 		else if (this.team.life <= 1)
 		{
 			this.occultCount = 0;
-			this.atkRate = 1,00000000.0;
+			this.atkRate = 1.00000000;
 			this.occult_level = 0;
 		}
 		else
@@ -59,7 +59,7 @@ function Update_Normal()
 			{
 				this.PlaySE(3241);
 				this.occult_level++;
-				this.atkRate = 1,04999995.0 + this.occult_level * 0,05000000.0;
+				this.atkRate = 1.04999995 + this.occult_level * 0.05000000;
 
 				switch(this.occult_level)
 				{

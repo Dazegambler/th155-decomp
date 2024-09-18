@@ -23,25 +23,25 @@ function OnMove()
 			{
 				if (a.vf.x)
 				{
-					if (this.abs(a.vf.x) > 1,00000000.0)
+					if (this.abs(a.vf.x) > 1.00000000)
 					{
-						a.vf.x -= a.vf.x > 0,00000000.0 ? 1,00000000.0 : -1,00000000.0;
+						a.vf.x -= a.vf.x > 0.00000000 ? 1.00000000 : -1.00000000;
 					}
 					else
 					{
-						a.vf.x = 0,00000000.0;
+						a.vf.x = 0.00000000;
 					}
 				}
 
 				if (a.vfBaria.x)
 				{
-					if (this.abs(a.vfBaria.x) > 1,00000000.0)
+					if (this.abs(a.vfBaria.x) > 1.00000000)
 					{
-						a.vfBaria.x -= a.vfBaria.x > 0,00000000.0 ? 1,00000000.0 : -1,00000000.0;
+						a.vfBaria.x -= a.vfBaria.x > 0.00000000 ? 1.00000000 : -1.00000000;
 					}
 					else
 					{
-						a.vfBaria.x = 0,00000000.0;
+						a.vfBaria.x = 0.00000000;
 					}
 				}
 
@@ -197,7 +197,7 @@ function OnMove()
 	}
 	else if (x0 > x1)
 	{
-		local dx = (right1 - left0) / 2,00000000.0;
+		local dx = (right1 - left0) / 2.00000000;
 		p0.vx += dx;
 		p1.vx -= dx;
 
@@ -216,7 +216,7 @@ function OnMove()
 	}
 	else
 	{
-		local dx = (right0 - left1) / 2,00000000.0;
+		local dx = (right0 - left1) / 2.00000000;
 		p0.vx -= dx;
 		p1.vx += dx;
 

@@ -1,7 +1,7 @@
 function Boss_Shot_Tutorial( t )
 {
 	this.SetMotion(4918, 0);
-	this.SetSpeed_Vec(6,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(6.00000000, t.rot, this.direction);
 	this.cancelCount = 1;
 	this.owner.shot_actor.Add(this);
 	this.rz = t.rot;
@@ -9,15 +9,15 @@ function Boss_Shot_Tutorial( t )
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.func[0] = function ()
 			{
 			};
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy -= 0,10000000.0;
+				this.sx = this.sy -= 0.10000000;
 
-				if (this.sx <= 0,00000000.0)
+				if (this.sx <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -43,26 +43,26 @@ function Boss_Shot_Tutorial2( t )
 		this.SetMotion(this.motion, 1);
 	}
 
-	this.SetSpeed_Vec(3,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(3.00000000, t.rot, this.direction);
 	this.cancelCount = 1;
 	this.owner.shot_actor.Add(this);
 	this.rz = t.rot;
 	this.flag1 = this.Vector3();
-	this.flag1.x = this.va.x * 0,05000000.0;
-	this.flag1.y = this.va.y * 0,05000000.0;
+	this.flag1.x = this.va.x * 0.05000000;
+	this.flag1.y = this.va.y * 0.05000000;
 	this.func = [
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.func[0] = function ()
 			{
 			};
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy -= 0,10000000.0;
+				this.sx = this.sy -= 0.10000000;
 
-				if (this.sx <= 0,00000000.0)
+				if (this.sx <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -96,26 +96,26 @@ function Boss_Shot_Tutorial2( t )
 function Boss_Shot_Tutorial2B( t )
 {
 	this.SetMotion(4918, 0);
-	this.SetSpeed_Vec(3,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(3.00000000, t.rot, this.direction);
 	this.cancelCount = 1;
 	this.owner.shot_actor.Add(this);
 	this.rz = t.rot;
 	this.flag1 = this.Vector3();
-	this.flag1.x = this.va.x * 0,05000000.0;
-	this.flag1.y = this.va.y * 0,05000000.0;
+	this.flag1.x = this.va.x * 0.05000000;
+	this.flag1.y = this.va.y * 0.05000000;
 	this.func = [
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.func[0] = function ()
 			{
 			};
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy -= 0,10000000.0;
+				this.sx = this.sy -= 0.10000000;
 
-				if (this.sx <= 0,00000000.0)
+				if (this.sx <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -143,9 +143,9 @@ function Boss_Shot_ChangeWave( t )
 			this.callbackGroup = 0;
 			this.stateLabel = function ()
 			{
-				this.alpha -= 0,10000000.0;
+				this.alpha -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -166,8 +166,8 @@ function Boss_Shot_ChangeWave( t )
 	this.flag1 = true;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += 0,50000000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy += 0.50000000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 		if (this.flag1 && this.hitResult & 1)
 		{

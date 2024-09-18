@@ -14,7 +14,7 @@ function Initialize()
 	actor.oy = ::graphics.height / 2;
 	this.item.push(actor);
 	local version = ::font.CreateSystemString(::GetVersionString());
-	local s = 0,66600001.0;
+	local s = 0.66600001;
 	version.sx = version.sy = s;
 	version.x = ::graphics.width - 16 - version.width * s;
 	version.y = ::graphics.height - 48 * s - version.height * s;
@@ -34,7 +34,7 @@ function Initialize()
 		{
 			this.count--;
 			this.obj.x = this.ox - this.count * this.count;
-			this.obj.alpha = 1,00000000.0 - this.count / 10,00000000.0;
+			this.obj.alpha = 1.00000000 - this.count / 10.00000000;
 		}
 		else
 		{
@@ -50,7 +50,7 @@ function Initialize()
 		{
 			this.count++;
 			this.obj.x = this.ox - this.count * this.count;
-			this.obj.alpha = 1,00000000.0 - this.count / 10,00000000.0;
+			this.obj.alpha = 1.00000000 - this.count / 10.00000000;
 		}
 		else
 		{
@@ -126,7 +126,7 @@ function Initialize()
 			return;
 		}
 
-		this.v.sx -= 0,04000000.0;
+		this.v.sx -= 0.04000000;
 
 		if (this.v.sx <= 1)
 		{
@@ -134,7 +134,7 @@ function Initialize()
 			::loop.DeleteTask(this);
 		}
 	};
-	this.sx <- 1,00000000.0;
+	this.sx <- 1.00000000;
 	this.count <- 0;
 	this.state <- 0;
 
@@ -190,23 +190,23 @@ function Update()
 {
 	if (this.action.cursor.diff || this.action.cursor_difficulty.diff)
 	{
-		this.sx = 1,14999998.0;
+		this.sx = 1.14999998;
 		::loop.AddTask(this.scale_task);
 	}
 
 	if (this.action.new_version && !this.new_version)
 	{
 		this.new_version = true;
-		local t = ::font.CreateSystemStringSmall("V‚µ‚¢ƒo[ƒWƒ‡ƒ“‚ª‚ ‚è‚\x2584‚·");
+		local t = ::font.CreateSystemStringSmall("V‚\x2561‚¢ƒo[ƒWƒ‡ƒ“‚ª‚ ‚è‚\x2584‚\x2556");
 		t.x = ::graphics.width - t.width - 16;
 		t.y = ::graphics.height - t.height - 32 - 20 * 2;
-		t.blue = 0,50000000.0;
+		t.blue = 0.50000000;
 		t.ConnectRenderSlot(::graphics.slot.ui, 10);
 		this.item.push(t);
-		t = ::font.CreateSystemStringSmall("ƒAƒbƒvƒf[ƒg‚ðs‚\x2534‚\x2500‚­‚¾‚\x2502‚¢");
+		t = ::font.CreateSystemStringSmall("ƒAƒbƒvƒf[ƒg‚\x2261s‚\x2534‚\x2500‚­‚\x255b‚\x2502‚¢");
 		t.x = ::graphics.width - t.width - 16;
 		t.y = ::graphics.height - t.height - 32 - 20;
-		t.blue = 0,50000000.0;
+		t.blue = 0.50000000;
 		t.ConnectRenderSlot(::graphics.slot.ui, 10);
 		this.item.push(t);
 	}
@@ -234,18 +234,18 @@ function Update()
 		else
 		{
 			local c = this.action.cursor.val;
-			::menu.cursor.SetTarget(this.main[c].ox - 24, this.main[c].oy + 28, 1,00000000.0);
+			::menu.cursor.SetTarget(this.main[c].ox - 24, this.main[c].oy + 28, 1.00000000);
 
 			foreach( i, v in this.main )
 			{
 				if (this.action.cursor.val != i)
 				{
-					v.obj.red = v.obj.green = v.obj.blue = 0,50000000.0;
+					v.obj.red = v.obj.green = v.obj.blue = 0.50000000;
 					v.obj.sx = v.obj.sy = 1;
 				}
 				else
 				{
-					v.obj.red = v.obj.green = v.obj.blue = 1,00000000.0;
+					v.obj.red = v.obj.green = v.obj.blue = 1.00000000;
 					v.obj.sx = v.obj.sy = this.sx;
 				}
 			}
@@ -274,18 +274,18 @@ function Update()
 		else
 		{
 			local c = this.action.cursor_difficulty.val;
-			::menu.cursor.SetTarget(this.difficulty[c].ox - 24, this.difficulty[c].oy + 28, 1,00000000.0);
+			::menu.cursor.SetTarget(this.difficulty[c].ox - 24, this.difficulty[c].oy + 28, 1.00000000);
 
 			foreach( i, v in this.difficulty )
 			{
 				if (this.action.cursor_difficulty.val != i)
 				{
-					v.obj.red = v.obj.green = v.obj.blue = 0,50000000.0;
+					v.obj.red = v.obj.green = v.obj.blue = 0.50000000;
 					v.obj.sx = v.obj.sy = 1;
 				}
 				else
 				{
-					v.obj.red = v.obj.green = v.obj.blue = 1,00000000.0;
+					v.obj.red = v.obj.green = v.obj.blue = 1.00000000;
 					v.obj.sx = v.obj.sy = this.sx;
 				}
 			}
@@ -295,7 +295,7 @@ function Update()
 	}
 
 	local t = this.item[2];
-	t.sy = t.sx = 1 + (1 - this.cos(this.count * 0,01000000.0)) * 0,01500000.0;
+	t.sy = t.sx = 1 + (1 - this.cos(this.count * 0.01000000)) * 0.01500000;
 	this.count++;
 }
 

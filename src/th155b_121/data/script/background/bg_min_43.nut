@@ -1,7 +1,7 @@
 local slot = ::graphics.slot;
 this.mat_world <- this.manbow.Matrix();
 this.mat_world.SetIdentity();
-this.mat_world.SetScaling(1280,00000000.0 / 1278,00000000.0, 720,00000000.0 / 718,00000000.0, 1);
+this.mat_world.SetScaling(1280.00000000 / 1278.00000000, 720.00000000 / 718.00000000, 1);
 this.animation_set <- ::manbow.AnimationSet2D();
 local prop = this.manbow.Animation2DProperty();
 prop.texture_name = "data/background/min/43.dds";
@@ -48,7 +48,7 @@ this.actor4.SetMotion(3, 3);
 this.actor4.ConnectRenderSlot(slot.background2d_0, 998);
 local mat = ::manbow.Matrix();
 this.mat_scale <- ::manbow.Matrix();
-this.mat_scale.SetScaling(0,50000000.0, 0,50000000.0, 0,50000000.0);
+this.mat_scale.SetScaling(0.50000000, 0.50000000, 0.50000000);
 mat.Set(this.mat_scale);
 mat.Translate(50, 580, -200);
 this.actor1.SetWorldTransform(mat);
@@ -90,27 +90,27 @@ function Update()
 	}
 
 	mat.Set(this.mat_scale);
-	mat.Translate(665, 500 + 5 * this.sin(1,08570004.0 * this.count * 3 * 0,01745329.0), -130);
+	mat.Translate(665, 500 + 5 * this.sin(1.08570004 * this.count * 3 * 0.01745329), -130);
 	this.actor1.SetWorldTransform(mat);
 	this.actor1.Update();
 	mat.Set(this.mat_scale);
-	mat.Translate(610 + 5 * this.sin(1,08570004.0 * this.count * 0,01745329.0), 520 + 2,50000000.0 * this.sin((1,08570004.0 * this.count + 90) * 3 * 0,01745329.0), -200);
+	mat.Translate(610 + 5 * this.sin(1.08570004 * this.count * 0.01745329), 520 + 2.50000000 * this.sin((1.08570004 * this.count + 90) * 3 * 0.01745329), -200);
 	this.actor2.SetWorldTransform(mat);
 	this.actor2.Update();
 	mat.Set(this.mat_scale);
-	mat.Translate(610 + 5 * this.sin(1,08570004.0 * this.count * 0,01745329.0), 520 + 2,50000000.0 * this.sin((1,08570004.0 * this.count + 90) * 3 * 0,01745329.0), -210);
+	mat.Translate(610 + 5 * this.sin(1.08570004 * this.count * 0.01745329), 520 + 2.50000000 * this.sin((1.08570004 * this.count + 90) * 3 * 0.01745329), -210);
 	this.actor2b.SetWorldTransform(mat);
 	this.actor2b.Update();
 	mat.Set(this.mat_scale);
-	mat.Translate(540 - 10 * this.sin(1,08570004.0 * this.count * 0,01745329.0 * 2), 510 + 5 * this.sin((1,08570004.0 * this.count + 180) * 4 * 0,01745329.0), -180);
+	mat.Translate(540 - 10 * this.sin(1.08570004 * this.count * 0.01745329 * 2), 510 + 5 * this.sin((1.08570004 * this.count + 180) * 4 * 0.01745329), -180);
 	this.actor3.SetWorldTransform(mat);
 	this.actor3.Update();
 	mat.Set(this.mat_scale);
-	mat.Translate(540 - 10 * this.sin(1,08570004.0 * this.count * 0,01745329.0 * 2), 510 + 5 * this.sin((1,08570004.0 * this.count + 180) * 4 * 0,01745329.0), -190);
+	mat.Translate(540 - 10 * this.sin(1.08570004 * this.count * 0.01745329 * 2), 510 + 5 * this.sin((1.08570004 * this.count + 180) * 4 * 0.01745329), -190);
 	this.actor3b.SetWorldTransform(mat);
 	this.actor3b.Update();
 	mat.Set(this.mat_scale);
-	mat.Translate(740 + 10 * this.sin(1,08570004.0 * this.count * 0,01745329.0 * 2), 510 + 5 * this.sin((1,08570004.0 * this.count + 270) * 4 * 0,01745329.0), -150);
+	mat.Translate(740 + 10 * this.sin(1.08570004 * this.count * 0.01745329 * 2), 510 + 5 * this.sin((1.08570004 * this.count + 270) * 4 * 0.01745329), -150);
 	this.actor4.SetWorldTransform(mat);
 	this.actor4.Update();
 }

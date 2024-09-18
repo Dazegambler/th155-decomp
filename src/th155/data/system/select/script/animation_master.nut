@@ -63,8 +63,8 @@ local func_init = function ( i )
 		}
 		else
 		{
-			this.frame.red = this.frame.blue = this.frame.green = 2,50000000.0;
-			f.red = f.blue = f.green = 2,50000000.0;
+			this.frame.red = this.frame.blue = this.frame.green = 2.50000000;
+			f.red = f.blue = f.green = 2.50000000;
 			f.ConnectRenderSlot(::graphics.slot.ui, priority + 2000 + this.offset);
 		}
 
@@ -73,8 +73,8 @@ local func_init = function ( i )
 	}
 
 	this.target_id = 1000 + this.cursor;
-	this.rot <- 0 + this.index * 0,50000000.0;
-	this.rot_acc <- 0,00500000.0;
+	this.rot <- 0 + this.index * 0.50000000;
+	this.rot_acc <- 0.00500000;
 	this.scale <- 0;
 	this.scale_face <- 1;
 };
@@ -83,12 +83,12 @@ local func_update = function ()
 	local mat = ::manbow.Matrix();
 	this.rot += this.rot_acc;
 
-	if (this.fabs(this.rot_acc) > 0,00200000.0)
+	if (this.fabs(this.rot_acc) > 0.00200000)
 	{
-		this.rot_acc *= 0,94999999.0;
+		this.rot_acc *= 0.94999999;
 	}
 
-	mat.SetRotation(-0,40000001.0, 0,60000002.0, this.rot);
+	mat.SetRotation(-0.40000001, 0.60000002, this.rot);
 	mat.Scale(this.scale, this.scale, 1);
 	mat.Multiply(this.mat_frame);
 
@@ -106,11 +106,11 @@ local func_update = function ()
 	}
 	else
 	{
-		color = color - 0,20000000.0;
+		color = color - 0.20000000;
 
-		if (color < 0,50000000.0)
+		if (color < 0.50000000)
 		{
-			color = 0,50000000.0;
+			color = 0.50000000;
 		}
 	}
 
@@ -124,12 +124,12 @@ local func_update = function ()
 
 			if (v.alpha < 1)
 			{
-				v.alpha += 0,20000000.0;
+				v.alpha += 0.20000000;
 			}
 		}
-		else if (v.alpha > 0,10000000.0)
+		else if (v.alpha > 0.10000000)
 		{
-			v.alpha -= 0,10000000.0;
+			v.alpha -= 0.10000000;
 		}
 		else
 		{
@@ -141,7 +141,7 @@ local func_update = function ()
 
 	if (this.scale > 1)
 	{
-		this.scale -= 0,15000001.0;
+		this.scale -= 0.15000001;
 
 		if (this.scale < 1)
 		{
@@ -150,7 +150,7 @@ local func_update = function ()
 	}
 	else if (this.scale < 1)
 	{
-		this.scale += 0,10000000.0;
+		this.scale += 0.10000000;
 
 		if (this.scale > 1)
 		{
@@ -162,7 +162,7 @@ local func_update = function ()
 	{
 		if (this.target_id != 2000 + this.cursor_inst.val)
 		{
-			this.rot_acc = 0,10000000.0;
+			this.rot_acc = 0.10000000;
 
 			foreach( v in this.face )
 			{

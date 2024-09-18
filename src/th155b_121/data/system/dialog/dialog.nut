@@ -93,7 +93,7 @@ class this.Dialog
 			this.item.left <- left;
 			local input_rect = ::manbow.Rectangle();
 			input_rect.SetPosition(left, top - margin, right, bottom + margin);
-			input_rect.SetColor(1, 0,20000000.0, 0,20000000.0, 0,20000000.0);
+			input_rect.SetColor(1, 0.20000000, 0.20000000, 0.20000000);
 			this.item.input_rect <- input_rect;
 			this.obj.append(input_rect);
 			local text = arg ? arg : "";
@@ -139,12 +139,12 @@ class this.Dialog
 
 			for( local i = 0; i <= 5; i = ++i )
 			{
-				mat.SetScaling(i / 5,00000000.0, i / 5,00000000.0, 1);
+				mat.SetScaling(i / 5.00000000, i / 5.00000000, 1);
 				mat.Translate(::graphics.width / 2, ::graphics.height / 2, 0);
 
 				foreach( v in this.obj )
 				{
-					v.alpha = i / 5,00000000.0;
+					v.alpha = i / 5.00000000;
 					v.SetWorldTransform(mat);
 				}
 
@@ -173,12 +173,12 @@ class this.Dialog
 
 			for( local i = 5; i > 0; i = --i )
 			{
-				mat.SetScaling(i / 5,00000000.0, i / 5,00000000.0, 1);
+				mat.SetScaling(i / 5.00000000, i / 5.00000000, 1);
 				mat.Translate(::graphics.width / 2, ::graphics.height / 2, 0);
 
 				foreach( v in this.obj )
 				{
-					v.alpha = i / 5,00000000.0;
+					v.alpha = i / 5.00000000;
 					v.SetWorldTransform(mat);
 				}
 
@@ -218,7 +218,7 @@ class this.Dialog
 			}
 		}
 
-		::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0,69999999.0);
+		::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0.69999999);
 	}
 
 	function UpdateSelect()
@@ -234,7 +234,7 @@ class this.Dialog
 			}
 			else
 			{
-				v.red = v.green = v.blue = 0,50000000.0;
+				v.red = v.green = v.blue = 0.50000000;
 			}
 		}
 
@@ -259,7 +259,7 @@ class this.Dialog
 		}
 
 		local cur = this.item[this.cursor.val];
-		::menu.cursor.SetTarget(cur.x - 20 + ::graphics.width / 2, cur.y + 24 + ::graphics.height / 2, 0,69999999.0);
+		::menu.cursor.SetTarget(cur.x - 20 + ::graphics.width / 2, cur.y + 24 + ::graphics.height / 2, 0.69999999);
 	}
 
 	function UpdateInputText()
@@ -366,7 +366,7 @@ class this.Dialog
 			}
 		}
 
-		::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0,69999999.0);
+		::menu.cursor.SetTarget(this.obj[1].x - 20 + ::graphics.width / 2, this.obj[1].y + 24 + ::graphics.height / 2, 0.69999999);
 	}
 
 }

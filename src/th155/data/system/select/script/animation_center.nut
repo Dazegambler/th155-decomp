@@ -67,7 +67,7 @@ local func_init = function ( _index, target )
 	this.target_x <- this.x;
 	this.target_y <- this.y;
 	this.z <- this.index;
-	this.dir <- this.index == 0 ? 1,00000000.0 : -1,00000000.0;
+	this.dir <- this.index == 0 ? 1.00000000 : -1.00000000;
 	this.ok <- false;
 	this.name <- ::manbow.AnimationController2D();
 	this.name.Init(this.anime_set);
@@ -78,9 +78,9 @@ local func_update = function ()
 {
 	this.target_x = (this.cursor.x - 1) * offset_x[this.cursor.y] + 640;
 	this.target_y = (this.cursor.y - 3) * 81 + 371;
-	this.x += (this.target_x - this.x) * 0,20000000.0;
-	this.y += (this.target_y - this.y) * 0,20000000.0;
-	this.z += this.dir * -0,02000000.0;
+	this.x += (this.target_x - this.x) * 0.20000000;
+	this.y += (this.target_y - this.y) * 0.20000000;
+	this.z += this.dir * -0.02000000;
 
 	if (this.cursor.ok)
 	{

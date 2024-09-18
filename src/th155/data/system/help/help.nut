@@ -120,7 +120,7 @@ function In()
 {
 	foreach( v in this.obj )
 	{
-		v.alpha += 0,10000000.0;
+		v.alpha += 0.10000000;
 	}
 
 	if (this.obj.len() && this.obj[0].alpha >= 1)
@@ -133,7 +133,7 @@ function Out()
 {
 	foreach( v in this.obj )
 	{
-		v.alpha -= 0,10000000.0;
+		v.alpha -= 0.10000000;
 	}
 
 	if (this.obj.len() && this.obj[0].alpha <= 1)

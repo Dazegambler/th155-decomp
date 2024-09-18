@@ -19,10 +19,10 @@ function Update_Normal()
 
 	local mat = ::manbow.Matrix();
 	this.uv_count++;
-	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0,20000000.0 % 1024, (this.y / 2 + this.uv_count * 1,50000000.0) % 1024, 0);
+	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0.20000000 % 1024, (this.y / 2 + this.uv_count * 1.50000000) % 1024, 0);
 	this.uv.SetWorldTransform(mat);
 	local mat2 = ::manbow.Matrix();
-	mat2.SetTranslation(this.shion.x * this.direction / 2 + this.uv_count * 0,20000000.0 % 1024, (this.shion.y / 2 - this.uv_count * 0,50000000.0) % 1024, 0);
+	mat2.SetTranslation(this.shion.x * this.direction / 2 + this.uv_count * 0.20000000 % 1024, (this.shion.y / 2 - this.uv_count * 0.50000000) % 1024, 0);
 	this.uv2.SetWorldTransform(mat2);
 
 	if (::battle.state == 8)

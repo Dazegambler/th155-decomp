@@ -17,8 +17,8 @@ function S_Lance_Fire( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.flag2 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.flag2 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag2)
@@ -69,7 +69,7 @@ function S_Lance_Fire( t )
 
 			local t_ = {};
 			t_.rot <- this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-			t_.rot = this.Math_MinMax(t_.rot, -0,10471975.0, 0,10471975.0);
+			t_.rot = this.Math_MinMax(t_.rot, -0.10471975, 0.10471975);
 			this.SetShot(this.point0_x, this.point0_y, this.direction, this.Boss_Shot_Lance, t_);
 			this.PlaySE(1710);
 		},
@@ -77,7 +77,7 @@ function S_Lance_Fire( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		},
 		function ()
@@ -89,11 +89,11 @@ function S_Lance_Fire( t )
 	{
 		if (this.count >= this.flag5.charge)
 		{
-			this.SetSpeed_XY(10,00000000.0 * this.direction, 0,00000000.0);
+			this.SetSpeed_XY(10.00000000 * this.direction, 0.00000000);
 			this.SetMotion(4910, 2);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,75000000.0, 0,25000000.0 * this.direction);
+				this.VX_Brake(0.75000000, 0.25000000 * this.direction);
 			};
 		}
 	};
@@ -113,7 +113,7 @@ function S_FallKick_Attack( t )
 	this.LabelClear();
 	this.SetMotion(4920, 0);
 	this.HitReset();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.GetFront();
 	this.armor = -1;
 	this.count = 0;
@@ -125,7 +125,7 @@ function S_FallKick_Attack( t )
 		function ()
 		{
 			this.PlaySE(1713);
-			this.SetSpeed_XY(25,00000000.0 * this.direction, 20,00000000.0);
+			this.SetSpeed_XY(25.00000000 * this.direction, 20.00000000);
 			this.centerStop = 2;
 			this.SetMotion(this.motion, 3);
 			this.stateLabel = function ()
@@ -133,13 +133,13 @@ function S_FallKick_Attack( t )
 				if (this.y > this.centerY + 50)
 				{
 					this.SetMotion(this.motion, 4);
-					this.SetSpeed_XY(this.va.x * 0,34999999.0, this.va.y * 0,34999999.0);
+					this.SetSpeed_XY(this.va.x * 0.34999999, this.va.y * 0.34999999);
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,50000000.0, 2,00000000.0);
+						this.Vec_Brake(0.50000000, 2.00000000);
 						this.stateLabel = function ()
 						{
-							this.AddSpeed_XY(0,00000000.0, -0,20000000.0);
+							this.AddSpeed_XY(0.00000000, -0.20000000);
 						};
 					};
 				}
@@ -150,22 +150,22 @@ function S_FallKick_Attack( t )
 		function ()
 		{
 			this.PlaySE(1712);
-			this.SetSpeed_XY(0,00000000.0, -10,00000000.0);
+			this.SetSpeed_XY(0.00000000, -10.00000000);
 			this.centerStop = -2;
 			this.flag2.x = this.target.x - (this.target.y - 200) * this.direction;
 			this.stateLabel = function ()
 			{
-				this.SetSpeed_XY((this.flag2.x - this.x) * 0,10000000.0, this.va.y);
+				this.SetSpeed_XY((this.flag2.x - this.x) * 0.10000000, this.va.y);
 			};
 		},
 		function ()
 		{
 			this.count = 0;
-			this.SetSpeed_XY(0,00000000.0, this.va.y * 0,50000000.0);
+			this.SetSpeed_XY(0.00000000, this.va.y * 0.50000000);
 			this.stateLabel = function ()
 			{
-				this.SetSpeed_XY((this.flag2.x - this.x) * 0,10000000.0, this.va.y);
-				this.VY_Brake(0,50000000.0);
+				this.SetSpeed_XY((this.flag2.x - this.x) * 0.10000000, this.va.y);
+				this.VY_Brake(0.50000000);
 
 				if (this.count >= this.flag1)
 				{
@@ -187,7 +187,7 @@ function S_FallKick_Attack( t )
 			this.count = 0;
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,25000000.0, null);
+				this.CenterUpdate(0.25000000, null);
 
 				if (this.count == 90)
 				{
@@ -235,8 +235,8 @@ function Slave_Attack_Jyoon3()
 	this.armor = -1;
 	this.count = 0;
 	this.centerStop = -2;
-	this.SetSpeed_XY(-10,00000000.0 * this.direction, 0,00000000.0);
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.SetSpeed_XY(-10.00000000 * this.direction, 0.00000000);
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -250,7 +250,7 @@ function Slave_Attack_Jyoon3()
 	this.flag5.shotCount <- 25;
 	this.flag5.shotNum <- 1;
 	this.flag5.charge <- 120;
-	this.flag5.rotSpeed <- 0,00000000.0;
+	this.flag5.rotSpeed <- 0.00000000;
 
 	switch(this.com_difficulty)
 	{
@@ -258,21 +258,21 @@ function Slave_Attack_Jyoon3()
 		this.flag5.shotNum = 2;
 		this.flag5.shotCount = 25;
 		this.flag5.charge = 90;
-		this.flag5.rotSpeed = 0,01745329.0;
+		this.flag5.rotSpeed = 0.01745329;
 		break;
 
 	case 2:
 		this.flag5.shotNum = 3;
 		this.flag5.shotCount = 25;
 		this.flag5.charge = 60;
-		this.flag5.rotSpeed = 0,03490658.0;
+		this.flag5.rotSpeed = 0.03490658;
 		break;
 
 	case 3:
 		this.flag5.shotNum = 4;
 		this.flag5.shotCount = 25;
 		this.flag5.charge = 45;
-		this.flag5.rotSpeed = 0,05235988.0;
+		this.flag5.rotSpeed = 0.05235988;
 		break;
 	}
 
@@ -293,8 +293,8 @@ function Slave_Attack_Jyoon3()
 			this.PlaySE(1708);
 			this.flag5.shotNum--;
 			this.rz = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-			this.rz = this.Math_MinMax(this.rz, -1,57079601.0, 1,57079601.0);
-			this.SetSpeed_Vec(20,00000000.0, this.rz, this.direction);
+			this.rz = this.Math_MinMax(this.rz, -1.57079601, 1.57079601);
+			this.SetSpeed_Vec(20.00000000, this.rz, this.direction);
 			this.count = 0;
 			this.centerStop = -2;
 			this.stateLabel = function ()
@@ -308,16 +308,16 @@ function Slave_Attack_Jyoon3()
 
 				if (this.count >= this.flag5.shotCount)
 				{
-					this.rz = 0,00000000.0;
+					this.rz = 0.00000000;
 					this.SetMotion(4930, 5);
 					this.AjustCenterStop();
 					this.stateLabel = function ()
 					{
-						if (this.Vec_Brake(2,00000000.0, 2,00000000.0))
+						if (this.Vec_Brake(2.00000000, 2.00000000))
 						{
 							this.stateLabel = function ()
 							{
-								this.CenterUpdate(0,10000000.0, 2,00000000.0);
+								this.CenterUpdate(0.10000000, 2.00000000);
 							};
 						}
 					};
@@ -344,7 +344,7 @@ function Slave_Attack_Jyoon3()
 	];
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,75000000.0);
+		this.VX_Brake(0.75000000);
 
 		if (this.count == this.flag5.charge)
 		{

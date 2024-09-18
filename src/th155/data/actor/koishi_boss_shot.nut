@@ -1,24 +1,24 @@
 function Boss_Shot_T_HeartFall( t )
 {
 	this.SetMotion(4919, 0);
-	this.SetSpeed_XY(4 - this.rand() % 81 * 0,10000000.0, -12,00000000.0 - this.rand() % 5);
+	this.SetSpeed_XY(4 - this.rand() % 81 * 0.10000000, -12.00000000 - this.rand() % 5);
 	this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 	this.cancelCount = 1;
-	this.flag1 = 3,00000000.0 + this.rand() % 3;
+	this.flag1 = 3.00000000 + this.rand() % 3;
 	this.owner.shot_actor.Add(this);
 	this.func = [
 		function ()
 		{
 			this.SetMotion(4919, 1);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.func[0] = function ()
 			{
 			};
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy -= 0,05000000.0;
+				this.sx = this.sy -= 0.05000000;
 
-				if (this.sx <= 0,00000000.0)
+				if (this.sx <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -27,10 +27,10 @@ function Boss_Shot_T_HeartFall( t )
 	];
 	this.subState = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,20000000.0);
+		this.AddSpeed_XY(0.00000000, 0.20000000);
 		this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 
-		if (this.va.y > 6,50000000.0)
+		if (this.va.y > 6.50000000)
 		{
 			this.subState = function ()
 			{
@@ -47,7 +47,7 @@ function Boss_Shot_T_HeartFall( t )
 
 		if (this.va.y < 0 && this.y < ::battle.scroll_top - 200)
 		{
-			this.SetSpeed_XY(this.va.x, 0,00000000.0);
+			this.SetSpeed_XY(this.va.x, 0.00000000);
 		}
 
 		this.subState();
@@ -57,24 +57,24 @@ function Boss_Shot_T_HeartFall( t )
 function Boss_Shot_T_HeartFall_B( t )
 {
 	this.SetMotion(4919, 0);
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetSpeed_Vec(10,00000000.0, this.rz, this.direction);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetSpeed_Vec(10.00000000, this.rz, this.direction);
 	this.cancelCount = 1;
-	this.flag1 = 3,00000000.0 + this.rand() % 3;
+	this.flag1 = 3.00000000 + this.rand() % 3;
 	this.owner.shot_actor.Add(this);
 	this.func = [
 		function ()
 		{
 			this.SetMotion(4919, 1);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.func[0] = function ()
 			{
 			};
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy -= 0,05000000.0;
+				this.sx = this.sy -= 0.05000000;
 
-				if (this.sx <= 0,00000000.0)
+				if (this.sx <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -83,10 +83,10 @@ function Boss_Shot_T_HeartFall_B( t )
 	];
 	this.subState = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,20000000.0);
+		this.AddSpeed_XY(0.00000000, 0.20000000);
 		this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 
-		if (this.va.y > 6,50000000.0)
+		if (this.va.y > 6.50000000)
 		{
 			this.subState = function ()
 			{
@@ -103,7 +103,7 @@ function Boss_Shot_T_HeartFall_B( t )
 
 		if (this.va.y < 0 && this.y < ::battle.scroll_top - 150)
 		{
-			this.SetSpeed_XY(this.va.x, 0,00000000.0);
+			this.SetSpeed_XY(this.va.x, 0.00000000);
 		}
 
 		this.subState();

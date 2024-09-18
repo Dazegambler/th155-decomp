@@ -1,6 +1,6 @@
 function CPU_MoveBase()
 {
-	this.com_dash = 0,00000000.0;
+	this.com_dash = 0.00000000;
 	this.com_rand[2] = this.rand() % 100;
 	local d_ = this.abs(this.targetDist);
 
@@ -43,7 +43,7 @@ function CPU_MoveBase()
 		this.com_rand[2] = this.rand() % 100;
 	}
 
-	if (this.x < ::battle.corner_left + 100 && this.direction == 1,00000000.0 || this.x > ::battle.corner_right - 100 && this.direction == -1,00000000.0)
+	if (this.x < ::battle.corner_left + 100 && this.direction == 1.00000000 || this.x > ::battle.corner_right - 100 && this.direction == -1.00000000)
 	{
 		if (this.centerStop * this.centerStop <= 1)
 		{
@@ -271,24 +271,24 @@ function CPU_CenterWait( wait_ )
 
 		if (this.com_rand[2] <= 3)
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 50 : -400))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 50 : -400))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 400 : -50))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 400 : -50))
 			{
 				this.com_keyFlag.x = 1;
 			}
 		}
 		else
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 100 : -250))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 100 : -250))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 250 : -100))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 250 : -100))
 			{
 				this.com_keyFlag.x = 1;
 			}
@@ -312,24 +312,24 @@ function CPU_CenterWaitFar( wait_ )
 
 		if (this.com_rand[2] <= 6)
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 200 : -800))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 200 : -800))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 800 : -200))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 800 : -200))
 			{
 				this.com_keyFlag.x = 1;
 			}
 		}
 		else
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 325 : -650))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 325 : -650))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 650 : -325))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 650 : -325))
 			{
 				this.com_keyFlag.x = 1;
 			}
@@ -422,13 +422,13 @@ function CPU_WalkA( wait_ )
 
 		case 12:
 		case 18:
-			if (this.target.x - this.x > 0,00000000.0)
+			if (this.target.x - this.x > 0.00000000)
 			{
-				this.input.x = -1,00000000.0;
+				this.input.x = -1.00000000;
 			}
 			else
 			{
-				this.input.x = 1,00000000.0;
+				this.input.x = 1.00000000;
 			}
 
 			break;
@@ -1931,7 +1931,7 @@ function CPU_AtkDashLow2( wait_ )
 			return true;
 		}
 
-		this.com_dash = -1,00000000.0;
+		this.com_dash = -1.00000000;
 		this.input.x = -this.direction;
 
 		if (this.motion == 41)
@@ -2117,7 +2117,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -2143,7 +2143,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -2159,7 +2159,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -2176,7 +2176,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -2192,7 +2192,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 8)
 				{
-					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-45, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -3397,10 +3397,10 @@ function CPU_SpellC( wait_ )
 				tPos_.y = this.target.y - this.y;
 				tPos_.Normalize();
 				local rPos_ = this.Vector3();
-				rPos_.x = this.cos(this.rz + 35 * 0,01745329.0) * this.direction;
-				rPos_.y = this.sin(this.rz + 35 * 0,01745329.0);
+				rPos_.x = this.cos(this.rz + 35 * 0.01745329) * this.direction;
+				rPos_.y = this.sin(this.rz + 35 * 0.01745329);
 
-				if (rPos_.x * tPos_.x + rPos_.y * tPos_.y >= 0,99599999.0)
+				if (rPos_.x * tPos_.x + rPos_.y * tPos_.y >= 0.99599999)
 				{
 					this.input.y = 0;
 				}

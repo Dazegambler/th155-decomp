@@ -18,7 +18,7 @@ function Slave_Attack_Dream( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag4 = t;
 	this.flag5 = 300;
 
@@ -40,7 +40,7 @@ function Slave_Attack_Dream( t )
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,05000000.0, 1,00000000.0);
+		this.CenterUpdate(0.05000000, 1.00000000);
 
 		if (this.count >= this.flag5)
 		{
@@ -57,23 +57,23 @@ function Slave_Smash_Dream( t )
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_Team_ChangeB, {}, this.weakref());
 	this.PlaySE(900);
 	this.direction = this.team.master.direction;
-	this.SetSpeed_XY(-3,00000000.0 * this.direction, -12,50000000.0);
+	this.SetSpeed_XY(-3.00000000 * this.direction, -12.50000000);
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,25000000.0, null, 10,00000000.0);
+		this.AddSpeed_XY(0.00000000, 0.25000000, null, 10.00000000);
 
-		if (this.va.y > 3,00000000.0 && this.keyTake <= 2)
+		if (this.va.y > 3.00000000 && this.keyTake <= 2)
 		{
 			this.SetMotion(this.motion, 3);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,25000000.0, null, 10,00000000.0);
-				this.alpha -= 0,02500000.0;
+				this.AddSpeed_XY(0.00000000, 0.25000000, null, 10.00000000);
+				this.alpha -= 0.02500000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
-					this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+					this.SetSpeed_XY(0.00000000, 0.00000000);
 					this.stateLabel = function ()
 					{
 					};
@@ -97,14 +97,14 @@ function Master_Spell_1_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -118,7 +118,7 @@ function Master_Spell_1_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Dream_Attack();
 				}

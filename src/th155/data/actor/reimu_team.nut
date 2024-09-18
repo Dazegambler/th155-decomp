@@ -7,14 +7,14 @@ function Team_Change_AttackB( t_ )
 	this.SetMotion(3913, 0);
 	this.AjustCenterStop();
 	this.count = 0;
-	this.SetSpeed_XY(15,00000000.0 * this.direction, 0,00000000.0);
+	this.SetSpeed_XY(15.00000000 * this.direction, 0.00000000);
 	this.keyAction = [
 		null,
 		function ()
 		{
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		},
 		function ()
@@ -22,20 +22,20 @@ function Team_Change_AttackB( t_ )
 			this.PlaySE(1122);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,10000000.0);
+		this.VX_Brake(0.10000000);
 
 		if (this.count == 8)
 		{
 			this.SetMotion(3913, 1);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,25000000.0);
+				this.VX_Brake(0.25000000);
 			};
 		}
 	};
@@ -54,16 +54,16 @@ function Team_Change_Attack_AirB( t_ )
 	if (this.y < this.centerY)
 	{
 		this.centerStop = -2;
-		local v_ = this.va.y - 5,00000000.0;
-		v_ = this.Math_MinMax(v_, -8,00000000.0, -2,00000000.0);
-		this.SetSpeed_XY(15,00000000.0 * this.direction, v_);
+		local v_ = this.va.y - 5.00000000;
+		v_ = this.Math_MinMax(v_, -8.00000000, -2.00000000);
+		this.SetSpeed_XY(15.00000000 * this.direction, v_);
 	}
 	else
 	{
 		this.centerStop = 2;
-		local v_ = this.va.y + 5,00000000.0;
-		v_ = this.Math_MinMax(v_, 2,00000000.0, 8,00000000.0);
-		this.SetSpeed_XY(15,00000000.0 * this.direction, 4,00000000.0);
+		local v_ = this.va.y + 5.00000000;
+		v_ = this.Math_MinMax(v_, 2.00000000, 8.00000000);
+		this.SetSpeed_XY(15.00000000 * this.direction, 4.00000000);
 	}
 
 	this.keyAction = [
@@ -81,7 +81,7 @@ function Team_Change_Attack_AirB( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -90,8 +90,8 @@ function Team_Change_Attack_AirB( t_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,50000000.0, null);
-		this.VX_Brake(0,50000000.0, 4,00000000.0 * this.direction);
+		this.CenterUpdate(0.50000000, null);
+		this.VX_Brake(0.50000000, 4.00000000 * this.direction);
 
 		if (this.centerStop * this.centerStop <= 1)
 		{
@@ -99,7 +99,7 @@ function Team_Change_Attack_AirB( t_ )
 			this.SetMotion(this.motion, 3);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		}
 	};
@@ -116,35 +116,35 @@ function Team_Change_ShotB( va_ )
 	this.flag3 = 0;
 	this.subState = function ()
 	{
-		this.CenterUpdate(0,15000001.0, 3,00000000.0);
+		this.CenterUpdate(0.15000001, 3.00000000);
 
 		if (this.centerStop == 0)
 		{
-			this.VX_Brake(0,50000000.0, -2,00000000.0 * this.direction);
+			this.VX_Brake(0.50000000, -2.00000000 * this.direction);
 		}
 		else
 		{
-			this.VX_Brake(0,15000001.0, -2,00000000.0 * this.direction);
+			this.VX_Brake(0.15000001, -2.00000000 * this.direction);
 		}
 	};
 
 	if (this.centerStop * this.centerStop <= 1)
 	{
 		this.SetMotion(3920, 0);
-		this.SetSpeed_XY(-8,00000000.0 * this.direction, 0,00000000.0);
+		this.SetSpeed_XY(-8.00000000 * this.direction, 0.00000000);
 		this.stateLabel = function ()
 		{
-			this.VX_Brake(0,15000001.0, -2,00000000.0 * this.direction);
+			this.VX_Brake(0.15000001, -2.00000000 * this.direction);
 		};
 	}
 	else
 	{
 		this.SetMotion(3921, 0);
-		this.SetSpeed_XY(-8,00000000.0 * this.direction, this.y < this.centerY ? -3,00000000.0 : 3,00000000.0);
+		this.SetSpeed_XY(-8.00000000 * this.direction, this.y < this.centerY ? -3.00000000 : 3.00000000);
 		this.stateLabel = function ()
 		{
-			this.CenterUpdate(0,15000001.0, 3,00000000.0);
-			this.VX_Brake(0,15000001.0, -2,00000000.0 * this.direction);
+			this.CenterUpdate(0.15000001, 3.00000000);
+			this.VX_Brake(0.15000001, -2.00000000 * this.direction);
 		};
 	}
 
@@ -157,7 +157,7 @@ function Team_Change_ShotB( va_ )
 			{
 				this.team.AddMP(-200, 90);
 				this.flag1 = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-				this.flag1 = this.Math_MinMax(this.flag1, -30 * 0,01745329.0, 30 * 0,01745329.0);
+				this.flag1 = this.Math_MinMax(this.flag1, -30 * 0.01745329, 30 * 0.01745329);
 			}
 
 			this.stateLabel = function ()
@@ -182,7 +182,7 @@ function Team_Change_ShotB( va_ )
 					}
 					else
 					{
-						local r_ = 25 * 0,01745329.0 * this.sin(this.flag3 * 0,01745329.0);
+						local r_ = 25 * 0.01745329 * this.sin(this.flag3 * 0.01745329);
 						this.PlaySE(1124);
 						local t_ = {};
 						t_.rot <- this.flag1 + r_;
@@ -214,11 +214,11 @@ function Team_Change_ShotB( va_ )
 			{
 				if (this.centerStop == 0)
 				{
-					this.VX_Brake(0,50000000.0, -2,00000000.0 * this.direction);
+					this.VX_Brake(0.50000000, -2.00000000 * this.direction);
 				}
 				else
 				{
-					this.VX_Brake(0,15000001.0, -2,00000000.0 * this.direction);
+					this.VX_Brake(0.15000001, -2.00000000 * this.direction);
 				}
 			};
 		}
@@ -248,12 +248,12 @@ function Team_Change_ShotFinB( va_, ky_ )
 
 	if (ky_ < 0)
 	{
-		this.flag2 = -30 * 0,01745329.0;
+		this.flag2 = -30 * 0.01745329;
 	}
 
 	if (ky_ > 0)
 	{
-		this.flag2 = 30 * 0,01745329.0;
+		this.flag2 = 30 * 0.01745329;
 	}
 
 	this.keyAction = [
@@ -262,10 +262,10 @@ function Team_Change_ShotFinB( va_, ky_ )
 			if (this.target)
 			{
 				this.flag1 = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-				this.flag1 = this.Math_MinMax(this.flag1, -45 * 0,01745329.0, 45 * 0,01745329.0);
+				this.flag1 = this.Math_MinMax(this.flag1, -45 * 0.01745329, 45 * 0.01745329);
 			}
 
-			this.SetSpeed_XY(-15,00000000.0 * this.direction, 0,00000000.0);
+			this.SetSpeed_XY(-15.00000000 * this.direction, 0.00000000);
 			this.hitResult = 1;
 			this.PlaySE(1126);
 			local t_ = {};
@@ -273,8 +273,8 @@ function Team_Change_ShotFinB( va_, ky_ )
 			this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_ChangeFin, t_);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
-				this.CenterUpdate(0,10000000.0, 2,00000000.0);
+				this.VX_Brake(0.50000000);
+				this.CenterUpdate(0.10000000, 2.00000000);
 			};
 		},
 		function ()
@@ -287,7 +287,7 @@ function Team_Change_ShotFinB( va_, ky_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0);
+		this.Vec_Brake(0.25000000);
 	};
 }
 
@@ -297,7 +297,7 @@ function Team_Change_Skill_FrontB( t, v_ )
 	this.HitReset();
 	this.count = 0;
 	this.flag1 = 0;
-	this.SetSpeed_XY(v_.x * 0,50000000.0, v_.y * 0,50000000.0);
+	this.SetSpeed_XY(v_.x * 0.50000000, v_.y * 0.50000000);
 	this.AjustCenterStop();
 	this.SetMotion(3950, 0);
 	this.keyAction = [
@@ -311,9 +311,9 @@ function Team_Change_Skill_FrontB( t, v_ )
 			for( local i = 0; i <= 3; i++ )
 			{
 				local t_ = {};
-				t_.rot <- (-6,00000000.0 + 4,00000000.0 * i) * 0,01745329.0;
+				t_.rot <- (-6.00000000 + 4.00000000 * i) * 0.01745329;
 				t_.take <- 0;
-				this.SetShot(this.point0_x + (i * 20 - 50) * this.cos(t_.rot + 3,14159203.0 * 0,50000000.0) * this.direction, this.point0_y + (20 * i - 50) * this.sin(t_.rot + 3,14159203.0 * 0,50000000.0), this.direction, this.SPShot_A, t_);
+				this.SetShot(this.point0_x + (i * 20 - 50) * this.cos(t_.rot + 3.14159203 * 0.50000000) * this.direction, this.point0_y + (20 * i - 50) * this.sin(t_.rot + 3.14159203 * 0.50000000), this.direction, this.SPShot_A, t_);
 			}
 		},
 		null,
@@ -328,8 +328,8 @@ function Team_Change_Skill_FrontB( t, v_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,25000000.0, 2,00000000.0);
-		this.VX_Brake(0,25000000.0);
+		this.CenterUpdate(0.25000000, 2.00000000);
+		this.VX_Brake(0.25000000);
 	};
 	return true;
 }
@@ -346,7 +346,7 @@ function Team_Change_SpellB( t )
 		for( local i = 0; i < 8; i++ )
 		{
 			local t_ = {};
-			t_.rot <- i * 45 * 0,01745329.0;
+			t_.rot <- i * 45 * 0.01745329;
 			t_.motion <- 4007 + i % 3;
 			this.SetFreeObject(this.point0_x, this.point0_y, this.direction, this.SpellShot_A, t_);
 		}
@@ -367,20 +367,20 @@ function Spell_Team_Init( t )
 	this.count = 0;
 	this.flag1 = 0;
 	this.direction = t;
-	this.SetSpeed_XY(-7,00000000.0 * this.direction, 0,00000000.0);
-	this.masterAlpha = 0,00000000.0;
+	this.SetSpeed_XY(-7.00000000 * this.direction, 0.00000000);
+	this.masterAlpha = 0.00000000;
 	this.AjustCenterStop();
 	this.flag5 = null;
 	this.stateLabel = function ()
 	{
-		this.masterAlpha += 0,05000000.0;
+		this.masterAlpha += 0.05000000;
 
-		if (this.masterAlpha > 1,00000000.0)
+		if (this.masterAlpha > 1.00000000)
 		{
-			this.masterAlpha = 1,00000000.0;
+			this.masterAlpha = 1.00000000;
 		}
 
-		this.VX_Brake(0,50000000.0);
+		this.VX_Brake(0.50000000);
 	};
 	this.keyAction = [
 		function ()
@@ -390,7 +390,7 @@ function Spell_Team_Init( t )
 			for( local i = 0; i < 8; i++ )
 			{
 				local t_ = {};
-				t_.rot <- i * 45 * 0,01745329.0;
+				t_.rot <- i * 45 * 0.01745329;
 				t_.motion <- 4097 + i % 3;
 				this.SetFreeObject(this.point0_x, this.point0_y, this.direction, this.Spell_Team_Shot_A, t_);
 			}
@@ -398,14 +398,14 @@ function Spell_Team_Init( t )
 			this.flag5 = this.SetFreeObject(this.point2_x, this.point2_y, this.direction, this.Spell_Team_Bou, {}).weakref();
 			this.stateLabel = function ()
 			{
-				this.masterAlpha += 0,05000000.0;
+				this.masterAlpha += 0.05000000;
 
-				if (this.masterAlpha > 1,00000000.0)
+				if (this.masterAlpha > 1.00000000)
 				{
-					this.masterAlpha = 1,00000000.0;
+					this.masterAlpha = 1.00000000;
 				}
 
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		},
 		function ()
@@ -417,7 +417,7 @@ function Spell_Team_Init( t )
 				if (this.count % 10 == 1 && this.flag1 <= 6)
 				{
 					local t_ = {};
-					t_.rot <- (-45 + this.flag1 * 30 % 110) * 0,01745329.0 * 2,00000000.0;
+					t_.rot <- (-45 + this.flag1 * 30 % 110) * 0.01745329 * 2.00000000;
 					t_.motion <- 4097 + this.flag1 % 3;
 					t_.rate <- this.atkRate_Pat;
 					this.PlaySE(1156);
@@ -456,10 +456,10 @@ function Spell_Team_Shot_A( t )
 {
 	this.SetMotion(t.motion, 0);
 	this.flag1 = {};
-	this.flag2 = 20,00000000.0;
-	this.flag1.range <- 20,00000000.0;
+	this.flag2 = 20.00000000;
+	this.flag1.range <- 20.00000000;
 	this.flag1.rot <- t.rot;
-	this.sx = this.sy = 0,00000000.0;
+	this.sx = this.sy = 0.00000000;
 	this.x = this.owner.point0_x + this.flag1.range * this.cos(this.flag1.rot) * this.direction;
 	this.y = this.owner.point0_y + this.flag1.range * this.sin(this.flag1.rot);
 	this.EnableTimeStop(false);
@@ -471,10 +471,10 @@ function Spell_Team_Shot_A( t )
 			{
 				this.stateLabel = function ()
 				{
-					this.sx = this.sy += 0,10000000.0;
-					this.alpha -= 0,10000000.0;
+					this.sx = this.sy += 0.10000000;
+					this.alpha -= 0.10000000;
 
-					if (this.alpha <= 0,00000000.0)
+					if (this.alpha <= 0.00000000)
 					{
 						this.ReleaseActor();
 					}
@@ -498,20 +498,20 @@ function Spell_Team_Shot_A( t )
 			return;
 		}
 
-		this.sx += 0,02500000.0;
+		this.sx += 0.02500000;
 
-		if (this.sx > 2,00000000.0)
+		if (this.sx > 2.00000000)
 		{
-			this.sx = 2,00000000.0;
+			this.sx = 2.00000000;
 		}
 
 		this.sy = this.sx;
 		this.flag1.range += this.flag2;
-		this.flag2 -= 2,00000000.0;
+		this.flag2 -= 2.00000000;
 
-		if (this.flag2 < 2,00000000.0)
+		if (this.flag2 < 2.00000000)
 		{
-			this.flag2 = 2,00000000.0;
+			this.flag2 = 2.00000000;
 			this.count++;
 		}
 
@@ -524,14 +524,14 @@ function Spell_Team_Shot_A( t )
 					return;
 				}
 
-				this.sy = this.sx *= 0,94999999.0;
-				this.flag1.range *= 0,80000001.0;
+				this.sy = this.sx *= 0.94999999;
+				this.flag1.range *= 0.80000001;
 				this.x = this.owner.point0_x + this.flag1.range * this.cos(this.flag1.rot) * this.direction;
 				this.y = this.owner.point0_y + this.flag1.range * this.sin(this.flag1.rot);
 			};
 		}
 
-		this.flag1.rot -= 0,07500000.0;
+		this.flag1.rot -= 0.07500000;
 	};
 }
 
@@ -539,14 +539,14 @@ function Spell_Team_Bullet( t )
 {
 	this.SetMotion(t.motion, 1);
 	this.target = this.owner.target.weakref();
-	this.sx = this.sy = 0,50000000.0;
-	this.SetSpeed_Vec(20,00000000.0, t.rot, this.direction);
+	this.sx = this.sy = 0.50000000;
+	this.SetSpeed_Vec(20.00000000, t.rot, this.direction);
 	this.PlaySE(1156);
 	this.cancelCount = 3;
 	this.SetTrail(this.motion, 6, 20, 100);
 	this.func = function ()
 	{
-		this.rz += 8,00000000.0 * 0,01745329.0;
+		this.rz += 8.00000000 * 0.01745329;
 
 		if (this.hitResult)
 		{
@@ -561,7 +561,7 @@ function Spell_Team_Bullet( t )
 				this.HitReset();
 			}
 		}
-		else if (this.count >= 180 || this.IsScreen(300,00000000.0))
+		else if (this.count >= 180 || this.IsScreen(300.00000000))
 		{
 			local t_ = {};
 			t_.motion <- this.motion;
@@ -570,30 +570,30 @@ function Spell_Team_Bullet( t )
 	};
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,50000000.0, 1,00000000.0);
+		this.Vec_Brake(0.50000000, 1.00000000);
 		this.count++;
-		this.sx = this.sy += 0,05000000.0;
+		this.sx = this.sy += 0.05000000;
 
-		if (this.sx > 1,75000000.0)
+		if (this.sx > 1.75000000)
 		{
-			this.sx = this.sy = 1,75000000.0;
+			this.sx = this.sy = 1.75000000;
 		}
 
 		if (this.count >= 40)
 		{
-			this.TargetHoming(this.owner.target, 360,00000000.0 * 0,01745329.0, this.direction);
+			this.TargetHoming(this.owner.target, 360.00000000 * 0.01745329, this.direction);
 			this.stateLabel = function ()
 			{
 				this.count++;
-				this.TargetHoming(this.owner.target, 3,00000000.0 * 0,01745329.0, this.direction);
-				this.AddSpeed_Vec(3,00000000.0, null, 45,00000000.0, this.direction);
+				this.TargetHoming(this.owner.target, 3.00000000 * 0.01745329, this.direction);
+				this.AddSpeed_Vec(3.00000000, null, 45.00000000, this.direction);
 				this.func();
 				return;
 			};
 			return;
 		}
 
-		this.TargetHoming(this.owner.target, 3,00000000.0 * 0,01745329.0, this.direction);
+		this.TargetHoming(this.owner.target, 3.00000000 * 0.01745329, this.direction);
 		this.func();
 	};
 }
@@ -601,14 +601,14 @@ function Spell_Team_Bullet( t )
 function Spell_Team_Flash( t )
 {
 	this.SetMotion(t.motion, 2);
-	this.sx = this.sy = 0,25000000.0 + this.rand() % 50 * 0,01000000.0;
-	this.rz = 0,01745329.0 * this.rand() % 360;
+	this.sx = this.sy = 0.25000000 + this.rand() % 50 * 0.01000000;
+	this.rz = 0.01745329 * this.rand() % 360;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += 0,02500000.0;
-		this.alpha -= 0,04000000.0;
+		this.sx = this.sy += 0.02500000;
+		this.alpha -= 0.04000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -618,13 +618,13 @@ function Spell_Team_Flash( t )
 function Spell_Team_Trail( t )
 {
 	this.SetMotion(t.motion, 4);
-	this.sx = this.sy = 1,00000000.0;
+	this.sx = this.sy = 1.00000000;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy *= 0,92000002.0;
-		this.alpha -= 0,10000000.0;
+		this.sx = this.sy *= 0.92000002;
+		this.alpha -= 0.10000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -634,24 +634,24 @@ function Spell_Team_Trail( t )
 function Spell_Team_Hit( t )
 {
 	this.SetMotion(t.motion, 2);
-	this.sx = this.sy = 1,00000000.0;
-	this.rz = 0,01745329.0 * this.rand() % 360;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.sx = this.sy = 1.00000000;
+	this.rz = 0.01745329 * this.rand() % 360;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.stateLabel = function ()
 	{
-		this.linkObject[0].alpha -= 0,10000000.0;
-		this.linkObject[0].anime.length *= 0,80000001.0;
-		this.linkObject[0].anime.radius0 *= 0,80000001.0;
+		this.linkObject[0].alpha -= 0.10000000;
+		this.linkObject[0].anime.length *= 0.80000001;
+		this.linkObject[0].anime.radius0 *= 0.80000001;
 
-		if (this.linkObject[0].alpha <= 0,00000000.0)
+		if (this.linkObject[0].alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
 
-		this.sx = this.sy *= 0,99000001.0;
-		this.alpha -= 0,04000000.0;
+		this.sx = this.sy *= 0.99000001;
+		this.alpha -= 0.04000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -663,7 +663,7 @@ function Spell_Team_Hit( t )
 		this.SetMotion(t__.motion, 5);
 		this.stateLabel = function ()
 		{
-			this.sx = this.sy += 0,05000000.0;
+			this.sx = this.sy += 0.05000000;
 		};
 		this.keyAction = function ()
 		{
@@ -681,15 +681,15 @@ function Spell_Team_Bou( t )
 	this.flag1.x = this.x;
 	this.flag1.y = this.y;
 	this.EnableTimeStop(false);
-	this.flag2.y = -25,00000000.0;
+	this.flag2.y = -25.00000000;
 	this.func = function ()
 	{
 		local pos_ = this.Vector3();
 		this.GetPoint.call(this.owner, 2, pos_);
-		this.Warp(pos_.x, pos_.y - 600,00000000.0);
+		this.Warp(pos_.x, pos_.y - 600.00000000);
 		this.flag1.x = this.x;
 		this.flag1.y = this.y;
-		this.flag2.y = 40,00000000.0;
+		this.flag2.y = 40.00000000;
 	};
 	this.stateLabel = function ()
 	{

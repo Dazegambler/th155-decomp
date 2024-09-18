@@ -20,7 +20,7 @@ function Update_Normal()
 	this.uv_count++;
 	local mat = ::manbow.Matrix();
 	local x_ = this.x * this.direction % 128;
-	mat.SetTranslation(256 + x_, 256 + (this.y / 2 + this.uv_count * 0,25000000.0) % 128, 0);
+	mat.SetTranslation(256 + x_, 256 + (this.y / 2 + this.uv_count * 0.25000000) % 128, 0);
 	this.uv.SetWorldTransform(mat);
 
 	if (::battle.state == 8)
@@ -437,7 +437,7 @@ function InputMove()
 		}
 		else if (this.centerStop * this.centerStop <= 1)
 		{
-			if (this.input.x * this.direction > 0,00000000.0)
+			if (this.input.x * this.direction > 0.00000000)
 			{
 				if (this.motion != 40 && this.debuff_hyper.time > 0)
 				{
@@ -462,7 +462,7 @@ function InputMove()
 		{
 			if (this.input.y <= -1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -483,7 +483,7 @@ function InputMove()
 
 			if (this.input.y >= 1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -506,7 +506,7 @@ function InputMove()
 		{
 			if (this.input.y <= -1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{
@@ -527,7 +527,7 @@ function InputMove()
 
 			if (this.input.y >= 1)
 			{
-				this.hitBackFlag = 0,00000000.0;
+				this.hitBackFlag = 0.00000000;
 
 				if (this.motion <= 49)
 				{

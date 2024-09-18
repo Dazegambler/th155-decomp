@@ -136,7 +136,7 @@ function Round_Begin()
 	this.enable_contact_test = false;
 	this.gauge.Show(0);
 	::camera.Reset();
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	::sound.PlayBGM(null);
 	::graphics.FadeIn(60);
 	this.team[0].mp = 1000;
@@ -148,7 +148,7 @@ function Round_Begin()
 	this.enable_contact_test = true;
 	this.time = -1;
 	this.time_count = 0;
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	::camera.SetMode_Battle();
 	this.Apply();
 }
@@ -368,17 +368,17 @@ function PracticeRestart()
 
 	if (this.team[0].master.x <= this.team[1].master.x)
 	{
-		this.team[0].master.direction = 1,00000000.0;
-		this.team[0].slave.direction = 1,00000000.0;
-		this.team[1].master.direction = -1,00000000.0;
-		this.team[1].slave.direction = -1,00000000.0;
+		this.team[0].master.direction = 1.00000000;
+		this.team[0].slave.direction = 1.00000000;
+		this.team[1].master.direction = -1.00000000;
+		this.team[1].slave.direction = -1.00000000;
 	}
 	else
 	{
-		this.team[0].master.direction = -1,00000000.0;
-		this.team[0].slave.direction = -1,00000000.0;
-		this.team[1].master.direction = 1,00000000.0;
-		this.team[1].slave.direction = 1,00000000.0;
+		this.team[0].master.direction = -1.00000000;
+		this.team[0].slave.direction = -1.00000000;
+		this.team[1].master.direction = 1.00000000;
+		this.team[1].slave.direction = 1.00000000;
 	}
 
 	this.team[0].current.autoGuard = false;
@@ -391,7 +391,7 @@ function PracticeRestart()
 	this.enable_contact_test = true;
 	this.gauge.Show(0);
 	::camera.Reset();
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	::camera.SetMode_Battle();
 	this.team[0].current.SetSpellBackReset();
 	this.team[1].current.SetSpellBackReset();

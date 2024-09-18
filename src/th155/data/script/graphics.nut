@@ -86,7 +86,7 @@ function FadeOut( count, func = null, r = 0, g = 0, b = 0 )
 	this.fade_rect.visible = true;
 	this.fade_task.count = count;
 	this.fade_task.callback_function = func;
-	this.fade_task.alpha_delta = (1,00000000.0 - this.fade_rect.alpha) / count.tofloat();
+	this.fade_task.alpha_delta = (1.00000000 - this.fade_rect.alpha) / count.tofloat();
 	::loop.AddTask(this.fade_task);
 }
 

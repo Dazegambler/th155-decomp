@@ -4,10 +4,10 @@ function Drop_Stone( t )
 	this.DrawActorPriority(188);
 	this.stateLabel = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-		this.alpha = this.red = this.green = this.blue -= 0,05000000.0;
+		this.AddSpeed_XY(0.00000000, 0.50000000);
+		this.alpha = this.red = this.green = this.blue -= 0.05000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -156,7 +156,7 @@ function Shot_Dash( t )
 {
 	this.SetMotion(1310, 3);
 	this.SetParent(this.owner, 0, 0);
-	this.SetSpeed_XY(12,50000000.0 * this.direction, 0,00000000.0);
+	this.SetSpeed_XY(12.50000000 * this.direction, 0.00000000);
 	this.cancelCount = 3;
 	this.func = [
 		function ()
@@ -165,9 +165,9 @@ function Shot_Dash( t )
 			this.SetMotion(1310, 5);
 			this.stateLabel = function ()
 			{
-				this.alpha = this.green = this.blue -= 0,10000000.0;
+				this.alpha = this.green = this.blue -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -176,7 +176,7 @@ function Shot_Dash( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,60000002.0, 1,00000000.0 * this.direction);
+		this.VX_Brake(0.60000002, 1.00000000 * this.direction);
 	};
 }
 
@@ -185,14 +185,14 @@ function Shot_Normal( t )
 	this.SetMotion(2009, 0);
 	this.rz = t.rot;
 	this.SetCollisionRotation(0, 0, this.rz);
-	this.SetSpeed_Vec(5,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(5.00000000, this.rz, this.direction);
 	this.cancelCount = 1;
 	this.Warp(this.x + this.va.x * 5, this.y + this.va.y * 5);
 	this.flag1 = null;
 	this.flag2 = false;
 	this.func = function ()
 	{
-		this.SetSpeed_XY(this.va.x * 0,10000000.0, this.va.y * 0,10000000.0);
+		this.SetSpeed_XY(this.va.x * 0.10000000, this.va.y * 0.10000000);
 		this.SetMotion(this.motion, 2);
 
 		if (this.flag1)
@@ -202,11 +202,11 @@ function Shot_Normal( t )
 
 		this.stateLabel = function ()
 		{
-			this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-			this.rz += (-90 * 0,01745329.0 - this.rz) * 0,07500000.0;
-			this.alpha = this.green = this.blue = this.red -= 0,07500000.0;
+			this.AddSpeed_XY(0.00000000, 0.50000000);
+			this.rz += (-90 * 0.01745329 - this.rz) * 0.07500000;
+			this.alpha = this.green = this.blue = this.red -= 0.07500000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -225,7 +225,7 @@ function Shot_Normal( t )
 			return true;
 		}
 
-		this.Vec_Brake(1,00000000.0, 1,50000000.0);
+		this.Vec_Brake(1.00000000, 1.50000000);
 		this.count++;
 
 		if (this.count >= this.initTable.wait)
@@ -235,7 +235,7 @@ function Shot_Normal( t )
 			this.flag1 = this.SetShot(this.x, this.y, this.direction, this.Shot_Normal_Trail, t_, this.weakref()).weakref();
 			this.SetMotion(this.motion, 1);
 			this.count = 0;
-			this.SetSpeed_Vec(8,00000000.0, this.rz, this.direction);
+			this.SetSpeed_Vec(8.00000000, this.rz, this.direction);
 			this.stateLabel = this.subState;
 			return;
 		}
@@ -263,11 +263,11 @@ function Shot_Normal( t )
 		{
 			if (this.HitCycleUpdate(3))
 			{
-				this.SetSpeed_Vec(8,00000000.0, this.rz, this.direction);
+				this.SetSpeed_Vec(8.00000000, this.rz, this.direction);
 			}
 			else if (this.hitInterval > 0 && this.hitTarget.len() > 0)
 			{
-				this.SetSpeed_Vec(1,00000000.0, this.rz, this.direction);
+				this.SetSpeed_Vec(1.00000000, this.rz, this.direction);
 			}
 		}
 
@@ -280,7 +280,7 @@ function Shot_Normal_Trail( t )
 	this.DrawActorPriority(199);
 	this.SetMotion(2009, 3);
 	this.rz = t.rot;
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	this.SetCollisionRotation(0, 0, this.rz);
 	this.hitOwner = this.initTable.pare.weakref();
 	this.SetParent(this.initTable.pare, 0, 0);
@@ -290,11 +290,11 @@ function Shot_Normal_Trail( t )
 		{
 			if (this.hitOwner.count == 0)
 			{
-				this.sx += 0,04000000.0;
+				this.sx += 0.04000000;
 			}
 		}
 
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	};
 }
 
@@ -303,10 +303,10 @@ function Shot_FrontTrail( t )
 	this.SetMotion(2019, 3);
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += 0,05000000.0;
-		this.alpha = this.green = this.blue -= 0,05000000.0;
+		this.sx = this.sy += 0.05000000;
+		this.alpha = this.green = this.blue -= 0.05000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -316,18 +316,18 @@ function Shot_FrontTrail( t )
 function Shot_Front( t )
 {
 	this.SetMotion(2019, 0);
-	this.SetSpeed_Vec(20,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(20.00000000, t.rot, this.direction);
 	this.cancelCount = 5;
 	this.hitCount = 0;
 	this.flag1 = this.Vector3();
 	this.func = function ()
 	{
-		this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+		this.SetSpeed_XY(0.00000000, 0.00000000);
 		this.stateLabel = function ()
 		{
-			this.alpha = this.green = this.blue -= 0,10000000.0;
+			this.alpha = this.green = this.blue -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -390,7 +390,7 @@ function Shot_Front( t )
 					return;
 				}
 
-				this.flag1.SetLength(12,50000000.0);
+				this.flag1.SetLength(12.50000000);
 				this.SetSpeed_XY(this.flag1.x, this.flag1.y);
 			};
 			return;
@@ -408,12 +408,12 @@ function Shot_Barrage( t )
 		this.ReleaseActor();
 	};
 	this.rz = t.rot;
-	this.SetSpeed_Vec(15,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(15.00000000, this.rz, this.direction);
 	this.keyAction = this.ReleaseActor;
 	this.cancelCount = 1;
 	this.subState = function ()
 	{
-		if (this.Vec_Brake(0,75000000.0, 3,00000000.0))
+		if (this.Vec_Brake(0.75000000, 3.00000000))
 		{
 			this.subState = function ()
 			{
@@ -425,10 +425,10 @@ function Shot_Barrage( t )
 		this.SetMotion(2027, this.keyTake);
 		this.stateLabel = function ()
 		{
-			this.sy *= 0,92000002.0;
-			this.alpha -= 0,10000000.0;
+			this.sy *= 0.92000002;
+			this.alpha -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -456,17 +456,17 @@ function Shot_Charge( t )
 {
 	this.SetMotion(2029, 0);
 	this.cancelCount = 3;
-	this.SetSpeed_Vec(15,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(15.00000000, t.rot, this.direction);
 	this.func = [
 		function ()
 		{
 			this.SetMotion(2029, 2);
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,75000000.0, 0,50000000.0);
-				this.alpha = this.blue = this.green -= 0,10000000.0;
+				this.Vec_Brake(0.75000000, 0.50000000);
+				this.alpha = this.blue = this.green -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -487,9 +487,9 @@ function Shot_Charge( t )
 			return;
 		}
 
-		this.sx = this.sy += 0,00500000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
-		this.Vec_Brake(0,50000000.0, 6,00000000.0);
+		this.sx = this.sy += 0.00500000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
+		this.Vec_Brake(0.50000000, 6.00000000);
 
 		if (this.hitCount < 4)
 		{
@@ -502,15 +502,15 @@ function Shot_Occult_WindBack( t )
 {
 	this.SetMotion(2509, 2);
 	this.DrawActorPriority(10);
-	this.rz = (5 + this.rand() % 5) * 0,01745329.0;
-	this.sx = 1,00000000.0 + this.rand() % 10 * 0,10000000.0;
-	this.sy = 1,00000000.0 + this.rand() % 10 * 0,10000000.0;
-	this.SetSpeed_Vec(100,00000000.0, this.rz, this.direction);
+	this.rz = (5 + this.rand() % 5) * 0.01745329;
+	this.sx = 1.00000000 + this.rand() % 10 * 0.10000000;
+	this.sy = 1.00000000 + this.rand() % 10 * 0.10000000;
+	this.SetSpeed_Vec(100.00000000, this.rz, this.direction);
 	this.stateLabel = function ()
 	{
-		this.alpha -= 0,03300000.0;
+		this.alpha -= 0.03300000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -521,16 +521,16 @@ function Shot_Occult_Wind( t )
 {
 	this.SetMotion(2509, 2);
 	this.DrawActorPriority(300);
-	this.rz = (10 + this.rand() % 10) * 0,01745329.0;
-	this.sx = 1,00000000.0 + this.rand() % 10 * 0,10000000.0;
-	this.sy = 1,00000000.0 + this.rand() % 10 * 0,10000000.0;
-	this.SetSpeed_Vec(150,00000000.0, this.rz, this.direction);
-	this.rz += (2 + this.rand() % 2) * 0,01745329.0;
+	this.rz = (10 + this.rand() % 10) * 0.01745329;
+	this.sx = 1.00000000 + this.rand() % 10 * 0.10000000;
+	this.sy = 1.00000000 + this.rand() % 10 * 0.10000000;
+	this.SetSpeed_Vec(150.00000000, this.rz, this.direction);
+	this.rz += (2 + this.rand() % 2) * 0.01745329;
 	this.stateLabel = function ()
 	{
-		this.alpha -= 0,02500000.0;
+		this.alpha -= 0.02500000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -541,15 +541,15 @@ function Shot_Occult_Back( t )
 {
 	this.SetMotion(2509, 1);
 	this.DrawBackActorPriority(80);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.func = [
 		function ()
 		{
 			this.stateLabel = function ()
 			{
-				this.alpha -= 0,02500000.0;
+				this.alpha -= 0.02500000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -558,11 +558,11 @@ function Shot_Occult_Back( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.alpha += 0,01250000.0;
+		this.alpha += 0.01250000;
 
-		if (this.alpha >= 1,00000000.0)
+		if (this.alpha >= 1.00000000)
 		{
-			this.alpha = 1,00000000.0;
+			this.alpha = 1.00000000;
 		}
 	};
 }
@@ -571,21 +571,21 @@ function Shot_Occult_Clowd( t )
 {
 	this.SetMotion(2509, 0);
 	this.DrawActorPriority(10);
-	this.flag1 = this.SetFreeObject(0, 0, 1,00000000.0, this.Shot_Occult_Back, {}).weakref();
+	this.flag1 = this.SetFreeObject(0, 0, 1.00000000, this.Shot_Occult_Back, {}).weakref();
 	this.flag2 = 40;
-	this.anime.vertex_alpha1 = 0,75000000.0;
-	this.alpha = 0,00000000.0;
+	this.anime.vertex_alpha1 = 0.75000000;
+	this.alpha = 0.00000000;
 	this.func = [
 		function ()
 		{
 			this.flag1.func[0].call(this.flag1);
 			this.stateLabel = function ()
 			{
-				this.anime.left += 0,50000000.0;
-				this.AddSpeed_XY(0,00000000.0, -0,05000000.0);
-				this.alpha -= 0,03300000.0;
+				this.anime.left += 0.50000000;
+				this.AddSpeed_XY(0.00000000, -0.05000000);
+				this.alpha -= 0.03300000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -594,21 +594,21 @@ function Shot_Occult_Clowd( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.SetSpeed_XY(0,00000000.0, -this.y * 0,01000000.0);
-		this.alpha += 0,02500000.0;
+		this.SetSpeed_XY(0.00000000, -this.y * 0.01000000);
+		this.alpha += 0.02500000;
 
-		if (this.alpha >= 1,00000000.0)
+		if (this.alpha >= 1.00000000)
 		{
-			this.alpha = 1,00000000.0;
+			this.alpha = 1.00000000;
 		}
 
-		this.anime.left += 0,50000000.0;
+		this.anime.left += 0.50000000;
 		this.count++;
 
 		if (this.count % this.flag2 == this.flag2 - 1)
 		{
 			this.count = 0;
-			this.SetFreeObject(0, 200 + this.rand() % 420, 1,00000000.0, this.Shot_Occult_Wind, {});
+			this.SetFreeObject(0, 200 + this.rand() % 420, 1.00000000, this.Shot_Occult_Wind, {});
 			this.flag2 = 15 + this.rand() % 21;
 		}
 	};
@@ -627,7 +627,7 @@ function Shot_Occult_Lightning( t )
 		if (this.count == 30)
 		{
 			this.PlaySE(4276);
-			::camera.Shake(10,00000000.0);
+			::camera.Shake(10.00000000);
 		}
 	};
 }
@@ -641,13 +641,13 @@ function Shot_Change( t )
 		this.ReleaseActor();
 	};
 	this.rz = t.rot;
-	this.SetSpeed_Vec(20,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(20.00000000, this.rz, this.direction);
 	this.cancelCount = 1;
 	this.flag2 = 0;
 	this.func = [
 		function ()
 		{
-			this.SetSpeed_XY(this.va.x * 0,10000000.0, this.va.y * 0,10000000.0);
+			this.SetSpeed_XY(this.va.x * 0.10000000, this.va.y * 0.10000000);
 			this.SetMotion(this.motion, 2);
 
 			if (this.flag1)
@@ -657,11 +657,11 @@ function Shot_Change( t )
 
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.rz += (-90 * 0,01745329.0 - this.rz) * 0,07500000.0;
-				this.alpha = this.green = this.blue = this.red -= 0,07500000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.rz += (-90 * 0.01745329 - this.rz) * 0.07500000;
+				this.alpha = this.green = this.blue = this.red -= 0.07500000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -681,12 +681,12 @@ function Shot_Change( t )
 				}
 
 				this.count++;
-				this.Vec_Brake(2,50000000.0);
+				this.Vec_Brake(2.50000000);
 
 				if (this.count <= 20)
 				{
 					local r_ = this.atan2(this.owner.target.y - this.y, (this.owner.target.x - this.x) * this.direction);
-					this.rz += (r_ - this.rz) * 0,40000001.0;
+					this.rz += (r_ - this.rz) * 0.40000001;
 				}
 
 				if (this.count >= 25 && this.count % 2 == 0 && this.flag2 < 4)
@@ -710,7 +710,7 @@ function Shot_Change( t )
 			this.SetMotion(this.motion, 1);
 			this.PlaySE(4274);
 			this.grazeCount = 0;
-			this.SetSpeed_Vec(20,00000000.0, this.rz, this.direction);
+			this.SetSpeed_Vec(20.00000000, this.rz, this.direction);
 			this.stateLabel = function ()
 			{
 				if (this.IsScreen(200) || this.Damage_ConvertOP(this.x, this.y, 1))
@@ -725,19 +725,19 @@ function Shot_Change( t )
 					return true;
 				}
 
-				this.TargetHoming(this.team.target, 0,75000000.0 * 0,01745329.0, this.direction);
+				this.TargetHoming(this.team.target, 0.75000000 * 0.01745329, this.direction);
 				this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 
 				if (this.hitResult & (13 | 32))
 				{
-					this.SetSpeed_Vec(1,00000000.0, this.rz, this.direction);
+					this.SetSpeed_Vec(1.00000000, this.rz, this.direction);
 					this.count++;
 
 					if (this.count >= 3)
 					{
 						this.count = 0;
 						this.HitReset();
-						this.SetSpeed_Vec(15,00000000.0, this.rz, this.direction);
+						this.SetSpeed_Vec(15.00000000, this.rz, this.direction);
 					}
 				}
 			};
@@ -759,7 +759,7 @@ function Shot_Change( t )
 			return;
 		}
 
-		this.TargetHoming(this.team.target, 0,75000000.0 * 0,01745329.0, this.direction);
+		this.TargetHoming(this.team.target, 0.75000000 * 0.01745329, this.direction);
 		this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 
 		if (this.cancelCount <= 0)
@@ -778,8 +778,8 @@ function Shot_ChangeB( t )
 		this.ReleaseActor();
 	};
 	this.rz = t.rot;
-	this.SetSpeed_Vec(25,00000000.0, this.rz, this.direction);
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+	this.SetSpeed_Vec(25.00000000, this.rz, this.direction);
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 	this.keyAction = this.ReleaseActor;
 	this.cancelCount = 1;
 	this.func = function ()
@@ -787,10 +787,10 @@ function Shot_ChangeB( t )
 		this.callbackGroup = 0;
 		this.stateLabel = function ()
 		{
-			this.sy *= 0,92000002.0;
-			this.alpha -= 0,10000000.0;
+			this.sy *= 0.92000002;
+			this.alpha -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -821,7 +821,7 @@ function Shot_ChangeFin( t )
 	t_.rot <- t.rot;
 	this.flag1.trail = this.SetFreeObject(this.x, this.y, this.direction, this.owner.Shot_ChangeFinTrail, t_).weakref();
 	this.cancelCount = 3;
-	this.SetSpeed_Vec(15,00000000.0, this.initTable.rot, this.direction);
+	this.SetSpeed_Vec(15.00000000, this.initTable.rot, this.direction);
 	this.subState = function ()
 	{
 		if (this.IsScreen(100 * this.sx) || this.Damage_ConvertOP(this.x, this.y, 10))
@@ -845,14 +845,14 @@ function Shot_ChangeFin( t )
 
 			this.flag1.trail = null;
 			this.SetMotion(this.motion, 1);
-			this.SetSpeed_XY(-5,00000000.0 * this.direction, -5,00000000.0);
+			this.SetSpeed_XY(-5.00000000 * this.direction, -5.00000000);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(null, 0,25000000.0);
-				this.rz -= 10 * 0,01745329.0;
-				this.alpha -= 0,05000000.0;
+				this.AddSpeed_XY(null, 0.25000000);
+				this.rz -= 10 * 0.01745329;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -872,10 +872,10 @@ function Shot_ChangeFin( t )
 			return;
 		}
 
-		this.rz += 0,17453292.0;
+		this.rz += 0.17453292;
 		this.HitCycleUpdate(0);
-		this.sx = this.sy += 0,02500000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy += 0.02500000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	};
 }
 
@@ -883,7 +883,7 @@ function Shot_ChangeFinTrail( t )
 {
 	this.rz = t.rot;
 	this.SetMotion(3939, 2);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.func = [
 		function ()
 		{
@@ -891,21 +891,21 @@ function Shot_ChangeFinTrail( t )
 		},
 		function ()
 		{
-			this.sx = 0,50000000.0;
-			this.sy = 1,00000000.0;
-			this.alpha = 0,00000000.0;
-			this.red = this.blue = this.green = 1,00000000.0;
+			this.sx = 0.50000000;
+			this.sy = 1.00000000;
+			this.alpha = 0.00000000;
+			this.red = this.blue = this.green = 1.00000000;
 			this.subState = function ()
 			{
-				this.alpha += 0,20000000.0;
+				this.alpha += 0.20000000;
 
-				if (this.alpha >= 1,00000000.0)
+				if (this.alpha >= 1.00000000)
 				{
 					this.subState = function ()
 					{
-						this.alpha = this.green = this.blue -= 0,02500000.0;
+						this.alpha = this.green = this.blue -= 0.02500000;
 
-						if (this.alpha <= 0,00000000.0)
+						if (this.alpha <= 0.00000000)
 						{
 							this.func[1].call(this);
 						}
@@ -917,8 +917,8 @@ function Shot_ChangeFinTrail( t )
 	this.func[1].call(this);
 	this.stateLabel = function ()
 	{
-		this.sx += (1,50000000.0 - this.sx) * 0,10000000.0;
-		this.sy *= 0,99000001.0;
+		this.sx += (1.50000000 - this.sx) * 0.10000000;
+		this.sy *= 0.99000001;
 		this.subState();
 	};
 }
@@ -932,14 +932,14 @@ function Shot_BarrageBit( t )
 		this.ReleaseActor();
 	};
 	this.rz = t.rot;
-	this.SetSpeed_Vec(20,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(20.00000000, this.rz, this.direction);
 	this.cancelCount = 1;
 	this.flag2 = 0;
-	this.flag3 = t.rot <= 0 ? 0,05235988.0 : -0,05235988.0;
+	this.flag3 = t.rot <= 0 ? 0.05235988 : -0.05235988;
 	this.func = [
 		function ()
 		{
-			this.SetSpeed_XY(this.va.x * 0,10000000.0, this.va.y * 0,10000000.0);
+			this.SetSpeed_XY(this.va.x * 0.10000000, this.va.y * 0.10000000);
 			this.SetMotion(this.motion, 2);
 
 			if (this.flag1)
@@ -949,11 +949,11 @@ function Shot_BarrageBit( t )
 
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.rz += (-90 * 0,01745329.0 - this.rz) * 0,07500000.0;
-				this.alpha = this.green = this.blue = this.red -= 0,07500000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.rz += (-90 * 0.01745329 - this.rz) * 0.07500000;
+				this.alpha = this.green = this.blue = this.red -= 0.07500000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -973,12 +973,12 @@ function Shot_BarrageBit( t )
 				}
 
 				this.count++;
-				this.Vec_Brake(2,50000000.0);
+				this.Vec_Brake(2.50000000);
 
 				if (this.count <= 20)
 				{
 					local r_ = this.atan2(this.owner.target.y - this.y, (this.owner.target.x - this.x) * this.direction);
-					this.rz += (r_ - this.rz) * 0,40000001.0;
+					this.rz += (r_ - this.rz) * 0.40000001;
 				}
 
 				if (this.count >= 26)
@@ -1009,7 +1009,7 @@ function Shot_BarrageBit( t )
 		function ()
 		{
 			this.SetMotion(this.motion, 2);
-			this.SetSpeed_Vec(20,00000000.0, this.rz, this.direction);
+			this.SetSpeed_Vec(20.00000000, this.rz, this.direction);
 			this.count = 0;
 			this.stateLabel = function ()
 			{
@@ -1021,8 +1021,8 @@ function Shot_BarrageBit( t )
 
 				if (this.count <= 30)
 				{
-					this.rz += 0,10471975.0;
-					this.va.RotateByRadian(0,10471975.0);
+					this.rz += 0.10471975;
+					this.va.RotateByRadian(0.10471975);
 					this.ConvertTotalSpeed();
 				}
 
@@ -1046,7 +1046,7 @@ function Shot_BarrageBit( t )
 			return;
 		}
 
-		this.TargetHoming(this.team.target, 0,75000000.0 * 0,01745329.0, this.direction);
+		this.TargetHoming(this.team.target, 0.75000000 * 0.01745329, this.direction);
 		this.rz = this.atan2(this.va.y, this.va.x * this.direction);
 
 		if (this.cancelCount <= 0)
@@ -1065,12 +1065,12 @@ function Shot_Barrage( t )
 		this.ReleaseActor();
 	};
 	this.rz = t.rot;
-	this.SetSpeed_Vec(15,00000000.0, this.rz, this.direction);
+	this.SetSpeed_Vec(15.00000000, this.rz, this.direction);
 	this.keyAction = this.ReleaseActor;
 	this.cancelCount = 1;
 	this.subState = function ()
 	{
-		if (this.Vec_Brake(0,75000000.0, 5,00000000.0))
+		if (this.Vec_Brake(0.75000000, 5.00000000))
 		{
 			this.subState = function ()
 			{
@@ -1082,10 +1082,10 @@ function Shot_Barrage( t )
 		this.SetMotion(2027, this.keyTake);
 		this.stateLabel = function ()
 		{
-			this.sy *= 0,92000002.0;
-			this.alpha -= 0,10000000.0;
+			this.sy *= 0.92000002;
+			this.alpha -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -1112,19 +1112,19 @@ function Shot_Barrage( t )
 function SP_Hisou_Stone( t )
 {
 	this.SetMotion(3009, 0);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.SetParent(this.owner, this.x - this.owner.x, this.y - this.owner.y);
-	this.SetSpeed_XY(0,00000000.0, -3,00000000.0);
+	this.SetSpeed_XY(0.00000000, -3.00000000);
 	this.flag1 = ::manbow.Actor2DProcGroup();
-	this.flag2 = 0,00000000.0;
+	this.flag2 = 0.00000000;
 	this.flag3 = this.Vector3();
-	this.flag3.y = -50,00000000.0;
-	this.flag3.RotateByDegree(4,50000000.0);
-	this.flag4 = (-90 + 4,50000000.0) * 0,01745329.0;
+	this.flag3.y = -50.00000000;
+	this.flag3.RotateByDegree(4.50000000);
+	this.flag4 = (-90 + 4.50000000) * 0.01745329;
 	this.func = [
 		function ()
 		{
-			this.alpha = 1,00000000.0;
+			this.alpha = 1.00000000;
 			this.SetParent(null, 0, 0);
 			this.flag1.Foreach(function ()
 			{
@@ -1132,11 +1132,11 @@ function SP_Hisou_Stone( t )
 			});
 			this.stateLabel = function ()
 			{
-				this.rz += (-60 * 0,01745329.0 - this.rz) * 0,05000000.0;
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.alpha -= 0,05000000.0;
+				this.rz += (-60 * 0.01745329 - this.rz) * 0.05000000;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1144,8 +1144,8 @@ function SP_Hisou_Stone( t )
 		},
 		function ()
 		{
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-			this.alpha = 1,00000000.0;
+			this.SetSpeed_XY(0.00000000, 0.00000000);
+			this.alpha = 1.00000000;
 			this.count = 0;
 			this.PlaySE(4223);
 			this.stateLabel = function ()
@@ -1161,12 +1161,12 @@ function SP_Hisou_Stone( t )
 				if (this.count % 2 == 1 && this.count <= 19)
 				{
 					local t_ = {};
-					t_.rot <- 0,10471975.0 * this.sin(this.flag4);
-					this.flag1.Add(this.SetShotDynamic(this.x + this.flag3.x * 0,25000000.0 * this.direction, this.y + this.flag3.y, this.direction, this.SP_Hisou_Laser_B, t_));
+					t_.rot <- 0.10471975 * this.sin(this.flag4);
+					this.flag1.Add(this.SetShotDynamic(this.x + this.flag3.x * 0.25000000 * this.direction, this.y + this.flag3.y, this.direction, this.SP_Hisou_Laser_B, t_));
 					local t_ = {};
-					t_.rot <- 0,10471975.0 * this.sin(this.flag4 + 3,14159203.0);
-					this.flag1.Add(this.SetShotDynamic(this.x - this.flag3.x * 0,25000000.0 * this.direction, this.y - this.flag3.y, this.direction, this.SP_Hisou_Laser_F, t_));
-					this.flag4 += 18 * 0,01745329.0;
+					t_.rot <- 0.10471975 * this.sin(this.flag4 + 3.14159203);
+					this.flag1.Add(this.SetShotDynamic(this.x - this.flag3.x * 0.25000000 * this.direction, this.y - this.flag3.y, this.direction, this.SP_Hisou_Laser_F, t_));
+					this.flag4 += 18 * 0.01745329;
 					this.flag3.RotateByDegree(18);
 				}
 			};
@@ -1180,8 +1180,8 @@ function SP_Hisou_Stone( t )
 			return;
 		}
 
-		this.VY_Brake(0,25000000.0);
-		this.alpha += 0,10000000.0;
+		this.VY_Brake(0.25000000);
+		this.alpha += 0.10000000;
 	};
 }
 
@@ -1196,8 +1196,8 @@ function SP_Hisou_Laser_Common( t )
 	this.anime.center_x = 0;
 	this.anime.center_y = 16;
 	this.rz = t.rot;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
-	this.sy = 0,05000000.0;
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
+	this.sy = 0.05000000;
 	this.cancelCount = 1;
 	this.flag1 = null;
 	this.func = [
@@ -1214,10 +1214,10 @@ function SP_Hisou_Laser_Common( t )
 			this.stateLabel = function ()
 			{
 				this.anime.left -= 6;
-				this.alpha = this.blue = this.green -= 0,05000000.0;
-				this.sy *= 0,69999999.0;
+				this.alpha = this.blue = this.green -= 0.05000000;
+				this.sy *= 0.69999999;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1235,7 +1235,7 @@ function SP_Hisou_Laser_Common( t )
 			this.stateLabel = function ()
 			{
 				this.anime.left -= 30;
-				this.sy += (1,00000000.0 - this.sy) * 0,40000001.0;
+				this.sy += (1.00000000 - this.sy) * 0.40000001;
 				this.count++;
 
 				if (this.cancelCount <= 0 || this.count >= 19)
@@ -1249,9 +1249,9 @@ function SP_Hisou_Laser_Common( t )
 	this.stateLabel = function ()
 	{
 		this.anime.left -= 30;
-		this.sy += 0,00750000.0;
+		this.sy += 0.00750000;
 
-		if (this.sy >= 0,20000000.0)
+		if (this.sy >= 0.20000000)
 		{
 			this.func[1].call(this);
 		}
@@ -1277,19 +1277,19 @@ function SP_Hisou_Ball_B( t )
 	this.SetMotion(3009, 3);
 	this.DrawActorPriority(199);
 	this.SetParent(t.pare, 0, 0);
-	this.sx = this.sy = 0,10000000.0;
+	this.sx = this.sy = 0.10000000;
 	this.func = [
 		function ()
 		{
 			this.SetParent(null, 0, 0);
-			this.alpha = 2,00000000.0;
+			this.alpha = 2.00000000;
 			this.stateLabel = function ()
 			{
-				this.sx *= 0,89999998.0;
-				this.sy *= 0,89999998.0;
-				this.alpha -= 0,10000000.0;
+				this.sx *= 0.89999998;
+				this.sy *= 0.89999998;
+				this.alpha -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1299,13 +1299,13 @@ function SP_Hisou_Ball_B( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy += (1,00000000.0 - this.sx) * 0,10000000.0;
+				this.sx = this.sy += (1.00000000 - this.sx) * 0.10000000;
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += (0,25000000.0 - this.sx) * 0,10000000.0;
+		this.sx = this.sy += (0.25000000 - this.sx) * 0.10000000;
 	};
 }
 
@@ -1313,19 +1313,19 @@ function SP_Hisou_Ball_F( t )
 {
 	this.SetMotion(3009, 3);
 	this.SetParent(t.pare, 0, 0);
-	this.sx = this.sy = 0,10000000.0;
+	this.sx = this.sy = 0.10000000;
 	this.func = [
 		function ()
 		{
 			this.SetParent(null, 0, 0);
-			this.alpha = 2,00000000.0;
+			this.alpha = 2.00000000;
 			this.stateLabel = function ()
 			{
-				this.sx *= 0,89999998.0;
-				this.sy *= 0,89999998.0;
-				this.alpha -= 0,10000000.0;
+				this.sx *= 0.89999998;
+				this.sy *= 0.89999998;
+				this.alpha -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1335,13 +1335,13 @@ function SP_Hisou_Ball_F( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy += (1,00000000.0 - this.sx) * 0,10000000.0;
+				this.sx = this.sy += (1.00000000 - this.sx) * 0.10000000;
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += (0,25000000.0 - this.sx) * 0,10000000.0;
+		this.sx = this.sy += (0.25000000 - this.sx) * 0.10000000;
 	};
 }
 
@@ -1351,7 +1351,7 @@ function SPShot_Kaname_Drop( t )
 	this.cancelCount = 3;
 	this.stateLabel = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, 0,75000000.0, 0,00000000.0, 17,50000000.0);
+		this.AddSpeed_XY(0.00000000, 0.75000000, 0.00000000, 17.50000000);
 
 		if (this.y > ::battle.scroll_bottom || this.Damage_ConvertOP(this.x, this.y, 15))
 		{
@@ -1364,9 +1364,9 @@ function SPShot_Kaname_Drop( t )
 			this.SetMotion(3029, 1);
 			this.stateLabel = function ()
 			{
-				this.alpha = this.red = this.green = this.blue -= 0,20000000.0;
+				this.alpha = this.red = this.green = this.blue -= 0.20000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1378,10 +1378,10 @@ function SPShot_Kaname_Drop( t )
 function SP_Kaname_Crash_Stone( t )
 {
 	this.SetMotion(3019, 0);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.flag1 = this.Vector3();
 	this.flag1.y = 200 * t.y;
-	this.flag2 = 4,00000000.0;
+	this.flag2 = 4.00000000;
 	this.cancelCount = 99;
 	this.func = [
 		function ()
@@ -1400,7 +1400,7 @@ function SP_Kaname_Crash_Stone( t )
 					this.flag2 = -16;
 				}
 
-				if (this.initTable.y == -1 && this.rz - this.flag2 * 0,01745329.0 >= 90 * 0,01745329.0 || this.initTable.y == 1 && this.rz + this.flag2 * 0,01745329.0 <= -90 * 0,01745329.0)
+				if (this.initTable.y == -1 && this.rz - this.flag2 * 0.01745329 >= 90 * 0.01745329 || this.initTable.y == 1 && this.rz + this.flag2 * 0.01745329 <= -90 * 0.01745329)
 				{
 					this.func[2].call(this);
 				}
@@ -1412,7 +1412,7 @@ function SP_Kaname_Crash_Stone( t )
 
 			if (this.initTable.y == -1)
 			{
-				::camera.shake_radius = 6,00000000.0;
+				::camera.shake_radius = 6.00000000;
 				this.PlaySE(4226);
 				this.SetShot(this.owner.x + 200 * this.direction, this.owner.y, this.direction, this.SP_Kaname_Crash_Wave, {});
 			}
@@ -1422,7 +1422,7 @@ function SP_Kaname_Crash_Stone( t )
 	];
 	this.subState = function ()
 	{
-		this.flag2 *= 0,89999998.0;
+		this.flag2 *= 0.89999998;
 	};
 	this.stateLabel = function ()
 	{
@@ -1432,12 +1432,12 @@ function SP_Kaname_Crash_Stone( t )
 			return;
 		}
 
-		this.alpha += 0,10000000.0;
+		this.alpha += 0.10000000;
 		this.subState();
 		this.flag1.RotateByDegree(this.flag2 * this.initTable.y);
 		this.Warp(this.owner.x + this.flag1.x * this.direction, this.owner.y + this.flag1.y);
-		this.rz += this.flag2 * 0,01745329.0 * this.initTable.y;
-		this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+		this.rz += this.flag2 * 0.01745329 * this.initTable.y;
+		this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 	};
 }
 
@@ -1445,13 +1445,13 @@ function SP_Kaname_Crash_Wave( t )
 {
 	this.SetMotion(3019, 2);
 	this.cancelCount = 3;
-	this.alpha = 1,25000000.0;
+	this.alpha = 1.25000000;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += (2,00000000.0 - this.sx) * 0,15000001.0;
-		this.alpha -= 0,05000000.0;
+		this.sx = this.sy += (2.00000000 - this.sx) * 0.15000001;
+		this.alpha -= 0.05000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -1474,7 +1474,7 @@ function SP_Hisou_Slash_Blade( t )
 		function ()
 		{
 			this.sx = this.sy = t.scale;
-			this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+			this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 		},
 		function ()
 		{
@@ -1493,9 +1493,9 @@ function SP_Hisou_Slash_Blade( t )
 function SP_Koma_Shot( t )
 {
 	this.SetMotion(3049, 0);
-	this.SetSpeed_XY(15,00000000.0 * this.direction, -1,00000000.0);
+	this.SetSpeed_XY(15.00000000 * this.direction, -1.00000000);
 	this.flag1 = this.y + 60;
-	this.rz = -0,17453292.0;
+	this.rz = -0.17453292;
 	this.func = [
 		function ()
 		{
@@ -1504,13 +1504,13 @@ function SP_Koma_Shot( t )
 		function ()
 		{
 			this.SetMotion(3049, 1);
-			this.SetSpeed_XY(this.va.x, -7,50000000.0);
+			this.SetSpeed_XY(this.va.x, -7.50000000);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
-				this.alpha = this.red = this.green = this.blue -= 0,10000000.0;
+				this.AddSpeed_XY(0.00000000, 0.50000000);
+				this.alpha = this.red = this.green = this.blue -= 0.10000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1520,26 +1520,26 @@ function SP_Koma_Shot( t )
 	this.cancelCount = 3;
 	this.subState = function ()
 	{
-		this.VX_Brake(0,50000000.0, 2,00000000.0 * this.direction);
-		this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
+		this.VX_Brake(0.50000000, 2.00000000 * this.direction);
+		this.AddSpeed_XY(0.00000000, 0.50000000);
 
 		if (this.y > this.flag1)
 		{
-			this.SetSpeed_XY(this.va.x, 1,50000000.0);
+			this.SetSpeed_XY(this.va.x, 1.50000000);
 			this.subState = function ()
 			{
-				this.VX_Brake(0,50000000.0);
-				this.AddSpeed_XY(0,00000000.0, -0,50000000.0);
+				this.VX_Brake(0.50000000);
+				this.AddSpeed_XY(0.00000000, -0.50000000);
 
 				if (this.va.y < 0 && this.y < this.flag1)
 				{
-					this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+					this.SetSpeed_XY(0.00000000, 0.00000000);
 					this.count = 0;
 					this.subState = function ()
 					{
 						this.count++;
-						this.rz = 0,10471975.0 * this.sin(this.count * 0,10471975.0);
-						this.SetSpeed_XY(3,00000000.0 * this.direction * this.sin(this.count * 0,10471975.0), 0,00000000.0);
+						this.rz = 0.10471975 * this.sin(this.count * 0.10471975);
+						this.SetSpeed_XY(3.00000000 * this.direction * this.sin(this.count * 0.10471975), 0.00000000);
 					};
 				}
 			};
@@ -1569,7 +1569,7 @@ function SPShot_A( t )
 	this.rz = t.rot;
 	this.SetMotion(3009, 0);
 	this.flag1 = 0;
-	this.SetSpeed_Vec(30,00000000.0, t.rot, this.direction);
+	this.SetSpeed_Vec(30.00000000, t.rot, this.direction);
 	this.cancelCount = 3;
 	this.FitBoxfromSprite();
 	this.func = [
@@ -1579,7 +1579,7 @@ function SPShot_A( t )
 			this.keyAction = this.ReleaseActor;
 			this.stateLabel = function ()
 			{
-				this.SetSpeed_XY(this.va.x * 0,94999999.0, this.va.y * 0,94999999.0);
+				this.SetSpeed_XY(this.va.x * 0.94999999, this.va.y * 0.94999999);
 			};
 		}
 	];
@@ -1601,7 +1601,7 @@ function SPShot_A( t )
 		{
 			if (this.hitResult & 31)
 			{
-				this.SetSpeed_Vec(1,00000000.0, this.rz, this.direction);
+				this.SetSpeed_Vec(1.00000000, this.rz, this.direction);
 				this.stateLabel = function ()
 				{
 					if (this.count >= 15 || this.hitCount >= 4 || this.hitResult & 8)
@@ -1624,7 +1624,7 @@ function SPShot_A( t )
 
 function SPShot_A_Exp( t )
 {
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.SetMotion(3009, 2);
 	this.HitReset();
 	this.stateLabel = null;
@@ -1644,22 +1644,22 @@ function SPShot_B( t )
 	this.cancelCount = 9;
 	this.flag1 = [];
 	this.flag2 = {};
-	this.flag2.range <- 0,00000000.0;
-	this.flag3 = 8,00000000.0;
-	this.SetSpeed_XY(15,00000000.0 * this.direction, 0,00000000.0);
+	this.flag2.range <- 0.00000000;
+	this.flag3 = 8.00000000;
+	this.SetSpeed_XY(15.00000000 * this.direction, 0.00000000);
 
 	for( local i = 0; i < 4; i++ )
 	{
 		local t_ = {};
-		t_.rot <- (45 + 90 * i) * 0,01745329.0;
+		t_.rot <- (45 + 90 * i) * 0.01745329;
 
 		if (i <= 1)
 		{
-			t_.rotRate <- 1,00000000.0;
+			t_.rotRate <- 1.00000000;
 		}
 		else
 		{
-			t_.rotRate <- -1,00000000.0;
+			t_.rotRate <- -1.00000000;
 		}
 
 		this.flag1.append(this.SetObject(this.x, this.y, this.direction, this.owner.SPShot_B_Point, t_).weakref());
@@ -1678,10 +1678,10 @@ function SPShot_B( t )
 		this.callbackGroup = 0;
 		this.stateLabel = function ()
 		{
-			this.sx = this.sy *= 0,92000002.0;
-			this.alpha -= 0,10000000.0;
+			this.sx = this.sy *= 0.92000002;
+			this.alpha -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -1712,14 +1712,14 @@ function SPShot_B( t )
 
 		this.flag2.range += this.flag3;
 
-		if (this.flag2.range >= 160,00000000.0)
+		if (this.flag2.range >= 160.00000000)
 		{
 			this.PlaySE(1102);
 			this.SetMotion(3019, 2);
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.count = 0;
-			this.flag2.range = 160,00000000.0;
-			this.sx = this.sy = 1,00000000.0;
+			this.flag2.range = 160.00000000;
+			this.sx = this.sy = 1.00000000;
 			this.FitBoxfromSprite();
 
 			foreach( a in this.flag1 )
@@ -1741,16 +1741,16 @@ function SPShot_B( t )
 					return;
 				}
 
-				this.flag2.range -= 0,50000000.0;
+				this.flag2.range -= 0.50000000;
 
 				if (this.hitResult & 32)
 				{
-					this.flag2.range -= 3,00000000.0;
+					this.flag2.range -= 3.00000000;
 				}
 
-				this.sx = this.flag2.range / 160,00000000.0;
-				this.sy = this.flag2.range / 160,00000000.0;
-				this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+				this.sx = this.flag2.range / 160.00000000;
+				this.sy = this.flag2.range / 160.00000000;
+				this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 				foreach( val, a in this.flag1 )
 				{
@@ -1783,11 +1783,11 @@ function SPShot_B_SetEffect( t )
 	this.SetMotion(3019, 0);
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += 0,02500000.0;
-		this.rz += 13,00000000.0 * 0,01745329.0;
-		this.alpha -= 0,05000000.0;
+		this.sx = this.sy += 0.02500000;
+		this.rz += 13.00000000 * 0.01745329;
+		this.alpha -= 0.05000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -1813,7 +1813,7 @@ function SPShot_B_Point( t )
 				return;
 			}
 
-			this.rz += 18 * 0,01745329.0 * this.initTable.rotRate;
+			this.rz += 18 * 0.01745329 * this.initTable.rotRate;
 
 			if (this.count % 2 == 1)
 			{
@@ -1824,7 +1824,7 @@ function SPShot_B_Point( t )
 		}
 		else
 		{
-			this.rz += 0,01745329.0 * this.initTable.rotRate;
+			this.rz += 0.01745329 * this.initTable.rotRate;
 		}
 	};
 	this.func = function ()
@@ -1839,10 +1839,10 @@ function SPShot_B_Trail( t )
 	this.rz = t.rot;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy += 0,02500000.0;
-		this.alpha = this.green = this.blue -= 0,07500000.0;
+		this.sx = this.sy += 0.02500000;
+		this.alpha = this.green = this.blue -= 0.07500000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -1852,7 +1852,7 @@ function SPShot_B_Trail( t )
 function SPShot_B_PointFade( t )
 {
 	this.SetMotion(3019, 4);
-	this.sx = this.sy = 2,00000000.0;
+	this.sx = this.sy = 2.00000000;
 	local i = 0;
 
 	while (i < 6)
@@ -1863,17 +1863,17 @@ function SPShot_B_PointFade( t )
 
 	this.stateLabel = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, -0,20000000.0);
+		this.AddSpeed_XY(0.00000000, -0.20000000);
 
 		if (this.rand() % 100 <= 25)
 		{
 			this.SetFreeObject(this.x, this.y, this.direction, this.owner.SPShot_B_Ball, {});
 		}
 
-		this.sx = this.sy *= 0,92000002.0;
-		this.alpha -= 0,05000000.0;
+		this.sx = this.sy *= 0.92000002;
+		this.alpha -= 0.05000000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -1883,17 +1883,17 @@ function SPShot_B_PointFade( t )
 function SPShot_B_Ball( t )
 {
 	this.SetMotion(3019, 5 + this.rand() % 4);
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.sx = this.sy = 0,75000000.0 + this.rand() % 6 * 0,10000000.0;
-	this.SetSpeed_Vec(4 + this.rand() % 4, this.rand() % 360 * 0,01745329.0, this.direction);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.sx = this.sy = 0.75000000 + this.rand() % 6 * 0.10000000;
+	this.SetSpeed_Vec(4 + this.rand() % 4, this.rand() % 360 * 0.01745329, this.direction);
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,25000000.0);
-		this.AddSpeed_XY(0,00000000.0, -0,25000000.0);
-		this.sx = this.sy *= 0,98000002.0;
-		this.alpha = this.blue -= 0,03500000.0;
+		this.VX_Brake(0.25000000);
+		this.AddSpeed_XY(0.00000000, -0.25000000);
+		this.sx = this.sy *= 0.98000002;
+		this.alpha = this.blue -= 0.03500000;
 
-		if (this.alpha <= 0,00000000.0)
+		if (this.alpha <= 0.00000000)
 		{
 			this.ReleaseActor();
 		}
@@ -1915,10 +1915,10 @@ function SPShot_G( t )
 		this.rz = t.rot;
 		this.stateLabel = function ()
 		{
-			this.sx = this.sy += 0,05000000.0;
-			this.alpha = this.green = this.blue -= 0,20000000.0;
+			this.sx = this.sy += 0.05000000;
+			this.alpha = this.green = this.blue -= 0.20000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -1934,10 +1934,10 @@ function SPShot_G_Head( t )
 		this.SetSpeed_XY(this.initTable.pare.va.x, this.initTable.pare.va.y);
 		this.stateLabel = function ()
 		{
-			this.sx = this.sy *= 0,98000002.0;
-			this.alpha = this.green = this.blue -= 0,10000000.0;
+			this.sx = this.sy *= 0.98000002;
+			this.alpha = this.green = this.blue -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -1947,7 +1947,7 @@ function SPShot_G_Head( t )
 	{
 		if (this.initTable.pare.hitStopTime == 0)
 		{
-			this.rz -= 10,00000000.0 * 0,01745329.0;
+			this.rz -= 10.00000000 * 0.01745329;
 		}
 
 		if (this.initTable.pare.motion >= 3060 && this.initTable.pare.motion <= 3064)
@@ -1964,19 +1964,19 @@ function SPShot_G_Head( t )
 function SPShot_G_Trail( t )
 {
 	this.rz = t.rot;
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.SetMotion(3069, 2);
 	this.DrawActorPriority(180);
-	this.sx = 0,25000000.0;
+	this.sx = 0.25000000;
 	this.func = function ()
 	{
 		this.SetSpeed_XY(this.initTable.pare.va.x, this.initTable.pare.va.y);
 		this.stateLabel = function ()
 		{
-			this.sy *= 0,94999999.0;
-			this.alpha = this.green = this.blue -= 0,07500000.0;
+			this.sy *= 0.94999999;
+			this.alpha = this.green = this.blue -= 0.07500000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -1984,16 +1984,16 @@ function SPShot_G_Trail( t )
 	};
 	this.stateLabel = function ()
 	{
-		this.alpha += 0,20000000.0;
+		this.alpha += 0.20000000;
 
-		if (this.alpha > 1,00000000.0)
+		if (this.alpha > 1.00000000)
 		{
-			this.alpha = 1,00000000.0;
+			this.alpha = 1.00000000;
 		}
 
 		if (this.initTable.pare.hitStopTime == 0)
 		{
-			this.sx += (1,50000000.0 - this.sx) * 0,25000000.0;
+			this.sx += (1.50000000 - this.sx) * 0.25000000;
 		}
 
 		if (this.initTable.pare.motion >= 3060 && this.initTable.pare.motion <= 3064)
@@ -2011,8 +2011,8 @@ function SpellShot_A( t )
 {
 	this.SetMotion(4009, 0);
 	this.rz = t.rot;
-	this.SetSpeed_Vec(50,00000000.0, this.rz, this.direction);
-	this.alpha = 0,00000000.0;
+	this.SetSpeed_Vec(50.00000000, this.rz, this.direction);
+	this.alpha = 0.00000000;
 	this.cancelCount = 3;
 	this.func = [
 		function ()
@@ -2021,7 +2021,7 @@ function SpellShot_A( t )
 		},
 		function ()
 		{
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.SetMotion(4009, 1);
 			this.count = 0;
 			this.rz = this.atan2(this.owner.target.y - 30 - this.y, (this.owner.target.x - this.x) * this.direction);
@@ -2029,19 +2029,19 @@ function SpellShot_A( t )
 			{
 				local r_ = this.atan2(this.owner.target.y - 30 - this.y, (this.owner.target.x - this.x) * this.direction) - this.rz;
 
-				while (this.abs(r_) > 3,14159203.0)
+				while (this.abs(r_) > 3.14159203)
 				{
 					if (r_ > 0)
 					{
-						r_ = r_ - 6,28318548.0;
+						r_ = r_ - 6.28318548;
 					}
 					else
 					{
-						r_ = r_ + 6,28318548.0;
+						r_ = r_ + 6.28318548;
 					}
 				}
 
-				this.rz += r_ * 0,25000000.0;
+				this.rz += r_ * 0.25000000;
 				this.count++;
 
 				if (this.count == 10)
@@ -2057,7 +2057,7 @@ function SpellShot_A( t )
 				this.PlaySE(this.initTable.se);
 			}
 
-			this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
+			this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
 			this.count = 0;
 			this.SetMotion(4009, 3);
 			this.stateLabel = function ()
@@ -2073,7 +2073,7 @@ function SpellShot_A( t )
 
 				if (this.count <= 18)
 				{
-					this.rz += 0,17453292.0;
+					this.rz += 0.17453292;
 					this.SetSpeed_Vec(30, this.rz, this.direction);
 				}
 
@@ -2096,13 +2096,13 @@ function SpellShot_A( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.alpha += 0,10000000.0;
-		this.TargetHoming(this.owner.target, 6,28318548.0, this.direction);
+		this.alpha += 0.10000000;
+		this.TargetHoming(this.owner.target, 6.28318548, this.direction);
 		this.count++;
 
 		if (this.count >= 15)
 		{
-			this.Vec_Brake(5,00000000.0);
+			this.Vec_Brake(5.00000000);
 		}
 
 		if (this.count == 20)
@@ -2122,14 +2122,14 @@ function SpellShot_B( t )
 		{
 			this.SetParent(null, 0, 0);
 			this.SetMotion(4019, 1);
-			this.flag1 = (3 - this.rand() % 7) * 0,01745329.0;
+			this.flag1 = (3 - this.rand() % 7) * 0.01745329;
 			this.flag2 = 0;
 			this.stateLabel = function ()
 			{
-				this.alpha = this.red = this.green = this.blue -= 0,02500000.0;
-				this.AddSpeed_XY(0,00000000.0, 0,20000000.0);
+				this.alpha = this.red = this.green = this.blue -= 0.02500000;
+				this.AddSpeed_XY(0.00000000, 0.20000000);
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -2138,7 +2138,7 @@ function SpellShot_B( t )
 
 				if (this.flag1 > 0)
 				{
-					this.flag2 += 0,20000000.0 * 0,01745329.0;
+					this.flag2 += 0.20000000 * 0.01745329;
 					this.rz += this.flag2;
 
 					if (this.rz > this.flag1)
@@ -2148,7 +2148,7 @@ function SpellShot_B( t )
 				}
 				else
 				{
-					this.flag2 += 0,20000000.0 * 0,01745329.0;
+					this.flag2 += 0.20000000 * 0.01745329;
 					this.rz += this.flag2;
 
 					if (this.rz > this.flag1)
@@ -2178,18 +2178,18 @@ function SpellShot_B_Sub( t )
 {
 	this.SetMotion(4019, 0);
 	this.DrawActorPriority(180);
-	this.rz = (15 - this.rand() % 31) * 0,10000000.0 * 0,01745329.0;
-	::camera.Shake(5,00000000.0);
+	this.rz = (15 - this.rand() % 31) * 0.10000000 * 0.01745329;
+	::camera.Shake(5.00000000);
 	this.func = [
 		function ()
 		{
 			this.SetMotion(4019, 1);
 			this.stateLabel = function ()
 			{
-				this.alpha = this.red = this.green = this.blue -= 0,02500000.0;
-				this.AddSpeed_XY(0,00000000.0, 0,20000000.0);
+				this.alpha = this.red = this.green = this.blue -= 0.02500000;
+				this.AddSpeed_XY(0.00000000, 0.20000000);
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -2198,13 +2198,13 @@ function SpellShot_B_Sub( t )
 	];
 	this.subState = function ()
 	{
-		this.AddSpeed_XY(0,00000000.0, -2,00000000.0, 0,00000000.0, -20,00000000.0);
+		this.AddSpeed_XY(0.00000000, -2.00000000, 0.00000000, -20.00000000);
 
 		if (this.y < this.initTable.height)
 		{
 			this.subState = function ()
 			{
-				if (this.VY_Brake(4,00000000.0))
+				if (this.VY_Brake(4.00000000))
 				{
 					this.SetMotion(4019, 1);
 					this.subState = function ()
@@ -2280,11 +2280,11 @@ function Climax_Shot( t )
 	this.DrawActorPriority(179);
 	this.SetMotion(4909, 1);
 	this.rx = t.rot;
-	this.ry = 90 * 0,01745329.0;
-	this.sx = this.sy = this.sz = 0,10000000.0;
+	this.ry = 90 * 0.01745329;
+	this.sx = this.sy = this.sz = 0.10000000;
 	this.cancelCount = 99;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rx);
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rx);
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	this.SetParent(this.owner, this.x - this.owner.x, this.y - this.owner.y);
 
 	if (t.pare)
@@ -2299,7 +2299,7 @@ function Climax_Shot( t )
 		},
 		function ()
 		{
-			this.flag1 = 1,00000000.0;
+			this.flag1 = 1.00000000;
 			this.SetParent(null, 0, 0);
 			this.SetKeyFrame(1);
 			this.stateLabel = function ()
@@ -2310,8 +2310,8 @@ function Climax_Shot( t )
 	this.keyAction = this.ReleaseActor;
 	this.stateLabel = function ()
 	{
-		this.sx = this.sy = this.sz += (1,50000000.0 - this.sx) * 0,15000001.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy = this.sz += (1.50000000 - this.sx) * 0.15000001;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 	};
 }
 
@@ -2330,15 +2330,15 @@ function Climax_Back( t )
 			this.ReleaseActor();
 		}
 	];
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.stateLabel = function ()
 	{
-		this.alpha += 0,03300000.0;
+		this.alpha += 0.03300000;
 
-		if (this.alpha >= 1,00000000.0)
+		if (this.alpha >= 1.00000000)
 		{
-			this.flag1 = this.SetFreeObject(640, 720, 1,00000000.0, this.Climax_HAARP, {}).weakref();
-			this.alpha = 1,00000000.0;
+			this.flag1 = this.SetFreeObject(640, 720, 1.00000000, this.Climax_HAARP, {}).weakref();
+			this.alpha = 1.00000000;
 			this.stateLabel = null;
 		}
 	};
@@ -2366,7 +2366,7 @@ function Climax_Clowd( t )
 {
 	this.SetMotion(4907, 2);
 	this.DrawScreenActorPriority(110);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.anime.left = 0;
 	this.anime.top = 1;
 	this.anime.width = 768;
@@ -2376,10 +2376,10 @@ function Climax_Clowd( t )
 	this.anime.radius0 = 300;
 	this.anime.radius1 = 800;
 	this.anime.length = 400;
-	this.anime.vertex_alpha1 = 1,00000000.0;
-	this.anime.vertex_blue1 = 1,00000000.0;
-	this.anime.vertex_red1 = 1,00000000.0;
-	this.anime.vertex_green1 = 1,00000000.0;
+	this.anime.vertex_alpha1 = 1.00000000;
+	this.anime.vertex_blue1 = 1.00000000;
+	this.anime.vertex_red1 = 1.00000000;
+	this.anime.vertex_green1 = 1.00000000;
 	this.func = [
 		function ()
 		{
@@ -2399,22 +2399,22 @@ function Climax_Clowd( t )
 
 			this.stateLabel = function ()
 			{
-				this.anime.radius0 *= 1,10000002.0;
-				this.anime.radius1 *= 1,10000002.0;
-				this.anime.length += 0,50000000.0;
-				this.anime.left += 1,50000000.0;
-				this.anime.radius0 -= 0,25000000.0;
+				this.anime.radius0 *= 1.10000002;
+				this.anime.radius1 *= 1.10000002;
+				this.anime.length += 0.50000000;
+				this.anime.left += 1.50000000;
+				this.anime.radius0 -= 0.25000000;
 			};
 		}
 	];
 	this.flag1 = this.SetFreeObjectDynamic(this.x, this.y, this.direction, this.Climax_ClowdB, {}, this).weakref();
 	this.stateLabel = function ()
 	{
-		this.rx += 0,01000000.0 * 0,01745329.0;
-		this.alpha += 0,02500000.0;
-		this.anime.length += 0,50000000.0;
-		this.anime.left += 0,50000000.0;
-		this.anime.radius0 -= 0,25000000.0;
+		this.rx += 0.01000000 * 0.01745329;
+		this.alpha += 0.02500000;
+		this.anime.length += 0.50000000;
+		this.anime.left += 0.50000000;
+		this.anime.radius0 -= 0.25000000;
 	};
 }
 
@@ -2422,7 +2422,7 @@ function Climax_ClowdB( t )
 {
 	this.SetMotion(4907, 3);
 	this.DrawScreenActorPriority(110);
-	this.alpha = 0,00000000.0;
+	this.alpha = 0.00000000;
 	this.anime.left = 0;
 	this.anime.top = 1;
 	this.anime.width = 512;
@@ -2432,10 +2432,10 @@ function Climax_ClowdB( t )
 	this.anime.radius0 = 500;
 	this.anime.radius1 = 800;
 	this.anime.length = 600;
-	this.anime.vertex_alpha1 = 1,00000000.0;
-	this.anime.vertex_blue1 = 1,00000000.0;
-	this.anime.vertex_red1 = 1,00000000.0;
-	this.anime.vertex_green1 = 1,00000000.0;
+	this.anime.vertex_alpha1 = 1.00000000;
+	this.anime.vertex_blue1 = 1.00000000;
+	this.anime.vertex_red1 = 1.00000000;
+	this.anime.vertex_green1 = 1.00000000;
 	this.func = [
 		function ()
 		{
@@ -2445,16 +2445,16 @@ function Climax_ClowdB( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.anime.radius0 *= 1,10000002.0;
-				this.anime.left += 1,50000000.0;
+				this.anime.radius0 *= 1.10000002;
+				this.anime.left += 1.50000000;
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.rx += 0,01000000.0 * 0,01745329.0;
-		this.alpha += 0,02500000.0;
-		this.anime.left += 1,50000000.0;
+		this.rx += 0.01000000 * 0.01745329;
+		this.alpha += 0.02500000;
+		this.anime.left += 1.50000000;
 	};
 }
 
@@ -2462,7 +2462,7 @@ function Climax_ClowdSpark( t )
 {
 	this.SetMotion(4907, 5 + this.rand() % 2);
 	this.DrawScreenActorPriority(115);
-	this.rz = this.rand() % 360 * 0,01745329.0;
+	this.rz = this.rand() % 360 * 0.01745329;
 	this.sx = this.sy = t.scale;
 }
 
@@ -2470,7 +2470,7 @@ function Climax_ClowdSparkB( t )
 {
 	this.SetMotion(4907, 5 + this.rand() % 2);
 	this.DrawScreenActorPriority(130);
-	this.rz = this.rand() % 360 * 0,01745329.0;
+	this.rz = this.rand() % 360 * 0.01745329;
 	this.sx = this.sy = t.scale;
 }
 
@@ -2478,8 +2478,8 @@ function Climax_Cut( t )
 {
 	this.SetMotion(4907, 0);
 	this.DrawScreenActorPriority(120);
-	this.red = this.green = this.blue = 0,00000000.0;
-	this.sx = this.sy = 4,00000000.0;
+	this.red = this.green = this.blue = 0.00000000;
+	this.sx = this.sy = 4.00000000;
 	this.func = [
 		function ()
 		{
@@ -2489,48 +2489,48 @@ function Climax_Cut( t )
 		{
 			this.stateLabel = function ()
 			{
-				this.sx = this.sy *= 1,20000005.0;
+				this.sx = this.sy *= 1.20000005;
 			};
 		}
 	];
 	this.flag1 = 600;
-	this.flag2 = 0,00000000.0;
+	this.flag2 = 0.00000000;
 	this.flag3 = 100;
-	this.rz = -150 * 0,01745329.0;
+	this.rz = -150 * 0.01745329;
 	this.stateLabel = function ()
 	{
 		this.count++;
 
 		if (this.count >= 20)
 		{
-			this.red = this.green = this.blue += 0,00250000.0;
+			this.red = this.green = this.blue += 0.00250000;
 		}
 
-		if (this.red > 1,00000000.0)
+		if (this.red > 1.00000000)
 		{
-			this.red = this.green = this.blue = 1,00000000.0;
+			this.red = this.green = this.blue = 1.00000000;
 		}
 
-		local s_ = (1,00000000.0 - this.sx) * 0,01500000.0;
+		local s_ = (1.00000000 - this.sx) * 0.01500000;
 
-		if (s_ > -0,00100000.0)
+		if (s_ > -0.00100000)
 		{
-			s_ = -0,00100000.0;
+			s_ = -0.00100000;
 		}
 
 		this.sx = this.sy += s_;
-		this.flag2 = -2,00000000.0 * (this.sx - 0,97500002.0);
+		this.flag2 = -2.00000000 * (this.sx - 0.97500002);
 		this.flag1 += this.flag2;
-		local r_ = this.rz * 0,01000000.0;
+		local r_ = this.rz * 0.01000000;
 
-		if (r_ > -0,05000000.0 * 0,01745329.0)
+		if (r_ > -0.05000000 * 0.01745329)
 		{
-			r_ = -0,05000000.0 * 0,01745329.0;
+			r_ = -0.05000000 * 0.01745329;
 		}
 
 		this.rz -= r_;
-		this.Warp(640 + this.flag1 * this.cos(this.rz + 90 * 0,01745329.0) * this.direction, this.flag3 + this.flag1 * this.sin(this.rz + 90 * 0,01745329.0));
-		this.flag3 -= 0,10000000.0;
+		this.Warp(640 + this.flag1 * this.cos(this.rz + 90 * 0.01745329) * this.direction, this.flag3 + this.flag1 * this.sin(this.rz + 90 * 0.01745329));
+		this.flag3 -= 0.10000000;
 	};
 }
 
@@ -2538,9 +2538,9 @@ function Climax_Lightning( t )
 {
 	this.SetMotion(4908, 0);
 	this.keyAction = this.ReleaseActor;
-	this.sx = 0,75000000.0 + this.rand() % 50 * 0,01000000.0;
-	this.sy = 1,00000000.0 + this.rand() % 50 * 0,01000000.0;
-	this.rz = (10 - this.rand() % 21) * 0,01745329.0;
+	this.sx = 0.75000000 + this.rand() % 50 * 0.01000000;
+	this.sy = 1.00000000 + this.rand() % 50 * 0.01000000;
+	this.rz = (10 - this.rand() % 21) * 0.01745329;
 }
 
 function Climax_HitBox( t )

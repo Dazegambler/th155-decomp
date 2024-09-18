@@ -63,14 +63,14 @@ local func_create = function ()
 
 		if (this.index == 0)
 		{
-			name = ::font.CreateSpellString(::spell.param[master_name][i].name, 1,00000000.0, 0,50000000.0, 0,50000000.0);
+			name = ::font.CreateSpellString(::spell.param[master_name][i].name, 1.00000000, 0.50000000, 0.50000000);
 		}
 		else
 		{
-			name = ::font.CreateSpellString(::spell.param[master_name][i].name, 0,50000000.0, 0,50000000.0, 1,00000000.0);
+			name = ::font.CreateSpellString(::spell.param[master_name][i].name, 0.50000000, 0.50000000, 1.00000000);
 		}
 
-		local scale = name.width > 280 ? 280,00000000.0 / name.width.tofloat() : 1;
+		local scale = name.width > 280 ? 280.00000000 / name.width.tofloat() : 1;
 		name.x = card.x + (this.index == 0 ? ::spell.width + 8 : -name.width * scale);
 		name.y = card.y + ::spell.height - 32;
 		name.sx = scale;
@@ -135,7 +135,7 @@ local func_update = function ()
 		{
 			if (v.scale < 1)
 			{
-				v.scale += 0,20000000.0;
+				v.scale += 0.20000000;
 			}
 		}
 		else
@@ -143,19 +143,19 @@ local func_update = function ()
 			v.scale = 0;
 		}
 
-		v.x += (v.target_x - v.x) * (0,15000001.0 - i * 0,02000000.0);
-		v.y += (v.target_y - v.y) * (0,15000001.0 - i * 0,02000000.0);
-		v.x2 += (v.target_x2 - v.x2) * (0,15000001.0 - i * 0,02000000.0);
-		v.y2 += (v.target_y2 - v.y2) * (0,15000001.0 - i * 0,02000000.0);
+		v.x += (v.target_x - v.x) * (0.15000001 - i * 0.02000000);
+		v.y += (v.target_y - v.y) * (0.15000001 - i * 0.02000000);
+		v.x2 += (v.target_x2 - v.x2) * (0.15000001 - i * 0.02000000);
+		v.y2 += (v.target_y2 - v.y2) * (0.15000001 - i * 0.02000000);
 		mat.SetTranslation(v.x, v.y, 0);
 		v.card.SetWorldTransform(mat);
 		mat.SetTranslation(v.x2, v.y2, 0);
 		v.name.SetWorldTransform(mat);
 		v.cost.SetWorldTransform(mat);
-		v.roll += 0,02000000.0 * v.dir;
+		v.roll += 0.02000000 * v.dir;
 		mat.SetTranslation(v.x, v.y, 0);
 		mat2.SetScaling(v.scale, v.scale, 1);
-		mat2.Rotate(0,80000001.0, -0,30000001.0 * v.dir, v.roll);
+		mat2.Rotate(0.80000001, -0.30000001 * v.dir, v.roll);
 		mat2.Multiply(v.mat_local);
 		mat2.Multiply(mat);
 		v.frame.SetWorldTransform(mat2);

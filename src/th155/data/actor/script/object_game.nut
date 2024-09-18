@@ -6,10 +6,10 @@ function ConvertTotalSpeed()
 
 function ResetSpeed()
 {
-	this.vx = 0,00000000.0;
-	this.vy = 0,00000000.0;
-	this.va.x = 0,00000000.0;
-	this.va.y = 0,00000000.0;
+	this.vx = 0.00000000;
+	this.vy = 0.00000000;
+	this.va.x = 0.00000000;
+	this.va.y = 0.00000000;
 	this.ConvertTotalSpeed();
 }
 
@@ -18,7 +18,7 @@ function SetDamage( damage_ )
 	this.life -= damage_.tointeger();
 }
 
-function SetComboDamage( atk, damage, min_scale = 0,10000000.0, disable_kill = false )
+function SetComboDamage( atk, damage, min_scale = 0.10000000, disable_kill = false )
 {
 	local scale = this.team.damage_scale;
 	scale = scale * this.team.base_scale;

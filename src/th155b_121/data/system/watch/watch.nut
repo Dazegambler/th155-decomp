@@ -38,7 +38,7 @@ function Resume()
 function Update()
 {
 	this.count++;
-	this.text.alpha = this.fabs(this.sin(3,14150000.0 * 2 * this.count / 240,00000000.0));
+	this.text.alpha = this.fabs(this.sin(3.14150000 * 2 * this.count / 240.00000000));
 
 	if (::input_all.b1 == 1)
 	{

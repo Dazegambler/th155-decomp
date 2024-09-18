@@ -118,15 +118,15 @@ function IsCenter( y_ )
 
 	if (this.abs(a) <= y_)
 	{
-		return 0,00000000.0;
+		return 0.00000000;
 	}
 	else if (a > 0)
 	{
-		return 1,00000000.0;
+		return 1.00000000;
 	}
 	else
 	{
-		return -1,00000000.0;
+		return -1.00000000;
 	}
 }
 

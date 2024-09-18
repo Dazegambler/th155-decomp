@@ -11,7 +11,7 @@ function Team_Change_AttackB( t_ )
 	this.SetMotion(3913, 0);
 	this.AjustCenterStop();
 	this.count = 0;
-	this.SetSpeed_XY(15,00000000.0 * this.direction, 0,00000000.0);
+	this.SetSpeed_XY(15.00000000 * this.direction, 0.00000000);
 	this.keyAction = [
 		null,
 		function ()
@@ -24,14 +24,14 @@ function Team_Change_AttackB( t_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.VX_Brake(0,10000000.0);
+		this.VX_Brake(0.10000000);
 
 		if (this.count == 8)
 		{
 			this.SetMotion(3913, 1);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,75000000.0);
+				this.VX_Brake(0.75000000);
 			};
 		}
 	};
@@ -50,16 +50,16 @@ function Team_Change_Attack_AirB( t_ )
 	if (this.y < this.centerY)
 	{
 		this.centerStop = -2;
-		local v_ = this.va.y - 5,00000000.0;
-		v_ = this.Math_MinMax(v_, -8,00000000.0, -2,00000000.0);
-		this.SetSpeed_XY(15,00000000.0 * this.direction, v_);
+		local v_ = this.va.y - 5.00000000;
+		v_ = this.Math_MinMax(v_, -8.00000000, -2.00000000);
+		this.SetSpeed_XY(15.00000000 * this.direction, v_);
 	}
 	else
 	{
 		this.centerStop = 2;
-		local v_ = this.va.y + 5,00000000.0;
-		v_ = this.Math_MinMax(v_, 2,00000000.0, 8,00000000.0);
-		this.SetSpeed_XY(15,00000000.0 * this.direction, 4,00000000.0);
+		local v_ = this.va.y + 5.00000000;
+		v_ = this.Math_MinMax(v_, 2.00000000, 8.00000000);
+		this.SetSpeed_XY(15.00000000 * this.direction, 4.00000000);
 	}
 
 	this.keyAction = [
@@ -77,7 +77,7 @@ function Team_Change_Attack_AirB( t_ )
 					this.SetMotion(this.motion, 3);
 					this.stateLabel = function ()
 					{
-						this.VX_Brake(0,50000000.0);
+						this.VX_Brake(0.50000000);
 					};
 				}
 			};
@@ -86,8 +86,8 @@ function Team_Change_Attack_AirB( t_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.CenterUpdate(0,50000000.0, null);
-		this.VX_Brake(0,50000000.0, 4,00000000.0 * this.direction);
+		this.CenterUpdate(0.50000000, null);
+		this.VX_Brake(0.50000000, 4.00000000 * this.direction);
 
 		if (this.centerStop * this.centerStop <= 1)
 		{
@@ -95,7 +95,7 @@ function Team_Change_Attack_AirB( t_ )
 			this.SetMotion(this.motion, 3);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
+				this.VX_Brake(0.50000000);
 			};
 		}
 	};
@@ -113,35 +113,35 @@ function Team_Change_ShotB( va_ )
 	this.flag4 = this.Vector3();
 	this.subState = function ()
 	{
-		this.CenterUpdate(0,10000000.0, 2,00000000.0);
+		this.CenterUpdate(0.10000000, 2.00000000);
 
 		if (this.centerStop == 0)
 		{
-			this.VX_Brake(0,50000000.0);
+			this.VX_Brake(0.50000000);
 		}
 		else
 		{
-			this.VX_Brake(0,50000000.0, -1,50000000.0 * this.direction);
+			this.VX_Brake(0.50000000, -1.50000000 * this.direction);
 		}
 	};
 
 	if (this.centerStop * this.centerStop <= 1)
 	{
 		this.SetMotion(3920, 0);
-		this.SetSpeed_XY(-10,00000000.0 * this.direction, this.va.y * 0,10000000.0);
+		this.SetSpeed_XY(-10.00000000 * this.direction, this.va.y * 0.10000000);
 		this.stateLabel = function ()
 		{
-			this.VX_Brake(0,15000001.0, -1,00000000.0 * this.direction);
+			this.VX_Brake(0.15000001, -1.00000000 * this.direction);
 		};
 	}
 	else
 	{
 		this.SetMotion(3921, 0);
-		this.SetSpeed_XY(-10,00000000.0 * this.direction, this.va.y * 0,10000000.0);
+		this.SetSpeed_XY(-10.00000000 * this.direction, this.va.y * 0.10000000);
 		this.stateLabel = function ()
 		{
-			this.CenterUpdate(0,10000000.0, 1,50000000.0);
-			this.VX_Brake(0,15000001.0, -1,00000000.0 * this.direction);
+			this.CenterUpdate(0.10000000, 1.50000000);
+			this.VX_Brake(0.15000001, -1.00000000 * this.direction);
 		};
 	}
 
@@ -153,7 +153,7 @@ function Team_Change_ShotB( va_ )
 			this.hitResult = 1;
 			this.team.AddMP(-200, 90);
 			this.flag1 = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-			this.flag1 = this.Math_MinMax(this.flag1, -0,78539813.0, 0,78539813.0);
+			this.flag1 = this.Math_MinMax(this.flag1, -0.78539813, 0.78539813);
 			this.stateLabel = function ()
 			{
 				this.subState();
@@ -163,7 +163,7 @@ function Team_Change_ShotB( va_ )
 					if (this.flag3 == 0)
 					{
 						local t_ = {};
-						t_.v <- 9,00000000.0 + this.flag3 * 1,00000000.0;
+						t_.v <- 9.00000000 + this.flag3 * 1.00000000;
 						t_.rot <- this.flag1;
 						t_.type <- true;
 						this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Change, t_);
@@ -171,26 +171,26 @@ function Team_Change_ShotB( va_ )
 					else if (this.flag3 == -5)
 					{
 						local t_ = {};
-						t_.v <- 9,00000000.0 + this.flag3 * 1,00000000.0;
-						t_.rot <- this.flag1 + this.flag3 * 0,10471975.0;
+						t_.v <- 9.00000000 + this.flag3 * 1.00000000;
+						t_.rot <- this.flag1 + this.flag3 * 0.10471975;
 						t_.type <- true;
 						this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Change, t_);
 						local t_ = {};
-						t_.v <- 9,00000000.0 + this.flag3 * 1,00000000.0;
-						t_.rot <- this.flag1 - this.flag3 * 0,10471975.0;
+						t_.v <- 9.00000000 + this.flag3 * 1.00000000;
+						t_.rot <- this.flag1 - this.flag3 * 0.10471975;
 						t_.type <- true;
 						this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Change, t_);
 					}
 					else
 					{
 						local t_ = {};
-						t_.v <- 9,00000000.0 + this.flag3 * 1,00000000.0;
-						t_.rot <- this.flag1 + this.flag3 * 0,10471975.0;
+						t_.v <- 9.00000000 + this.flag3 * 1.00000000;
+						t_.rot <- this.flag1 + this.flag3 * 0.10471975;
 						t_.type <- false;
 						this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Change, t_);
 						local t_ = {};
-						t_.v <- 9,00000000.0 + this.flag3 * 1,00000000.0;
-						t_.rot <- this.flag1 - this.flag3 * 0,10471975.0;
+						t_.v <- 9.00000000 + this.flag3 * 1.00000000;
+						t_.rot <- this.flag1 - this.flag3 * 0.10471975;
 						t_.type <- false;
 						this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_Change, t_);
 					}
@@ -207,7 +207,7 @@ function Team_Change_ShotB( va_ )
 			{
 				if (this.centerStop == 0)
 				{
-					this.VX_Brake(0,50000000.0);
+					this.VX_Brake(0.50000000);
 				}
 			};
 		}
@@ -237,12 +237,12 @@ function Team_Change_ShotFinB( va_, ky_ )
 
 	if (ky_ < 0)
 	{
-		this.flag2 = -30 * 0,01745329.0;
+		this.flag2 = -30 * 0.01745329;
 	}
 
 	if (ky_ > 0)
 	{
-		this.flag2 = 30 * 0,01745329.0;
+		this.flag2 = 30 * 0.01745329;
 	}
 
 	this.keyAction = [
@@ -251,10 +251,10 @@ function Team_Change_ShotFinB( va_, ky_ )
 			if (this.target)
 			{
 				this.flag1 = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-				this.flag1 = this.Math_MinMax(this.flag1, -45 * 0,01745329.0, 45 * 0,01745329.0);
+				this.flag1 = this.Math_MinMax(this.flag1, -45 * 0.01745329, 45 * 0.01745329);
 			}
 
-			this.SetSpeed_XY(-15,00000000.0 * this.direction, 0,00000000.0);
+			this.SetSpeed_XY(-15.00000000 * this.direction, 0.00000000);
 			this.hitResult = 1;
 			this.PlaySE(1126);
 			local t_ = {};
@@ -262,8 +262,8 @@ function Team_Change_ShotFinB( va_, ky_ )
 			this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shot_ChangeFin, t_);
 			this.stateLabel = function ()
 			{
-				this.VX_Brake(0,50000000.0);
-				this.CenterUpdate(0,10000000.0, 2,00000000.0);
+				this.VX_Brake(0.50000000);
+				this.CenterUpdate(0.10000000, 2.00000000);
 			};
 		},
 		function ()
@@ -276,7 +276,7 @@ function Team_Change_ShotFinB( va_, ky_ )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0);
+		this.Vec_Brake(0.25000000);
 	};
 }
 
@@ -301,7 +301,7 @@ function Team_Change_Skill_FrontB( t, v_ )
 	}
 
 	this.flag3 = 0;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.AjustCenterStop();
 	this.SetMotion(3950, 1);
 	this.hitCount = 0;
@@ -317,21 +317,21 @@ function Team_Change_Skill_FrontB( t, v_ )
 		{
 			this.team.AddMP(-200, 120);
 			this.Warp(this.flag1.x, ::battle.scroll_top - 180);
-			this.SetSpeed_XY(0,00000000.0, 30,00000000.0);
+			this.SetSpeed_XY(0.00000000, 30.00000000);
 			this.centerStop = 2;
 			this.stateLabel = function ()
 			{
 				if (this.y > this.flag1.y + 50 || this.ground)
 				{
 					this.SetMotion(3005, 0);
-					this.SetSpeed_XY(0,00000000.0, 20,00000000.0);
+					this.SetSpeed_XY(0.00000000, 20.00000000);
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(1,50000000.0);
+						this.Vec_Brake(1.50000000);
 
-						if (this.va.y < 0,25000000.0)
+						if (this.va.y < 0.25000000)
 						{
-							this.SetSpeed_XY(0,00000000.0, 0,25000000.0);
+							this.SetSpeed_XY(0.00000000, 0.25000000);
 						}
 					};
 					this.keyAction = [
@@ -371,7 +371,7 @@ function Team_Change_Skill_FrontB( t, v_ )
 					{
 						this.HitTargetReset();
 						this.SetMotion(this.motion, 3);
-						this.SetSpeed_XY(0,00000000.0, 15,00000000.0);
+						this.SetSpeed_XY(0.00000000, 15.00000000);
 						this.PlaySE(1901);
 
 						if (this.flag2)
@@ -394,31 +394,31 @@ function Team_Change_Skill_FrontB( t, v_ )
 						{
 							if (this.motion >= 3001 && this.count % 2 == 0)
 							{
-								this.SetFreeObject(this.x, this.y + 50,00000000.0, this.direction, this.owner.SPShot_A_Spin, {});
+								this.SetFreeObject(this.x, this.y + 50.00000000, this.direction, this.owner.SPShot_A_Spin, {});
 							}
 
-							if (this.va.y <= 0,00000000.0)
+							if (this.va.y <= 0.00000000)
 							{
-								this.AddSpeed_XY(0,00000000.0, -0,50000000.0);
+								this.AddSpeed_XY(0.00000000, -0.50000000);
 
-								if (this.va.y <= -3,50000000.0)
+								if (this.va.y <= -3.50000000)
 								{
-									this.SetSpeed_XY(0,00000000.0, -3,50000000.0);
+									this.SetSpeed_XY(0.00000000, -3.50000000);
 								}
 							}
 							else
 							{
-								this.Vec_Brake(1,50000000.0);
+								this.Vec_Brake(1.50000000);
 							}
 
 							if (this.count >= 20)
 							{
 								this.centerStop = -2;
 								this.SetMotion(this.motion, 4);
-								this.SetSpeed_XY(0,00000000.0, -15,00000000.0);
+								this.SetSpeed_XY(0.00000000, -15.00000000);
 								this.stateLabel = function ()
 								{
-									this.AddSpeed_XY(0,00000000.0, 0,50000000.0);
+									this.AddSpeed_XY(0.00000000, 0.50000000);
 								};
 							}
 						};
@@ -444,10 +444,10 @@ function Team_Change_SpellB( t )
 	{
 		this.UseChangeSpellCard(60, -this.team.sp);
 		this.centerStop = -2;
-		this.SetSpeed_Vec(17,50000000.0, -120 * 0,01745329.0, this.direction);
+		this.SetSpeed_Vec(17.50000000, -120 * 0.01745329, this.direction);
 		this.stateLabel = function ()
 		{
-			this.Vec_Brake(1,20000005.0, 1,00000000.0);
+			this.Vec_Brake(1.20000005, 1.00000000);
 		};
 		this.PlaySE(1932);
 	};

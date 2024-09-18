@@ -38,11 +38,11 @@ function Master_Spell_1_Attack( t )
 	this.flag5 = {};
 	this.flag5.shotCount <- 240;
 	this.flag5.shotNum <- 4;
-	this.flag5.shotRot <- 60 * 0,01745329.0;
-	this.flag5.shotRotStart <- -1,57079601.0;
+	this.flag5.shotRot <- 60 * 0.01745329;
+	this.flag5.shotRotStart <- -1.57079601;
 	this.flag5.charge <- 90;
-	this.flag5.moveV <- 7,50000000.0;
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.moveV <- 7.50000000;
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -58,7 +58,7 @@ function Master_Spell_1_Attack( t )
 		function ( r_ )
 		{
 			this.PlaySE(3430);
-			::camera.Shake(5,00000000.0);
+			::camera.Shake(5.00000000);
 			local pos_ = this.Vector3();
 			pos_.x = 80;
 			pos_.RotateByRadian(r_);
@@ -66,8 +66,8 @@ function Master_Spell_1_Attack( t )
 			for( local i = 0; i < this.flag5.shotNum; i++ )
 			{
 				local t_ = {};
-				t_.rot <- r_ + 3,14159203.0 + this.flag5.shotRotStart + this.flag5.shotRot * i;
-				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1,00000000.0, this.Boss_Shot_MS1, t_);
+				t_.rot <- r_ + 3.14159203 + this.flag5.shotRotStart + this.flag5.shotRot * i;
+				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1.00000000, this.Boss_Shot_MS1, t_);
 			}
 		}
 	];
@@ -79,26 +79,26 @@ function Master_Spell_1_Attack( t )
 
 	case 1:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 10,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 10.00000000;
 		break;
 
 	case 2:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 13,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 13.00000000;
 		break;
 
 	case 3:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 15,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 15.00000000;
 		break;
 
 	case 4:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 17,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 17.00000000;
 		break;
 	}
 
@@ -111,7 +111,7 @@ function Master_Spell_1_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0);
+		this.Vec_Brake(0.25000000);
 
 		if (this.count >= this.flag5.charge)
 		{
@@ -126,21 +126,21 @@ function Master_Spell_1_Attack( t )
 			this.SetMotion(this.motion, 2);
 			local r_ = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
 
-			if (r_ < 0,00000000.0)
+			if (r_ < 0.00000000)
 			{
-				r_ = -0,78539813.0;
+				r_ = -0.78539813;
 			}
 			else
 			{
-				r_ = 0,78539813.0;
+				r_ = 0.78539813;
 			}
 
-			this.SetSpeed_Vec(2,00000000.0, r_, this.direction);
+			this.SetSpeed_Vec(2.00000000, r_, this.direction);
 			this.subState = function ()
 			{
 				if (this.va.Length() < this.flag5.moveV)
 				{
-					if (this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction))
+					if (this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction))
 					{
 						this.subState = function ()
 						{
@@ -164,23 +164,23 @@ function Master_Spell_1_Attack( t )
 
 				if (this.count == this.flag5.shotCount - 60)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				this.subState();
 
-				if (this.ground || this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top + 50)
+				if (this.ground || this.va.y < 0.00000000 && this.y < ::battle.scroll_top + 50)
 				{
 					this.SetSpeed_XY(this.va.x, -this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.y < 0 ? 1,57079601.0 : -1,57079601.0);
+					this.func[0].call(this, this.va.y < 0 ? 1.57079601 : -1.57079601);
 				}
 
 				if (this.wall)
 				{
 					this.SetSpeed_XY(-this.va.x, this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.x < 0 ? 0 : 3,14159203.0);
+					this.func[0].call(this, this.va.x < 0 ? 0 : 3.14159203);
 				}
 			};
 		}
@@ -234,10 +234,10 @@ function Master_Spell_1B_ChangeAttack( t )
 	this.flag5 = {};
 	this.flag5.shotCount <- 240;
 	this.flag5.shotNum <- 4;
-	this.flag5.shotRot <- 60 * 0,01745329.0;
-	this.flag5.shotRotStart <- -1,57079601.0;
+	this.flag5.shotRot <- 60 * 0.01745329;
+	this.flag5.shotRotStart <- -1.57079601;
 	this.flag5.charge <- 90;
-	this.flag5.moveV <- 7,50000000.0;
+	this.flag5.moveV <- 7.50000000;
 	this.flag4 = null;
 	this.lavelClearEvent = function ()
 	{
@@ -254,7 +254,7 @@ function Master_Spell_1B_ChangeAttack( t )
 		function ( r_ )
 		{
 			this.PlaySE(3430);
-			::camera.Shake(5,00000000.0);
+			::camera.Shake(5.00000000);
 			local pos_ = this.Vector3();
 			pos_.x = 80;
 			pos_.RotateByRadian(r_);
@@ -262,8 +262,8 @@ function Master_Spell_1B_ChangeAttack( t )
 			for( local i = 0; i < this.flag5.shotNum; i++ )
 			{
 				local t_ = {};
-				t_.rot <- r_ + 3,14159203.0 + this.flag5.shotRotStart + this.flag5.shotRot * i;
-				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1,00000000.0, this.Boss_Shot_MS1B, t_);
+				t_.rot <- r_ + 3.14159203 + this.flag5.shotRotStart + this.flag5.shotRot * i;
+				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1.00000000, this.Boss_Shot_MS1B, t_);
 			}
 		}
 	];
@@ -275,31 +275,31 @@ function Master_Spell_1B_ChangeAttack( t )
 
 	case 1:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 10,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 10.00000000;
 		break;
 
 	case 2:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 13,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 13.00000000;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 17,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 17.00000000;
 		break;
 	}
 
 	this.count = 0;
-	this.SetSpeed_Vec(2,00000000.0, t, 1,00000000.0);
+	this.SetSpeed_Vec(2.00000000, t, 1.00000000);
 	this.subState = function ()
 	{
 		if (this.va.Length() < this.flag5.moveV)
 		{
-			if (this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction))
+			if (this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction))
 			{
 				this.subState = function ()
 				{
@@ -324,23 +324,23 @@ function Master_Spell_1B_ChangeAttack( t )
 
 		if (this.count == this.flag5.shotCount - 60)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		this.subState();
 
-		if (this.ground || this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top + 50)
+		if (this.ground || this.va.y < 0.00000000 && this.y < ::battle.scroll_top + 50)
 		{
 			this.SetSpeed_XY(this.va.x, -this.va.y);
 			this.HitReset();
-			this.func[0].call(this, this.va.y < 0 ? 1,57079601.0 : -1,57079601.0);
+			this.func[0].call(this, this.va.y < 0 ? 1.57079601 : -1.57079601);
 		}
 
 		if (this.wall)
 		{
 			this.SetSpeed_XY(-this.va.x, this.va.y);
 			this.HitReset();
-			this.func[0].call(this, this.va.x < 0 ? 0 : 3,14159203.0);
+			this.func[0].call(this, this.va.x < 0 ? 0 : 3.14159203);
 		}
 	};
 }
@@ -353,11 +353,11 @@ function Master_Spell_1B_Attack( t )
 	this.flag5 = {};
 	this.flag5.shotCount <- 240;
 	this.flag5.shotNum <- 4;
-	this.flag5.shotRot <- 60 * 0,01745329.0;
-	this.flag5.shotRotStart <- -1,57079601.0;
+	this.flag5.shotRot <- 60 * 0.01745329;
+	this.flag5.shotRotStart <- -1.57079601;
 	this.flag5.charge <- 90;
-	this.flag5.moveV <- 7,50000000.0;
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.moveV <- 7.50000000;
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -373,7 +373,7 @@ function Master_Spell_1B_Attack( t )
 		function ( r_ )
 		{
 			this.PlaySE(3430);
-			::camera.Shake(5,00000000.0);
+			::camera.Shake(5.00000000);
 			local pos_ = this.Vector3();
 			pos_.x = 80;
 			pos_.RotateByRadian(r_);
@@ -381,8 +381,8 @@ function Master_Spell_1B_Attack( t )
 			for( local i = 0; i < this.flag5.shotNum; i++ )
 			{
 				local t_ = {};
-				t_.rot <- r_ + 3,14159203.0 + this.flag5.shotRotStart + this.flag5.shotRot * i;
-				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1,00000000.0, this.Boss_Shot_MS1B, t_);
+				t_.rot <- r_ + 3.14159203 + this.flag5.shotRotStart + this.flag5.shotRot * i;
+				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1.00000000, this.Boss_Shot_MS1B, t_);
 			}
 		}
 	];
@@ -394,21 +394,21 @@ function Master_Spell_1B_Attack( t )
 
 	case 1:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 10,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 10.00000000;
 		break;
 
 	case 2:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 13,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 13.00000000;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 17,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 17.00000000;
 		break;
 	}
 
@@ -421,7 +421,7 @@ function Master_Spell_1B_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0);
+		this.Vec_Brake(0.25000000);
 
 		if (this.count >= this.flag5.charge)
 		{
@@ -436,21 +436,21 @@ function Master_Spell_1B_Attack( t )
 			this.SetMotion(this.motion, 2);
 			local r_ = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
 
-			if (r_ < 0,00000000.0)
+			if (r_ < 0.00000000)
 			{
-				r_ = -0,78539813.0;
+				r_ = -0.78539813;
 			}
 			else
 			{
-				r_ = 0,78539813.0;
+				r_ = 0.78539813;
 			}
 
-			this.SetSpeed_Vec(2,00000000.0, r_, this.direction);
+			this.SetSpeed_Vec(2.00000000, r_, this.direction);
 			this.subState = function ()
 			{
 				if (this.va.Length() < this.flag5.moveV)
 				{
-					if (this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction))
+					if (this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction))
 					{
 						this.subState = function ()
 						{
@@ -475,23 +475,23 @@ function Master_Spell_1B_Attack( t )
 
 				if (this.count == this.flag5.shotCount - 60)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				this.subState();
 
-				if (this.ground || this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top + 50)
+				if (this.ground || this.va.y < 0.00000000 && this.y < ::battle.scroll_top + 50)
 				{
 					this.SetSpeed_XY(this.va.x, -this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.y < 0 ? 1,57079601.0 : -1,57079601.0);
+					this.func[0].call(this, this.va.y < 0 ? 1.57079601 : -1.57079601);
 				}
 
 				if (this.wall)
 				{
 					this.SetSpeed_XY(-this.va.x, this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.x < 0 ? 0 : 3,14159203.0);
+					this.func[0].call(this, this.va.x < 0 ? 0 : 3.14159203);
 				}
 			};
 		}
@@ -543,15 +543,15 @@ function Master_Spell_1C_Attack( t )
 	this.LabelClear();
 	this.GetFront();
 	this.SetMotion(4930, 0);
-	this.SetSpeed_XY(-9,00000000.0 * this.direction, 0,00000000.0);
+	this.SetSpeed_XY(-9.00000000 * this.direction, 0.00000000);
 	this.flag5 = {};
 	this.flag5.shotCount <- 240;
 	this.flag5.shotNum <- 4;
-	this.flag5.shotRot <- 60 * 0,01745329.0;
-	this.flag5.shotRotStart <- -1,57079601.0;
+	this.flag5.shotRot <- 60 * 0.01745329;
+	this.flag5.shotRotStart <- -1.57079601;
 	this.flag5.charge <- 90;
-	this.flag5.moveV <- 7,50000000.0;
-	this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+	this.flag5.moveV <- 7.50000000;
+	this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -567,7 +567,7 @@ function Master_Spell_1C_Attack( t )
 		function ( r_ )
 		{
 			this.PlaySE(3430);
-			::camera.Shake(5,00000000.0);
+			::camera.Shake(5.00000000);
 			local pos_ = this.Vector3();
 			pos_.x = 80;
 			pos_.RotateByRadian(r_);
@@ -575,8 +575,8 @@ function Master_Spell_1C_Attack( t )
 			for( local i = 0; i < this.flag5.shotNum; i++ )
 			{
 				local t_ = {};
-				t_.rot <- r_ + 3,14159203.0 + this.flag5.shotRotStart + this.flag5.shotRot * i;
-				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1,00000000.0, this.Boss_Shot_MS1C, t_);
+				t_.rot <- r_ + 3.14159203 + this.flag5.shotRotStart + this.flag5.shotRot * i;
+				this.SetShot(this.x + pos_.x, this.y + pos_.y, 1.00000000, this.Boss_Shot_MS1C, t_);
 			}
 		}
 	];
@@ -588,21 +588,21 @@ function Master_Spell_1C_Attack( t )
 
 	case 1:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 10,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 10.00000000;
 		break;
 
 	case 2:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 13,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 13.00000000;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.shotNum <- 10;
-		this.flag5.shotRot <- 20 * 0,01745329.0;
-		this.flag5.moveV = 17,00000000.0;
+		this.flag5.shotRot <- 20 * 0.01745329;
+		this.flag5.moveV = 17.00000000;
 		break;
 	}
 
@@ -615,7 +615,7 @@ function Master_Spell_1C_Attack( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,25000000.0);
+		this.Vec_Brake(0.25000000);
 
 		if (this.count >= this.flag5.charge)
 		{
@@ -630,21 +630,21 @@ function Master_Spell_1C_Attack( t )
 			this.SetMotion(this.motion, 2);
 			local r_ = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
 
-			if (r_ < 0,00000000.0)
+			if (r_ < 0.00000000)
 			{
-				r_ = -0,78539813.0;
+				r_ = -0.78539813;
 			}
 			else
 			{
-				r_ = 0,78539813.0;
+				r_ = 0.78539813;
 			}
 
-			this.SetSpeed_Vec(2,00000000.0, r_, this.direction);
+			this.SetSpeed_Vec(2.00000000, r_, this.direction);
 			this.subState = function ()
 			{
 				if (this.va.Length() < this.flag5.moveV)
 				{
-					if (this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction))
+					if (this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction))
 					{
 						this.subState = function ()
 						{
@@ -668,23 +668,23 @@ function Master_Spell_1C_Attack( t )
 
 				if (this.count == this.flag5.shotCount - 60)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				this.subState();
 
-				if (this.ground || this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top + 50)
+				if (this.ground || this.va.y < 0.00000000 && this.y < ::battle.scroll_top + 50)
 				{
 					this.SetSpeed_XY(this.va.x, -this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.y < 0 ? 1,57079601.0 : -1,57079601.0);
+					this.func[0].call(this, this.va.y < 0 ? 1.57079601 : -1.57079601);
 				}
 
 				if (this.wall)
 				{
 					this.SetSpeed_XY(-this.va.x, this.va.y);
 					this.HitReset();
-					this.func[0].call(this, this.va.x < 0 ? 0 : 3,14159203.0);
+					this.func[0].call(this, this.va.x < 0 ? 0 : 3.14159203);
 				}
 			};
 		}
@@ -720,16 +720,16 @@ function Slave_Attack_Udonge( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag2 = null;
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 60;
 	this.flag5.shotNum <- 6;
-	this.flag5.shotRot <- 1,04719746.0;
+	this.flag5.shotRot <- 1.04719746;
 	this.flag5.wait <- 240;
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -745,20 +745,20 @@ function Slave_Attack_Udonge( t )
 	case 1:
 		this.flag5.shotCycle = 40;
 		this.flag5.shotNum = 8;
-		this.flag5.shotRot = 0,78539813.0;
+		this.flag5.shotRot = 0.78539813;
 		break;
 
 	case 2:
 		this.flag5.shotCycle = 25;
 		this.flag5.shotNum = 10;
-		this.flag5.shotRot = 36 * 0,01745329.0;
+		this.flag5.shotRot = 36 * 0.01745329;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.shotCycle = 15;
 		this.flag5.shotNum = 12;
-		this.flag5.shotRot = 0,52359873.0;
+		this.flag5.shotRot = 0.52359873;
 		break;
 	}
 
@@ -772,7 +772,7 @@ function Slave_Attack_Udonge( t )
 			});
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,02500000.0, null);
+				this.CenterUpdate(0.02500000, null);
 
 				if (this.flag4 == null && this.count % this.flag5.shotCycle == 1 && this.count <= 90)
 				{
@@ -782,14 +782,14 @@ function Slave_Attack_Udonge( t )
 					{
 						local t_ = {};
 						t_.rot <- i * this.flag5.shotRot;
-						t_.v <- 6,00000000.0 - this.rand() % 15 * 0,10000000.0;
-						this.SetShot(this.point0_x, this.point0_y, 1,00000000.0, this.Boss_Shot_SL1, t_);
+						t_.v <- 6.00000000 - this.rand() % 15 * 0.10000000;
+						this.SetShot(this.point0_x, this.point0_y, 1.00000000, this.Boss_Shot_SL1, t_);
 					}
 				}
 
 				if (this.count == this.flag5.wait - 90)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count == this.flag5.wait)
@@ -847,16 +847,16 @@ function Slave_Attack_Tenshi( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag2 = null;
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 60;
 	this.flag5.shotNum <- 6;
-	this.flag5.shotRot <- 1,04719746.0;
+	this.flag5.shotRot <- 1.04719746;
 	this.flag5.wait <- 300;
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -872,20 +872,20 @@ function Slave_Attack_Tenshi( t )
 	case 1:
 		this.flag5.shotCycle = 40;
 		this.flag5.shotNum = 8;
-		this.flag5.shotRot = 0,78539813.0;
+		this.flag5.shotRot = 0.78539813;
 		break;
 
 	case 2:
 		this.flag5.shotCycle = 25;
 		this.flag5.shotNum = 10;
-		this.flag5.shotRot = 36 * 0,01745329.0;
+		this.flag5.shotRot = 36 * 0.01745329;
 		break;
 
 	case 3:
 	case 4:
 		this.flag5.shotCycle = 10;
 		this.flag5.shotNum = 12;
-		this.flag5.shotRot = 0,52359873.0;
+		this.flag5.shotRot = 0.52359873;
 		break;
 	}
 
@@ -898,10 +898,10 @@ function Slave_Attack_Tenshi( t )
 				this.func[1].call(this);
 			});
 			this.PlaySE(3475);
-			this.flag5.shotRot = this.rand() % 360 * 0,01745329.0;
+			this.flag5.shotRot = this.rand() % 360 * 0.01745329;
 			this.stateLabel = function ()
 			{
-				this.CenterUpdate(0,02500000.0, null);
+				this.CenterUpdate(0.02500000, null);
 
 				if (this.owner.com_difficulty == 4 && this.count <= 90)
 				{
@@ -912,14 +912,14 @@ function Slave_Attack_Tenshi( t )
 
 					local t_ = {};
 					t_.rot <- this.flag5.shotRot;
-					t_.v <- 6,00000000.0 - this.rand() % 15 * 0,10000000.0;
-					this.SetShot(this.point0_x, this.point0_y, 1,00000000.0, this.Boss_Shot_SL1, t_);
-					this.flag5.shotRot -= 0,13962634.0;
+					t_.v <- 6.00000000 - this.rand() % 15 * 0.10000000;
+					this.SetShot(this.point0_x, this.point0_y, 1.00000000, this.Boss_Shot_SL1, t_);
+					this.flag5.shotRot -= 0.13962634;
 				}
 
 				if (this.count == this.flag5.wait - 90)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count == this.flag5.wait)
@@ -951,14 +951,14 @@ function Slave_Attack2_Tenshi( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag2 = null;
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 90;
 	this.flag5.wait <- 240;
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -1007,7 +1007,7 @@ function Slave_Attack2_Tenshi( t )
 
 				if (this.count == this.flag5.wait)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count == this.flag5.wait + 90)
@@ -1052,14 +1052,14 @@ function Slave_Attack3_Tenshi( t )
 	this.count = 0;
 	this.centerStop = -2;
 	this.AjustCenterStop();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.flag2 = null;
 	this.flag4 = null;
 	this.flag5 = {};
 	this.flag5.shotCycle <- 90;
 	this.flag5.wait <- 240;
 	this.flag5.pos <- this.Vector3();
-	this.flag5.v <- 0,00000000.0;
+	this.flag5.v <- 0.00000000;
 	this.direction = this.team.master.direction;
 	this.lavelClearEvent = function ()
 	{

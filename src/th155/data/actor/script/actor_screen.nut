@@ -43,8 +43,8 @@ function FadeOut( r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeScreen;
 	t_.pare <- this.weakref();
-	this.team.fade_screen = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
-	this.EF_Set_FadeColor.call(this.team.fade_screen, 1,00000000.0, r_, g_, b_);
+	this.team.fade_screen = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
+	this.EF_Set_FadeColor.call(this.team.fade_screen, 1.00000000, r_, g_, b_);
 	this.EF_BeginFadeOut.call(this.team.fade_screen, 0, time_);
 }
 
@@ -54,8 +54,8 @@ function FadeIn( r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeScreen;
 	t_.pare <- this.weakref();
-	this.team.fade_screen = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
-	this.EF_Set_FadeColor.call(this.team.fade_screen, 1,00000000.0, r_, g_, b_);
+	this.team.fade_screen = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
+	this.EF_Set_FadeColor.call(this.team.fade_screen, 1.00000000, r_, g_, b_);
 	this.EF_BeginFadeIn.call(this.team.fade_screen, 0, time_);
 }
 
@@ -74,8 +74,8 @@ function BackFadeOut( r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeBackScreen;
 	t_.pare <- this.weakref();
-	this.team.fade_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
-	this.EF_Set_FadeColor.call(this.team.fade_back, 1,00000000.0, r_, g_, b_);
+	this.team.fade_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
+	this.EF_Set_FadeColor.call(this.team.fade_back, 1.00000000, r_, g_, b_);
 	this.EF_BeginFadeOut.call(this.team.fade_back, 0, time_);
 }
 
@@ -85,8 +85,8 @@ function BackFadeIn( r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeBackScreen;
 	t_.pare <- this.weakref();
-	this.team.fade_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
-	this.EF_Set_FadeColor.call(this.team.fade_back, 1,00000000.0, r_, g_, b_);
+	this.team.fade_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
+	this.EF_Set_FadeColor.call(this.team.fade_back, 1.00000000, r_, g_, b_);
 	this.EF_BeginBackFadeIn.call(this.team.fade_back, 0, time_);
 }
 
@@ -105,7 +105,7 @@ function BackColorFilter( a_, r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeBackScreen;
 	t_.pare <- this.weakref();
-	this.team.color_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
+	this.team.color_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
 	this.EF_Set_FadeColor.call(this.team.color_back, a_, r_, g_, b_);
 	this.EF_BeginFadeOut.call(this.team.color_back, 0, time_);
 }
@@ -116,7 +116,7 @@ function BackColorFilterOut( a_, r_, g_, b_, time_ )
 	local t_ = {};
 	t_.init <- this.EF_FadeBackScreen;
 	t_.pare <- this.weakref();
-	this.team.color_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1,00000000.0, this.effect_class.EF_CommonInit, t_).weakref();
+	this.team.color_back = ::actor.effect_mgr.CreateActor2D(this.effect_class, 0, 0, 1.00000000, this.effect_class.EF_CommonInit, t_).weakref();
 	this.EF_Set_FadeColor.call(this.team.color_back, a_, r_, g_, b_);
 	this.EF_BeginBackFadeIn.call(this.team.color_back, 0, time_);
 }
@@ -169,7 +169,7 @@ function SetSpellBack( t_ = true )
 	{
 		if (this.team.spellBackCount == 0)
 		{
-			this.BackColorFilter(0,75000000.0, 0,00000000.0, 0,00000000.0, 0,00000000.0, 20);
+			this.BackColorFilter(0.75000000, 0.00000000, 0.00000000, 0.00000000, 20);
 		}
 
 		this.team.spellBackCount++;
@@ -178,7 +178,7 @@ function SetSpellBack( t_ = true )
 	{
 		if (this.team.spellBackCount == 1)
 		{
-			this.BackColorFilterOut(0,75000000.0, 0,00000000.0, 0,00000000.0, 0,00000000.0, 20);
+			this.BackColorFilterOut(0.75000000, 0.00000000, 0.00000000, 0.00000000, 20);
 		}
 
 		this.team.spellBackCount--;

@@ -16,8 +16,8 @@ this.start_y <- [
 	480
 ];
 this.start_direction <- [
-	1,00000000.0,
-	-1,00000000.0
+	1.00000000,
+	-1.00000000
 ];
 this.scroll_left <- 0;
 this.scroll_right <- 1280;
@@ -25,13 +25,13 @@ this.scroll_top <- 0;
 this.scroll_bottom <- 720;
 this.corner_left <- this.scroll_left + 40;
 this.corner_right <- this.scroll_right - 40;
-this.corner_bottom <- this.scroll_bottom - 50,00000000.0;
+this.corner_bottom <- this.scroll_bottom - 50.00000000;
 this.corner_top <- this.scroll_top;
 this.corner_left_actor <- -1;
 this.corner_right_actor <- -1;
-this.start_x[0] = -128 + (this.scroll_left + this.scroll_right) * 0,50000000.0;
-this.start_x[1] = 128 + (this.scroll_left + this.scroll_right) * 0,50000000.0;
-this.start_y[0] = this.start_y[1] = (this.scroll_top + this.scroll_bottom) * 0,50000000.0;
+this.start_x[0] = -128 + (this.scroll_left + this.scroll_right) * 0.50000000;
+this.start_x[1] = 128 + (this.scroll_left + this.scroll_right) * 0.50000000;
+this.start_y[0] = this.start_y[1] = (this.scroll_top + this.scroll_bottom) * 0.50000000;
 this.state <- 0;
 this.slow_count <- 0;
 this.time_stop_count <- 0;

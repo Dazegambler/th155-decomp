@@ -45,31 +45,31 @@ function CallSpellCard( time_, type_ = 0 )
 	if (this.team.sp >= this.team.sp_max2 && this.team.slave && this.team.slave.type != 19 && !this.team.slave_ban)
 	{
 		this.PlaySE(827);
-		this.SetEffect(0, 0, 1,00000000.0, this.Call_Delay, {}, this.weakref());
+		this.SetEffect(0, 0, 1.00000000, this.Call_Delay, {}, this.weakref());
 
 		if (this.team.index == 0)
 		{
-			this.SetFreeObjectStencil(-1480, 360 + 444, 1,00000000.0, this.SpellFace, {}, this.weakref());
+			this.SetFreeObjectStencil(-1480, 360 + 444, 1.00000000, this.SpellFace, {}, this.weakref());
 
 			if (this.team.slave)
 			{
-				this.team.slave.SetFreeObjectStencil(1280 + 1480, 360 - 444, -1,00000000.0, this.SpellFace_Slave, {}, this.weakref());
+				this.team.slave.SetFreeObjectStencil(1280 + 1480, 360 - 444, -1.00000000, this.SpellFace_Slave, {}, this.weakref());
 			}
 		}
 		else
 		{
-			this.SetFreeObjectStencil(1280 + 1480, 360 + 444, -1,00000000.0, this.SpellFace, {}, this.weakref());
+			this.SetFreeObjectStencil(1280 + 1480, 360 + 444, -1.00000000, this.SpellFace, {}, this.weakref());
 
 			if (this.team.slave)
 			{
-				this.team.slave.SetFreeObjectStencil(-1480, 360 - 444, 1,00000000.0, this.SpellFace_Slave, {}, this.weakref());
+				this.team.slave.SetFreeObjectStencil(-1480, 360 - 444, 1.00000000, this.SpellFace_Slave, {}, this.weakref());
 			}
 		}
 	}
 	else
 	{
 		this.PlaySE(826);
-		this.SetFreeObjectStencil(this.team.index == 0 ? -1480 : 1280 + 1480, 360 + 442, this.team.index == 0 ? 1,00000000.0 : -1,00000000.0, this.SpellFace, {}, this.weakref());
+		this.SetFreeObjectStencil(this.team.index == 0 ? -1480 : 1280 + 1480, 360 + 442, this.team.index == 0 ? 1.00000000 : -1.00000000, this.SpellFace, {}, this.weakref());
 	}
 }
 
@@ -159,11 +159,11 @@ function UseSpellCard( time_, sp_ )
 
 	if (this.team.index == 0)
 	{
-		this.SetFreeObject(640 + 640, 720, 1,00000000.0, this.SpellUseFace, {});
+		this.SetFreeObject(640 + 640, 720, 1.00000000, this.SpellUseFace, {});
 	}
 	else
 	{
-		this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+		this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 	}
 }
 
@@ -180,7 +180,7 @@ function UseChangeSpellCard( time_, sp_ )
 function UseClimaxSpell( time_, name_ )
 {
 	this.PlaySE(824);
-	this.atkRate_Pat = 0,60000002.0 + 0,40000001.0 * ((this.team.sp - 1000) / 2000,00000000.0);
+	this.atkRate_Pat = 0.60000002 + 0.40000001 * ((this.team.sp - 1000) / 2000.00000000);
 	this.SetEffect(this.point0_x, this.point0_y, this.direction, this.EF_ClimaxFlash, {});
 	this.SetTimeStop(time_);
 	this.lastword.Activate(name_);

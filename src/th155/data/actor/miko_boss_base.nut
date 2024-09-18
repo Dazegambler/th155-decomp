@@ -19,7 +19,7 @@ function Update_Normal()
 
 	local mat = ::manbow.Matrix();
 	this.uv_count++;
-	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0,20000000.0 % 1024, (this.y / 2 + this.uv_count * 0,20000000.0) % 1024, 0);
+	mat.SetTranslation(this.x * this.direction / 2 + this.uv_count * 0.20000000 % 1024, (this.y / 2 + this.uv_count * 0.20000000) % 1024, 0);
 	this.uv.SetWorldTransform(mat);
 
 	if (::battle.state == 8)

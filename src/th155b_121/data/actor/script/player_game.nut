@@ -2,7 +2,7 @@ function ConvertTotalSpeed()
 {
 	if (this.vx_slow)
 	{
-		this.vx = this.va.x * 0,25000000.0 + this.vf.x + this.vfBaria.x;
+		this.vx = this.va.x * 0.25000000 + this.vf.x + this.vfBaria.x;
 		this.vy = this.va.y + this.vf.y + this.vfBaria.y;
 	}
 	else
@@ -14,14 +14,14 @@ function ConvertTotalSpeed()
 
 function ResetSpeed()
 {
-	this.vx = 0,00000000.0;
-	this.vy = 0,00000000.0;
-	this.va.x = 0,00000000.0;
-	this.va.y = 0,00000000.0;
-	this.vf.x = 0,00000000.0;
-	this.vf.y = 0,00000000.0;
-	this.vfBaria.x = 0,00000000.0;
-	this.vfBaria.y = 0,00000000.0;
+	this.vx = 0.00000000;
+	this.vy = 0.00000000;
+	this.va.x = 0.00000000;
+	this.va.y = 0.00000000;
+	this.vf.x = 0.00000000;
+	this.vf.y = 0.00000000;
+	this.vfBaria.x = 0.00000000;
+	this.vfBaria.y = 0.00000000;
 	this.vx_slow = 0;
 	this.hitBackFlag = 0;
 	this.bariaBackFlag = 0;
@@ -131,9 +131,9 @@ function GetDamageReset()
 		}
 	}
 
-	this.rx = 0,00000000.0;
-	this.ry = 0,00000000.0;
-	this.rz = 0,00000000.0;
+	this.rx = 0.00000000;
+	this.ry = 0.00000000;
+	this.rz = 0.00000000;
 	this.FitBoxfromSprite();
 	this.freeMap = false;
 	this.collisionFree = false;
@@ -150,9 +150,9 @@ function GetGuardReset()
 		}
 	}
 
-	this.rx = 0,00000000.0;
-	this.ry = 0,00000000.0;
-	this.rz = 0,00000000.0;
+	this.rx = 0.00000000;
+	this.ry = 0.00000000;
+	this.rz = 0.00000000;
 	this.FitBoxfromSprite();
 	this.freeMap = false;
 	this.collisionFree = false;
@@ -188,21 +188,21 @@ function KnockBackTarget( dir_ )
 		this.target.damageTarget = this.weakref();
 	}
 
-	local _min_scale = 0,10000000.0;
+	local _min_scale = 0.10000000;
 
 	if (_frame_data.flagAttack & 256)
 	{
-		_min_scale = 0,20000000.0;
+		_min_scale = 0.20000000;
 	}
 
 	if (_frame_data.flagAttack & 512)
 	{
-		_min_scale = 0,25000000.0;
+		_min_scale = 0.25000000;
 	}
 
 	local dam_ = this.target.team.SetComboDamage.call(this.target.team, this, _frame_data.damagePoint, _min_scale);
 	this.team.AddSP(_frame_data.addSP);
-	this.target.team.AddSP(dam_ * 0,10000000.0);
+	this.target.team.AddSP(dam_ * 0.10000000);
 
 	if (this.flagAttack & 2097152)
 	{
@@ -259,12 +259,12 @@ function KnockBackTarget( dir_ )
 
 	if (this.target.team.combo_count == 0)
 	{
-		this.target.minRate = 1,00000000.0;
-		this.target.team.SetDamageScale(_frame_data.firstRate * 0,00100000.0);
+		this.target.minRate = 1.00000000;
+		this.target.team.SetDamageScale(_frame_data.firstRate * 0.00100000);
 	}
 	else
 	{
-		this.target.team.SetDamageScale(_frame_data.comboRate * 0,00100000.0);
+		this.target.team.SetDamageScale(_frame_data.comboRate * 0.00100000);
 	}
 
 	local t_ = this.HitState();
@@ -286,11 +286,11 @@ function KnockBackTarget( dir_ )
 
 	t_.atkRank = _frame_data.atkRank;
 	t_.atkType = _frame_data.atkType;
-	t_.hitVecX = _frame_data.hitVecX * 0,01000000.0;
-	t_.hitVecY = _frame_data.hitVecY * 0,01000000.0;
-	t_.grazeKnock = _frame_data.grazeKnock * 0,01000000.0;
-	t_.stopVecX = _frame_data.stopVecX * 0,01000000.0;
-	t_.stopVecY = _frame_data.stopVecY * 0,01000000.0;
+	t_.hitVecX = _frame_data.hitVecX * 0.01000000;
+	t_.hitVecY = _frame_data.hitVecY * 0.01000000;
+	t_.grazeKnock = _frame_data.grazeKnock * 0.01000000;
+	t_.stopVecX = _frame_data.stopVecX * 0.01000000;
+	t_.stopVecY = _frame_data.stopVecY * 0.01000000;
 	t_.recover = _frame_data.recover;
 	t_.forceKnock = _frame_data.flagAttack & 2097152;
 	this.target.damageStopTime = _frame_data.hitStopE;

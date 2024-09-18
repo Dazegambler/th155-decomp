@@ -17,7 +17,7 @@ function Shion_Init( t )
 function Shion_OutSide()
 {
 	this.SetMotion(5009, 0);
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.stateLabel = function ()
 	{
 	};
@@ -26,7 +26,7 @@ function Shion_OutSide()
 function Shion_StageIn()
 {
 	this.SetMotion(5000, 0);
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.PlaySE(4626);
 	this.Warp(this.owner.x - 160 * this.direction, this.y - 130);
 	this.SetFreeObject(this.x, this.y, this.direction, this.Shion_StageIn_Effect, {});
@@ -41,7 +41,7 @@ function Shion_StageIn()
 
 		this.flag1.x = this.owner.x - 60 * this.direction;
 		this.flag1.y = this.owner.y - 30;
-		this.SetSpeed_XY((this.flag1.x - this.x) * 0,01500000.0, (this.flag1.y - this.y) * 0,01500000.0);
+		this.SetSpeed_XY((this.flag1.x - this.x) * 0.01500000, (this.flag1.y - this.y) * 0.01500000);
 	};
 }
 
@@ -54,8 +54,8 @@ function Shion_StageIn_Effect( t )
 function Shion_Wait( t = false )
 {
 	this.SetMotion(5000, 0);
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
-	this.rz = 0,00000000.0;
+	this.SetSpeed_XY(0.00000000, 0.00000000);
+	this.rz = 0.00000000;
 
 	if (t)
 	{
@@ -77,7 +77,7 @@ function Shion_Wait( t = false )
 		{
 			this.subState = function ()
 			{
-				this.SetSpeed_XY(null, (this.flag1.y - this.y) * 0,01500000.0);
+				this.SetSpeed_XY(null, (this.flag1.y - this.y) * 0.01500000);
 
 				if (this.abs(this.flag1.x) <= 20 || this.x < 30 && this.va.x < 0 || this.x > 1250 && this.va.x > 0)
 				{
@@ -91,7 +91,7 @@ function Shion_Wait( t = false )
 						this.SetMotion(5001, 0);
 					}
 
-					this.AddSpeed_XY(0,50000000.0 * this.direction, 0,00000000.0, 4,00000000.0 * this.direction, null);
+					this.AddSpeed_XY(0.50000000 * this.direction, 0.00000000, 4.00000000 * this.direction, null);
 				}
 				else
 				{
@@ -100,7 +100,7 @@ function Shion_Wait( t = false )
 						this.SetMotion(5002, 0);
 					}
 
-					this.AddSpeed_XY(-0,50000000.0 * this.direction, 0,00000000.0, -4,00000000.0 * this.direction, null);
+					this.AddSpeed_XY(-0.50000000 * this.direction, 0.00000000, -4.00000000 * this.direction, null);
 				}
 			};
 		},
@@ -113,8 +113,8 @@ function Shion_Wait( t = false )
 
 			this.subState = function ()
 			{
-				this.VX_Brake(0,25000000.0);
-				this.VY_Brake(0,25000000.0);
+				this.VX_Brake(0.25000000);
+				this.VY_Brake(0.25000000);
 
 				if (this.abs(this.flag1.x) >= 300)
 				{
@@ -143,7 +143,7 @@ function Shion_Wait( t = false )
 function Shion_SlaveWait( t )
 {
 	this.owner.shion_act = true;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 
 	if (t)
 	{
@@ -168,11 +168,11 @@ function Shion_Wait_Behind( t )
 	this.DrawActorPriority(180);
 	this.owner.shion_act = false;
 	this.keyAction = null;
-	this.rz = 0,00000000.0;
+	this.rz = 0.00000000;
 	this.stateLabel = function ()
 	{
 		this.direction = this.owner.target.direction;
-		this.SetSpeed_XY((this.owner.target.x - 75 * this.direction - this.x) * 0,10000000.0, (this.owner.target.y - 75 - this.y) * 0,10000000.0);
+		this.SetSpeed_XY((this.owner.target.x - 75 * this.direction - this.x) * 0.10000000, (this.owner.target.y - 75 - this.y) * 0.10000000);
 	};
 }
 
@@ -232,7 +232,7 @@ function Shion_Wait_Behind_Boss( t )
 			}
 
 			this.direction = this.owner.target.direction;
-			this.SetSpeed_XY((this.owner.target.x - 75 * this.direction - this.x) * 0,10000000.0, (this.owner.target.y - 75 - this.y) * 0,10000000.0);
+			this.SetSpeed_XY((this.owner.target.x - 75 * this.direction - this.x) * 0.10000000, (this.owner.target.y - 75 - this.y) * 0.10000000);
 			this.count++;
 
 			if (this.count > this.flag5.shotCount)
@@ -242,7 +242,7 @@ function Shion_Wait_Behind_Boss( t )
 
 			if (this.count < 0 && ::battle.state == 8 && this.count % this.flag5.shotCycle == -1 && !this.team.current.IsDamage())
 			{
-				this.SetShot(this.x - 80 + this.rand() % 160, this.y - 100 - this.rand() % 51, 1,00000000.0, this.Shion_ShotBoss, {});
+				this.SetShot(this.x - 80 + this.rand() % 160, this.y - 100 - this.rand() % 51, 1.00000000, this.Shion_ShotBoss, {});
 			}
 		}
 		else if (!this.team.current.IsDamage())
@@ -257,12 +257,12 @@ function Shion_ShotBoss( t )
 {
 	this.SetMotion(5307, this.rand() % 4);
 	this.owner.shot_actor.Add(this);
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetTaskAddRotation(0,00000000.0, 0,00000000.0, 0,03490658.0);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetTaskAddRotation(0.00000000, 0.00000000, 0.03490658);
 	this.cancelCount = 1;
-	this.sx = this.sy = 1,00000000.0;
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
-	this.SetSpeed_XY(2,00000000.0 - this.rand() % 41 * 0,10000000.0, -1);
+	this.sx = this.sy = 1.00000000;
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
+	this.SetSpeed_XY(2.00000000 - this.rand() % 41 * 0.10000000, -1);
 	this.func = [
 		function ()
 		{
@@ -272,11 +272,11 @@ function Shion_ShotBoss( t )
 			};
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
-				this.sx = this.sy *= 0,92000002.0;
-				this.alpha -= 0,05000000.0;
+				this.Vec_Brake(0.50000000);
+				this.sx = this.sy *= 0.92000002;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -291,8 +291,8 @@ function Shion_ShotBoss( t )
 			return;
 		}
 
-		this.sx = this.sy += 0,00500000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy += 0.00500000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 		if (this.grazeCount > 0 || this.hitCount > 0 || this.cancelCount == 0)
 		{
@@ -300,7 +300,7 @@ function Shion_ShotBoss( t )
 			return;
 		}
 
-		this.AddSpeed_XY(0,00000000.0, 0,15000001.0, null, 3,50000000.0);
+		this.AddSpeed_XY(0.00000000, 0.15000001, null, 3.50000000);
 	};
 }
 
@@ -310,10 +310,10 @@ function Shion_Damage( count_ )
 	this.SetMotion(5100, 0);
 	this.PlaySE(4629);
 	this.keyAction = null;
-	this.SetSpeed_XY(-12,00000000.0 * this.direction, -2,00000000.0);
+	this.SetSpeed_XY(-12.00000000 * this.direction, -2.00000000);
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,50000000.0, 0,25000000.0);
+		this.Vec_Brake(0.50000000, 0.25000000);
 		this.count--;
 
 		if (this.count <= 0)
@@ -321,7 +321,7 @@ function Shion_Damage( count_ )
 			this.SetMotion(5100, 1);
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
+				this.Vec_Brake(0.50000000);
 			};
 			this.keyAction = function ()
 			{
@@ -336,7 +336,7 @@ function Shion_DamageVanish()
 {
 	this.SetMotion(5009, 0);
 	this.keyAction = null;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.stateLabel = function ()
 	{
 		if (this.owner.debuff_animal.time == 0 && this.owner.IsFree())
@@ -367,7 +367,7 @@ function Shion_ChargeShot_Wait( t )
 		}
 
 		this.direction = this.owner.direction;
-		this.SetSpeed_XY((this.owner.x - this.x) * 0,05000000.0, (this.owner.y - this.y) * 0,05000000.0);
+		this.SetSpeed_XY((this.owner.x - this.x) * 0.05000000, (this.owner.y - this.y) * 0.05000000);
 	};
 }
 
@@ -377,8 +377,8 @@ function Shion_ChargeShot_Fire( t )
 	this.PlaySE(4627);
 	this.life = 400;
 	this.rz = t.rot;
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
-	this.SetSpeed_Vec(15,00000000.0, this.rz, this.direction);
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
+	this.SetSpeed_Vec(15.00000000, this.rz, this.direction);
 	this.SetEndMotionCallbackFunction(function ()
 	{
 		this.SetMotion(5000, 0);
@@ -389,7 +389,7 @@ function Shion_ChargeShot_Fire( t )
 	this.HitReset();
 	this.atk_id = 131072;
 	this.keyAction = null;
-	this.flag1 = this.SetFreeObject(this.x, this.y, 1,00000000.0, this.Shion_ChargeShot_Trail, {}, this).weakref();
+	this.flag1 = this.SetFreeObject(this.x, this.y, 1.00000000, this.Shion_ChargeShot_Trail, {}, this).weakref();
 	this.flag1.SetParent(this, 0, 0);
 	this.func = function ()
 	{
@@ -401,12 +401,12 @@ function Shion_ChargeShot_Fire( t )
 			this.flag1 = null;
 		}
 
-		this.rz = 0,00000000.0;
-		this.SetCollisionRotation(0,00000000.0, 0,00000000.0, 0,00000000.0);
+		this.rz = 0.00000000;
+		this.SetCollisionRotation(0.00000000, 0.00000000, 0.00000000);
 		this.SetMotion(5200, 1);
 		this.stateLabel = function ()
 		{
-			this.Vec_Brake(0,50000000.0);
+			this.Vec_Brake(0.50000000);
 		};
 		this.keyAction = function ()
 		{
@@ -491,8 +491,8 @@ function Shion_Burrage( t )
 
 	this.SetMotion(5302, 0);
 	this.life = 100;
-	this.flag1 = 0,00000000.0;
-	this.rz = 0,00000000.0;
+	this.flag1 = 0.00000000;
+	this.rz = 0.00000000;
 	this.owner.shion_act = true;
 	this.vec.x = this.owner.x - 50 * this.owner.direction - this.x;
 	this.vec.y = this.owner.y - 50 - this.y;
@@ -508,15 +508,15 @@ function Shion_Burrage( t )
 	this.subState = function ()
 	{
 		this.direction = this.owner.direction;
-		this.flag1 += 0,50000000.0;
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 > 7,50000000.0)
+		if (this.flag1 > 7.50000000)
 		{
-			this.flag1 = 7,50000000.0;
+			this.flag1 = 7.50000000;
 		}
 
-		this.va.x = (this.owner.x - 50 * this.owner.direction - this.x) * 0,10000000.0;
-		this.va.y = (this.owner.y - 50 - this.y) * 0,10000000.0;
+		this.va.x = (this.owner.x - 50 * this.owner.direction - this.x) * 0.10000000;
+		this.va.y = (this.owner.y - 50 - this.y) * 0.10000000;
 
 		if (this.va.Length() >= this.flag1)
 		{
@@ -537,8 +537,8 @@ function Shion_Burrage( t )
 				if (this.team.mp > 0 && this.count % 4 == 1)
 				{
 					local t_ = {};
-					t_.v <- this.va.x * 0,50000000.0;
-					t_.y <- this.va.y * 0,50000000.0;
+					t_.v <- this.va.x * 0.50000000;
+					t_.y <- this.va.y * 0.50000000;
 					this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shion_Shot_Barrage, t_);
 				}
 
@@ -547,7 +547,7 @@ function Shion_Burrage( t )
 					this.SetMotion(this.motion, 2);
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,10000000.0);
+						this.Vec_Brake(0.10000000);
 					};
 					return;
 				}
@@ -572,21 +572,21 @@ function Shion_Burrage_Behind( t )
 {
 	this.SetMotion(5302, 0);
 	this.life = 100;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.owner.shion_act = true;
-	this.rz = 0,00000000.0;
+	this.rz = 0.00000000;
 	this.subState = function ()
 	{
 		this.direction = this.owner.target.direction;
-		this.flag1 += 0,50000000.0;
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 > 12,50000000.0)
+		if (this.flag1 > 12.50000000)
 		{
-			this.flag1 = 12,50000000.0;
+			this.flag1 = 12.50000000;
 		}
 
-		this.va.x = (this.owner.target.x - 100 * this.owner.target.direction - this.x) * 0,10000000.0;
-		this.va.y = (this.owner.target.y - 50 - this.y) * 0,10000000.0;
+		this.va.x = (this.owner.target.x - 100 * this.owner.target.direction - this.x) * 0.10000000;
+		this.va.y = (this.owner.target.y - 50 - this.y) * 0.10000000;
 
 		if (this.va.Length() >= this.flag1)
 		{
@@ -607,8 +607,8 @@ function Shion_Burrage_Behind( t )
 				if (this.team.mp > 0 && this.count % 4 == 1)
 				{
 					local t_ = {};
-					t_.v <- -3,00000000.0 * this.direction;
-					t_.y <- 0,00000000.0;
+					t_.v <- -3.00000000 * this.direction;
+					t_.y <- 0.00000000;
 					this.SetShot(this.point0_x, this.point0_y, this.direction, this.Shion_Shot_Barrage, t_);
 				}
 
@@ -617,7 +617,7 @@ function Shion_Burrage_Behind( t )
 					this.SetMotion(this.motion, 2);
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,10000000.0);
+						this.Vec_Brake(0.10000000);
 					};
 					return;
 				}
@@ -642,25 +642,25 @@ function Shion_Shot_Barrage( t )
 {
 	this.SetMotion(5308, this.rand() % 4);
 	this.atk_id = 262144;
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetTaskAddRotation(0,00000000.0, 0,00000000.0, 0,03490658.0);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetTaskAddRotation(0.00000000, 0.00000000, 0.03490658);
 	this.cancelCount = 1;
-	this.sx = this.sy = 0,50000000.0;
+	this.sx = this.sy = 0.50000000;
 	local func_ = function ()
 	{
 		this.ReleaseActor();
 	};
-	this.SetSpeed_XY(t.v + (3,00000000.0 + this.rand() % 31 * 0,10000000.0) * this.direction, -2,00000000.0 + t.y);
+	this.SetSpeed_XY(t.v + (3.00000000 + this.rand() % 31 * 0.10000000) * this.direction, -2.00000000 + t.y);
 	this.func = function ()
 	{
 		this.SetMotion(this.motion, 1);
-		this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+		this.SetSpeed_XY(0.00000000, 0.00000000);
 		this.stateLabel = function ()
 		{
-			this.sx = this.sy *= 0,92000002.0;
-			this.alpha -= 0,10000000.0;
+			this.sx = this.sy *= 0.92000002;
+			this.alpha -= 0.10000000;
 
-			if (this.alpha <= 0,00000000.0)
+			if (this.alpha <= 0.00000000)
 			{
 				this.ReleaseActor();
 			}
@@ -675,11 +675,11 @@ function Shion_Shot_Barrage( t )
 			};
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
-				this.sx = this.sy *= 0,92000002.0;
-				this.alpha -= 0,05000000.0;
+				this.Vec_Brake(0.50000000);
+				this.sx = this.sy *= 0.92000002;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -694,10 +694,10 @@ function Shion_Shot_Barrage( t )
 			return;
 		}
 
-		this.flag2 = (1,00000000.0 - this.sx) * 0,25000000.0;
+		this.flag2 = (1.00000000 - this.sx) * 0.25000000;
 		this.count++;
 		this.sx = this.sy += this.flag2;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 		if (this.grazeCount > 0 || this.hitCount > 0 || this.cancelCount == 0)
 		{
@@ -705,7 +705,7 @@ function Shion_Shot_Barrage( t )
 			return;
 		}
 
-		this.AddSpeed_XY(0,00000000.0, 0,15000001.0);
+		this.AddSpeed_XY(0.00000000, 0.15000001);
 	};
 }
 
@@ -713,12 +713,12 @@ function Shion_Occult( t )
 {
 	this.SetMotion(5300, 0);
 	this.life = 100;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.owner.shion_act = true;
-	this.rz = 0,00000000.0;
+	this.rz = 0.00000000;
 	this.subState = function ()
 	{
-		this.AddSpeed_XY(0,50000000.0 * this.direction, 0,00000000.0, 5,00000000.0 * this.direction, null);
+		this.AddSpeed_XY(0.50000000 * this.direction, 0.00000000, 5.00000000 * this.direction, null);
 	};
 	this.keyAction = [
 		function ()
@@ -747,7 +747,7 @@ function Shion_Occult( t )
 					this.SetMotion(5300, 2);
 					this.stateLabel = function ()
 					{
-						this.Vec_Brake(0,10000000.0);
+						this.Vec_Brake(0.10000000);
 					};
 					return;
 				}
@@ -773,7 +773,7 @@ function Shion_Occult( t )
 function Shion_OccultChange( pos_ )
 {
 	this.SetEffect(this.x, this.y - 20, this.direction, this.EF_Team_Change, {}, this.weakref());
-	this.rz = 0,00000000.0;
+	this.rz = 0.00000000;
 	this.team.op_stop = 300;
 	this.team.op_stop_max = 300;
 	this.Warp(pos_.x, pos_.y);
@@ -781,7 +781,7 @@ function Shion_OccultChange( pos_ )
 	{
 		this.Shion_Wait(null);
 	};
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.SetMotion(5310, 0);
 	this.stateLabel = function ()
 	{
@@ -791,13 +791,13 @@ function Shion_OccultChange( pos_ )
 function Shion_ShotOccult( t )
 {
 	this.SetMotion(5309, this.rand() % 4);
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetTaskAddRotation(0,00000000.0, 0,00000000.0, 0,03490658.0);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetTaskAddRotation(0.00000000, 0.00000000, 0.03490658);
 	this.cancelCount = 1;
 	this.atk_id = 524288;
-	this.sx = this.sy = 0,25000000.0;
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
-	this.SetSpeed_XY((4,00000000.0 + this.rand() % 20 * 0,10000000.0) * this.direction, -6,00000000.0 - this.rand() % 21 * 0,10000000.0);
+	this.sx = this.sy = 0.25000000;
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
+	this.SetSpeed_XY((4.00000000 + this.rand() % 20 * 0.10000000) * this.direction, -6.00000000 - this.rand() % 21 * 0.10000000);
 	this.func = [
 		function ()
 		{
@@ -807,11 +807,11 @@ function Shion_ShotOccult( t )
 			};
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
-				this.sx = this.sy *= 0,92000002.0;
-				this.alpha -= 0,05000000.0;
+				this.Vec_Brake(0.50000000);
+				this.sx = this.sy *= 0.92000002;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -826,16 +826,16 @@ function Shion_ShotOccult( t )
 			return;
 		}
 
-		this.flag2 = (1,50000000.0 - this.sx) * 0,25000000.0;
+		this.flag2 = (1.50000000 - this.sx) * 0.25000000;
 
-		if (this.flag2 < 0,01000000.0)
+		if (this.flag2 < 0.01000000)
 		{
-			this.flag2 = 0,01000000.0;
+			this.flag2 = 0.01000000;
 		}
 
 		this.count++;
 		this.sx = this.sy += this.flag2;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 		if (this.grazeCount > 0 || this.hitCount > 0 || this.cancelCount == 0 || this.count >= 90)
 		{
@@ -843,7 +843,7 @@ function Shion_ShotOccult( t )
 			return;
 		}
 
-		this.AddSpeed_XY(0,00000000.0, 0,25000000.0);
+		this.AddSpeed_XY(0.00000000, 0.25000000);
 	};
 }
 
@@ -860,7 +860,7 @@ function Shion_Climax_Wait( t )
 	this.SetMotion(5322, 0);
 	return;
 	this.flag1 = this.Vector3();
-	this.flag2 = 0,00000000.0;
+	this.flag2 = 0.00000000;
 	this.direction = this.owner.direction;
 	this.flag1.x = this.owner.x - 70 * this.direction - this.x;
 	this.flag1.y = this.owner.y - 50 - this.y;
@@ -903,15 +903,15 @@ function Shion_Climax_Wait( t )
 	{
 		this.flag1.x = this.owner.x - 70 * this.direction - this.x;
 		this.flag1.y = this.owner.y - 50 - this.y;
-		this.flag2 += 0,50000000.0;
+		this.flag2 += 0.50000000;
 
-		if (this.flag2 > 15,00000000.0)
+		if (this.flag2 > 15.00000000)
 		{
-			this.flag2 = 15,00000000.0;
+			this.flag2 = 15.00000000;
 		}
 
 		this.subState();
-		this.SetSpeed_XY(this.flag1.x * 0,10000000.0, this.flag1.y * 0,10000000.0);
+		this.SetSpeed_XY(this.flag1.x * 0.10000000, this.flag1.y * 0.10000000);
 
 		if (this.va.Length() > this.flag2)
 		{
@@ -926,7 +926,7 @@ function Shion_Climax_MoneyCatch_A( t )
 	this.SetMotion(5320, 0);
 	this.flag1 = this.Vector3();
 	this.flag2 = this.Vector3();
-	this.flag3 = 0,00000000.0;
+	this.flag3 = 0.00000000;
 	this.direction = -this.owner.direction;
 	this.Warp(this.owner.x + 800 * this.owner.direction, this.owner.y);
 	this.count = 0;
@@ -936,25 +936,25 @@ function Shion_Climax_MoneyCatch_A( t )
 			this.SetMotion(this.motion, 2);
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
+				this.Vec_Brake(0.50000000);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
 		this.count++;
-		this.flag2.x = 20 * this.sin(this.count * 0,08726646.0) * this.direction;
-		this.flag2.y = 30 * this.cos(this.count * 0,06981317.0);
+		this.flag2.x = 20 * this.sin(this.count * 0.08726646) * this.direction;
+		this.flag2.y = 30 * this.cos(this.count * 0.06981317);
 		this.flag1.x = this.owner.target.x - 240 * this.direction + this.flag2.x - this.x;
 		this.flag1.y = this.owner.y - this.flag2.y - this.y;
-		this.flag3 += 1,50000000.0;
+		this.flag3 += 1.50000000;
 
-		if (this.flag3 > 25,00000000.0)
+		if (this.flag3 > 25.00000000)
 		{
-			this.flag3 = 25,00000000.0;
+			this.flag3 = 25.00000000;
 		}
 
-		this.SetSpeed_XY(this.flag1.x * 0,10000000.0, this.flag1.y * 0,10000000.0);
+		this.SetSpeed_XY(this.flag1.x * 0.10000000, this.flag1.y * 0.10000000);
 
 		if (this.va.Length() > this.flag3)
 		{
@@ -969,8 +969,8 @@ function Shion_Climax_MoneyCatch_B( t )
 	this.SetMotion(5321, 0);
 	this.flag1 = this.Vector3();
 	this.flag2 = this.Vector3();
-	this.flag2.x = 240,00000000.0;
-	this.flag3 = 0,00000000.0;
+	this.flag2.x = 240.00000000;
+	this.flag3 = 0.00000000;
 	this.direction = -this.owner.direction;
 	this.count = 0;
 	this.func = [
@@ -979,17 +979,17 @@ function Shion_Climax_MoneyCatch_B( t )
 			this.SetFreeObject(this.x, this.y, this.direction, this.Shion_Vanish, {});
 			this.SetMotion(5322, 0);
 			this.stateLabel = null;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 		}
 	];
 	this.stateLabel = function ()
 	{
 		this.count++;
-		this.flag2.RotateByRadian(0,10471975.0);
+		this.flag2.RotateByRadian(0.10471975);
 		this.flag1.x = this.owner.x + this.flag2.x - this.x;
-		this.flag1.y = this.owner.y + this.flag2.y * 0,25000000.0 + 50 - this.y;
+		this.flag1.y = this.owner.y + this.flag2.y * 0.25000000 + 50 - this.y;
 
-		if (this.flag2.y < 0,00000000.0)
+		if (this.flag2.y < 0.00000000)
 		{
 			this.DrawActorPriority(180);
 		}
@@ -998,14 +998,14 @@ function Shion_Climax_MoneyCatch_B( t )
 			this.DrawActorPriority(210);
 		}
 
-		this.flag3 += 1,00000000.0;
+		this.flag3 += 1.00000000;
 
-		if (this.flag3 > 25,00000000.0)
+		if (this.flag3 > 25.00000000)
 		{
-			this.flag3 = 25,00000000.0;
+			this.flag3 = 25.00000000;
 		}
 
-		this.SetSpeed_XY(this.flag1.x * 0,10000000.0, this.flag1.y * 0,10000000.0);
+		this.SetSpeed_XY(this.flag1.x * 0.10000000, this.flag1.y * 0.10000000);
 
 		if (this.va.Length() > this.flag3)
 		{
@@ -1015,11 +1015,11 @@ function Shion_Climax_MoneyCatch_B( t )
 
 		if (this.va.x > 0)
 		{
-			this.direction = 1,00000000.0;
+			this.direction = 1.00000000;
 		}
 		else
 		{
-			this.direction = -1,00000000.0;
+			this.direction = -1.00000000;
 		}
 	};
 }
@@ -1028,22 +1028,22 @@ function Shion_Win_Paper( t )
 {
 	this.SetMotion(5400, 0);
 	this.direction = this.owner.direction;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.flag2 = this.Vector3();
 	this.stateLabel = function ()
 	{
 		this.count++;
-		this.flag2.x = 20 * this.sin(this.count * 0,03490658.0);
-		this.flag2.y = 20 * this.cos(this.count * 0,05235988.0);
-		this.flag1 += 0,50000000.0;
+		this.flag2.x = 20 * this.sin(this.count * 0.03490658);
+		this.flag2.y = 20 * this.cos(this.count * 0.05235988);
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 >= 10,00000000.0)
+		if (this.flag1 >= 10.00000000)
 		{
-			this.flag1 = 10,00000000.0;
+			this.flag1 = 10.00000000;
 		}
 
-		this.vec.x = (this.owner.x - (100 + this.flag2.x) * this.direction - this.x) * 0,10000000.0;
-		this.vec.y = (this.owner.y + this.flag2.y - this.y - 100) * 0,10000000.0;
+		this.vec.x = (this.owner.x - (100 + this.flag2.x) * this.direction - this.x) * 0.10000000;
+		this.vec.y = (this.owner.y + this.flag2.y - this.y - 100) * 0.10000000;
 
 		if (this.vec.Length() >= this.flag1)
 		{
@@ -1058,7 +1058,7 @@ function Shion_Win_Taxi( t )
 {
 	this.SetMotion(5000, 0);
 	this.direction = this.owner.direction;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.flag2 = this.Vector3();
 	this.func = [
 		function ()
@@ -1070,24 +1070,24 @@ function Shion_Win_Taxi( t )
 			this.PlaySE(4679);
 			this.SetEffect(this.x, this.y, this.direction, this.EF_HitSmashB, {});
 			this.SetMotion(5402, 1);
-			this.SetSpeed_XY(-10,00000000.0 * this.direction, -4,50000000.0);
+			this.SetSpeed_XY(-10.00000000 * this.direction, -4.50000000);
 			this.stateLabel = function ()
 			{
-				this.AddSpeed_XY(0,20000000.0 * this.direction, 0,50000000.0, -2,00000000.0 * this.direction);
+				this.AddSpeed_XY(0.20000000 * this.direction, 0.50000000, -2.00000000 * this.direction);
 			};
 		}
 	];
 	this.stateLabel = function ()
 	{
-		this.flag1 += 0,50000000.0;
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 >= 10,00000000.0)
+		if (this.flag1 >= 10.00000000)
 		{
-			this.flag1 = 10,00000000.0;
+			this.flag1 = 10.00000000;
 		}
 
-		this.vec.x = (this.owner.x - 65 * this.direction - this.x) * 0,10000000.0;
-		this.vec.y = (this.owner.y - this.y - 50) * 0,10000000.0;
+		this.vec.x = (this.owner.x - 65 * this.direction - this.x) * 0.10000000;
+		this.vec.y = (this.owner.y - this.y - 50) * 0.10000000;
 
 		if (this.vec.Length() >= this.flag1)
 		{
@@ -1102,7 +1102,7 @@ function Shion_Win_TaxiB( t )
 {
 	this.SetMotion(5000, 0);
 	this.direction = this.owner.direction;
-	this.flag1 = 0,00000000.0;
+	this.flag1 = 0.00000000;
 	this.flag2 = this.Vector3();
 	this.func = [
 		function ()
@@ -1116,15 +1116,15 @@ function Shion_Win_TaxiB( t )
 	];
 	this.stateLabel = function ()
 	{
-		this.flag1 += 0,50000000.0;
+		this.flag1 += 0.50000000;
 
-		if (this.flag1 >= 10,00000000.0)
+		if (this.flag1 >= 10.00000000)
 		{
-			this.flag1 = 10,00000000.0;
+			this.flag1 = 10.00000000;
 		}
 
-		this.vec.x = (this.owner.x - 65 * this.direction - this.x) * 0,10000000.0;
-		this.vec.y = (this.owner.y - this.y - 50) * 0,10000000.0;
+		this.vec.x = (this.owner.x - 65 * this.direction - this.x) * 0.10000000;
+		this.vec.y = (this.owner.y - this.y - 50) * 0.10000000;
 
 		if (this.vec.Length() >= this.flag1)
 		{
@@ -1145,7 +1145,7 @@ function Shion_Wait_Stg( t )
 			this.SetFreeObject(this.x, this.y, this.direction, this.Shion_Vanish, {});
 			this.PlaySE(4629);
 			this.keyAction = null;
-			this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+			this.SetSpeed_XY(0.00000000, 0.00000000);
 			this.owner.shion_act = true;
 			this.stateLabel = function ()
 			{
@@ -1157,7 +1157,7 @@ function Shion_Wait_Stg( t )
 			this.SetMotion(5000, 0);
 			this.DrawActorPriority(180);
 			this.keyAction = null;
-			this.rz = 0,00000000.0;
+			this.rz = 0.00000000;
 			local pos_ = this.Vector3();
 			pos_.x = this.owner.x;
 			pos_.y = this.owner.y;
@@ -1206,7 +1206,7 @@ function Shion_Wait_Stg( t )
 			}
 
 			this.count = 0;
-			this.SetShot(this.point0_x, this.point0_y, 1,00000000.0, this.Shion_ShotStg, {});
+			this.SetShot(this.point0_x, this.point0_y, 1.00000000, this.Shion_ShotStg, {});
 			this.subState = function ()
 			{
 				this.count++;
@@ -1232,12 +1232,12 @@ function Shion_Wait_Stg( t )
 function Shion_ShotStg( t )
 {
 	this.SetMotion(5507, this.rand() % 4);
-	this.rz = this.rand() % 360 * 0,01745329.0;
-	this.SetTaskAddRotation(0,00000000.0, 0,00000000.0, 0,03490658.0);
+	this.rz = this.rand() % 360 * 0.01745329;
+	this.SetTaskAddRotation(0.00000000, 0.00000000, 0.03490658);
 	this.cancelCount = 1;
-	this.sx = this.sy = 1,00000000.0;
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
-	this.SetSpeed_XY(3,00000000.0, -10,00000000.0);
+	this.sx = this.sy = 1.00000000;
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
+	this.SetSpeed_XY(3.00000000, -10.00000000);
 	this.func = [
 		function ()
 		{
@@ -1247,11 +1247,11 @@ function Shion_ShotStg( t )
 			};
 			this.stateLabel = function ()
 			{
-				this.Vec_Brake(0,50000000.0);
-				this.sx = this.sy *= 0,92000002.0;
-				this.alpha -= 0,05000000.0;
+				this.Vec_Brake(0.50000000);
+				this.sx = this.sy *= 0.92000002;
+				this.alpha -= 0.05000000;
 
-				if (this.alpha <= 0,00000000.0)
+				if (this.alpha <= 0.00000000)
 				{
 					this.ReleaseActor();
 				}
@@ -1266,8 +1266,8 @@ function Shion_ShotStg( t )
 			return;
 		}
 
-		this.sx = this.sy += 0,02000000.0;
-		this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+		this.sx = this.sy += 0.02000000;
+		this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 
 		if (this.grazeCount > 0 || this.hitCount > 0 || this.cancelCount == 0)
 		{
@@ -1275,7 +1275,7 @@ function Shion_ShotStg( t )
 			return;
 		}
 
-		this.AddSpeed_XY(0,00000000.0, 0,50000000.0, null, 15,00000000.0);
+		this.AddSpeed_XY(0.00000000, 0.50000000, null, 15.00000000);
 	};
 }
 

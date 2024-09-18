@@ -67,7 +67,7 @@ function Initialize()
 	{
 		local t = ::battle.team[i];
 		local offset = i * 10;
-		local dir = i == 0 ? 1,00000000.0 : -1,00000000.0;
+		local dir = i == 0 ? 1.00000000 : -1.00000000;
 		local mat_top = i == 0 ? this.mat_left_top : this.mat_right_top;
 		local mat_bottom = i == 0 ? this.mat_left_bottom : this.mat_right_bottom;
 		local mat = ::manbow.Matrix();
@@ -141,7 +141,7 @@ function Initialize()
 
 function Update()
 {
-	this.alpha -= 0,05000000.0;
+	this.alpha -= 0.05000000;
 
 	if (this.alpha < -1)
 	{

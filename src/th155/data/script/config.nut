@@ -118,8 +118,8 @@ function Load()
 
 function Apply()
 {
-	::sound.SetVolumeSE(this.sound.se / 100,00000000.0);
-	::sound.SetVolumeBGM(this.sound.bgm / 100,00000000.0);
+	::sound.SetVolumeSE(this.sound.se / 100.00000000);
+	::sound.SetVolumeBGM(this.sound.bgm / 100.00000000);
 	::SetWindowMode(0, 0, this.graphics.fullscreen, this.graphics.vsync, false);
 }
 

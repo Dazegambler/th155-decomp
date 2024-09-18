@@ -104,9 +104,9 @@ function Update_Input()
 function BossForceCall_Init()
 {
 	::battle.enableTimeCount = false;
-	this.SetFreeObject(this.x, this.y, 1,00000000.0, this.Boss_SetLife_Actor, {});
+	this.SetFreeObject(this.x, this.y, 1.00000000, this.Boss_SetLife_Actor, {});
 	this.CallBossCard(0, ::battle.boss_spell[0].master_name);
-	this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+	this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 
 	if (this.boss_spell_func)
 	{

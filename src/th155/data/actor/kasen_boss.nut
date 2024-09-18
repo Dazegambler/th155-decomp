@@ -3,7 +3,7 @@ function Master_Spell_1()
 	this.disableGuard = -1;
 	this.armor = -1;
 	this.cpuState = null;
-	this.com_flag1 = -1,00000000.0;
+	this.com_flag1 = -1.00000000;
 	this.com_flag2 = 1;
 	this.boss_spell_func = function ()
 	{
@@ -39,14 +39,14 @@ function Master_Spell_1_Start()
 	this.flag5.pos <- this.Vector3();
 	this.flag5.pos.x = 640 - 400 * this.direction;
 	this.flag5.pos.y = 240;
-	this.SetSpeed_Vec(0,25000000.0, -160 * 0,01745329.0, this.direction);
+	this.SetSpeed_Vec(0.25000000, -160 * 0.01745329, this.direction);
 	this.stateLabel = function ()
 	{
-		this.flag5.moveV += 0,25000000.0;
+		this.flag5.moveV += 0.25000000;
 
-		if (this.flag5.moveV > 10,00000000.0)
+		if (this.flag5.moveV > 10.00000000)
 		{
-			this.flag5.moveV = 10,00000000.0;
+			this.flag5.moveV = 10.00000000;
 		}
 
 		this.va.x = this.flag5.pos.x - this.x;
@@ -60,7 +60,7 @@ function Master_Spell_1_Start()
 			{
 				this.Boss_WalkMotionUpdate(0);
 
-				if (this.Vec_Brake(0,25000000.0))
+				if (this.Vec_Brake(0.25000000))
 				{
 					this.Master_Spell_1_Dream_Attack();
 				}

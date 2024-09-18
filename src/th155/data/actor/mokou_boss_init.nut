@@ -13,8 +13,8 @@ this.player_class.Init <- function ()
 	this.AI_BossCommon();
 	this.type = 8;
 	this.type = 11;
-	this.baseGravity = 0,75000000.0;
-	this.baseSlideSpeed = 17,50000000.0;
+	this.baseGravity = 0.75000000;
+	this.baseSlideSpeed = 17.50000000;
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;
 	this.func_timeDemo = this.Func_Lose;
@@ -32,7 +32,7 @@ this.player_class.Init <- function ()
 		if (this.occultCount > 0)
 		{
 			this.occultCount = 0;
-			this.atkRate = 1,00000000.0;
+			this.atkRate = 1.00000000;
 			this.occult_level = 0;
 		}
 	};

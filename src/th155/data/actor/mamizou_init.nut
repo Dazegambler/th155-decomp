@@ -23,9 +23,9 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_PlayerCommon();
 	this.type = 8;
-	this.baseGravity = 0,40000001.0;
-	this.baseSlideSpeed = 13,00000000.0;
-	this.atkRange = 175,00000000.0;
+	this.baseGravity = 0.40000001;
+	this.baseSlideSpeed = 13.00000000;
+	this.atkRange = 175.00000000;
 	this.alien = [];
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;

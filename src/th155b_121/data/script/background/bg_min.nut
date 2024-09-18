@@ -1,6 +1,6 @@
 this.mat_world <- this.manbow.Matrix();
 this.mat_world.SetIdentity();
-this.mat_world.SetScaling(1280,00000000.0 / 1278,00000000.0, 720,00000000.0 / 718,00000000.0, 1);
+this.mat_world.SetScaling(1280.00000000 / 1278.00000000, 720.00000000 / 718.00000000, 1);
 this.animation_set <- ::manbow.AnimationSet2D();
 local prop = this.manbow.Animation2DProperty();
 prop.texture_name = "data/background/min/" + (this.id < 10 ? "0" : "") + this.id + ".dds";

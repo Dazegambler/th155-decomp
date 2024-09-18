@@ -82,12 +82,12 @@ function BossCall_Init()
 	this.invin = 6;
 	this.invinObject = 6;
 	this.invinGrab = 6;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.count = 0;
 	::battle.enableTimeCount = false;
-	this.SetFreeObject(this.x, this.y, 1,00000000.0, this.Boss_SetLife_Actor, {});
+	this.SetFreeObject(this.x, this.y, 1.00000000, this.Boss_SetLife_Actor, {});
 	this.CallBossCard(0, ::battle.boss_spell[0].master_name);
-	this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+	this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 
 	if (this.boss_spell_func)
 	{
@@ -100,9 +100,9 @@ function BossCall_Init()
 function BossForceCall_Init()
 {
 	::battle.enableTimeCount = false;
-	this.SetFreeObject(this.x, this.y, 1,00000000.0, this.Boss_SetLife_Actor, {});
+	this.SetFreeObject(this.x, this.y, 1.00000000, this.Boss_SetLife_Actor, {});
 	this.CallBossCard(0, ::battle.boss_spell[0].master_name);
-	this.SetFreeObject(640 - 640, 720, -1,00000000.0, this.SpellUseFace, {});
+	this.SetFreeObject(640 - 640, 720, -1.00000000, this.SpellUseFace, {});
 
 	if (this.boss_spell_func)
 	{

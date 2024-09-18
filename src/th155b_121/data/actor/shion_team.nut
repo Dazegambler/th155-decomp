@@ -8,10 +8,10 @@ function Team_BinbouCrash( t_ )
 	this.SetMotion(3912, 0);
 	this.AjustCenterStop();
 	this.count = 0;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.PlaySE(4680);
-	::camera.Shake(9,00000000.0);
-	this.SetShot(this.x, this.y, 1,00000000.0, this.Binbou_Shot_Core, {});
+	::camera.Shake(9.00000000);
+	this.SetShot(this.x, this.y, 1.00000000, this.Binbou_Shot_Core, {});
 	this.stateLabel = function ()
 	{
 		if (this.count == 30)
@@ -26,7 +26,7 @@ function Team_BinbouCrash( t_ )
 				this.Team_Bench_In();
 				this.team.current.Team_Change_MasterB(this.direction);
 				local val_ = this.team.op;
-				this.team.op_stop = (1200 - 1140 * (val_ / 2000,00000000.0)).tointeger();
+				this.team.op_stop = (1200 - 1140 * (val_ / 2000.00000000)).tointeger();
 				this.team.op_stop_max = this.team.op_stop;
 				this.team.op = 0;
 			}
@@ -40,7 +40,7 @@ function Team_BinbouCrash( t_ )
 				this.Team_Bench_In();
 				this.team.current.Team_Change_MasterB(this.direction);
 				local val_ = this.team.op;
-				this.team.op_stop = (1200 - 1140 * (val_ / 2000,00000000.0)).tointeger();
+				this.team.op_stop = (1200 - 1140 * (val_ / 2000.00000000)).tointeger();
 				this.team.op_stop_max = this.team.op_stop;
 				this.team.op = 0;
 			}

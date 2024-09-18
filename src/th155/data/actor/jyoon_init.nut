@@ -29,8 +29,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_PlayerCommon();
 	this.type = 18;
-	this.baseGravity = 0,94999999.0;
-	this.baseSlideSpeed = 20,00000000.0;
+	this.baseGravity = 0.94999999;
+	this.baseSlideSpeed = 20.00000000;
 	this.Reset_PlayerCommon();
 	this.func_beginDemo = this.Func_BeginBattle;
 	this.func_timeDemo = this.Func_Lose;

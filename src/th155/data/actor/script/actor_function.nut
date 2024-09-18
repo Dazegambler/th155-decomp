@@ -42,12 +42,12 @@ function Math_MinMax( a_, min_, max_ )
 
 function Math_Bezier( s_, g_, c_, rate_ )
 {
-	if (rate_ >= 1,00000000.0)
+	if (rate_ >= 1.00000000)
 	{
 		return g_;
 	}
 
-	if (rate_ <= 0,00000000.0)
+	if (rate_ <= 0.00000000)
 	{
 		return s_;
 	}
@@ -63,7 +63,7 @@ function Math_ShotPath( V, G, Pos_, Target_ )
 	local A = -G * X * X / (2 * V * V);
 	local A2 = X / A;
 	local B = -Y / A + 1;
-	local Check_ = -B + A2 * A2 * 0,25000000.0;
+	local Check_ = -B + A2 * A2 * 0.25000000;
 	local t = [];
 
 	if (Check_ < 0)
@@ -72,13 +72,13 @@ function Math_ShotPath( V, G, Pos_, Target_ )
 	}
 	else if (Check_ == 0)
 	{
-		t.append(-A2 * 0,50000000.0);
+		t.append(-A2 * 0.50000000);
 	}
 	else
 	{
 		local Check_root = this.sqrt(Check_);
-		t.append(-A2 * 0,50000000.0 + Check_root);
-		t.append(-A2 * 0,50000000.0 - Check_root);
+		t.append(-A2 * 0.50000000 + Check_root);
+		t.append(-A2 * 0.50000000 - Check_root);
 	}
 
 	return t;

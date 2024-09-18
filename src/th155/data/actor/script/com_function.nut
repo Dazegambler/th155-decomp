@@ -150,9 +150,9 @@ function CPU_Clear()
 	this.com_baria_rate = 0;
 	this.com_aggro_stance = 0;
 	this.com_sleep = 0;
-	this.com_front = 1,00000000.0;
+	this.com_front = 1.00000000;
 	this.com_disable_attack = 0;
-	this.com_dash = 0,00000000.0;
+	this.com_dash = 0.00000000;
 	this.com_command = 0;
 	this.cpuState = null;
 	this.com_count = [
@@ -256,21 +256,21 @@ function CPU_EnemySearch( near_, far_ )
 	{
 		local rot_ = pos_.GetDegree();
 
-		if (rot_ >= -22,50000000.0 && rot_ <= 22,50000000.0)
+		if (rot_ >= -22.50000000 && rot_ <= 22.50000000)
 		{
 			this.com_enemyPos = 16;
 		}
-		else if (rot_ <= -157,50000000.0 || rot_ >= 157,50000000.0)
+		else if (rot_ <= -157.50000000 || rot_ >= 157.50000000)
 		{
 			this.com_enemyPos = 14;
 		}
 		else if (rot_ >= 0)
 		{
-			if (rot_ >= -67,50000000.0)
+			if (rot_ >= -67.50000000)
 			{
 				this.com_enemyPos = 13;
 			}
-			else if (rot_ <= -112,50000000.0)
+			else if (rot_ <= -112.50000000)
 			{
 				this.com_enemyPos = 11;
 			}
@@ -279,11 +279,11 @@ function CPU_EnemySearch( near_, far_ )
 				this.com_enemyPos = 12;
 			}
 		}
-		else if (rot_ <= 67,50000000.0)
+		else if (rot_ <= 67.50000000)
 		{
 			this.com_enemyPos = 19;
 		}
-		else if (rot_ >= 112,50000000.0)
+		else if (rot_ >= 112.50000000)
 		{
 			this.com_enemyPos = 17;
 		}

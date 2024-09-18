@@ -26,7 +26,7 @@ local func_update = function ()
 
 		if (this.actor.alpha < 1)
 		{
-			this.actor.alpha += 0,05000000.0;
+			this.actor.alpha += 0.05000000;
 		}
 	}
 	else
@@ -41,7 +41,7 @@ local func_update = function ()
 
 		if (this.actor.alpha > 0)
 		{
-			this.actor.alpha -= 0,05000000.0;
+			this.actor.alpha -= 0.05000000;
 		}
 	}
 };

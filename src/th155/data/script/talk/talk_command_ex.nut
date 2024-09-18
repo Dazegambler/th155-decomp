@@ -9,9 +9,9 @@ function ShowTitle( arg )
 		t.sprite.alpha = 0;
 		t.Show();
 
-		while (t.sprite.alpha < 1,00000000.0)
+		while (t.sprite.alpha < 1.00000000)
 		{
-			t.sprite.alpha += 0,10000000.0;
+			t.sprite.alpha += 0.10000000;
 			this.suspend();
 		}
 
@@ -20,9 +20,9 @@ function ShowTitle( arg )
 			this.suspend();
 		}
 
-		while (t.sprite.alpha > 0,00000000.0)
+		while (t.sprite.alpha > 0.00000000)
 		{
-			t.sprite.alpha -= 0,10000000.0;
+			t.sprite.alpha -= 0.10000000;
 			this.suspend();
 		}
 

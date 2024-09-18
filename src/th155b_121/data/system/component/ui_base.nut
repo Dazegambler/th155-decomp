@@ -337,7 +337,7 @@ class this.UIItemHighlight
 		this.back.y = top;
 		this.back.address = 0;
 		this.back.red = 0;
-		this.back.alpha = 0,50000000.0;
+		this.back.alpha = 0.50000000;
 		::menu.cursor.left.x = this.left - 32;
 		::menu.cursor.right.x = this.right + 32;
 		::menu.cursor.left.y = ::menu.cursor.right.y = (top + bottom) / 2 - 16;
@@ -368,7 +368,7 @@ class this.UIItemHighlight
 	{
 		this.count++;
 		this.back.SetUV(0, this.count * 2 % 128, this.width, this.height);
-		local a = this.abs(this.sin(this.count * 0,10000000.0) * 4);
+		local a = this.abs(this.sin(this.count * 0.10000000) * 4);
 		::menu.cursor.left.x = this.left - 32 - a;
 		::menu.cursor.right.x = this.right + 32 + a;
 	}
@@ -408,7 +408,7 @@ class this.UIItemSelector
 
 			foreach( i, v in this.item )
 			{
-				v.x = x - v.width / 2 + w * (i + 0,50000000.0);
+				v.x = x - v.width / 2 + w * (i + 0.50000000);
 			}
 		}
 		else
@@ -421,7 +421,7 @@ class this.UIItemSelector
 		foreach( i, v in this.item )
 		{
 			v.SetWorldTransform(this.mat_world);
-			v.red = v.green = v.blue = this.cursor.val == i ? 1,00000000.0 : 0,50000000.0;
+			v.red = v.green = v.blue = this.cursor.val == i ? 1.00000000 : 0.50000000;
 		}
 	}
 
@@ -449,7 +449,7 @@ class this.UIItemSelector
 
 		foreach( i, v in this.item )
 		{
-			local c = this.cursor.val == i ? 1,00000000.0 : 0,50000000.0;
+			local c = this.cursor.val == i ? 1.00000000 : 0.50000000;
 			v.red = this.red * c;
 			v.green = this.green * c;
 			v.blue = this.blue * c;
@@ -465,9 +465,9 @@ class this.UIItemSelector
 
 		if (this.cursor.val != this.cur)
 		{
-			this.item[this.cur].red = this.red * 0,50000000.0;
-			this.item[this.cur].green = this.green * 0,50000000.0;
-			this.item[this.cur].blue = this.blue * 0,50000000.0;
+			this.item[this.cur].red = this.red * 0.50000000;
+			this.item[this.cur].green = this.green * 0.50000000;
+			this.item[this.cur].blue = this.blue * 0.50000000;
 			this.cur = this.cursor.val;
 			this.item[this.cur].red = this.red;
 			this.item[this.cur].green = this.green;

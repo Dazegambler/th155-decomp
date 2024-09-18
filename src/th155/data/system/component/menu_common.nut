@@ -204,7 +204,7 @@ function UpdateLayout( gl )
 {
 	if (this.action == ::loop.GetCurrentScene())
 	{
-		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0,69999999.0);
+		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0.69999999);
 	}
 
 	this.ui.Update();
@@ -218,7 +218,7 @@ function UpdateLayout( gl )
 		}
 
 		v.SetWorldTransform(this.mat_world);
-		v.red = v.green = v.blue = this.action.cursor_item.val == i ? 1,00000000.0 : 0,50000000.0;
+		v.red = v.green = v.blue = this.action.cursor_item.val == i ? 1.00000000 : 0.50000000;
 	}
 }
 

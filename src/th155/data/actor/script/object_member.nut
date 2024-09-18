@@ -22,7 +22,7 @@ this.hitInterval <- 0;
 this.grazeCount <- 0;
 this.autoGuard <- false;
 this.guardAction <- null;
-this.atkRate_Pat <- 1,00000000.0;
+this.atkRate_Pat <- 1.00000000;
 this.pEvent_getDamage <- null;
 this.hit_state <- 0;
 this.attack_state <- 0;

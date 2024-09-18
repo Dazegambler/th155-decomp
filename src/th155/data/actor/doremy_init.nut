@@ -20,8 +20,8 @@ this.player_class.Init <- function ()
 	this.SetMotion(0, 0);
 	this.AI_PlayerCommon();
 	this.type = 15;
-	this.baseGravity = 0,60000002.0;
-	this.baseSlideSpeed = 14,00000000.0;
+	this.baseGravity = 0.60000002;
+	this.baseSlideSpeed = 14.00000000;
 	this.back_park = null;
 	this.back_hole = [];
 	this.mukon = ::manbow.Actor2DProcGroup();

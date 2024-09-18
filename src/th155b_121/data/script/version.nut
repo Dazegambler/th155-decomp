@@ -24,4 +24,4 @@ function GetVersionSignature()
 	return "1_21b";
 }
 
-::SetWindowText("“Œ•ûœ\x2580ˆ\x2566‰Ø@` Antinomy of Common Flowers. " + this.GetVersionString());
+::SetWindowText("“Œ•\x221aœ\x2580ˆ\x2566‰\x256a@` Antinomy of Common Flowers. " + this.GetVersionString());

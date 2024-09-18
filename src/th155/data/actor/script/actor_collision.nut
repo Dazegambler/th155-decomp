@@ -1,7 +1,7 @@
 function FitBoxfromSprite()
 {
-	this.SetCollisionRotation(0,00000000.0, 0,00000000.0, this.rz);
-	this.SetCollisionScaling(this.sx, this.sy, 1,00000000.0);
+	this.SetCollisionRotation(0.00000000, 0.00000000, this.rz);
+	this.SetCollisionScaling(this.sx, this.sy, 1.00000000);
 }
 
 function FitRotatefromVec()
@@ -142,7 +142,7 @@ function CalcContactTestGuard()
 	{
 		if (this.target.x == this.x)
 		{
-			if (this.direction > 0,00000000.0)
+			if (this.direction > 0.00000000)
 			{
 				if (this.input.x < 0)
 				{

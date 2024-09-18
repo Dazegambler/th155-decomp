@@ -42,7 +42,7 @@ class this.PlayerTeamData
 	damage_scale = 1;
 	counter_scale = 1;
 	base_scale = 1;
-	kaiki_scale = 1,00000000.0;
+	kaiki_scale = 1.00000000;
 	combo_stun = 0;
 	combo_wall = 0;
 	combo_ground = 0;
@@ -176,7 +176,7 @@ class this.PlayerTeamData
 			this.slave.Warp(this.start_x, this.start_y);
 		}
 
-		this.master.direction = this.index == 0 ? 1,00000000.0 : -1,00000000.0;
+		this.master.direction = this.index == 0 ? 1.00000000 : -1.00000000;
 
 		if (this.slave)
 		{
@@ -239,7 +239,7 @@ class this.PlayerTeamData
 			this.slave.Warp(this.start_x, this.start_y);
 		}
 
-		this.master.direction = this.index == 0 ? 1,00000000.0 : -1,00000000.0;
+		this.master.direction = this.index == 0 ? 1.00000000 : -1.00000000;
 
 		if (this.slave)
 		{
@@ -324,7 +324,7 @@ class this.PlayerTeamData
 					}
 					else
 					{
-						this.regain_life -= (damage * 0,75000000.0).tointeger();
+						this.regain_life -= (damage * 0.75000000).tointeger();
 
 						if (this.regain_life < this.life)
 						{
@@ -626,7 +626,7 @@ class this.PlayerTeamData
 		}
 	}
 
-	function SetComboDamage( atk, damage, min_scale = 0,10000000.0, disable_kill = false )
+	function SetComboDamage( atk, damage, min_scale = 0.10000000, disable_kill = false )
 	{
 		local scale = this.damage_scale;
 		scale = scale * this.counter_scale;
@@ -637,9 +637,9 @@ class this.PlayerTeamData
 			scale = min_scale;
 		}
 
-		if (scale < 0,10000000.0)
+		if (scale < 0.10000000)
 		{
-			scale = 0,10000000.0;
+			scale = 0.10000000;
 		}
 
 		scale = scale * this.kaiki_scale;
@@ -668,9 +668,9 @@ class this.PlayerTeamData
 			this.damage_scale -= scale;
 		}
 
-		if (this.damage_scale <= 0,10000000.0)
+		if (this.damage_scale <= 0.10000000)
 		{
-			this.damage_scale = 0,10000000.0;
+			this.damage_scale = 0.10000000;
 		}
 
 		if (this.combo_count > 1)
@@ -685,18 +685,18 @@ class this.PlayerTeamData
 	function ResetCombo()
 	{
 		this.combo.Deactivate();
-		this.base_scale = 1,00000000.0;
-		this.counter_scale = 1,00000000.0;
+		this.base_scale = 1.00000000;
+		this.counter_scale = 1.00000000;
 		this.combo_count = 0;
 		this.combo_damage = 0;
-		this.damage_scale = 1,00000000.0;
-		this.kaiki_scale = 1,00000000.0;
+		this.damage_scale = 1.00000000;
+		this.kaiki_scale = 1.00000000;
 		this.combo_reset_count = 0;
 		this.combo_stun = 0;
 		this.combo_wall = 0;
 		this.combo_ground = 0;
 		this.combo_hit_id = 0;
-		this.target.team.sp_rate = 1,00000000.0;
+		this.target.team.sp_rate = 1.00000000;
 		this.target.team.master.hit_id = 0;
 
 		if (this.target.team.slave)
@@ -707,7 +707,7 @@ class this.PlayerTeamData
 
 	function GetGutsRate()
 	{
-		return 0,75000000.0 + 0,50000000.0 * this.life / this.life_max;
+		return 0.75000000 + 0.50000000 * this.life / this.life_max;
 	}
 
 	function AddMP( v, stop )
@@ -748,7 +748,7 @@ class this.PlayerTeamData
 			local t_ = {};
 			t_.owner <- this.current.weakref();
 			t_.type <- 1;
-			this.current.SetEffect(this.index == 0 ? 40 : 1240, 664, 1,00000000.0, ::actor.effect_class.EF_SpellCharge, t_);
+			this.current.SetEffect(this.index == 0 ? 40 : 1240, 664, 1.00000000, ::actor.effect_class.EF_SpellCharge, t_);
 		}
 
 		if (this.sp < this.sp_max && this.sp + v >= this.sp_max)
@@ -757,7 +757,7 @@ class this.PlayerTeamData
 			local t_ = {};
 			t_.owner <- this.current.weakref();
 			t_.type <- 0;
-			this.current.SetEffect(this.index == 0 ? 40 : 1240, 664, 1,00000000.0, ::actor.effect_class.EF_SpellCharge, t_);
+			this.current.SetEffect(this.index == 0 ? 40 : 1240, 664, 1.00000000, ::actor.effect_class.EF_SpellCharge, t_);
 		}
 
 		this.sp += v.tointeger();

@@ -71,7 +71,7 @@ function LabelClear()
 		this.armor = 0;
 	}
 
-	this.atkRate_Pat = 1,00000000.0;
+	this.atkRate_Pat = 1.00000000;
 	this.atk_id = 0;
 	this.SetEndMotionCallbackFunction(this.EndtoFreeMove);
 }
@@ -128,7 +128,7 @@ function SetSpeed_XY( vx_, vy_ )
 	this.ConvertTotalSpeed();
 }
 
-function SetSpeed_Vec( vec_, rot_, direction_ = 1,00000000.0 )
+function SetSpeed_Vec( vec_, rot_, direction_ = 1.00000000 )
 {
 	this.va.x = vec_ * this.cos(rot_) * direction_;
 	this.va.y = vec_ * this.sin(rot_);
@@ -143,7 +143,7 @@ function AddSpeed_XY( vx_, vy_, maxX_ = null, maxY_ = null )
 
 		if (maxX_ != null)
 		{
-			if (vx_ > 0,00000000.0 && this.va.x > maxX_ || vx_ < 0,00000000.0 && this.va.x < maxX_)
+			if (vx_ > 0.00000000 && this.va.x > maxX_ || vx_ < 0.00000000 && this.va.x < maxX_)
 			{
 				this.va.x = maxX_;
 			}
@@ -156,7 +156,7 @@ function AddSpeed_XY( vx_, vy_, maxX_ = null, maxY_ = null )
 
 		if (maxY_ != null)
 		{
-			if (vy_ > 0,00000000.0 && this.va.y > maxY_ || vy_ < 0,00000000.0 && this.va.y < maxY_)
+			if (vy_ > 0.00000000 && this.va.y > maxY_ || vy_ < 0.00000000 && this.va.y < maxY_)
 			{
 				this.va.y = maxY_;
 			}
@@ -166,17 +166,17 @@ function AddSpeed_XY( vx_, vy_, maxX_ = null, maxY_ = null )
 	this.ConvertTotalSpeed();
 }
 
-function AddSpeed_Vec( vec_, rot_, max_, direction_ = 1,00000000.0 )
+function AddSpeed_Vec( vec_, rot_, max_, direction_ = 1.00000000 )
 {
 	if (rot_ == null)
 	{
-		if (this.va.x != 0,00000000.0 || this.va.y != 0,00000000.0)
+		if (this.va.x != 0.00000000 || this.va.y != 0.00000000)
 		{
 			rot_ = -this.atan2(-this.va.y, this.va.x * direction_);
 		}
 		else
 		{
-			rot_ = 0,00000000.0;
+			rot_ = 0.00000000;
 		}
 	}
 
@@ -226,11 +226,11 @@ function VX_Brake( x_, min_ = null )
 	}
 	else if (this.fabs(this.va.x) >= x_)
 	{
-		this.va.x -= this.va.x > 0,00000000.0 ? x_ : -x_;
+		this.va.x -= this.va.x > 0.00000000 ? x_ : -x_;
 	}
 	else
 	{
-		this.va.x = 0,00000000.0;
+		this.va.x = 0.00000000;
 		b_ = true;
 	}
 
@@ -267,11 +267,11 @@ function VY_Brake( y_, min_ = null )
 	}
 	else if (this.va.y * this.va.y >= y_ * y_)
 	{
-		this.va.y -= this.va.y > 0,00000000.0 ? y_ : -y_;
+		this.va.y -= this.va.y > 0.00000000 ? y_ : -y_;
 	}
 	else
 	{
-		this.va.y = 0,00000000.0;
+		this.va.y = 0.00000000;
 		b_ = true;
 	}
 
@@ -279,7 +279,7 @@ function VY_Brake( y_, min_ = null )
 	return b_;
 }
 
-function Vec_Brake( v_, min_ = 0,00000000.0 )
+function Vec_Brake( v_, min_ = 0.00000000 )
 {
 	local b_ = false;
 	local vsq_ = this.va.LengthXY();
@@ -332,7 +332,7 @@ function GetTargetAngle( target_, dir_ )
 	}
 }
 
-function TargetHoming_Vec( target_, vec_, rotSpeed_, direction_ = 1,00000000.0 )
+function TargetHoming_Vec( target_, vec_, rotSpeed_, direction_ = 1.00000000 )
 {
 	if (!target_)
 	{
@@ -363,7 +363,7 @@ function TargetHoming_Vec( target_, vec_, rotSpeed_, direction_ = 1,00000000.0 )
 	return false;
 }
 
-function TargetHoming( target_, rotSpeed_, direction_ = 1,00000000.0 )
+function TargetHoming( target_, rotSpeed_, direction_ = 1.00000000 )
 {
 	if (!target_)
 	{
@@ -402,7 +402,7 @@ function TargetHoming( target_, rotSpeed_, direction_ = 1,00000000.0 )
 	}
 }
 
-function PosHoming( pos_, rotSpeed_, direction_ = 1,00000000.0 )
+function PosHoming( pos_, rotSpeed_, direction_ = 1.00000000 )
 {
 	local tVec_ = this.Vector3();
 	tVec_.x = pos_.x - this.x;

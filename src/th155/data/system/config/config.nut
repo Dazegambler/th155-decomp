@@ -150,7 +150,7 @@ this.proc.se <- function ()
 
 		if (this.cursor_se.diff)
 		{
-			::sound.SetVolumeSE(this.cursor_se.val * 10 / 100,00000000.0);
+			::sound.SetVolumeSE(this.cursor_se.val * 10 / 100.00000000);
 		}
 
 		if (this.cursor_se.ok)
@@ -162,7 +162,7 @@ this.proc.se <- function ()
 		else if (this.cursor_se.cancel)
 		{
 			this.cursor_se.val = ::config.sound.se / 10;
-			::sound.SetVolumeSE(this.cursor_se.val * 10 / 100,00000000.0);
+			::sound.SetVolumeSE(this.cursor_se.val * 10 / 100.00000000);
 			this.Update = this.UpdateMain;
 		}
 	};
@@ -176,7 +176,7 @@ this.proc.bgm <- function ()
 
 		if (this.cursor_bgm.diff)
 		{
-			::sound.SetVolumeBGM(this.cursor_bgm.val * 10 / 100,00000000.0);
+			::sound.SetVolumeBGM(this.cursor_bgm.val * 10 / 100.00000000);
 		}
 
 		if (this.cursor_bgm.ok)
@@ -188,7 +188,7 @@ this.proc.bgm <- function ()
 		else if (this.cursor_bgm.cancel)
 		{
 			this.cursor_bgm.val = ::config.sound.bgm / 10;
-			::sound.SetVolumeBGM(this.cursor_bgm.val * 10 / 100,00000000.0);
+			::sound.SetVolumeBGM(this.cursor_bgm.val * 10 / 100.00000000);
 			this.Update = this.UpdateMain;
 		}
 	};

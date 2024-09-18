@@ -96,7 +96,7 @@ class this.SPGauge
 	{
 		local mat = ::manbow.Matrix();
 		this.max = _max;
-		this.scale = _max / 1000,00000000.0;
+		this.scale = _max / 1000.00000000;
 		this.actor = this.manbow.AnimationControllerDynamic();
 		this.actor.Init(this.env.anime_set_sp);
 		this.actor.SetMotion(10, 0);
@@ -237,12 +237,12 @@ function Terminate()
 
 function UpdatePosition( count )
 {
-	local y = count * count * 1,00000000.0;
+	local y = count * count * 1.00000000;
 	this.mat_center.SetTranslation(0, -y, 0);
-	local x = count * count * 3,00000000.0;
+	local x = count * count * 3.00000000;
 	this.mat_left_top.SetTranslation(-x, 0, 0);
 	this.mat_right_top.SetTranslation(x, 0, 0);
-	y = count * count * 2,00000000.0;
+	y = count * count * 2.00000000;
 	this.mat_left_bottom.SetTranslation(0, y, 0);
 	this.mat_right_bottom.SetTranslation(0, y, 0);
 }
@@ -417,7 +417,7 @@ function FlashTime()
 	t.Update <- function ()
 	{
 		this.count--;
-		this.time.blue = this.time.green = 1,00000000.0 - this.count / 30,00000000.0;
+		this.time.blue = this.time.green = 1.00000000 - this.count / 30.00000000;
 
 		if (this.count == 0)
 		{

@@ -381,7 +381,7 @@ function Update()
 
 	if (this.action.state == 0)
 	{
-		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0,69999999.0);
+		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0.69999999);
 	}
 
 	foreach( v in this.page )
@@ -404,7 +404,7 @@ function Update()
 			}
 
 			t.text.SetWorldTransform(v.mat_world);
-			i = v.cursor.val == i ? 1,00000000.0 : 0,50000000.0;
+			i = v.cursor.val == i ? 1.00000000 : 0.50000000;
 			t.text.red = t.text.green = t.text.blue = i;
 
 			if (t.select_obj)

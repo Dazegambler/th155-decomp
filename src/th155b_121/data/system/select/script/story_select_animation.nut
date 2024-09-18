@@ -90,7 +90,7 @@ function Initialize()
 	d.SetMotion(800, s);
 	d.ConnectRenderSlot(::graphics.slot.ui, 60000);
 	mat = ::manbow.Matrix();
-	mat.SetScaling(0,50000000.0, 0,50000000.0, 0,50000000.0);
+	mat.SetScaling(0.50000000, 0.50000000, 0.50000000);
 	mat.Translate(8, 8, 0);
 	d.SetWorldTransform(mat);
 	this.device_icon <- d;

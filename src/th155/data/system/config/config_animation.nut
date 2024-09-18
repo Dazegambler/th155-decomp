@@ -33,7 +33,7 @@ function Initialize()
 
 		if (t.width > 270)
 		{
-			t.sx = 270,00000000.0 / t.width.tofloat();
+			t.sx = 270.00000000 / t.width.tofloat();
 		}
 	}
 
@@ -82,8 +82,8 @@ function Initialize()
 	this.se_bar.y = se_back.y = text_table.se.y + 4;
 	this.bgm_bar.x = bgm_back.x = text_table.bgm.x + item_left + 40;
 	this.bgm_bar.y = bgm_back.y = text_table.bgm.y + 4;
-	this.se_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_se.val / 10,00000000.0, this.bar_src.height);
-	this.bgm_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_bgm.val / 10,00000000.0, this.bar_src.height);
+	this.se_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_se.val / 10.00000000, this.bar_src.height);
+	this.bgm_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_bgm.val / 10.00000000, this.bar_src.height);
 
 	foreach( v in this.item )
 	{
@@ -140,7 +140,7 @@ function Update()
 			this.state = 0;
 		}
 
-		this.se_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_se.val / 10,00000000.0, this.bar_src.height);
+		this.se_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_se.val / 10.00000000, this.bar_src.height);
 		break;
 
 	case 2:
@@ -150,7 +150,7 @@ function Update()
 			this.state = 0;
 		}
 
-		this.bgm_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_bgm.val / 10,00000000.0, this.bar_src.height);
+		this.bgm_bar.SetUV(this.bar_src.left, this.bar_src.top, this.bar_src.width * this.action.cursor_bgm.val / 10.00000000, this.bar_src.height);
 		break;
 	}
 

@@ -43,7 +43,7 @@ function Master_Spell_1_Start()
 	this.flag5.charge <- 120;
 	this.flag5.vec <- this.Vector3();
 	this.flag4 = null;
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -108,19 +108,19 @@ function Master_Spell_1_Start()
 					this.SetSpeed_XY(this.flag5.vec.x, this.flag5.vec.y);
 					this.subState = function ()
 					{
-						this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction);
+						this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction);
 					};
 				}
 
-				if (this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top || this.va.y > 0,00000000.0 && this.ground)
+				if (this.va.y < 0.00000000 && this.y < ::battle.scroll_top || this.va.y > 0.00000000 && this.ground)
 				{
-					this.SetSpeed_XY(this.va.x, this.va.y * -0,66000003.0);
-					this.flag5.vec.y *= -0,66000003.0;
+					this.SetSpeed_XY(this.va.x, this.va.y * -0.66000003);
+					this.flag5.vec.y *= -0.66000003;
 				}
 
 				if (this.count == 900 / this.flag5.moveV - 90)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count >= 900 / this.flag5.moveV)
@@ -155,7 +155,7 @@ function Master_Spell_1_Attack( t )
 	this.flag5.moveV <- 4;
 	this.flag5.charge <- 180;
 	this.flag5.vec <- this.Vector3();
-	this.SetSpeed_XY(0,00000000.0, 0,00000000.0);
+	this.SetSpeed_XY(0.00000000, 0.00000000);
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -201,17 +201,17 @@ function Master_Spell_1_Attack( t )
 		}
 
 		this.HitCycleUpdate(16);
-		this.AddSpeed_Vec(0,25000000.0, null, this.flag5.moveV, this.direction);
+		this.AddSpeed_Vec(0.25000000, null, this.flag5.moveV, this.direction);
 
-		if (this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top || this.va.y > 0,00000000.0 && this.ground)
+		if (this.va.y < 0.00000000 && this.y < ::battle.scroll_top || this.va.y > 0.00000000 && this.ground)
 		{
-			this.SetSpeed_XY(this.va.x, this.va.y * -0,66000003.0);
-			this.flag5.vec.y *= -0,66000003.0;
+			this.SetSpeed_XY(this.va.x, this.va.y * -0.66000003);
+			this.flag5.vec.y *= -0.66000003;
 		}
 
 		if (this.count == 900 / this.flag5.moveV - 60)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		if (this.count >= 900 / this.flag5.moveV)
@@ -265,7 +265,7 @@ function Master_Spell_1_Stop( t )
 	{
 		if (this.count == this.flag5.moveCount - 60)
 		{
-			this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+			this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 		}
 
 		if (this.count >= this.flag5.moveCount)
@@ -312,8 +312,8 @@ function Slave_Attack_Ichirin1B( t )
 	this.flag5.charge <- 60;
 	this.flag5.vec <- this.Vector3();
 	local r_ = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-	r_ = this.Math_MinMax(r_, -0,52359873.0, 0,52359873.0);
-	this.SetSpeed_Vec(-12,50000000.0, r_, this.direction);
+	r_ = this.Math_MinMax(r_, -0.52359873, 0.52359873);
+	this.SetSpeed_Vec(-12.50000000, r_, this.direction);
 	this.lavelClearEvent = function ()
 	{
 		if (this.flag4)
@@ -359,8 +359,8 @@ function Slave_Attack_Ichirin1B( t )
 			this.flag4 = null;
 			this.SetMotion(4941, 1);
 			local r_ = this.atan2(this.target.y - this.y, (this.target.x - this.x) * this.direction);
-			r_ = this.Math_MinMax(r_, -0,26179937.0, 0,26179937.0);
-			this.SetSpeed_Vec(1,00000000.0, r_, this.direction);
+			r_ = this.Math_MinMax(r_, -0.26179937, 0.26179937);
+			this.SetSpeed_Vec(1.00000000, r_, this.direction);
 			this.count = 0;
 			this.stateLabel = function ()
 			{
@@ -370,12 +370,12 @@ function Slave_Attack_Ichirin1B( t )
 				}
 
 				this.HitCycleUpdate(16);
-				this.AddSpeed_Vec(0,50000000.0, null, this.flag5.moveV, this.direction);
+				this.AddSpeed_Vec(0.50000000, null, this.flag5.moveV, this.direction);
 
-				if (this.va.y < 0,00000000.0 && this.y < ::battle.scroll_top || this.va.y > 0,00000000.0 && this.ground)
+				if (this.va.y < 0.00000000 && this.y < ::battle.scroll_top || this.va.y > 0.00000000 && this.ground)
 				{
-					this.SetSpeed_XY(this.va.x, this.va.y * -0,66000003.0);
-					this.flag5.vec.y *= -0,66000003.0;
+					this.SetSpeed_XY(this.va.x, this.va.y * -0.66000003);
+					this.flag5.vec.y *= -0.66000003;
 				}
 
 				if (this.count >= 1050 / this.flag5.moveV)
@@ -385,7 +385,7 @@ function Slave_Attack_Ichirin1B( t )
 						this.flag3++;
 						this.stateLabel = function ()
 						{
-							if (this.Vec_Brake(0,50000000.0))
+							if (this.Vec_Brake(0.50000000))
 							{
 								this.GetFront();
 								this.func[0].call(this);
@@ -407,15 +407,15 @@ function Slave_Attack_Ichirin1B( t )
 			this.AjustCenterStop();
 			this.subState = function ()
 			{
-				if (this.Vec_Brake(0,25000000.0, 1,50000000.0))
+				if (this.Vec_Brake(0.25000000, 1.50000000))
 				{
 					this.subState = function ()
 					{
-						this.CenterUpdate(0,10000000.0, 2,00000000.0);
+						this.CenterUpdate(0.10000000, 2.00000000);
 
 						if (this.centerStop == 0)
 						{
-							this.VX_Brake(0,25000000.0);
+							this.VX_Brake(0.25000000);
 						}
 					};
 				}
@@ -426,7 +426,7 @@ function Slave_Attack_Ichirin1B( t )
 
 				if (this.count == 60)
 				{
-					this.flag4 = this.SetEffect(this.x, this.y - 25, 1,00000000.0, this.Boss_SpellCharge, {}, this.weakref()).weakref();
+					this.flag4 = this.SetEffect(this.x, this.y - 25, 1.00000000, this.Boss_SpellCharge, {}, this.weakref()).weakref();
 				}
 
 				if (this.count >= 135)
@@ -440,7 +440,7 @@ function Slave_Attack_Ichirin1B( t )
 	this.count = 0;
 	this.stateLabel = function ()
 	{
-		this.Vec_Brake(0,75000000.0, 0,50000000.0);
+		this.Vec_Brake(0.75000000, 0.50000000);
 
 		if (this.count >= this.flag5.charge)
 		{

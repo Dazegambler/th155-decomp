@@ -369,7 +369,7 @@ function Confirm( _func_callback )
 		break;
 
 	case 2:
-		local message = "ƒŠƒvƒŒƒC‚ğ•\x2588‘¶‚µ‚\x2584‚·‚©H";
+		local message = "ƒŠƒvƒŒƒC‚\x2261•\x2588‘\x2562‚\x2561‚\x2584‚\x2556‚\x2310H";
 		this.func_callback = _func_callback;
 		::Dialog(1, message, function ( t )
 		{

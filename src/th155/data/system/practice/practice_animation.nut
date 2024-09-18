@@ -189,7 +189,7 @@ function Initialize()
 				t.obj <- [];
 				t.cursor <- this.action.page[i].cursor[v];
 				t.mat_world <- p.mat_world;
-				t.text <- ::font.CreateSystemString("Žw’è‚\x255a‚µ");
+				t.text <- ::font.CreateSystemString("Žw’è‚\x255a‚\x2561");
 				t.text.ConnectRenderSlot(::graphics.slot.overlay, 0);
 				t.text.x = text.x + 240;
 				t.text.y = text.y;
@@ -319,7 +319,7 @@ function Update()
 
 	if (this.action.state == 0)
 	{
-		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0,69999999.0);
+		::menu.cursor.SetTarget(this.cursor_x, this.cursor_y + this.action.cursor_item.val * this.space, 0.69999999);
 	}
 
 	foreach( v in this.page )
@@ -342,7 +342,7 @@ function Update()
 			}
 
 			t.text.SetWorldTransform(v.mat_world);
-			i = v.cursor.val == i ? 1,00000000.0 : 0,50000000.0;
+			i = v.cursor.val == i ? 1.00000000 : 0.50000000;
 			t.text.red = t.text.green = t.text.blue = i;
 
 			if (t.select_obj)

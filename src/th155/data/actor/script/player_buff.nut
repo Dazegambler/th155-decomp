@@ -148,7 +148,7 @@ function AtkBuffDel( type_ )
 
 function AtkBuffSet()
 {
-	this.atkRate = 1,00000000.0;
+	this.atkRate = 1.00000000;
 
 	for( local i = 0; i < this.atkBuff.len(); i++ )
 	{

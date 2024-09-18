@@ -194,8 +194,8 @@ function LoadAnimationData( filename, enable_index = false )
 		t.texture_name <- dir + element.name;
 		t.offset_x <- element.cx;
 		t.offset_y <- element.cy;
-		t.scale_x <- element.sx / 100,00000000.0;
-		t.scale_y <- element.sy / 100,00000000.0;
+		t.scale_x <- element.sx / 100.00000000;
+		t.scale_y <- element.sy / 100.00000000;
 		t.left <- element.left;
 		t.top <- element.top;
 		t.height <- element.height;

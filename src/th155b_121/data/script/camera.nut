@@ -13,10 +13,10 @@ this.shake_radius <- 0;
 this.target_object <- [];
 this.target_x <- 0;
 this.target_y <- 0;
-this.target_zoom <- 2,00000000.0;
+this.target_zoom <- 2.00000000;
 this.zoom <- this.target_zoom;
 this.auto_target <- true;
-this.auto_zoom_limit <- 2,00000000.0;
+this.auto_zoom_limit <- 2.00000000;
 this.lock <- false;
 this.camera2d <- null;
 this.camera3d <- null;
@@ -30,7 +30,7 @@ function Initialize()
 	this.camera3d = ::manbow.Camera3D();
 	this.camera2d.width = this.width;
 	this.camera2d.height = this.height;
-	this.camera2d.depth = 32768,00000000.0;
+	this.camera2d.depth = 32768.00000000;
 	this.camera2d.x = this.target_x = 0;
 	this.camera2d.y = this.target_y = 0;
 	this.camera2d.cx = this.center_x;
@@ -66,7 +66,7 @@ function Clear()
 	this.offset_x = 0;
 	this.offset_y = 0;
 	this.target_object.resize(0);
-	this.auto_zoom_limit = 2,00000000.0;
+	this.auto_zoom_limit = 2.00000000;
 	this.auto_target = true;
 	this.lock = false;
 }
@@ -188,7 +188,7 @@ function SetMode_Debug()
 	this.auto_target = false;
 	this.target_x = 640;
 	this.target_y = 360;
-	this.zoom = 1,00000000.0;
+	this.zoom = 1.00000000;
 	this.func_update_2d = this.UpdateDebugCamera;
 	this.func_update_2d.call(this.camera2d, this);
 }
@@ -278,21 +278,21 @@ function UpdateTarget()
 			}
 		}
 
-		this.target_x = (_min_x + _max_x) * 0,50000000.0;
-		this.target_y = -20 + (_min_y + _max_y) * 0,50000000.0;
-		local distX = _max_x - _min_x + 280,00000000.0 - 180,00000000.0 * (2,00000000.0 - this.zoom) * (2,00000000.0 - this.zoom);
-		local _zoomRateX = 2,00000000.0 - (distX - 640,00000000.0) / 640,00000000.0;
-		local distY = _max_y - _min_y + 160,00000000.0 - 80,00000000.0 * (2,00000000.0 - this.zoom);
-		local _zoomRateY = 2,00000000.0 - (distY - 360,00000000.0) / 360,00000000.0;
+		this.target_x = (_min_x + _max_x) * 0.50000000;
+		this.target_y = -20 + (_min_y + _max_y) * 0.50000000;
+		local distX = _max_x - _min_x + 280.00000000 - 180.00000000 * (2.00000000 - this.zoom) * (2.00000000 - this.zoom);
+		local _zoomRateX = 2.00000000 - (distX - 640.00000000) / 640.00000000;
+		local distY = _max_y - _min_y + 160.00000000 - 80.00000000 * (2.00000000 - this.zoom);
+		local _zoomRateY = 2.00000000 - (distY - 360.00000000) / 360.00000000;
 		this.target_zoom = _zoomRateX < _zoomRateY ? _zoomRateX : _zoomRateY;
 
 		if (this.target_zoom > this.auto_zoom_limit)
 		{
 			this.target_zoom = this.auto_zoom_limit;
 		}
-		else if (this.target_zoom < 1,00000000.0)
+		else if (this.target_zoom < 1.00000000)
 		{
-			this.target_zoom = 1,00000000.0;
+			this.target_zoom = 1.00000000;
 		}
 
 		local cx = this.center_x / this.target_zoom;
@@ -319,27 +319,27 @@ function UpdateTarget()
 
 	if (this.zoom != this.target_zoom)
 	{
-		this.zoom += (this.target_zoom - this.zoom) * 0,20000000.0;
+		this.zoom += (this.target_zoom - this.zoom) * 0.20000000;
 
-		if ((this.zoom - this.target_zoom) * (this.zoom - this.target_zoom) <= 0,01000000.0)
+		if ((this.zoom - this.target_zoom) * (this.zoom - this.target_zoom) <= 0.01000000)
 		{
 			this.zoom = this.target_zoom;
 		}
 	}
 
-	if (this.shake_radius > 1,00000000.0)
+	if (this.shake_radius > 1.00000000)
 	{
-		this.shake_radius *= 0,94999999.0;
+		this.shake_radius *= 0.94999999;
 
-		if (this.shake_radius <= 1,00000000.0)
+		if (this.shake_radius <= 1.00000000)
 		{
 			this.offset_x = 0;
 			this.offset_y = 0;
 		}
 		else
 		{
-			this.offset_x = this.cos(1,44700003.0 * this.shake_count) * this.shake_radius * this.zoom;
-			this.offset_y = this.sin(1,86500001.0 * this.shake_count) * this.shake_radius * this.zoom;
+			this.offset_x = this.cos(1.44700003 * this.shake_count) * this.shake_radius * this.zoom;
+			this.offset_y = this.sin(1.86500001 * this.shake_count) * this.shake_radius * this.zoom;
 			this.shake_count++;
 		}
 	}

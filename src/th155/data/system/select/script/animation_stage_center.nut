@@ -10,7 +10,7 @@ local func_init = function ( i )
 	this.stage.SetMotion(5000 + i, i != 99 ? ::menu.character_select.stage_index[i] : 0);
 	this.frame_parts.push(this.stage);
 	this.target_rot <- 0;
-	this.current_rot <- -3,14150000.0 / 2;
+	this.current_rot <- -3.14150000 / 2;
 	this.active <- false;
 
 	foreach( v in this.frame_parts )
@@ -27,7 +27,7 @@ local func_update = function ()
 	}
 
 	local mat = ::manbow.Matrix();
-	this.current_rot += (this.target_rot - this.current_rot) * 0,25000000.0;
+	this.current_rot += (this.target_rot - this.current_rot) * 0.25000000;
 	local _x = this.cos(this.current_rot) * 160 - 150;
 	local _y = this.sin(this.current_rot) * 160 + 360;
 	mat.SetScaling(this.root.scale, this.root.scale, 1);
@@ -41,12 +41,12 @@ local func_update = function ()
 		{
 			if (v.red < 1)
 			{
-				v.red += 0,10000000.0;
+				v.red += 0.10000000;
 			}
 		}
-		else if (v.red > 0,50000000.0)
+		else if (v.red > 0.50000000)
 		{
-			v.red -= 0,10000000.0;
+			v.red -= 0.10000000;
 		}
 
 		v.green = v.blue = v.red;
@@ -70,7 +70,7 @@ local func_set_target = function ( diff )
 		return;
 	}
 
-	this.target_rot = 3,14159203.0 * (0,00000000.0 + -diff * 0,13000000.0);
+	this.target_rot = 3.14159203 * (0.00000000 + -diff * 0.13000000);
 	this.visible = true;
 
 	foreach( v in this.frame_parts )
@@ -99,7 +99,7 @@ local func_update_position = function ()
 
 		if (this.scale > 1)
 		{
-			this.scale -= 0,20000000.0;
+			this.scale -= 0.20000000;
 
 			if (this.scale < 1)
 			{
@@ -108,7 +108,7 @@ local func_update_position = function ()
 		}
 		else if (this.scale < 1)
 		{
-			this.scale += 0,20000000.0;
+			this.scale += 0.20000000;
 
 			if (this.scale > 1)
 			{
@@ -116,19 +116,19 @@ local func_update_position = function ()
 			}
 		}
 
-		if (this.fade_rect.alpha < 0,75000000.0)
+		if (this.fade_rect.alpha < 0.75000000)
 		{
-			this.fade_rect.alpha += 0,05000000.0;
+			this.fade_rect.alpha += 0.05000000;
 		}
 	}
 	else
 	{
 		if (this.fade_rect.alpha > 0)
 		{
-			this.fade_rect.alpha -= 0,05000000.0;
+			this.fade_rect.alpha -= 0.05000000;
 		}
 
-		this.scale -= 0,20000000.0;
+		this.scale -= 0.20000000;
 
 		if (this.scale < 0)
 		{
@@ -177,16 +177,16 @@ local func_update_position = function ()
 
 	if (this.cursor_inst.active)
 	{
-		if (this.cursor_up.alpha < 1,00000000.0)
+		if (this.cursor_up.alpha < 1.00000000)
 		{
-			this.cursor_up.alpha += 0,10000000.0;
+			this.cursor_up.alpha += 0.10000000;
 		}
 
 		this.cursor_down.alpha = this.cursor_up.alpha;
 	}
-	else if (this.cursor_up.alpha > 0,00000000.0)
+	else if (this.cursor_up.alpha > 0.00000000)
 	{
-		this.cursor_up.alpha -= 0,10000000.0;
+		this.cursor_up.alpha -= 0.10000000;
 		this.cursor_down.alpha = this.cursor_up.alpha;
 	}
 	else
@@ -195,7 +195,7 @@ local func_update_position = function ()
 	}
 
 	local mat = ::manbow.Matrix();
-	local a = this.abs(this.sin(this.count * 0,10000000.0) * 6) + 100;
+	local a = this.abs(this.sin(this.count * 0.10000000) * 6) + 100;
 	mat.SetTranslation(500 * this.scale - 40, 360 - a, 0);
 	this.cursor_up.SetWorldTransform(mat);
 	mat.SetTranslation(500 * this.scale - 40, 360 + a, 0);

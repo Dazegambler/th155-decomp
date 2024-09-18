@@ -1,7 +1,7 @@
 this.time_unit <- 90;
 this.time <- 99 * this.time_unit;
 this.camera_pos <- this.Vector3();
-this.camera_zoom <- 1,00000000.0;
+this.camera_zoom <- 1.00000000;
 this.is_continued <- false;
 this.enable_win_demo <- true;
 this.enable_demo_talk <- false;
@@ -70,7 +70,7 @@ function Restart_Stage()
 	this.Player_Setting();
 	this.Boss_Setting();
 	::camera.Reset();
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	this.Begin();
 	::graphics.FadeIn(15);
 }
@@ -221,15 +221,15 @@ function BeginCamera()
 {
 	this.camera_pos.x = 640;
 	this.camera_pos.y = 340;
-	this.camera_zoom = 1,10000002.0;
+	this.camera_zoom = 1.10000002;
 	::camera.SetTarget(this.camera_pos.x, this.camera_pos.y, this.camera_zoom, true);
 	this.battleUpdate = function ()
 	{
-		this.camera_zoom += (2,00000000.0 - this.camera_zoom) * 0,07500000.0;
+		this.camera_zoom += (2.00000000 - this.camera_zoom) * 0.07500000;
 
-		if (this.camera_zoom > 1,99800003.0)
+		if (this.camera_zoom > 1.99800003)
 		{
-			this.camera_zoom = 2,00000000.0;
+			this.camera_zoom = 2.00000000;
 			this.battleUpdate = null;
 		}
 
@@ -241,11 +241,11 @@ function BeginCamera_Live()
 {
 	this.camera_pos.x = 640;
 	this.camera_pos.y = 720;
-	this.camera_zoom = 2,00000000.0;
+	this.camera_zoom = 2.00000000;
 	::camera.SetTarget(this.camera_pos.x, this.camera_pos.y, this.camera_zoom, true);
 	this.battleUpdate = function ()
 	{
-		this.camera_pos.y -= 1,00000000.0;
+		this.camera_pos.y -= 1.00000000;
 
 		if (this.camera_pos.y <= 340)
 		{
@@ -261,16 +261,16 @@ function BeginCamera_LiveStart()
 {
 	this.camera_pos.x = 640;
 	this.camera_pos.y = 640;
-	this.camera_zoom = 6,00000000.0;
+	this.camera_zoom = 6.00000000;
 	::camera.SetTarget(this.camera_pos.x, this.camera_pos.y, this.camera_zoom, true);
 	this.battleUpdate = function ()
 	{
-		this.camera_zoom += (2,00000000.0 - this.camera_zoom) * 0,02500000.0;
-		this.camera_pos.y += (340 - this.camera_pos.y) * 0,02500000.0;
+		this.camera_zoom += (2.00000000 - this.camera_zoom) * 0.02500000;
+		this.camera_pos.y += (340 - this.camera_pos.y) * 0.02500000;
 
-		if (this.camera_zoom < 2,00200009.0)
+		if (this.camera_zoom < 2.00200009)
 		{
-			this.camera_zoom = 2,00000000.0;
+			this.camera_zoom = 2.00000000;
 			this.camera_pos.y = 340;
 			this.battleUpdate = null;
 		}
@@ -289,7 +289,7 @@ function Set_BattleMessage( x_, y_, text_ )
 
 	local t_ = {};
 	t_.text <- text_;
-	this.info_text = ::actor.SetEffect(x_, y_, 1,00000000.0, ::actor.effect_class.Font_Infomation, t_).weakref();
+	this.info_text = ::actor.SetEffect(x_, y_, 1.00000000, ::actor.effect_class.Font_Infomation, t_).weakref();
 }
 
 function Clear_BattleMessage()
@@ -316,12 +316,12 @@ function ShowBGM_Title()
 
 function Show_StageTitle()
 {
-	::actor.SetStoryEffect(640, 360, 1,00000000.0, ::actor.effect_class.Story_Title_Name, {});
+	::actor.SetStoryEffect(640, 360, 1.00000000, ::actor.effect_class.Story_Title_Name, {});
 }
 
 function Show_EnemyName()
 {
-	this.name_actor[0] = ::actor.SetStoryEffect(1480, 720, 1,00000000.0, ::actor.effect_class.Story_EnemyName, {}).weakref();
+	this.name_actor[0] = ::actor.SetStoryEffect(1480, 720, 1.00000000, ::actor.effect_class.Story_EnemyName, {}).weakref();
 
 	if (this.name_actor[1])
 	{
@@ -331,7 +331,7 @@ function Show_EnemyName()
 
 function Show_EnemySlaveName()
 {
-	this.name_actor[1] = ::actor.SetStoryEffect(1500, 740, 1,00000000.0, ::actor.effect_class.Story_EnemySlaveName, {}).weakref();
+	this.name_actor[1] = ::actor.SetStoryEffect(1500, 740, 1.00000000, ::actor.effect_class.Story_EnemySlaveName, {}).weakref();
 
 	if (this.name_actor[0])
 	{
@@ -418,7 +418,7 @@ function Battle_Fight()
 	this.state = 8;
 	this.battleUpdate = this.Fight_Update;
 	this.enable_contact_test = true;
-	::camera.SetTarget(640, 340, 2,00000000.0, true);
+	::camera.SetTarget(640, 340, 2.00000000, true);
 	::camera.SetMode_Battle();
 }
 
@@ -546,7 +546,7 @@ function Player_KO()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.demoCount = 0;
@@ -589,7 +589,7 @@ function Player_Defeat()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.state = 64;
@@ -659,7 +659,7 @@ function Enemy_KO()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.state = 64;
@@ -724,7 +724,7 @@ function Enemy_Defeat()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.state = 64;
@@ -819,7 +819,7 @@ function Double_KO()
 	local t_ = {};
 	t_.count <- 60;
 	t_.priority <- 210;
-	::actor.SetEffect(640, 360, 1,00000000.0, ::actor.effect_class.EF_SpeedLine, t_);
+	::actor.SetEffect(640, 360, 1.00000000, ::actor.effect_class.EF_SpeedLine, t_);
 	::actor.SetEffectLight(640, 360, 1001, 1);
 	this.PlaySE(855);
 	this.state = 64;
@@ -907,7 +907,7 @@ function Win()
 	if (!this.enable_KO_stand)
 	{
 		a.autoCamera = false;
-		::camera.SetTarget(a.x, a.y - 20, 2,00000000.0, false);
+		::camera.SetTarget(a.x, a.y - 20, 2.00000000, false);
 	}
 
 	if (this.enable_win_demo)
@@ -931,13 +931,13 @@ function Win()
 
 		if (a.x <= 640)
 		{
-			this.infoActor[0] = a.SetEffect(880, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
-			this.infoActor[1] = a.SetFreeObject(0, 600, 1,00000000.0, a.WinPlayerName_L, {}).weakref();
+			this.infoActor[0] = a.SetEffect(880, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+			this.infoActor[1] = a.SetFreeObject(0, 600, 1.00000000, a.WinPlayerName_L, {}).weakref();
 		}
 		else
 		{
-			this.infoActor[0] = a.SetEffect(400, 460, 1,00000000.0, ::actor.effect_class.Round_Call_Win1P, t).weakref();
-			this.infoActor[1] = a.SetFreeObject(1280, 600, 1,00000000.0, a.WinPlayerName_R, {}).weakref();
+			this.infoActor[0] = a.SetEffect(400, 460, 1.00000000, ::actor.effect_class.Round_Call_Win1P, t).weakref();
+			this.infoActor[1] = a.SetFreeObject(1280, 600, 1.00000000, a.WinPlayerName_R, {}).weakref();
 		}
 
 		this.battleUpdate = function ()
@@ -1223,7 +1223,7 @@ function Live_Start()
 {
 	this.demoCount = 0;
 	this.battleUpdate = this.Live_Start_Update;
-	::graphics.FadeOut(60, null, 1,00000000.0, 1,00000000.0, 1,00000000.0);
+	::graphics.FadeOut(60, null, 1.00000000, 1.00000000, 1.00000000);
 }
 
 function Live_Start_Update()

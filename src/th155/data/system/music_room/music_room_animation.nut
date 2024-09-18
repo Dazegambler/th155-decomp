@@ -14,7 +14,7 @@ function Initialize()
 	this.page <- [];
 	this.margin <- 40;
 	local space = 20;
-	local scale = 0,69999999.0;
+	local scale = 0.69999999;
 
 	foreach( p, _page in this.action.page )
 	{
@@ -44,7 +44,7 @@ function Initialize()
 			author.ConnectRenderSlot(::graphics.slot.front, 0);
 			obj.push(author);
 			author.sy = scale;
-			author.sx = scale * 0,75000000.0;
+			author.sx = scale * 0.75000000;
 
 			if (v.comment.len())
 			{
@@ -52,7 +52,7 @@ function Initialize()
 				comment.ConnectRenderSlot(::graphics.slot.front, 0);
 				obj.push(comment);
 				comment.sy = scale;
-				comment.sx = scale * 0,75000000.0;
+				comment.sx = scale * 0.75000000;
 				author.y = text.y;
 				comment.y = text.y + 18;
 				w = w + (comment.width > author.width ? comment.width : author.width) * author.sx;
@@ -128,12 +128,12 @@ function Update()
 
 					if (i == this.action.cur_index && p == this.action.cur_page)
 					{
-						obj.red = obj.green = 1,00000000.0;
-						obj.blue = 0,50000000.0;
+						obj.red = obj.green = 1.00000000;
+						obj.blue = 0.50000000;
 					}
 					else
 					{
-						obj.red = obj.green = obj.blue = i == this.action.cursor.val ? 1 : 0,50000000.0;
+						obj.red = obj.green = obj.blue = i == this.action.cursor.val ? 1 : 0.50000000;
 					}
 				}
 			}
@@ -141,7 +141,7 @@ function Update()
 	}
 
 	local t = this.page[this.action.cursor_page.val].item[this.action.cursor.val][0];
-	::menu.cursor.SetTarget(t.x - 20, t.y + 23, 0,69999999.0);
+	::menu.cursor.SetTarget(t.x - 20, t.y + 23, 0.69999999);
 	this.page_index.Set("page " + (this.action.cursor_page.val + 1) + "/" + this.action.cursor_page.item_num);
 	this.page_index.x = 1200 - this.page_index.width;
 }

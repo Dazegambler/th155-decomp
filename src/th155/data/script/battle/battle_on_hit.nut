@@ -8,7 +8,7 @@ this.hit_effect <- [
 ];
 class this.TempActorData 
 {
-	direction = 0,00000000.0;
+	direction = 0.00000000;
 	attackLV = 0;
 	cancelCount = 0;
 	atk_id = 0;
@@ -177,7 +177,7 @@ function SetHitState( t, atk_, def_ )
 	}
 	else
 	{
-		t.direction <- atk_.owner.x > def_.x ? 1,00000000.0 : -1,00000000.0;
+		t.direction <- atk_.owner.x > def_.x ? 1.00000000 : -1.00000000;
 	}
 
 	if (atk_.actorType & (1 | 4))
@@ -198,11 +198,11 @@ function SetHitState( t, atk_, def_ )
 	t.damage <- 0;
 	t.atkRank <- atk_.temp_frame_data.atkRank;
 	t.atkType <- atk_.temp_frame_data.atkType;
-	t.hitVecX <- atk_.temp_frame_data.hitVecX * 0,01000000.0;
-	t.hitVecY <- atk_.temp_frame_data.hitVecY * 0,01000000.0;
-	t.grazeKnock <- atk_.temp_frame_data.grazeKnock * 0,01000000.0;
-	t.stopVecX <- atk_.temp_frame_data.stopVecX * 0,01000000.0;
-	t.stopVecY <- atk_.temp_frame_data.stopVecY * 0,01000000.0;
+	t.hitVecX <- atk_.temp_frame_data.hitVecX * 0.01000000;
+	t.hitVecY <- atk_.temp_frame_data.hitVecY * 0.01000000;
+	t.grazeKnock <- atk_.temp_frame_data.grazeKnock * 0.01000000;
+	t.stopVecX <- atk_.temp_frame_data.stopVecX * 0.01000000;
+	t.stopVecY <- atk_.temp_frame_data.stopVecY * 0.01000000;
 	t.recover <- atk_.temp_frame_data.recover;
 	t.forceKnock <- atk_.temp_frame_data.flagAttack & 2097152;
 	t.bariaBreak <- atk_.temp_frame_data.flagAttack & 524288;
@@ -275,7 +275,7 @@ function HitPlayer( atk, def, pos )
 			def.team.SetDamage(atk.guardDamage * gf_, true);
 		}
 
-		atk.team.AddSP(atk.addSP * 0,33000001.0);
+		atk.team.AddSP(atk.addSP * 0.33000001);
 
 		if (atk.guardLost > 0)
 		{
@@ -284,7 +284,7 @@ function HitPlayer( atk, def, pos )
 				local gf_ = def.team.GetGutsRate();
 				gf_ = gf_ * atk.owner.atkRate;
 				gf_ = gf_ * atk.atkRate_Pat;
-				def.team.SetDamage_FullRegain(atk.temp_frame_data.damagePoint * 0,25000000.0, true);
+				def.team.SetDamage_FullRegain(atk.temp_frame_data.damagePoint * 0.25000000, true);
 			}
 			else
 			{
@@ -309,7 +309,7 @@ function HitPlayer( atk, def, pos )
 
 	local Knock_ = atk.temp_frame_data.addKnock;
 	local KnockCheck_ = false;
-	local rate_ = 1,00000000.0;
+	local rate_ = 1.00000000;
 	local t = {};
 	this.SetHitState(t, atk, def);
 
@@ -324,15 +324,15 @@ function HitPlayer( atk, def, pos )
 		{
 			if (atk.x == def.x)
 			{
-				atk.vfBaria.x = -15,00000000.0 * atk.direction;
+				atk.vfBaria.x = -15.00000000 * atk.direction;
 			}
 			else if (atk.x > def.x)
 			{
-				atk.vfBaria.x = 15,00000000.0;
+				atk.vfBaria.x = 15.00000000;
 			}
 			else
 			{
-				atk.vfBaria.x = -15,00000000.0;
+				atk.vfBaria.x = -15.00000000;
 			}
 		}
 
@@ -360,11 +360,11 @@ function HitPlayer( atk, def, pos )
 		{
 			if (atk.temp_frame_data.atkRank <= 1)
 			{
-				def.team.counter_scale += 0,10000000.0;
+				def.team.counter_scale += 0.10000000;
 			}
 			else
 			{
-				def.team.counter_scale += 0,20000000.0;
+				def.team.counter_scale += 0.20000000;
 			}
 
 			atk.SetEffect(pos.x, pos.y, t.direction, ::actor.effect_class.EF_Counter, {});
@@ -389,16 +389,16 @@ function HitPlayer( atk, def, pos )
 		::effect.Create(atk.hitEffect + 1000, pos, null, ::graphics.slot.actor, 200, 4096);
 	}
 
-	local _min_scale = 0,10000000.0;
+	local _min_scale = 0.10000000;
 
 	if (atk.temp_frame_data.flagAttack & 256)
 	{
-		_min_scale = 0,20000000.0;
+		_min_scale = 0.20000000;
 	}
 
 	if (atk.temp_frame_data.flagAttack & 512)
 	{
-		_min_scale = 0,25000000.0;
+		_min_scale = 0.25000000;
 	}
 
 	local dam_ = 0;
@@ -423,12 +423,12 @@ function HitPlayer( atk, def, pos )
 
 	if (def.team.combo_count == 0)
 	{
-		def.minRate = 1,00000000.0;
-		def.team.SetDamageScale(atk.temp_frame_data.firstRate * 0,00100000.0);
+		def.minRate = 1.00000000;
+		def.team.SetDamageScale(atk.temp_frame_data.firstRate * 0.00100000);
 	}
 	else
 	{
-		def.team.SetDamageScale(atk.temp_frame_data.comboRate * 0,00100000.0);
+		def.team.SetDamageScale(atk.temp_frame_data.comboRate * 0.00100000);
 	}
 
 	if (!((def.temp_frame_data.flagState & 2097152 || def.armor) && def.team.life > 0))
@@ -484,7 +484,7 @@ function HitPlayer( atk, def, pos )
 	}
 
 	atk.team.AddSP(atk.temp_frame_data.addSP);
-	def.team.AddSP(dam_ * 0,10000000.0);
+	def.team.AddSP(dam_ * 0.10000000);
 
 	if (KnockCheck_)
 	{
@@ -495,13 +495,13 @@ function HitPlayer( atk, def, pos )
 				atk.owner.hit_id = atk.owner.hit_id | atk.temp_atk_data.atk_id;
 				local t_ = {};
 				t_.num <- 5;
-				def.SetFreeObject(def.x, def.y, 1,00000000.0, def.Occult_PowerCreatePoint, t_);
+				def.SetFreeObject(def.x, def.y, 1.00000000, def.Occult_PowerCreatePoint, t_);
 			}
 			else
 			{
 				local t_ = {};
 				t_.num <- 1;
-				def.SetFreeObject(def.x, def.y, 1,00000000.0, def.Occult_PowerCreatePoint, t_);
+				def.SetFreeObject(def.x, def.y, 1.00000000, def.Occult_PowerCreatePoint, t_);
 			}
 		}
 

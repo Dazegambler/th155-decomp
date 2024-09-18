@@ -139,17 +139,17 @@ local func_update = function ()
 
 	local mat = ::manbow.Matrix();
 	local offset = this.action.state == this.action.SelectStory ? 0 : -1000;
-	this.x -= (this.x - (this.target_x + offset)) * 0,25000000.0;
+	this.x -= (this.x - (this.target_x + offset)) * 0.25000000;
 
 	foreach( i, v in this.item )
 	{
-		v.y -= (v.y - v.target_y) * 0,25000000.0;
+		v.y -= (v.y - v.target_y) * 0.25000000;
 		mat.SetTranslation(this.x, v.y, 0);
-		local c = 1,00000000.0 - this.abs(v.y - this.center) / 100,00000000.0;
+		local c = 1.00000000 - this.abs(v.y - this.center) / 100.00000000;
 
-		if (c < 0,33000001.0)
+		if (c < 0.33000001)
 		{
-			c = 0,33000001.0;
+			c = 0.33000001;
 		}
 
 		foreach( v2 in v.obj )
@@ -161,7 +161,7 @@ local func_update = function ()
 
 	if (this.action.story_list.len() > 1)
 	{
-		local a = this.abs(this.sin(this.count * 0,10000000.0) * 4);
+		local a = this.abs(this.sin(this.count * 0.10000000) * 4);
 		mat.SetTranslation(this.x + 250, this.center + 20 - a, 0);
 		this.cursor_up.SetWorldTransform(mat);
 		mat.SetTranslation(this.x + 250, this.center + 140 + a, 0);

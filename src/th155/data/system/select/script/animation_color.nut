@@ -139,8 +139,8 @@ local func_update = function ()
 		}
 	}
 
-	this.x += (this.target_x - this.x) * 0,15000001.0;
-	this.y += (this.target_y - this.y) * 0,25000000.0;
+	this.x += (this.target_x - this.x) * 0.15000001;
+	this.y += (this.target_y - this.y) * 0.25000000;
 	local mat = ::manbow.Matrix();
 	mat.SetTranslation(this.x, 0, 0);
 	mat.Multiply(this.mat_world);
@@ -164,22 +164,22 @@ local func_update = function ()
 			_y = _y + this.height;
 		}
 
-		local c = 1,00000000.0 - this.abs(_y) / 128,00000000.0;
+		local c = 1.00000000 - this.abs(_y) / 128.00000000;
 
-		if (c < 0,50000000.0)
+		if (c < 0.50000000)
 		{
-			c = 0,50000000.0;
+			c = 0.50000000;
 		}
 
 		mat.SetTranslation(this.x, 0, 0);
 		mat.Multiply(this.mat_world);
 		v.red = v.green = v.blue = c;
-		v.x = this.dir * _y * 0,25000000.0;
+		v.x = this.dir * _y * 0.25000000;
 		v.y = _y;
 		v.SetWorldTransform(mat);
 	}
 
-	local a = this.abs(this.sin(this.count * 0,10000000.0) * 4);
+	local a = this.abs(this.sin(this.count * 0.10000000) * 4);
 	mat.SetTranslation(this.x + 160 * this.dir, -a, 0);
 	mat.Multiply(this.mat_world);
 	this.cursor_up.SetWorldTransform(mat);

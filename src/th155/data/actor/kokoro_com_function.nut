@@ -1,6 +1,6 @@
 function CPU_MoveBase()
 {
-	this.com_dash = 0,00000000.0;
+	this.com_dash = 0.00000000;
 	this.com_rand[2] = this.rand() % 100;
 	local d_ = this.abs(this.targetDist);
 
@@ -43,7 +43,7 @@ function CPU_MoveBase()
 		this.com_rand[2] = this.rand() % 100;
 	}
 
-	if (this.x < ::battle.corner_left + 100 && this.direction == 1,00000000.0 || this.x > ::battle.corner_right - 100 && this.direction == -1,00000000.0)
+	if (this.x < ::battle.corner_left + 100 && this.direction == 1.00000000 || this.x > ::battle.corner_right - 100 && this.direction == -1.00000000)
 	{
 		if (this.centerStop * this.centerStop <= 1)
 		{
@@ -271,24 +271,24 @@ function CPU_CenterWait( wait_ )
 
 		if (this.com_rand[2] <= 3)
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 50 : -400))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 50 : -400))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 400 : -50))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 400 : -50))
 			{
 				this.com_keyFlag.x = 1;
 			}
 		}
 		else
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 100 : -250))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 100 : -250))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 250 : -100))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 250 : -100))
 			{
 				this.com_keyFlag.x = 1;
 			}
@@ -312,24 +312,24 @@ function CPU_CenterWaitFar( wait_ )
 
 		if (this.com_rand[2] <= 6)
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 200 : -600))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 200 : -600))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 600 : -200))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 600 : -200))
 			{
 				this.com_keyFlag.x = 1;
 			}
 		}
 		else
 		{
-			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1,00000000.0 ? 325 : -450))
+			if (this.com_keyFlag.x >= 0 && this.targetDist <= (this.direction == 1.00000000 ? 325 : -450))
 			{
 				this.com_keyFlag.x = -1;
 			}
 
-			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1,00000000.0 ? 450 : -325))
+			if (this.com_keyFlag.x <= 0 && this.targetDist >= (this.direction == 1.00000000 ? 450 : -325))
 			{
 				this.com_keyFlag.x = 1;
 			}
@@ -427,13 +427,13 @@ function CPU_WalkA( wait_ )
 
 		case 12:
 		case 18:
-			if (this.target.x - this.x > 0,00000000.0)
+			if (this.target.x - this.x > 0.00000000)
 			{
-				this.input.x = -1,00000000.0;
+				this.input.x = -1.00000000;
 			}
 			else
 			{
-				this.input.x = 1,00000000.0;
+				this.input.x = 1.00000000;
 			}
 
 			break;
@@ -1757,7 +1757,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -1783,7 +1783,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -1799,7 +1799,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -1816,7 +1816,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 9)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -1832,7 +1832,7 @@ function CPU_ChainMove( wait_ )
 
 				if (this.com_rand[1] <= 8)
 				{
-					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1,00000000.0 : -1,00000000.0);
+					this.CPU_Slide(-10, this.rand() % 10 <= 5 ? 0 : -this.direction, this.y < this.centerY ? 1.00000000 : -1.00000000);
 					return true;
 				}
 
@@ -2640,12 +2640,12 @@ function CPU_SkillO( wait_ )
 		pos_.y = this.target.y - this.y;
 		pos_.Normalize();
 
-		if (pos_.y < -0,25600001.0)
+		if (pos_.y < -0.25600001)
 		{
 			this.command.rsv_y = -1;
 		}
 
-		if (pos_.y > 0,25600001.0)
+		if (pos_.y > 0.25600001)
 		{
 			this.command.rsv_y = 1;
 		}

@@ -45,7 +45,7 @@ class this.Image
 
 		local t = ::newthread(function ( t, count )
 		{
-			local delta = (1,00000000.0 - t.sprite.alpha) / count.tofloat();
+			local delta = (1.00000000 - t.sprite.alpha) / count.tofloat();
 
 			for( local i = 0; i < count; i = ++i )
 			{

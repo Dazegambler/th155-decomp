@@ -105,15 +105,15 @@ function Initialize()
 		{
 			if (this.actor_stage.alpha > 0)
 			{
-				this.actor_stage.alpha -= 0,10000000.0;
+				this.actor_stage.alpha -= 0.10000000;
 			}
 		}
 		else if (this.actor_stage.alpha < 1)
 		{
-			this.actor_stage.alpha += 0,10000000.0;
+			this.actor_stage.alpha += 0.10000000;
 		}
 
-		this.actor_character.alpha = 1,00000000.0 - this.actor_stage.alpha;
+		this.actor_character.alpha = 1.00000000 - this.actor_stage.alpha;
 	};
 	this.data.push(v);
 	local v = {};
@@ -152,7 +152,7 @@ function Initialize()
 			d.SetMotion(800 + i, s);
 			d.ConnectRenderSlot(::graphics.slot.ui, 60000);
 			local mat = ::manbow.Matrix();
-			mat.SetScaling(0,50000000.0, 0,50000000.0, 0,50000000.0);
+			mat.SetScaling(0.50000000, 0.50000000, 0.50000000);
 			mat.Translate(i == 0 ? 8 : 1280 - 8, 8, 0);
 			d.SetWorldTransform(mat);
 			this.device[i] = d;
@@ -182,7 +182,7 @@ function Initialize()
 			v.icon.x = i == 0 ? 16 : 1280 - 16 - 32;
 			v.icon.y = 36;
 			v.text <- ::font.CreateSystemString(::network.player_name[i]);
-			v.text.sx = v.text.sy = 0,66000003.0;
+			v.text.sx = v.text.sy = 0.66000003;
 			v.text.x = i == 0 ? v.icon.x + 32 : v.icon.x - v.text.width * v.text.sx;
 			v.text.y = v.icon.y + 2;
 			v.text.ConnectRenderSlot(::graphics.slot.ui, 40000);

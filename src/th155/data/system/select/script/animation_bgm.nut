@@ -37,20 +37,20 @@ local func_init = function ( i, _page )
 	if (a)
 	{
 		this.author <- ::font.CreateSystemString(a);
-		this.author.sx = -0,69999999.0;
-		this.author.sy = -0,69999999.0;
-		this.author.x = this.author.width * 0,69999999.0 / 2 + 270;
+		this.author.sx = -0.69999999;
+		this.author.sy = -0.69999999;
+		this.author.x = this.author.width * 0.69999999 / 2 + 270;
 		this.author.y = 3;
 		this.frame_parts.push(this.author);
 	}
 
 	this.target_rot <- 0;
-	this.current_rot <- 3,14159203.0;
+	this.current_rot <- 3.14159203;
 	this.active <- false;
 
 	foreach( v in this.frame_parts )
 	{
-		v.green = v.blue = v.red = 0,50000000.0;
+		v.green = v.blue = v.red = 0.50000000;
 		v.SetWorldTransform(mat_init);
 		v.Update();
 	}
@@ -63,7 +63,7 @@ local func_update = function ()
 	}
 
 	local mat = ::manbow.Matrix();
-	this.current_rot += (this.target_rot - this.current_rot) * 0,25000000.0;
+	this.current_rot += (this.target_rot - this.current_rot) * 0.25000000;
 	local _x = this.cos(this.current_rot) * 120 + 1280 + 100;
 	local _y = this.sin(this.current_rot) * 120 + y;
 	mat.SetScaling(this.root.scale, this.root.scale, 1);
@@ -76,12 +76,12 @@ local func_update = function ()
 		{
 			if (v.red < 1)
 			{
-				v.red += 0,10000000.0;
+				v.red += 0.10000000;
 			}
 		}
-		else if (v.red > 0,50000000.0)
+		else if (v.red > 0.50000000)
 		{
-			v.red -= 0,10000000.0;
+			v.red -= 0.10000000;
 		}
 
 		v.green = v.blue = v.red;
@@ -91,13 +91,13 @@ local func_update = function ()
 };
 local func_set_target = function ( diff )
 {
-	this.target_rot = 3,14159203.0 * (1 + diff * 0,09000000.0);
+	this.target_rot = 3.14159203 * (1 + diff * 0.09000000);
 
-	if (this.target_rot - this.current_rot < -0,20000000.0 * 3,14159203.0)
+	if (this.target_rot - this.current_rot < -0.20000000 * 3.14159203)
 	{
 		this.current_rot = this.target_rot;
 	}
-	else if (this.target_rot - this.current_rot > 0,20000000.0 * 3,14159203.0)
+	else if (this.target_rot - this.current_rot > 0.20000000 * 3.14159203)
 	{
 		this.current_rot = this.target_rot;
 	}
@@ -136,7 +136,7 @@ local func_update_position = function ()
 
 		if (this.scale < 1)
 		{
-			this.scale += 0,20000000.0;
+			this.scale += 0.20000000;
 
 			if (this.scale > 1)
 			{
@@ -146,7 +146,7 @@ local func_update_position = function ()
 	}
 	else
 	{
-		this.scale -= 0,20000000.0;
+		this.scale -= 0.20000000;
 
 		if (this.scale < 0)
 		{
@@ -231,7 +231,7 @@ local func_update_cursor = function ()
 			this.visible = true;
 		}
 
-		this.scale += 0,20000000.0;
+		this.scale += 0.20000000;
 
 		if (this.scale > 1)
 		{
@@ -240,7 +240,7 @@ local func_update_cursor = function ()
 	}
 	else if (this.scale > 0)
 	{
-		this.scale -= 0,20000000.0;
+		this.scale -= 0.20000000;
 
 		if (this.scale < 0)
 		{
@@ -258,7 +258,7 @@ local func_update_cursor = function ()
 	if (this.visible)
 	{
 		local mat = ::manbow.Matrix();
-		local a = this.abs(this.sin(this.count * 0,10000000.0) * 6) + 50;
+		local a = this.abs(this.sin(this.count * 0.10000000) * 6) + 50;
 		mat.SetTranslation(-500 * this.scale + 1480, y - a, 0);
 		this.cursor_up.SetWorldTransform(mat);
 		mat.SetTranslation(-500 * this.scale + 1480, y + a, 0);

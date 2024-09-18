@@ -20,7 +20,7 @@ function Initialize()
 	{
 		local _title = ::font.CreateSystemString(data.title);
 		local author = ::font.CreateSystemString(data.author);
-		author.sx = author.sy = 0,69999999.0;
+		author.sx = author.sy = 0.69999999;
 		local w = _title.width;
 		local w2 = author.width * author.sx;
 
@@ -38,7 +38,7 @@ function Initialize()
 		t.Set(::menu.cursor.under);
 		t.x = ::graphics.width / 2 - w;
 		t.y = _title.y + 25;
-		t.sx = w / 256,00000000.0;
+		t.sx = w / 256.00000000;
 		this.item.push(t);
 		this.item.push(_title);
 		this.item.push(author);

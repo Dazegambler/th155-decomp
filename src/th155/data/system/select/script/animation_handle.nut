@@ -77,7 +77,7 @@ local func_update = function ()
 
 	foreach( i, v in this.name )
 	{
-		mat.SetTranslation(-this.dir * (1,00000000.0 - v.alpha) * 500, 0, 0);
+		mat.SetTranslation(-this.dir * (1.00000000 - v.alpha) * 500, 0, 0);
 		mat.Multiply(this.mat_name);
 		v.SetWorldTransform(mat);
 
@@ -85,12 +85,12 @@ local func_update = function ()
 		{
 			if (v.alpha < 1)
 			{
-				v.alpha += 0,20000000.0;
+				v.alpha += 0.20000000;
 			}
 		}
-		else if (v.alpha > 0,10000000.0)
+		else if (v.alpha > 0.10000000)
 		{
-			v.alpha -= 0,10000000.0;
+			v.alpha -= 0.10000000;
 		}
 		else
 		{

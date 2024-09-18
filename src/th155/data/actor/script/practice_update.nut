@@ -54,7 +54,7 @@ function MainLoopFirst()
 
 	if (this.IsGuard() == 3)
 	{
-		if (this.input.x * this.direction <= 0,00000000.0 && this.input.y == 0 && this.input.b4 == 1 || this.autoBaria == 1 || this.autoBaria == 2)
+		if (this.input.x * this.direction <= 0.00000000 && this.input.y == 0 && this.input.b4 == 1 || this.autoBaria == 1 || this.autoBaria == 2)
 		{
 			local t_ = {};
 			t_.atkRank <- this.flag1;

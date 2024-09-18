@@ -23,7 +23,7 @@ function Initialize()
 
 		while (this.current < 250 + start)
 		{
-			sprite.red = sprite.green = sprite.blue = (this.current - start) / 250,00000000.0;
+			sprite.red = sprite.green = sprite.blue = (this.current - start) / 250.00000000;
 			this.suspend();
 		}
 
@@ -36,7 +36,7 @@ function Initialize()
 
 		while (this.current < 2500 + start)
 		{
-			sprite.red = sprite.green = sprite.blue = (2500 + start - this.current) / 500,00000000.0;
+			sprite.red = sprite.green = sprite.blue = (2500 + start - this.current) / 500.00000000;
 			this.suspend();
 		}
 
@@ -67,7 +67,7 @@ function Initialize()
 
 		while (this.current < 1000 + end)
 		{
-			this.sprite1.alpha = (1000 + end - this.current) / 1000,00000000.0;
+			this.sprite1.alpha = (1000 + end - this.current) / 1000.00000000;
 			this.suspend();
 		}
 

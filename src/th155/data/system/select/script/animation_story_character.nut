@@ -8,7 +8,7 @@ local func_init = function ()
 	this.current_id <- -1;
 	this.target_id <- 1000 + this.cursor_inst.val;
 	this.mat_frame <- ::manbow.Matrix();
-	this.mat_frame.SetScaling(1,50000000.0, 1,50000000.0, 1,50000000.0);
+	this.mat_frame.SetScaling(1.50000000, 1.50000000, 1.50000000);
 	this.mat_frame.Translate(0, 540, 0);
 	this.mat_frame.Multiply(this.mat_world);
 	this.frame_parts <- [];
@@ -51,7 +51,7 @@ local func_init = function ()
 	}
 
 	this.rot <- 0;
-	this.rot_acc <- 0,00500000.0;
+	this.rot_acc <- 0.00500000;
 	this.scale <- 0;
 	this.scale_face <- 1;
 };
@@ -60,9 +60,9 @@ local func_update = function ()
 	local mat = ::manbow.Matrix();
 	this.rot += this.rot_acc;
 
-	if (this.fabs(this.rot_acc) > 0,00200000.0)
+	if (this.fabs(this.rot_acc) > 0.00200000)
 	{
-		this.rot_acc *= 0,94999999.0;
+		this.rot_acc *= 0.94999999;
 	}
 
 	mat.SetRotation(0, 0, this.rot);
@@ -81,12 +81,12 @@ local func_update = function ()
 		{
 			if (v.alpha < 1)
 			{
-				v.alpha += 0,20000000.0;
+				v.alpha += 0.20000000;
 			}
 		}
-		else if (v.alpha > 0,10000000.0)
+		else if (v.alpha > 0.10000000)
 		{
-			v.alpha -= 0,10000000.0;
+			v.alpha -= 0.10000000;
 		}
 		else
 		{
@@ -96,7 +96,7 @@ local func_update = function ()
 
 	if (this.scale > 1)
 	{
-		this.scale -= 0,15000001.0;
+		this.scale -= 0.15000001;
 
 		if (this.scale < 1)
 		{
@@ -105,7 +105,7 @@ local func_update = function ()
 	}
 	else if (this.scale < 1)
 	{
-		this.scale += 0,10000000.0;
+		this.scale += 0.10000000;
 
 		if (this.scale > 1)
 		{
@@ -117,7 +117,7 @@ local func_update = function ()
 	{
 		if (this.target_id != 2000 + this.character_id_story[this.list[this.cursor_inst.val]])
 		{
-			this.rot_acc = 0,10000000.0;
+			this.rot_acc = 0.10000000;
 		}
 
 		this.target_id = 2000 + this.character_id_story[this.list[this.cursor_inst.val]];

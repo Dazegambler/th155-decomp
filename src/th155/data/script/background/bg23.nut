@@ -2,7 +2,7 @@ local slot = ::graphics.slot;
 local mat_world = this.manbow.Matrix();
 mat_world.SetIdentity();
 mat_world.Scale(-1, 1, 1);
-mat_world.Rotate(3,14159203.0 / 2,00000000.0, 0, 0);
+mat_world.Rotate(3.14159203 / 2.00000000, 0, 0);
 mat_world.Translate(0, 0, 0);
 this.animation_set <- ::manbow.AnimationSet3D();
 this.animation_set.Load(0, "data/background/bg23/bg23.msh", null);
